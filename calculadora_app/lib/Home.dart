@@ -32,7 +32,7 @@ class _HomeState extends State<Home> {
           Padding(
             padding: EdgeInsets.all(14.0),
             child: Text(
-              'Kit Ferramentas',
+              'Kit Óptica',
               style: TextStyle(
                   fontFamily: 'Montserrat',
                   fontSize: 40.0,
