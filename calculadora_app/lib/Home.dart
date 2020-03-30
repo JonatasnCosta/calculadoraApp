@@ -5,10 +5,19 @@ class Home extends StatefulWidget {
   _HomeState createState() => _HomeState();
 }
 
-class _HomeState extends State<Home> {
+class _HomeState extends State<Home> 
+//Contrutor do Menu
+with SingleTickerProviderStateMixin {
+  TabController tabController;
+  @override 
+  void initState(){
+    tabController = TabController (vsync: this, length: 4);
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+   return Scaffold(
       body: ListView(
         children: <Widget>[
           SizedBox(height: 15.0),
