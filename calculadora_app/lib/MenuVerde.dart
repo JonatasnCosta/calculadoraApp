@@ -48,7 +48,7 @@ class _MenuVerdeState extends State<MenuVerde> {
            children: <Widget>[
             getMenuCard('assets/', 'Valor a sua ótica', 'Diâmetro de lentes', 'Calculadora'),
             SizedBox(width: 15.0),
-            getMenuCard('assets/', 'Agilidade aos seus pedidos', 'Pedido Laboratório', 'Precal'),
+            getMenuCard('assets/', 'Agilidade aos seus pedidos', 'Pedido Laboratório', 'OS'),
             SizedBox(width: 15.0),
             getMenuCard('assets/', 'Confiança & Inovação', 'Transposição', 'Receitas')
            ]
