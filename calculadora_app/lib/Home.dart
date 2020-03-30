@@ -1,3 +1,4 @@
+import 'package:calculadoraapp/MenuVerde.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -11,7 +12,7 @@ with SingleTickerProviderStateMixin {
   TabController tabController;
   @override 
   void initState(){
-    tabController = TabController (vsync: this, length: 4);
+    tabController = TabController (vsync: this, length: 3);
     super.initState();
   }
 
@@ -56,7 +57,62 @@ with SingleTickerProviderStateMixin {
                   fontSize: 40.0,
                   fontWeight: FontWeight.w500),
             ),
-          )
+          ),
+          //Menu letras
+          Padding(
+            padding: EdgeInsets.only(left: 15.0),
+            child: TabBar(
+              controller: tabController,
+              indicatorColor: Colors.transparent,
+              labelColor: Colors.black,
+              unselectedLabelColor: Colors.grey.withOpacity(0.5),
+              isScrollable: true,
+              tabs: <Widget>[
+                Tab(
+                  child: Text(
+                    'Diâmetro de lentes',
+                    style: TextStyle(
+                      fontFamily: 'Montserrat',
+                      fontSize: 17.0,
+                      fontWeight: FontWeight.bold
+                     ),
+                  ),
+                ),
+                Tab(
+                  child: Text(
+                    'Pedido Laboratório',
+                    style: TextStyle(
+                      fontFamily: 'Montserrat',
+                      fontSize: 17.0,
+                      fontWeight: FontWeight.bold
+                     ),
+                  ),
+                ),
+                Tab(
+                  child: Text(
+                    'Transposição',
+                    style: TextStyle(
+                      fontFamily: 'Montserrat',
+                      fontSize: 17.0,
+                      fontWeight: FontWeight.bold
+                     ),
+                  ),
+                )
+              ],
+              )
+            ),
+           //Menu verde 
+           Container(
+             height: MediaQuery.of(context).size.height -200.0,
+             child: TabBarView(
+               controller: tabController,
+                children: <Widget>[
+                  MenuVerde(),
+                  MenuVerde(),
+                  MenuVerde()
+                ],
+              )
+           )
         ],
       ),
     );
