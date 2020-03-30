@@ -7,5 +7,6 @@ void main() {
     home: Home(),
   ));
 }
-//Ponto de integração para receber Appbar
-//Ponto de integração para receber Título
+//Ponto de integração para receber o Appbar
+//Ponto de integração para receber o Título
+//Ponto de integração para receber o Menu

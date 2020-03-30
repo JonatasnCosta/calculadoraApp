@@ -18,17 +18,26 @@ class _HomeState extends State<Home> {
             child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  IconButton(icon: Icon(Icons.menu), onPressed: () {}),
+                  //Icones
+                  IconButton(
+                    icon: Icon(Icons.menu), 
+                    onPressed: () {}
+                  ),
                   FloatingActionButton(
                     onPressed: () {},
                     backgroundColor: Colors.grey.withOpacity(0.3),
                     mini: true,
                     elevation: 0.0,
                     child:
-                        Icon(Icons.short_text, color: Colors.black, size: 17.0),
+                        Icon(
+                          Icons.short_text, 
+                          color: Colors.black, size: 17.0
+                          ),
                   )
-                ]),
+                ]
+                ),
           ),
+          // Título
           Padding(
             padding: EdgeInsets.all(14.0),
             child: Text(
