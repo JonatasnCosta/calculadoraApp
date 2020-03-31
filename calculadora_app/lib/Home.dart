@@ -1,3 +1,5 @@
+import 'package:calculadoraapp/MenuOS.dart';
+import 'package:calculadoraapp/MenuTransposicao.dart';
 import 'package:calculadoraapp/MenuVerde.dart';
 import 'package:flutter/material.dart';
 
@@ -108,8 +110,8 @@ with SingleTickerProviderStateMixin {
                controller: tabController,
                 children: <Widget>[
                   MenuVerde(),
-                  MenuVerde(),
-                  MenuVerde()
+                  MenuOS(),
+                  MenuTransposicao()
                 ],
               )
            )

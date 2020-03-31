@@ -1,15 +1,15 @@
-import 'package:calculadoraapp/Funcoes/Calculadora.dart';
+import 'package:calculadoraapp/Funcoes/OrdemServico.dart';
 import 'package:flutter/material.dart';
 
-class MenuVerde extends StatefulWidget {
+class MenuOS extends StatefulWidget {
   @override
-  _MenuVerdeState createState() => _MenuVerdeState();
+  _MenuOSState createState() => _MenuOSState();
 }
 
-class _MenuVerdeState extends State<MenuVerde> {
+class _MenuOSState extends State<MenuOS> {
  ScrollController _scrollController;
  List allDescriptions =[
-    'Existem varias maneiras de calcular o diâmentro de lentes. Essa venho pra facilitar.',
+    'Preencha os seus pedidos em um clique.',
  ];
 
  String description;
@@ -45,7 +45,7 @@ class _MenuVerdeState extends State<MenuVerde> {
            controller: _scrollController,
            scrollDirection: Axis.horizontal,
            children: <Widget>[
-            getMenuCard('assets/', 'Valor a sua ótica', 'Diâmetro de lentes', 'Calculadora')
+            getMenuCard('assets/', 'Agilidade aos seus pedidos', 'Pedido Laboratório', 'Ordem de serviço')
            ]
           )
         ),
@@ -258,7 +258,7 @@ class _MenuVerdeState extends State<MenuVerde> {
             ),
             child:InkWell(
               onTap: (){
-                Navigator.of(context).push(MaterialPageRoute(builder:(context) => Calculadora()));
+                Navigator.of(context).push(MaterialPageRoute(builder:(context) => OrdemServico()));
                 },
               child:  Center(
               child: Icon(

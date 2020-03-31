@@ -1,15 +1,16 @@
-import 'package:calculadoraapp/Funcoes/Calculadora.dart';
+
+import 'package:calculadoraapp/Funcoes/Transposicao.dart';
 import 'package:flutter/material.dart';
 
-class MenuVerde extends StatefulWidget {
+class MenuTransposicao extends StatefulWidget {
   @override
-  _MenuVerdeState createState() => _MenuVerdeState();
+  _MenuTransposicao createState() => _MenuTransposicao();
 }
 
-class _MenuVerdeState extends State<MenuVerde> {
+class _MenuTransposicao extends State<MenuTransposicao> {
  ScrollController _scrollController;
  List allDescriptions =[
-    'Existem varias maneiras de calcular o diâmentro de lentes. Essa venho pra facilitar.',
+    'Deixe os calculos complicados com a gente.',
  ];
 
  String description;
@@ -45,7 +46,7 @@ class _MenuVerdeState extends State<MenuVerde> {
            controller: _scrollController,
            scrollDirection: Axis.horizontal,
            children: <Widget>[
-            getMenuCard('assets/', 'Valor a sua ótica', 'Diâmetro de lentes', 'Calculadora')
+            getMenuCard('assets/', 'Confiança & Inovação', 'Transposição', 'Receita')
            ]
           )
         ),
@@ -258,7 +259,7 @@ class _MenuVerdeState extends State<MenuVerde> {
             ),
             child:InkWell(
               onTap: (){
-                Navigator.of(context).push(MaterialPageRoute(builder:(context) => Calculadora()));
+                Navigator.of(context).push(MaterialPageRoute(builder:(context) => Transposicao()));
                 },
               child:  Center(
               child: Icon(
