@@ -36,7 +36,43 @@ class _CalculadoraState extends State<Calculadora> {
               borderRadius: BorderRadius.only(bottomLeft: Radius.circular(35.0), bottomRight: Radius.circular(35.0)),
               color: Colors.white
             ),
-          )
+          ),
+           SizedBox(height: 30.0),
+            Container(
+          width: MediaQuery.of(context).size.width,
+          padding: EdgeInsets.only(right: 10.0),
+          child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                //Icones
+                IconButton(
+                  icon: Icon(Icons.arrow_back), 
+                  onPressed: () {}
+                ),
+                FloatingActionButton(
+                  onPressed: () {},
+                  backgroundColor: Colors.grey.withOpacity(0.3),
+                  mini: true,
+                  elevation: 0.0,
+                  child:
+                      Icon(
+                        Icons.short_text, 
+                        color: Colors.black, size: 17.0
+                        ),
+                )
+              ]
+              ),
+        ),
+         Padding(
+          padding: EdgeInsets.all(14.0),
+          child: Text(
+            'Calculadora de diâmetro',
+            style: TextStyle(
+                fontFamily: 'Montserrat',
+                fontSize: 40.0,
+                fontWeight: FontWeight.w500),
+          ),
+        ),
         ],
       ),
     );
