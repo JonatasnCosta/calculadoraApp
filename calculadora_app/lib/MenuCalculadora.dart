@@ -1,12 +1,12 @@
 import 'package:calculadoraapp/Funcoes/Calculadora.dart';
 import 'package:flutter/material.dart';
 
-class MenuVerde extends StatefulWidget {
+class MenuCalculadora extends StatefulWidget {
   @override
-  _MenuVerdeState createState() => _MenuVerdeState();
+  _MenuCalculadoraState createState() => _MenuCalculadoraState();
 }
 
-class _MenuVerdeState extends State<MenuVerde> {
+class _MenuCalculadoraState extends State<MenuCalculadora> {
  ScrollController _scrollController;
  List allDescriptions =[
     'Existem varias maneiras de calcular o diâmentro de lentes. Essa venho pra facilitar.',

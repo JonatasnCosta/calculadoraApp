@@ -1,6 +1,6 @@
+import 'package:calculadoraapp/MenuCalculadora.dart';
 import 'package:calculadoraapp/MenuOS.dart';
 import 'package:calculadoraapp/MenuTransposicao.dart';
-import 'package:calculadoraapp/MenuVerde.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -109,7 +109,7 @@ with SingleTickerProviderStateMixin {
              child: TabBarView(
                controller: tabController,
                 children: <Widget>[
-                  MenuVerde(),
+                  MenuCalculadora(),
                   MenuOS(),
                   MenuTransposicao()
                 ],
