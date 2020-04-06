@@ -1,6 +1,5 @@
-
 import 'package:flutter/material.dart';
-
+import 'package:share/share.dart';
 
 
 
@@ -12,6 +11,14 @@ class OrdemServico extends StatefulWidget {
 
 
 class _OrdemServicoState extends State<OrdemServico> {
+  
+
+
+   
+
+
+
+
   @override
   Widget build(BuildContext context) {
   
@@ -66,15 +73,15 @@ class _OrdemServicoState extends State<OrdemServico> {
               child: Center(
                 child: TextField(
                    keyboardType: TextInputType.text,
-                  decoration: InputDecoration(
+                   decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'Nome da ótica',
+                    hintText: 'Nome da ótica ',
                     hintStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
                       color: Colors.black
                     ),
-                  ),
+                  )
                 ),
               ),
             ),
@@ -90,7 +97,7 @@ class _OrdemServicoState extends State<OrdemServico> {
               ),
               child: Center(
                 child: TextField(
-                   keyboardType: TextInputType.datetime,
+                   keyboardType: TextInputType.text,
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     hintText: 'Data',
@@ -99,7 +106,7 @@ class _OrdemServicoState extends State<OrdemServico> {
                       fontSize: 15.0,
                       color: Colors.black
                     ),
-                  ),
+                  )
                 ),
               ),
             ),
@@ -116,7 +123,7 @@ class _OrdemServicoState extends State<OrdemServico> {
               ),
               child: Center(
                 child: TextField(
-                  keyboardType: TextInputType.number,
+                  keyboardType: TextInputType.text,
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     hintText: 'Número O.S',
@@ -125,7 +132,7 @@ class _OrdemServicoState extends State<OrdemServico> {
                       fontSize: 15.0,
                       color: Colors.black
                     ),
-                  ),
+                  )
                 ),
               ),
             ),
@@ -150,7 +157,7 @@ class _OrdemServicoState extends State<OrdemServico> {
                       fontSize: 15.0,
                       color: Colors.black
                     ),
-                  ),
+                  )
                 ),
               ),
             ),
@@ -175,7 +182,7 @@ class _OrdemServicoState extends State<OrdemServico> {
                       fontSize: 15.0,
                       color: Colors.black
                     ),
-                  ),
+                  )
                 ),
               ),
             ),
@@ -200,7 +207,7 @@ class _OrdemServicoState extends State<OrdemServico> {
                       fontSize: 15.0,
                       color: Colors.black
                     ),
-                  ),
+                  )
                 ),
               ),
             ),
@@ -225,7 +232,7 @@ class _OrdemServicoState extends State<OrdemServico> {
                       fontSize: 15.0,
                       color: Colors.black
                     ),
-                  ),
+                  )
                 ),
               ),
             ),
@@ -250,7 +257,7 @@ class _OrdemServicoState extends State<OrdemServico> {
                       fontSize: 15.0,
                       color: Colors.black
                     ),
-                  ),
+                  )
                 ),
               ),
             ),
@@ -275,7 +282,7 @@ class _OrdemServicoState extends State<OrdemServico> {
                       fontSize: 15.0,
                       color: Colors.black
                     ),
-                  ),
+                  )
                 ),
               ),
             ),
@@ -300,7 +307,7 @@ class _OrdemServicoState extends State<OrdemServico> {
                       fontSize: 15.0,
                       color: Colors.black
                     ),
-                  ),
+                  )
                 ),
               ),
             ),
@@ -325,7 +332,7 @@ class _OrdemServicoState extends State<OrdemServico> {
                       fontSize: 15.0,
                       color: Colors.black
                     ),
-                  ),
+                  )
                 ),
               ),
             ),
@@ -350,8 +357,8 @@ class _OrdemServicoState extends State<OrdemServico> {
                       fontSize: 15.0,
                       color: Colors.black
                     ),
-                  ),
-                ),
+                  )
+                )
               ),
             ),
           ),
@@ -401,14 +408,14 @@ class _OrdemServicoState extends State<OrdemServico> {
                       color: Colors.black
                     ),
                   ),
+                   
                 ),
               ),
             ),
-          )
-],
-),
-);
-
+          ),
+            ],
+            ),
+          );
 
   }
 }
