@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:share/share.dart';
 
 
 
@@ -11,14 +10,22 @@ class OrdemServico extends StatefulWidget {
 
 
 class _OrdemServicoState extends State<OrdemServico> {
+TextEditingController _controllerNomeotica = TextEditingController();
+TextEditingController _controllerData = TextEditingController();
+TextEditingController _controllerOS = TextEditingController();
+TextEditingController _controllerTipodelente = TextEditingController();
+TextEditingController _controllerTratamento = TextEditingController();
+TextEditingController _controllerODGrau = TextEditingController();
+TextEditingController _controllerOEGrau = TextEditingController();
+TextEditingController _controllerADD = TextEditingController();
+TextEditingController _controllerDNPOD = TextEditingController();
+TextEditingController _controllerDNPOE = TextEditingController();
+TextEditingController _controllerAltura = TextEditingController();
+TextEditingController _controllerDiametro = TextEditingController();
+TextEditingController _controllerTipodearo = TextEditingController();
+TextEditingController _controllerObservacoes = TextEditingController();
+
   
-
-
-   
-
-
-
-
   @override
   Widget build(BuildContext context) {
   
@@ -81,7 +88,8 @@ class _OrdemServicoState extends State<OrdemServico> {
                       fontSize: 15.0,
                       color: Colors.black
                     ),
-                  )
+                  ),
+                  controller: _controllerNomeotica,
                 ),
               ),
             ),
@@ -106,7 +114,8 @@ class _OrdemServicoState extends State<OrdemServico> {
                       fontSize: 15.0,
                       color: Colors.black
                     ),
-                  )
+                  ),
+                  controller: _controllerData,
                 ),
               ),
             ),
@@ -132,7 +141,8 @@ class _OrdemServicoState extends State<OrdemServico> {
                       fontSize: 15.0,
                       color: Colors.black
                     ),
-                  )
+                  ),
+                  controller: _controllerOS,
                 ),
               ),
             ),
@@ -157,7 +167,8 @@ class _OrdemServicoState extends State<OrdemServico> {
                       fontSize: 15.0,
                       color: Colors.black
                     ),
-                  )
+                  ),
+                  controller: _controllerTipodelente,
                 ),
               ),
             ),
@@ -182,7 +193,8 @@ class _OrdemServicoState extends State<OrdemServico> {
                       fontSize: 15.0,
                       color: Colors.black
                     ),
-                  )
+                  ),
+                  controller: _controllerTratamento,
                 ),
               ),
             ),
@@ -207,7 +219,8 @@ class _OrdemServicoState extends State<OrdemServico> {
                       fontSize: 15.0,
                       color: Colors.black
                     ),
-                  )
+                  ),
+                  controller: _controllerODGrau,
                 ),
               ),
             ),
@@ -232,7 +245,8 @@ class _OrdemServicoState extends State<OrdemServico> {
                       fontSize: 15.0,
                       color: Colors.black
                     ),
-                  )
+                  ),
+                  controller: _controllerOEGrau,
                 ),
               ),
             ),
@@ -257,7 +271,8 @@ class _OrdemServicoState extends State<OrdemServico> {
                       fontSize: 15.0,
                       color: Colors.black
                     ),
-                  )
+                  ),
+                  controller: _controllerADD,
                 ),
               ),
             ),
@@ -282,7 +297,8 @@ class _OrdemServicoState extends State<OrdemServico> {
                       fontSize: 15.0,
                       color: Colors.black
                     ),
-                  )
+                  ),
+                  controller: _controllerDNPOD,
                 ),
               ),
             ),
@@ -307,7 +323,8 @@ class _OrdemServicoState extends State<OrdemServico> {
                       fontSize: 15.0,
                       color: Colors.black
                     ),
-                  )
+                  ),
+                  controller: _controllerDNPOE,
                 ),
               ),
             ),
@@ -332,7 +349,8 @@ class _OrdemServicoState extends State<OrdemServico> {
                       fontSize: 15.0,
                       color: Colors.black
                     ),
-                  )
+                  ),
+                  controller: _controllerAltura,
                 ),
               ),
             ),
@@ -357,7 +375,8 @@ class _OrdemServicoState extends State<OrdemServico> {
                       fontSize: 15.0,
                       color: Colors.black
                     ),
-                  )
+                  ),
+                  controller: _controllerDiametro,
                 )
               ),
             ),
@@ -383,6 +402,7 @@ class _OrdemServicoState extends State<OrdemServico> {
                       color: Colors.black
                     ),
                   ),
+                  controller: _controllerTipodearo,
                 ),
               ),
             ),
@@ -408,7 +428,7 @@ class _OrdemServicoState extends State<OrdemServico> {
                       color: Colors.black
                     ),
                   ),
-                   
+                   controller: _controllerObservacoes,
                 ),
               ),
             ),
