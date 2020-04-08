@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
+import 'dart:io';
+import 'package:flutter/cupertino.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:pdf/pdf.dart';
+import 'package:pdf/widgets.dart' as pw;
+import 'package:calculadoraapp/PdfPreviewScreen.dart';
 
 
 
@@ -24,12 +30,114 @@ TextEditingController _controllerAltura = TextEditingController();
 TextEditingController _controllerDiametro = TextEditingController();
 TextEditingController _controllerTipodearo = TextEditingController();
 TextEditingController _controllerObservacoes = TextEditingController();
+final pdf = pw.Document();
+  
+
+  writeOnPdf(){
+    pdf.addPage(
+      pw.MultiPage(
+        pageFormat: PdfPageFormat.a3,
+        margin: pw.EdgeInsets.all(32),
+        
+
+        build: (pw.Context context){
+          return <pw.Widget>  [
+            pw.Header(
+              level: 0,
+              child: pw.Text("Ordem de serviço"
+              ),
+            ),
+            
+           pw.Paragraph(
+             text: "Nome da ótica"
+           ),
+            pw.Paragraph(text: _controllerNomeotica.text),
+          
+            pw.Paragraph(
+                text: "Data"
+            ),
+            pw.Paragraph(text: _controllerData.text),
+            
+            pw.Paragraph(
+                text: "Número O.S"
+            ),
+             pw.Paragraph(text: _controllerOS.text),
+           
+            pw.Paragraph(
+                text: "Tipo de lente"
+            ),
+             pw.Paragraph(text: _controllerTipodelente.text),
+
+            pw.Paragraph(
+                text: "Tratamento"
+            ),
+             pw.Paragraph(text: _controllerTratamento.text),
+           
+            pw.Paragraph(
+                text: "OD"
+            ),
+             pw.Paragraph(text: _controllerODGrau.text),
+            
+             pw.Paragraph(
+                text: "OE"
+            ),
+             pw.Paragraph(text: _controllerOEGrau.text),
+            
+             pw.Paragraph(
+                text: "ADD"
+            ),
+            pw.Paragraph(text: _controllerADD.text),
+           
+             pw.Paragraph(
+                text: "DNP OD"
+            ),
+             pw.Paragraph(text: _controllerDNPOD.text),
+
+              pw.Paragraph(
+                text: "DNP OE"
+            ),
+             pw.Paragraph(text: _controllerDNPOE.text),
+
+              pw.Paragraph(
+                text: "Altura"
+            ),
+             pw.Paragraph(text: _controllerAltura.text),
+
+              pw.Paragraph(
+                text: "Diâmetro"
+            ),
+             pw.Paragraph(text: _controllerDiametro.text),
+          
+            pw.Paragraph(
+                text: "Tipo de aro"
+            ),
+             pw.Paragraph(text: _controllerTipodearo.text),
+
+             pw.Paragraph(
+                text: "Observações"
+            ),
+             pw.Paragraph(text: _controllerObservacoes.text),
+          ];
+        },
+     )
+    );
+  }
+   Future savePdf() async{
+    Directory documentDirectory = await getApplicationDocumentsDirectory();
+
+    String documentPath = documentDirectory.path;
+
+    File file = File("$documentPath/ordemdeservico.pdf");
+
+    file.writeAsBytesSync(pdf.save());
+  }
 
   
   @override
   Widget build(BuildContext context) {
   
       return Scaffold(
+        
         body: ListView(
           children: <Widget>[
             SizedBox(height: 15.0),
@@ -44,17 +152,13 @@ TextEditingController _controllerObservacoes = TextEditingController();
                   icon: Icon(Icons.arrow_back), 
                   onPressed: () {}
                 ),
-                FloatingActionButton(
-                  onPressed: () {},
-                  backgroundColor: Colors.grey.withOpacity(0.3),
-                  mini: true,
-                  elevation: 0.0,
-                  child:
-                      Icon(
-                        Icons.short_text, 
-                        color: Colors.black, size: 17.0
-                        ),
-                )
+                  IconButton(
+                    color: Colors.grey.withOpacity(0.3),
+                      icon:Icon(Icons.short_text,
+                      color: Colors.black, size: 17.0
+                      ),
+                      onPressed: () {}    
+                    ), 
               ]
               ),
         ),
@@ -105,7 +209,7 @@ TextEditingController _controllerObservacoes = TextEditingController();
               ),
               child: Center(
                 child: TextField(
-                   keyboardType: TextInputType.text,
+                   keyboardType: TextInputType.datetime,
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     hintText: 'Data',
@@ -132,7 +236,7 @@ TextEditingController _controllerObservacoes = TextEditingController();
               ),
               child: Center(
                 child: TextField(
-                  keyboardType: TextInputType.text,
+                  keyboardType: TextInputType.number,
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     hintText: 'Número O.S',
@@ -262,7 +366,7 @@ TextEditingController _controllerObservacoes = TextEditingController();
               ),
               child: Center(
                 child: TextField(
-                   keyboardType: TextInputType.text,
+                   keyboardType: TextInputType.number,
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     hintText: 'ADD',
@@ -288,7 +392,7 @@ TextEditingController _controllerObservacoes = TextEditingController();
               ),
               child: Center(
                 child: TextField(
-                   keyboardType: TextInputType.text,
+                   keyboardType: TextInputType.number,
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     hintText: 'DNP: OD',
@@ -314,7 +418,7 @@ TextEditingController _controllerObservacoes = TextEditingController();
               ),
               child: Center(
                 child: TextField(
-                   keyboardType: TextInputType.text,
+                   keyboardType: TextInputType.number,
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     hintText: 'DNP: OE',
@@ -343,7 +447,7 @@ TextEditingController _controllerObservacoes = TextEditingController();
                    keyboardType: TextInputType.number,
                   decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'ALTURA',
+                    hintText: 'Altura',
                     hintStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
@@ -435,7 +539,27 @@ TextEditingController _controllerObservacoes = TextEditingController();
           ),
             ],
             ),
-          );
+            floatingActionButton: FloatingActionButton(
+              backgroundColor: Colors.black,
+        onPressed: ()async{
+          writeOnPdf();
+          await savePdf();
+
+          Directory documentDirectory = await getApplicationDocumentsDirectory();
+
+          String documentPath = documentDirectory.path;
+
+          String fullPath = "$documentPath/ordemdeservico.pdf";
+
+          Navigator.push(context, MaterialPageRoute(
+            builder: (context) => PdfPreviewScreen(path: fullPath,)
+          ));
+        },
+        child: Icon(Icons.library_add,
+        color: Colors.white
+        ), 
+      ),
+  );
 
   }
 }
