@@ -72,7 +72,7 @@ with SingleTickerProviderStateMixin {
               tabs: <Widget>[
                 Tab(
                   child: Text(
-                    'Diâmetro de lentes',
+                    'Pedido Laboratório',
                     style: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 17.0,
@@ -82,7 +82,7 @@ with SingleTickerProviderStateMixin {
                 ),
                 Tab(
                   child: Text(
-                    'Pedido Laboratório',
+                    'Diâmetro de lentes',
                     style: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 17.0,
@@ -109,8 +109,8 @@ with SingleTickerProviderStateMixin {
              child: TabBarView(
                controller: tabController,
                 children: <Widget>[
-                  MenuCalculadora(),
                   MenuOS(),
+                  MenuCalculadora(),
                   MenuTransposicao()
                 ],
               )

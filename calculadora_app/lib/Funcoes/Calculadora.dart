@@ -10,34 +10,9 @@ class _CalculadoraState extends State<Calculadora> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
+      body: ListView(
         children: <Widget>[
-          Container(
-            height: MediaQuery.of(context).size.height,
-            color: Color(0xff399d63),
-          ),
-          Positioned(
-            bottom: 22.0,
-            child: Container(
-            width: MediaQuery.of(context).size.width,
-            child: Center(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                RotatedBox(quarterTurns: 4, child: Icon(Icons.assignment, color: Colors.white.withOpacity(0.4)),)
-                ],
-              ),
-            ),
-            )
-          ),
-          Container(
-            height: MediaQuery.of(context).size.height - 65.0,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.only(bottomLeft: Radius.circular(35.0), bottomRight: Radius.circular(35.0)),
-              color: Colors.white
-            ),
-          ),
-           SizedBox(height: 30.0),
+           SizedBox(height: 15.0),
             Container(
           width: MediaQuery.of(context).size.width,
           padding: EdgeInsets.only(right: 10.0),
@@ -66,7 +41,7 @@ class _CalculadoraState extends State<Calculadora> {
          Padding(
           padding: EdgeInsets.all(14.0),
           child: Text(
-            'Calculadora de diâmetro',
+            'Calculadora Diâmetro',
             style: TextStyle(
                 fontFamily: 'Montserrat',
                 fontSize: 40.0,
