@@ -15,3 +15,5 @@ void main() {
 //Ponto de integração para receber controller
 //Ponto de integração para receber pdf
 //Ponto de integração para receber Calculadora
+//Ponto de integração para receber a opção de compartilhar
+
