@@ -1,3 +1,4 @@
+import 'package:calculadoraapp/Home.dart';
 import 'package:flutter/material.dart';
 import 'dart:io';
 import 'package:flutter/cupertino.dart';
@@ -150,7 +151,9 @@ final pdf = pw.Document();
                 //Icones
                 IconButton(
                   icon: Icon(Icons.arrow_back), 
-                  onPressed: () {}
+                  onPressed: () {
+                     Navigator.of(context).pop(MaterialPageRoute(builder:(context) => Home()));
+                  }
                 ),
                   IconButton(
                     color: Colors.grey.withOpacity(0.3),

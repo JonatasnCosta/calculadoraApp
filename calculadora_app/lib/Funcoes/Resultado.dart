@@ -1,18 +1,8 @@
-import 'package:calculadoraapp/Home.dart';
 import 'package:flutter/material.dart';
 
-
-
-class Transposicao extends StatefulWidget {
+class Resultado extends StatelessWidget {
+  
   @override
-  _TransposicaoState createState() => _TransposicaoState();
-}
-
-class _TransposicaoState extends State<Transposicao> {
-
-
-
- @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(
@@ -27,9 +17,7 @@ class _TransposicaoState extends State<Transposicao> {
                 //Icones
                 IconButton(
                   icon: Icon(Icons.arrow_back), 
-                  onPressed: () {
-                     Navigator.of(context).pop(MaterialPageRoute(builder:(context) => Home()));
-                  }
+                  onPressed: () {}
                 ),
                 FloatingActionButton(
                   onPressed: () {},
@@ -48,13 +36,15 @@ class _TransposicaoState extends State<Transposicao> {
          Padding(
           padding: EdgeInsets.all(14.0),
           child: Text(
-            'Transposição de lentes',
+            'Resultado',
             style: TextStyle(
                 fontFamily: 'Montserrat',
                 fontSize: 40.0,
                 fontWeight: FontWeight.w500),
           ),
         ),
+        
+        
         ],
       ),
     );
