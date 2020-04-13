@@ -1,4 +1,3 @@
-import 'package:calculadoraapp/Home.dart';
 import 'package:flutter/material.dart';
 
 
@@ -9,7 +8,6 @@ class Transposicao extends StatefulWidget {
 }
 
 class _TransposicaoState extends State<Transposicao> {
-
 
 
  @override
@@ -27,9 +25,7 @@ class _TransposicaoState extends State<Transposicao> {
                 //Icones
                 IconButton(
                   icon: Icon(Icons.arrow_back), 
-                  onPressed: () {
-                     Navigator.of(context).pop(MaterialPageRoute(builder:(context) => Home()));
-                  }
+                  onPressed: () {}
                 ),
                 FloatingActionButton(
                   onPressed: () {},
@@ -54,7 +50,8 @@ class _TransposicaoState extends State<Transposicao> {
                 fontSize: 40.0,
                 fontWeight: FontWeight.w500),
           ),
-        ),
+        )
+
         ],
       ),
     );

@@ -1,11 +1,8 @@
+import 'package:calculadoraapp/Funcoes/OrdemGerada.dart';
 import 'package:calculadoraapp/Home.dart';
 import 'package:flutter/material.dart';
-import 'dart:io';
-import 'package:flutter/cupertino.dart';
-import 'package:path_provider/path_provider.dart';
-import 'package:pdf/pdf.dart';
-import 'package:pdf/widgets.dart' as pw;
-import 'package:calculadoraapp/PdfPreviewScreen.dart';
+
+//import 'package:calculadoraapp/PdfPreviewScreen.dart';
 
 
 
@@ -31,107 +28,7 @@ TextEditingController _controllerAltura = TextEditingController();
 TextEditingController _controllerDiametro = TextEditingController();
 TextEditingController _controllerTipodearo = TextEditingController();
 TextEditingController _controllerObservacoes = TextEditingController();
-final pdf = pw.Document();
   
-
-  writeOnPdf(){
-    pdf.addPage(
-      pw.MultiPage(
-        pageFormat: PdfPageFormat.a3,
-        margin: pw.EdgeInsets.all(32),
-        
-
-        build: (pw.Context context){
-          return <pw.Widget>  [
-            pw.Header(
-              level: 0,
-              child: pw.Text("Ordem de serviço"
-              ),
-            ),
-            
-           pw.Paragraph(
-             text: "Nome da ótica"
-           ),
-            pw.Paragraph(text: _controllerNomeotica.text),
-          
-            pw.Paragraph(
-                text: "Data"
-            ),
-            pw.Paragraph(text: _controllerData.text),
-            
-            pw.Paragraph(
-                text: "Número O.S"
-            ),
-             pw.Paragraph(text: _controllerOS.text),
-           
-            pw.Paragraph(
-                text: "Tipo de lente"
-            ),
-             pw.Paragraph(text: _controllerTipodelente.text),
-
-            pw.Paragraph(
-                text: "Tratamento"
-            ),
-             pw.Paragraph(text: _controllerTratamento.text),
-           
-            pw.Paragraph(
-                text: "OD"
-            ),
-             pw.Paragraph(text: _controllerODGrau.text),
-            
-             pw.Paragraph(
-                text: "OE"
-            ),
-             pw.Paragraph(text: _controllerOEGrau.text),
-            
-             pw.Paragraph(
-                text: "ADD"
-            ),
-            pw.Paragraph(text: _controllerADD.text),
-           
-             pw.Paragraph(
-                text: "DNP OD"
-            ),
-             pw.Paragraph(text: _controllerDNPOD.text),
-
-              pw.Paragraph(
-                text: "DNP OE"
-            ),
-             pw.Paragraph(text: _controllerDNPOE.text),
-
-              pw.Paragraph(
-                text: "Altura"
-            ),
-             pw.Paragraph(text: _controllerAltura.text),
-
-              pw.Paragraph(
-                text: "Diâmetro"
-            ),
-             pw.Paragraph(text: _controllerDiametro.text),
-          
-            pw.Paragraph(
-                text: "Tipo de aro"
-            ),
-             pw.Paragraph(text: _controllerTipodearo.text),
-
-             pw.Paragraph(
-                text: "Observações"
-            ),
-             pw.Paragraph(text: _controllerObservacoes.text),
-          ];
-        },
-     )
-    );
-  }
-   Future savePdf() async{
-    Directory documentDirectory = await getApplicationDocumentsDirectory();
-
-    String documentPath = documentDirectory.path;
-
-    File file = File("$documentPath/ordemdeservico.pdf");
-
-    file.writeAsBytesSync(pdf.save());
-  }
 
   
   @override
@@ -155,13 +52,17 @@ final pdf = pw.Document();
                      Navigator.of(context).pop(MaterialPageRoute(builder:(context) => Home()));
                   }
                 ),
-                  IconButton(
-                    color: Colors.grey.withOpacity(0.3),
-                      icon:Icon(Icons.short_text,
-                      color: Colors.black, size: 17.0
-                      ),
-                      onPressed: () {}    
-                    ), 
+                  FloatingActionButton(
+                  onPressed: () {},
+                  backgroundColor: Colors.grey.withOpacity(0.3),
+                  mini: true,
+                  elevation: 0.0,
+                  child:
+                      Icon(
+                        Icons.short_text, 
+                        color: Colors.black, size: 17.0
+                    ),
+                )
               ]
               ),
         ),
@@ -540,30 +441,68 @@ final pdf = pw.Document();
               ),
             ),
           ),
-            ],
+           Padding( 
+            padding: EdgeInsets.only(top: 10.0, left: 30.0, right: 30.0),
+            child: RaisedButton(
+              color: Color(0xff399d63),
+              textColor: Colors.black,
+              padding: EdgeInsets.all(15.0),
+              child: Text('Gerar Ordem de serviço'),
+              shape: RoundedRectangleBorder(
+              borderRadius: new BorderRadius.circular(18.0),
+              side: BorderSide(color: Color(0xff399d63))
+              ),
+              onPressed: (){
+                _enviardadosParaOrdemGerada(context);
+              }
             ),
-            floatingActionButton: FloatingActionButton(
-              backgroundColor: Colors.black,
-        onPressed: ()async{
-          writeOnPdf();
-          await savePdf();
-
-          Directory documentDirectory = await getApplicationDocumentsDirectory();
-
-          String documentPath = documentDirectory.path;
-
-          String fullPath = "$documentPath/ordemdeservico.pdf";
-
-          Navigator.push(context, MaterialPageRoute(
-            builder: (context) => PdfPreviewScreen(path: fullPath,)
-          ));
-        },
-        child: Icon(Icons.library_add,
-        color: Colors.white
-        ), 
+          ),
+        ],
       ),
+            
   );
 
+  }
+  void _enviardadosParaOrdemGerada(BuildContext context) {
+    String nomeotica = _controllerNomeotica.text;
+    String data = _controllerData.text;
+    String os = _controllerOS.text;
+    String tipodelente = _controllerTipodelente.text;
+    String tratamento = _controllerTratamento.text;
+    String odgrau = _controllerODGrau.text;
+    String oegrau = _controllerOEGrau.text;
+    String add = _controllerADD.text;
+    String dnpod = _controllerDNPOD.text;
+    String dnpoe = _controllerDNPOE.text;
+    String altura = _controllerAltura.text;
+    String diametro = _controllerDiametro.text;
+    String tipodearo = _controllerTipodearo.text;
+    String obeservacoes = _controllerObservacoes.text;
+    // Transforma os dados em string
+    
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => OrdemGerada( 
+           textonome : nomeotica,
+           textodata : data,
+           textoos : os,
+           textotipodelente: tipodelente,
+           textotratamento: tratamento,
+           textoodgrau: odgrau,
+           textooegrau: oegrau,
+           textoadd: add,
+           textodnpod: dnpod,
+           textodnpoe: dnpoe,
+           textoaltura: altura,
+           textodiametro: diametro,
+           textotipodearo: tipodearo,
+           textoobs: obeservacoes,
+
+          ),   
+        ));
+         // Método para capturar os dados
+        // obtendo o texto do local da String e iniciando a tela secundária
   }
 }
 
