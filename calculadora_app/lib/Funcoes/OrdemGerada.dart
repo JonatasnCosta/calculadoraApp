@@ -239,7 +239,7 @@ class OrdemGerada extends StatelessWidget  {
    Future savePdf() async{
     Directory documentDirectory = await getApplicationDocumentsDirectory();
     String documentPath = documentDirectory.path;
-    File file = File("$documentPath/ordemdeservico.pdf");
+    File file = File("$documentPath/Ordem de serviço.pdf");
     file.writeAsBytesSync(pdf.save());
   }
 
@@ -300,7 +300,7 @@ class OrdemGerada extends StatelessWidget  {
               await savePdf();
              Directory documentDirectory = await getApplicationDocumentsDirectory();
                String documentPath = documentDirectory.path;
-               String fullPath = "$documentPath/ordemdeservico.pdf";
+               String fullPath = "$documentPath/Ordem de serviço.pdf";
                Navigator.push(context, MaterialPageRoute(
             builder: (context) => PdfPreviewScreen(path: fullPath,)));
               },
@@ -318,7 +318,7 @@ class OrdemGerada extends StatelessWidget  {
               side: BorderSide(color: Color(0xff399d63))
               ),
               onPressed: () async{
-                await Printing.sharePdf(bytes: pdf.save(), filename: 'ordemdeservico.pdf');
+                await Printing.sharePdf(bytes: pdf.save(), filename: 'Ordem de serviço.pdf');
               },
             ),
           )
