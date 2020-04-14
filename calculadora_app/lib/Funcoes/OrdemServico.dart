@@ -14,6 +14,7 @@ class OrdemServico extends StatefulWidget {
 
 
 class _OrdemServicoState extends State<OrdemServico> {
+ TextEditingController _controllerNumeroCliente = TextEditingController(); 
 TextEditingController _controllerNomeotica = TextEditingController();
 TextEditingController _controllerData = TextEditingController();
 TextEditingController _controllerOS = TextEditingController();
@@ -87,10 +88,36 @@ TextEditingController _controllerObservacoes = TextEditingController();
               ),
               child: Center(
                 child: TextField(
+                   keyboardType: TextInputType.number,
+                   decoration: InputDecoration(
+                    border: InputBorder.none,
+                    hintText: 'Número de cliente ',
+                    hintStyle: TextStyle(
+                      fontFamily: 'Montserrat',
+                      fontSize: 15.0,
+                      color: Colors.black
+                    ),
+                  ),
+                  controller: _controllerNumeroCliente,
+                ),
+              ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(top: 10.0, left: 30.0, right: 30.0),
+            child: Container(
+              padding: EdgeInsets.only(left: 45.0),
+              height: 50.0,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(25.0),
+                color: Color(0xff399d63)
+              ),
+              child: Center(
+                child: TextField(
                    keyboardType: TextInputType.text,
                    decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'Nome da ótica ',
+                    hintText: 'Ótica ',
                     hintStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
@@ -270,7 +297,7 @@ TextEditingController _controllerObservacoes = TextEditingController();
               ),
               child: Center(
                 child: TextField(
-                   keyboardType: TextInputType.number,
+                   keyboardType: TextInputType.text,
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     hintText: 'ADD',
@@ -296,7 +323,7 @@ TextEditingController _controllerObservacoes = TextEditingController();
               ),
               child: Center(
                 child: TextField(
-                   keyboardType: TextInputType.number,
+                   keyboardType: TextInputType.text,
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     hintText: 'DNP: OD',
@@ -322,7 +349,7 @@ TextEditingController _controllerObservacoes = TextEditingController();
               ),
               child: Center(
                 child: TextField(
-                   keyboardType: TextInputType.number,
+                   keyboardType: TextInputType.text,
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     hintText: 'DNP: OE',
@@ -374,7 +401,7 @@ TextEditingController _controllerObservacoes = TextEditingController();
               ),
               child: Center(
                 child: TextField(
-                   keyboardType: TextInputType.number,
+                   keyboardType: TextInputType.numberWithOptions(),
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     hintText: 'Diâmetro',
@@ -442,7 +469,7 @@ TextEditingController _controllerObservacoes = TextEditingController();
             ),
           ),
            Padding( 
-            padding: EdgeInsets.only(top: 10.0, left: 30.0, right: 30.0),
+            padding: EdgeInsets.only(top: 10.0, left: 30.0, right: 30.0, bottom: 40.0),
             child: RaisedButton(
               color: Color(0xff399d63),
               textColor: Colors.black,
@@ -465,6 +492,7 @@ TextEditingController _controllerObservacoes = TextEditingController();
   }
   void _enviardadosParaOrdemGerada(BuildContext context) {
     String nomeotica = _controllerNomeotica.text;
+    String numerocliente = _controllerNumeroCliente.text;
     String data = _controllerData.text;
     String os = _controllerOS.text;
     String tipodelente = _controllerTipodelente.text;
@@ -484,6 +512,7 @@ TextEditingController _controllerObservacoes = TextEditingController();
         context,
         MaterialPageRoute(
           builder: (context) => OrdemGerada( 
+           texonumerocliente: numerocliente,
            textonome : nomeotica,
            textodata : data,
            textoos : os,

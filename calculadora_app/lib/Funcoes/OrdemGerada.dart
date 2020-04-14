@@ -1,3 +1,4 @@
+import 'package:calculadoraapp/Funcoes/OrdemServico.dart';
 import 'package:calculadoraapp/PdfPreviewScreen.dart';
 import 'package:flutter/material.dart';
 import 'dart:io';
@@ -8,6 +9,7 @@ import 'package:printing/printing.dart';
 
 
 class OrdemGerada extends StatelessWidget  {
+  final String texonumerocliente;
   final String textonome;
   final String textodata;
   final String textoos;
@@ -25,6 +27,7 @@ class OrdemGerada extends StatelessWidget  {
    // recebendo dados da Tela primária como parâmetro
 
   OrdemGerada({Key key, @required 
+  this.texonumerocliente,
   this.textonome,
    this.textodata,
    this.textoos,
@@ -58,177 +61,228 @@ class OrdemGerada extends StatelessWidget  {
               level: 0,
               child: pw.Text("Ordem de serviço",
               style: pw.TextStyle(
-               fontSize: 20.0,
+               fontSize: 40.0,
              )
               ),
             ),
-            
-           pw.Paragraph(
-             text: "Nome da ótica",
+             pw.Row(
+              children: [
+                pw.Paragraph(
+             text: "Número de Cliente: ",
              style: pw.TextStyle(
-               fontSize: 15.0,
+               fontSize: 30.0,
+             )
+           ),
+            pw.Paragraph(text: texonumerocliente,
+            style: pw.TextStyle(
+               fontSize: 30.0,
+             )
+            ),
+              ]
+            ),
+             pw.Row(
+              children: [
+                pw.Paragraph(
+             text: "Ótica: ",
+             style: pw.TextStyle(
+               fontSize: 30.0,
              )
            ),
             pw.Paragraph(text: textonome,
             style: pw.TextStyle(
-               fontSize: 10.0,
+               fontSize: 30.0,
              )
             ),
-            
-          
-            pw.Paragraph(
-                text: "Data",
+              ]
+            ),
+            pw.Row(
+              children: [
+                 pw.Paragraph(
+                text: "Data: ",
                 style: pw.TextStyle(
-               fontSize: 15.0,
+               fontSize: 30.0,
              )
             ),
             pw.Paragraph(text: textodata,
             style: pw.TextStyle(
-               fontSize: 10.0,
+               fontSize: 30.0,
              )
             ),
-            
-            pw.Paragraph(
-                text: "Número O.S",
+            ]
+            ),
+             pw.Row(
+              children: [
+                pw.Paragraph(
+                text: "Número O.S: ",
                 style: pw.TextStyle(
-               fontSize: 15.0,
+               fontSize: 30.0,
              )
             ),
              pw.Paragraph(text: textoos,
              style: pw.TextStyle(
-               fontSize: 10.0,
+               fontSize: 30.0,
              )
              ),
-           
-            pw.Paragraph(
-                text: "Tipo de lente",
+             ]
+            ), pw.Row(
+              children: [
+                pw.Paragraph(
+                text: "Tipo de lente: ",
                 style: pw.TextStyle(
-               fontSize: 15.0,
+               fontSize: 30.0,
              )
             ),
              pw.Paragraph(text: textotipodelente,
              style: pw.TextStyle(
-               fontSize: 10.0,
+               fontSize: 30.0,
              )
              ),
-
-            pw.Paragraph(
-                text: "Tratamento",
+              ]
+            ), pw.Row(
+              children: [
+                pw.Paragraph(
+                text: "Tratamento: ",
                 style: pw.TextStyle(
-               fontSize: 15.0,
+               fontSize: 30.0,
              )
             ),
              pw.Paragraph(text: textotratamento,
              style: pw.TextStyle(
-               fontSize: 10.0,
+               fontSize: 30.0,
              )
-             ),
-           
-            pw.Paragraph(
-                text: "OD",
+             ), 
+              ]
+            ),
+             pw.Row(
+              children: [
+                pw.Paragraph(
+                text: "OD: ",
                 style: pw.TextStyle(
-               fontSize: 15.0,
+               fontSize: 30.0,
              )
             ),
              pw.Paragraph(text: textoodgrau,
              style: pw.TextStyle(
-               fontSize: 10.0,
+               fontSize: 30.0,
              )
              ),
-            
-             pw.Paragraph(
-                text: "OE",
+                
+              ]
+            ),
+             pw.Row(
+              children: [
+                 pw.Paragraph(
+                text: "OE: ",
                 style: pw.TextStyle(
-               fontSize: 15.0,
+               fontSize: 30.0,
              )
             ),
              pw.Paragraph(text: textooegrau,
              style: pw.TextStyle(
-               fontSize: 10.0,
+               fontSize: 30.0,
              )
              ),
-            
-             pw.Paragraph(
-                text: "ADD",
+              ]
+            ),
+             pw.Row(
+              children: [
+                pw.Paragraph(
+                text: "ADD: ",
                 style: pw.TextStyle(
-               fontSize: 15.0,
+               fontSize: 30.0,
              )
             ),
             pw.Paragraph(text: textoadd,
             style: pw.TextStyle(
-               fontSize: 10.0,
+               fontSize: 30.0,
              )
              ),
-           
-             pw.Paragraph(
-                text: "DNP OD",
+              ]
+            ),
+             pw.Row(
+              children: [
+                pw.Paragraph(
+                text: "DNP OD: ",
                 style: pw.TextStyle(
-               fontSize: 15.0,
+               fontSize: 30.0,
              )
             ),
              pw.Paragraph(text: textodnpod,
              style: pw.TextStyle(
-               fontSize: 10.0,
+               fontSize: 30.0,
              )
              ),
-
-              pw.Paragraph(
-                text: "DNP OE",
+              ]
+            ),
+             pw.Row(
+              children: [
+                 pw.Paragraph(
+                text: "DNP OE: ",
                 style: pw.TextStyle(
-               fontSize: 15.0,
+               fontSize: 30.0,
              )
             ),
              pw.Paragraph(text: textodnpoe,
              style: pw.TextStyle(
-               fontSize: 10.0,
+               fontSize: 30.0,
              )
              ),
-
-              pw.Paragraph(
-                text: "Altura",
+              ]
+            ),
+             pw.Row(
+              children: [
+                 pw.Paragraph(
+                text: "Altura: ",
                 style: pw.TextStyle(
-               fontSize: 15.0,
+               fontSize: 30.0,
              )
             ),
              pw.Paragraph(text: textoaltura,
              style: pw.TextStyle(
-               fontSize: 10.0,
+               fontSize: 30.0,
              )
              ),
-
-              pw.Paragraph(
-                text: "Diâmetro",
+              ]
+            ),
+             pw.Row(
+              children: [
+                 pw.Paragraph(
+                text: "Diâmetro: ",
                 style: pw.TextStyle(
-               fontSize: 15.0,
+               fontSize: 30.0,
              )
             ),
              pw.Paragraph(text: textodiametro,
              style: pw.TextStyle(
-               fontSize: 10.0,
+               fontSize: 30.0,
              )
              ),
-          
-            pw.Paragraph(
-                text: "Tipo de aro",
+              ]
+            ),
+             pw.Row(
+              children: [
+                 pw.Paragraph(
+                text: "Tipo de aro: ",
                 style: pw.TextStyle(
-               fontSize: 15.0,
+               fontSize: 30.0,
              )
             ),
              pw.Paragraph(text: textotipodearo,
              style: pw.TextStyle(
-               fontSize: 10.0,
+               fontSize: 30.0,
              )
              ),
-
-             pw.Paragraph(
-                text: "Observações",
+              ]
+            ),
+              pw.Paragraph(
+                text: "Observações:",
                 style: pw.TextStyle(
-               fontSize: 15.0,
+               fontSize: 30.0,
              )
             ),
              pw.Paragraph(text:textoobs,
              style: pw.TextStyle(
-               fontSize: 10.0,
+               fontSize: 30.0,
              )
              ),
           ];
@@ -239,7 +293,7 @@ class OrdemGerada extends StatelessWidget  {
    Future savePdf() async{
     Directory documentDirectory = await getApplicationDocumentsDirectory();
     String documentPath = documentDirectory.path;
-    File file = File("$documentPath/Ordem de serviço.pdf");
+    File file = File("$documentPath/Pedido O.S: $textoos.pdf");
     file.writeAsBytesSync(pdf.save());
   }
 
@@ -285,7 +339,7 @@ class OrdemGerada extends StatelessWidget  {
           ),
         ),
         Padding( 
-            padding: EdgeInsets.only(top: 10.0, left: 30.0, right: 30.0),
+            padding: EdgeInsets.only(top: 50.0, left: 30.0, right: 30.0),
             child: RaisedButton(
               color: Color(0xff399d63),
               textColor: Colors.black,
@@ -300,7 +354,7 @@ class OrdemGerada extends StatelessWidget  {
               await savePdf();
              Directory documentDirectory = await getApplicationDocumentsDirectory();
                String documentPath = documentDirectory.path;
-               String fullPath = "$documentPath/Ordem de serviço.pdf";
+               String fullPath = "$documentPath/Pedido O.S: $textoos.pdf";
                Navigator.push(context, MaterialPageRoute(
             builder: (context) => PdfPreviewScreen(path: fullPath,)));
               },
@@ -318,10 +372,26 @@ class OrdemGerada extends StatelessWidget  {
               side: BorderSide(color: Color(0xff399d63))
               ),
               onPressed: () async{
-                await Printing.sharePdf(bytes: pdf.save(), filename: 'Ordem de serviço.pdf');
+                await Printing.sharePdf(bytes: pdf.save(), filename: 'Pedido O.S: $textoos.pdf');
               },
             ),
-          )
+          ),
+          Padding( 
+            padding: EdgeInsets.only(top: 10.0, left: 30.0, right: 30.0),
+            child: RaisedButton(
+              color: Color(0xff399d63),
+              textColor: Colors.black,
+              padding: EdgeInsets.all(15.0),
+              child: Text('Novo pedido'),
+              shape: RoundedRectangleBorder(
+              borderRadius: new BorderRadius.circular(18.0),
+              side: BorderSide(color: Color(0xff399d63))
+              ),
+              onPressed: () {
+               Navigator.push(context, MaterialPageRoute(builder: (context) => OrdemServico()));
+              },
+            ),
+          ),
         ],
       ),
     );
