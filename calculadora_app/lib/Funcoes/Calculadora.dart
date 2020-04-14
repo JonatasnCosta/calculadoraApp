@@ -15,32 +15,12 @@ class _CalculadoraState extends State<Calculadora> {
 
   String _erro = "";
 
- var diametro ,
+ var diametro,
      aro ,
      ponte ,
      menorDnp ,
      maiorDiagonal;
-
-
- void _calcular(){
-  double aro = double.tryParse(  _controllerAro.text);
-  double ponte = double.tryParse(  _controllerPonte.text);
-  double menorDnp = double.tryParse(  _controllerMenorDnp.text);
-  double maiorDiagonal = double.tryParse(  _controllerMaiorDiagonal.text);
-  
-
- if (aro == null|| ponte == null || menorDnp == null || maiorDiagonal == null) {
-   setState(() {
-     _erro = "Use somente o (.)";
-   });
- } 
- else {
- setState(() {
-    diametro = (aro + ponte) - (menorDnp * 2) + maiorDiagonal + 2;
- });
- }
-}
-  
+ 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -77,7 +57,7 @@ class _CalculadoraState extends State<Calculadora> {
          Padding(
           padding: EdgeInsets.all(14.0),
           child: Text(
-            'Calculadora Diâmetro',
+            'Calculadora de Diâmetro',
             style: TextStyle(
                 fontFamily: 'Montserrat',
                 fontSize: 40.0,
@@ -200,20 +180,52 @@ class _CalculadoraState extends State<Calculadora> {
               side: BorderSide(color: Color(0xff399d63))
               ),
               onPressed: (){
-               _calcular();
+              _resultadodiametro(context);
               }
             ),
           ),
-          Padding(padding: EdgeInsets.only(top: 10.0, left: 140.0, right: 70.0),
-          child: Text(_erro
+          Padding(padding: EdgeInsets.only(top: 10.0, left: 120.0, right: 70.0),
+          child: Text(_erro,
+          style: TextStyle(
+            fontFamily:  'Montserrat',
+            fontSize: 20.0,
+            color: Colors.black
           ),
           ),
-          Padding(padding: EdgeInsets.only(top: 10.0, left: 140.0, right: 70.0),
-          child: Text("Diâmetro: $diametro"
           ),
-          )
+           Padding(padding: EdgeInsets.only(top: 10.0, left: 110.0, right: 70.0),
+          child: Text("Diâmetro:  $diametro",
+          style: TextStyle(
+            fontFamily:  'Montserrat',
+            fontSize: 20.0,
+            color: Colors.black
+          ),
+          ),
+          ),
         ],
       ),
     );
+    
   }
+  void _resultadodiametro(BuildContext context){
+  double aro = double.tryParse(  _controllerAro.text);
+  double ponte = double.tryParse(  _controllerPonte.text);
+  double menorDnp = double.tryParse(  _controllerMenorDnp.text);
+  double maiorDiagonal = double.tryParse(  _controllerMaiorDiagonal.text);
+  
+
+ if (aro == null|| ponte == null || menorDnp == null || maiorDiagonal == null) {
+   setState(() {
+     _erro = "Use somente o ponto '.' ";
+   });
+ } 
+ else {
+ setState(() {
+   
+    diametro = (aro + ponte) - (menorDnp * 2) + maiorDiagonal + 2;
+    
+ });
+ }
+
+}
 }

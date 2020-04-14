@@ -130,7 +130,7 @@ TextEditingController _controllerObservacoes = TextEditingController();
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 10.0, left: 30.0, right: 150.0),
+            padding: EdgeInsets.only(top: 10.0, left: 30.0, right: 30.0),
             child: Container(
               padding: EdgeInsets.only(left: 45.0),
               height: 50.0,
@@ -157,7 +157,7 @@ TextEditingController _controllerObservacoes = TextEditingController();
           ),
          
            Padding(
-            padding: EdgeInsets.only(top: 10.0, left: 30.0, right: 150.0),
+            padding: EdgeInsets.only(top: 10.0, left: 30.0, right: 30.0),
             child: Container(
               padding: EdgeInsets.only(left: 45.0),
               height: 50.0,
@@ -287,7 +287,7 @@ TextEditingController _controllerObservacoes = TextEditingController();
             ),
           ),
            Padding(
-            padding: EdgeInsets.only(top: 10.0, left: 30.0, right: 150.0),
+            padding: EdgeInsets.only(top: 10.0, left: 30.0, right: 30.0),
             child: Container(
               padding: EdgeInsets.only(left: 45.0),
               height: 50.0,
@@ -313,7 +313,7 @@ TextEditingController _controllerObservacoes = TextEditingController();
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 10.0, left: 30.0, right: 150.0),
+            padding: EdgeInsets.only(top: 10.0, left: 30.0, right: 30.0),
             child: Container(
               padding: EdgeInsets.only(left: 45.0),
               height: 50.0,
@@ -339,7 +339,7 @@ TextEditingController _controllerObservacoes = TextEditingController();
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 10.0, left: 30.0, right: 150.0),
+            padding: EdgeInsets.only(top: 10.0, left: 30.0, right: 30.0),
             child: Container(
               padding: EdgeInsets.only(left: 45.0),
               height: 50.0,
@@ -365,7 +365,7 @@ TextEditingController _controllerObservacoes = TextEditingController();
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 10.0, left: 30.0, right: 150.0),
+            padding: EdgeInsets.only(top: 10.0, left: 30.0, right: 30.0),
             child: Container(
               padding: EdgeInsets.only(left: 45.0),
               height: 50.0,
@@ -391,7 +391,7 @@ TextEditingController _controllerObservacoes = TextEditingController();
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 10.0, left: 30.0, right: 150.0),
+            padding: EdgeInsets.only(top: 10.0, left: 30.0, right: 30.0),
             child: Container(
               padding: EdgeInsets.only(left: 45.0),
               height: 50.0,
@@ -401,7 +401,7 @@ TextEditingController _controllerObservacoes = TextEditingController();
               ),
               child: Center(
                 child: TextField(
-                   keyboardType: TextInputType.numberWithOptions(),
+                   keyboardType: TextInputType.number,
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     hintText: 'Diâmetro',
@@ -417,7 +417,7 @@ TextEditingController _controllerObservacoes = TextEditingController();
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 10.0, left: 30.0, right: 150.0),
+            padding: EdgeInsets.only(top: 10.0, left: 30.0, right: 30.0),
             child: Container(
               padding: EdgeInsets.only(left: 45.0),
               height: 50.0,
