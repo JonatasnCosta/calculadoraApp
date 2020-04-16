@@ -22,13 +22,13 @@ class _CalculadoraState extends State<Calculadora> {
   TextEditingController _controllerMaiorDiagonal = TextEditingController();
 
   String _erro = "";
-    
+  double diametro = 0; 
+     
      var
-     diametro, 
-     aro ,
+     aro  ,
      ponte ,
      menorDnp ,
-     maiorDiagonal;
+     maiorDiagonal  ;
   
  void _resultadodiametro(BuildContext context){
   double aro = double.tryParse(  _controllerAro.text);
@@ -44,7 +44,7 @@ class _CalculadoraState extends State<Calculadora> {
  } 
  else {
  setState(() {
-   diametro = (aro + ponte) - (menorDnp * 2) + maiorDiagonal + 2; 
+   diametro = aro + ponte - menorDnp * 2 + maiorDiagonal + 2; 
  });
  }
 }
@@ -75,7 +75,7 @@ class _CalculadoraState extends State<Calculadora> {
                fontSize: 30.0,
              )
            ),
-            pw.Paragraph(text: diametro,
+            pw.Paragraph(text: _erro,
             style: pw.TextStyle(
                fontSize: 30.0,
              )
