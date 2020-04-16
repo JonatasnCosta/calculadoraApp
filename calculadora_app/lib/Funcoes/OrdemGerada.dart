@@ -1,4 +1,5 @@
 import 'package:calculadoraapp/Funcoes/OrdemServico.dart';
+import 'package:calculadoraapp/Home.dart';
 import 'package:calculadoraapp/PdfPreviewScreen.dart';
 import 'package:flutter/material.dart';
 import 'dart:io';
@@ -312,10 +313,14 @@ class OrdemGerada extends StatelessWidget  {
                 //Icones
                 IconButton(
                   icon: Icon(Icons.arrow_back), 
-                  onPressed: () {}
+                  onPressed: () {
+                    Navigator.of(context).pop(MaterialPageRoute(builder:(context) => OrdemServico()));
+                  }
                 ),
                 FloatingActionButton(
-                  onPressed: () {},
+                  onPressed: () {
+                     Navigator.of(context).push(MaterialPageRoute(builder:(context) => Home()));
+                  },
                   backgroundColor: Colors.grey.withOpacity(0.3),
                   mini: true,
                   elevation: 0.0,

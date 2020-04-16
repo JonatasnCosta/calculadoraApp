@@ -1,3 +1,4 @@
+import 'package:calculadoraapp/Home.dart';
 import 'package:flutter/material.dart';
 
 
@@ -25,10 +26,14 @@ class _TransposicaoState extends State<Transposicao> {
                 //Icones
                 IconButton(
                   icon: Icon(Icons.arrow_back), 
-                  onPressed: () {}
+                  onPressed: () {
+                    Navigator.of(context).pop(MaterialPageRoute(builder:(context) => Home()));
+                  }
                 ),
                 FloatingActionButton(
-                  onPressed: () {},
+                  onPressed: () {
+                     Navigator.of(context).push(MaterialPageRoute(builder:(context) => Home()));
+                  },
                   backgroundColor: Colors.grey.withOpacity(0.3),
                   mini: true,
                   elevation: 0.0,

@@ -1,5 +1,13 @@
+import 'package:calculadoraapp/Funcoes/PDFteste.dart';
 import 'package:calculadoraapp/Home.dart';
 import 'package:flutter/material.dart';
+import 'dart:io';
+import 'package:path_provider/path_provider.dart';
+import 'package:pdf/pdf.dart';
+import 'package:pdf/widgets.dart' as pw;
+import 'package:printing/printing.dart';
+
+
 
 
 class Calculadora extends StatefulWidget {
@@ -14,12 +22,77 @@ class _CalculadoraState extends State<Calculadora> {
   TextEditingController _controllerMaiorDiagonal = TextEditingController();
 
   String _erro = "";
-
- var diametro,
+    
+     var
+     diametro, 
      aro ,
      ponte ,
      menorDnp ,
      maiorDiagonal;
+  
+ void _resultadodiametro(BuildContext context){
+  double aro = double.tryParse(  _controllerAro.text);
+  double ponte = double.tryParse(  _controllerPonte.text);
+  double menorDnp = double.tryParse(  _controllerMenorDnp.text);
+  double maiorDiagonal = double.tryParse(  _controllerMaiorDiagonal.text);
+  
+
+ if (aro == null|| ponte == null || menorDnp == null || maiorDiagonal == null) {
+   setState(() {
+     _erro = "Use somente o ponto (.) para fazer o calculo. ";
+   });
+ } 
+ else {
+ setState(() {
+   diametro = (aro + ponte) - (menorDnp * 2) + maiorDiagonal + 2; 
+ });
+ }
+}
+
+ final pdf = pw.Document();
+  
+  writeOnPdf(){
+    pdf.addPage(
+      pw.MultiPage(
+        pageFormat: PdfPageFormat.a4,
+        margin: pw.EdgeInsets.all(32),
+         
+         build: (pw.Context context){
+          return <pw.Widget>  [
+            pw.Header(
+              level: 0,
+              child: pw.Text("Diâmetro de lentes",
+              style: pw.TextStyle(
+               fontSize: 40.0,
+             )
+              ),
+            ),
+            pw.Row(
+              children: [
+                pw.Paragraph(
+             text: "Diâmetro: ",
+             style: pw.TextStyle(
+               fontSize: 30.0,
+             )
+           ),
+            pw.Paragraph(text: diametro,
+            style: pw.TextStyle(
+               fontSize: 30.0,
+             )
+            ),
+              ],
+            ),
+            ];
+        },
+     )
+    );
+  }
+  Future savePdf() async{
+    Directory documentDirectory = await getApplicationDocumentsDirectory();
+    String documentPath = documentDirectory.path;
+    File file = File("$documentPath/Diâmetro de lentes.pdf");
+    file.writeAsBytesSync(pdf.save());
+  }
  
   @override
   Widget build(BuildContext context) {
@@ -37,11 +110,13 @@ class _CalculadoraState extends State<Calculadora> {
                 IconButton(
                   icon: Icon(Icons.arrow_back), 
                   onPressed: () {
-                   Navigator.of(context).pop(MaterialPageRoute(builder:(context) => Home()));
+                    Navigator.of(context).pop(MaterialPageRoute(builder:(context) => Home()));
                   }
                 ),
                 FloatingActionButton(
-                  onPressed: () {},
+                  onPressed: () {
+                     Navigator.of(context).push(MaterialPageRoute(builder:(context) => Home()));
+                  },
                   backgroundColor: Colors.grey.withOpacity(0.3),
                   mini: true,
                   elevation: 0.0,
@@ -183,8 +258,8 @@ class _CalculadoraState extends State<Calculadora> {
               _resultadodiametro(context);
               }
             ),
-          ),
-          Padding(padding: EdgeInsets.only(top: 10.0, left: 120.0, right: 70.0),
+           ),
+          Padding(padding: EdgeInsets.only(top: 10.0, left: 70.0, right: 40.0),
           child: Text(_erro,
           style: TextStyle(
             fontFamily:  'Montserrat',
@@ -192,8 +267,11 @@ class _CalculadoraState extends State<Calculadora> {
             color: Colors.black
           ),
           ),
-          ),
-           Padding(padding: EdgeInsets.only(top: 10.0, left: 110.0, right: 70.0),
+          ), 
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+             Padding(padding: EdgeInsets.only( top: 30.0, left: 20.0,bottom: 30.0),
           child: Text("Diâmetro:  $diametro",
           style: TextStyle(
             fontFamily:  'Montserrat',
@@ -202,30 +280,45 @@ class _CalculadoraState extends State<Calculadora> {
           ),
           ),
           ),
+          Padding(padding: EdgeInsets.only(top: 30.0, left: 10.0, bottom: 30.0),
+          child: IconButton(
+            icon:  Icon(Icons.library_add
+            ),
+            onPressed: () {
+            Navigator.of(context).push(MaterialPageRoute(builder:(context) => Calculadora()));
+                },
+              ),
+             ),
+          Padding(padding: EdgeInsets.only(top: 30.0, left: 10.0, bottom: 30.0),
+          child: IconButton(
+            icon: Icon(Icons.search
+            ), 
+            onPressed: () async{
+              writeOnPdf();
+              await savePdf();
+             Directory documentDirectory = await getApplicationDocumentsDirectory();
+               String documentPath = documentDirectory.path;
+               String fullPath = "$documentPath/Diâmetro de lentes.pdf";
+               Navigator.push(context, MaterialPageRoute(
+            builder: (context) => PDFteste(path: fullPath,)));
+            },
+            ),
+          ),
+          Padding(padding: EdgeInsets.only(top: 30.0, left: 10.0, bottom: 30.0),
+          child: IconButton(
+            icon:  Icon(Icons.share
+            ),
+            onPressed: ()async {
+            await Printing.sharePdf(bytes: pdf.save(), filename: 'Diâmetro de lentes.pdf');
+                },
+              ),
+             )
+            ],
+          )
         ],
       ),
     );
     
   }
-  void _resultadodiametro(BuildContext context){
-  double aro = double.tryParse(  _controllerAro.text);
-  double ponte = double.tryParse(  _controllerPonte.text);
-  double menorDnp = double.tryParse(  _controllerMenorDnp.text);
-  double maiorDiagonal = double.tryParse(  _controllerMaiorDiagonal.text);
   
-
- if (aro == null|| ponte == null || menorDnp == null || maiorDiagonal == null) {
-   setState(() {
-     _erro = "Use somente o ponto '.' ";
-   });
- } 
- else {
- setState(() {
-   
-    diametro = (aro + ponte) - (menorDnp * 2) + maiorDiagonal + 2;
-    
- });
- }
-
-}
 }

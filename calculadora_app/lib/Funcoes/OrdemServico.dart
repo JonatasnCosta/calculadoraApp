@@ -48,13 +48,15 @@ TextEditingController _controllerObservacoes = TextEditingController();
               children: <Widget>[
                 //Icones
                 IconButton(
-                  icon: Icon(Icons.arrow_back), 
+                  icon: Icon(Icons.library_add), 
                   onPressed: () {
-                     Navigator.of(context).pop(MaterialPageRoute(builder:(context) => Home()));
+                    Navigator.of(context).push(MaterialPageRoute(builder:(context) => OrdemServico()));
                   }
                 ),
                   FloatingActionButton(
-                  onPressed: () {},
+                  onPressed: () {
+                     Navigator.of(context).push(MaterialPageRoute(builder:(context) => Home()));
+                  },
                   backgroundColor: Colors.grey.withOpacity(0.3),
                   mini: true,
                   elevation: 0.0,
