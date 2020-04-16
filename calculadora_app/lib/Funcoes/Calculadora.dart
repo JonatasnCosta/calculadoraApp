@@ -56,7 +56,6 @@ class _CalculadoraState extends State<Calculadora> {
       pw.MultiPage(
         pageFormat: PdfPageFormat.a4,
         margin: pw.EdgeInsets.all(32),
-         
          build: (pw.Context context){
           return <pw.Widget>  [
             pw.Header(
@@ -271,7 +270,7 @@ class _CalculadoraState extends State<Calculadora> {
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
-             Padding(padding: EdgeInsets.only( top: 30.0, left: 20.0,bottom: 30.0),
+             Padding(padding: EdgeInsets.only( top: 30.0, left: 20.0,bottom: 50.0),
           child: Text("Diâmetro:  $diametro",
           style: TextStyle(
             fontFamily:  'Montserrat',
@@ -280,7 +279,7 @@ class _CalculadoraState extends State<Calculadora> {
           ),
           ),
           ),
-          Padding(padding: EdgeInsets.only(top: 30.0, left: 10.0, bottom: 30.0),
+          Padding(padding: EdgeInsets.only(top: 30.0, left: 10.0, bottom: 50.0),
           child: IconButton(
             icon:  Icon(Icons.library_add
             ),
@@ -289,7 +288,7 @@ class _CalculadoraState extends State<Calculadora> {
                 },
               ),
              ),
-          Padding(padding: EdgeInsets.only(top: 30.0, left: 10.0, bottom: 30.0),
+          Padding(padding: EdgeInsets.only(top: 30.0, left: 10.0, bottom: 50.0),
           child: IconButton(
             icon: Icon(Icons.search
             ), 
@@ -304,7 +303,7 @@ class _CalculadoraState extends State<Calculadora> {
             },
             ),
           ),
-          Padding(padding: EdgeInsets.only(top: 30.0, left: 10.0, bottom: 30.0),
+          Padding(padding: EdgeInsets.only(top: 30.0, left: 10.0, bottom: 50.0),
           child: IconButton(
             icon:  Icon(Icons.share
             ),
