@@ -1,7 +1,7 @@
 import 'package:calculadoraapp/Home.dart';
-import 'package:calculadoraapp/MeusTransposicao/TransposicaoAdicao.dart';
-import 'package:calculadoraapp/MeusTransposicao/TransposicaoCilindrico.dart';
-import 'package:calculadoraapp/MeusTransposicao/TransposicaoGraudePerto.dart';
+import 'package:calculadoraapp/MenusTransposicao/TransposicaoAdicao.dart';
+import 'package:calculadoraapp/MenusTransposicao/TransposicaoCilindrico.dart';
+import 'package:calculadoraapp/MenusTransposicao/TransposicaoGraudePerto.dart';
 import 'package:flutter/material.dart';
 
 
