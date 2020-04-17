@@ -22,7 +22,7 @@ class _TransposicaoCilindricoState extends State<TransposicaoCilindrico> {
            controller: _scrollController,
            scrollDirection: Axis.horizontal,
            children: <Widget>[
-            getMenuCard('Em entender a receita', 'Saber Cilindrico', 'Negativo')
+            getMenuCard('Em entender a receita', 'Saber Cilíndrico', 'Negativo')
            ]
           )
         ),
