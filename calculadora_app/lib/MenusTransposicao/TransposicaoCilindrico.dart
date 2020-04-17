@@ -26,7 +26,7 @@ class _TransposicaoCilindricoState extends State<TransposicaoCilindrico> {
            ]
           )
         ),
-        Padding(padding: EdgeInsets.only(top: 10.0, left: 15.0),
+        Padding(padding: EdgeInsets.only(left: 15.0),
         child: Text('O que há de melhor,',
         style: TextStyle(
           fontFamily: 'Montserrat',
@@ -37,7 +37,7 @@ class _TransposicaoCilindricoState extends State<TransposicaoCilindrico> {
         ),
         ),
         Padding(padding: EdgeInsets.only(top: 10.0, left: 15.0),
-        child: Text('Para você!',
+        child: Text('para você!',
         style: TextStyle(
           fontFamily: 'Montserrat',
           fontSize: 30.0,

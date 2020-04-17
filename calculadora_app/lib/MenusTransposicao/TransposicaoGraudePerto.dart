@@ -27,7 +27,7 @@ class _TransposicaoGraudePertoState extends State<TransposicaoGraudePerto> {
            ]
           )
         ),
-        Padding(padding: EdgeInsets.only(top: 10.0, left: 15.0),
+        Padding(padding: EdgeInsets.only(left: 15.0),
         child: Text('O que há de melhor,',
         style: TextStyle(
           fontFamily: 'Montserrat',
@@ -38,7 +38,7 @@ class _TransposicaoGraudePertoState extends State<TransposicaoGraudePerto> {
         ),
         ),
         Padding(padding: EdgeInsets.only(top: 5.0, left: 15.0),
-        child: Text('Para o seu negócio!',
+        child: Text('para o seu negócio!',
         style: TextStyle(
           fontFamily: 'Montserrat',
           fontSize: 30.0,

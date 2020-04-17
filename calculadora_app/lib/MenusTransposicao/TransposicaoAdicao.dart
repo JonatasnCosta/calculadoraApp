@@ -29,7 +29,7 @@ class _TransposicaoAdicaoState extends State<TransposicaoAdicao> {
            ]
           )
         ),
-         Padding(padding: EdgeInsets.only(top: 10.0, left: 15.0),
+         Padding(padding: EdgeInsets.only(left: 15.0),
         child: Text('O que há de melhor,',
         style: TextStyle(
           fontFamily: 'Montserrat',
@@ -40,7 +40,7 @@ class _TransposicaoAdicaoState extends State<TransposicaoAdicao> {
         ),
         ),
         Padding(padding: EdgeInsets.only(top: 10.0, left: 15.0),
-        child: Text('Para sua ótica!',
+        child: Text('para sua ótica!',
         style: TextStyle(
           fontFamily: 'Montserrat',
           fontSize: 30.0,
