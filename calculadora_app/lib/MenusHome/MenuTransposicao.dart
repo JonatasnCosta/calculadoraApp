@@ -46,7 +46,7 @@ class _MenuTransposicao extends State<MenuTransposicao> {
            controller: _scrollController,
            scrollDirection: Axis.horizontal,
            children: <Widget>[
-            getMenuCard('assets/', 'Confiança & Inovação', 'Transposição', 'Receita')
+            getMenuCard('Confiança & Inovação', 'Transposição', 'Receita')
            ]
           )
         ),
@@ -78,7 +78,7 @@ class _MenuTransposicao extends State<MenuTransposicao> {
     );
   }
    getMenuCard(
-    String imgPah, String price, String menuType, String menuName){
+    String price, String menuType, String menuName){
       return Stack(
       children: <Widget>[
         Container(
@@ -122,10 +122,7 @@ class _MenuTransposicao extends State<MenuTransposicao> {
                    SizedBox(width: 10.0)
                  ],
                ),
-               Image(
-                image: AssetImage(imgPah),
-                height: 165.0,
-              ),
+              SizedBox(height: 170.0),
               Row(
                 children: <Widget>[
                   SizedBox(width: 25.0),

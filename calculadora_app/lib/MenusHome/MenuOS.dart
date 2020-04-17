@@ -45,7 +45,7 @@ class _MenuOSState extends State<MenuOS> {
            controller: _scrollController,
            scrollDirection: Axis.horizontal,
            children: <Widget>[
-            getMenuCard('assets/', 'Agilidade aos seus pedidos', 'Pedido Laboratório', 'Ordem de serviço')
+            getMenuCard('Agilidade aos seus pedidos', 'Pedido Laboratório', 'Ordem de serviço')
            ]
           )
         ),
@@ -77,7 +77,7 @@ class _MenuOSState extends State<MenuOS> {
     );
   }
    getMenuCard(
-    String imgPah, String price, String menuType, String menuName){
+    String price, String menuType, String menuName){
       return Stack(
       children: <Widget>[
         Container(
@@ -121,11 +121,8 @@ class _MenuOSState extends State<MenuOS> {
                    SizedBox(width: 10.0)
                  ],
                ),
-               Image(
-                image: AssetImage(imgPah),
-                height: 165.0,
-              ),
-              Row(
+               SizedBox(height: 170.0),
+                Row(
                 children: <Widget>[
                   SizedBox(width: 25.0),
                   Column(

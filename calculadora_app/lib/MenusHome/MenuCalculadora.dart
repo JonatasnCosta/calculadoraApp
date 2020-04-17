@@ -45,7 +45,7 @@ class _MenuCalculadoraState extends State<MenuCalculadora> {
            controller: _scrollController,
            scrollDirection: Axis.horizontal,
            children: <Widget>[
-            getMenuCard('assets/', 'Valor a sua ótica', 'Diâmetro de lentes', 'Calculadora')
+            getMenuCard('Valor a sua ótica', 'Diâmetro de lentes', 'Calculadora')
            ]
           )
         ),
@@ -77,7 +77,7 @@ class _MenuCalculadoraState extends State<MenuCalculadora> {
     );
   }
    getMenuCard(
-    String imgPah, String price, String menuType, String menuName){
+    String price, String menuType, String menuName){
       return Stack(
       children: <Widget>[
         Container(
@@ -121,10 +121,7 @@ class _MenuCalculadoraState extends State<MenuCalculadora> {
                    SizedBox(width: 10.0)
                  ],
                ),
-               Image(
-                image: AssetImage(imgPah),
-                height: 165.0,
-              ),
+              SizedBox(height: 170.0),
               Row(
                 children: <Widget>[
                   SizedBox(width: 25.0),
