@@ -1,21 +1,18 @@
 import 'package:flutter/material.dart';
 
 
-
-class TransposicaoAdicao extends StatefulWidget {
-  
+class TransposicaoCilindrico extends StatefulWidget {
   @override
-  _TransposicaoAdicaoState createState() => _TransposicaoAdicaoState();
+  _TransposicaoCilindricoState createState() => _TransposicaoCilindricoState();
 }
 
-class _TransposicaoAdicaoState extends State<TransposicaoAdicao> {
-   ScrollController _scrollController;
+class _TransposicaoCilindricoState extends State<TransposicaoCilindrico> {
+  ScrollController _scrollController;
  List allDescriptions =[
     'Preencha os seus pedidos em um clique.',
  ];
-
   @override
-   Widget build(BuildContext context) {
+ Widget build(BuildContext context) {
     return ListView(
       children: <Widget>[
         Container(
@@ -25,11 +22,11 @@ class _TransposicaoAdicaoState extends State<TransposicaoAdicao> {
            controller: _scrollController,
            scrollDirection: Axis.horizontal,
            children: <Widget>[
-            getMenuCard('Agilidade nos seus calculos', 'Saber grau', ' de Adição')
+            getMenuCard('Em entender a receita', 'Saber Cilindrico', 'Negativo')
            ]
           )
         ),
-         Padding(padding: EdgeInsets.only(top: 10.0, left: 15.0),
+        Padding(padding: EdgeInsets.only(top: 10.0, left: 15.0),
         child: Text('O que há de melhor,',
         style: TextStyle(
           fontFamily: 'Montserrat',
@@ -40,7 +37,7 @@ class _TransposicaoAdicaoState extends State<TransposicaoAdicao> {
         ),
         ),
         Padding(padding: EdgeInsets.only(top: 10.0, left: 15.0),
-        child: Text('Para sua ótica!',
+        child: Text('Para você!',
         style: TextStyle(
           fontFamily: 'Montserrat',
           fontSize: 30.0,
@@ -49,6 +46,7 @@ class _TransposicaoAdicaoState extends State<TransposicaoAdicao> {
         ),
         ),
         )
+        
       ],
     );
   }
@@ -77,7 +75,7 @@ class _TransposicaoAdicaoState extends State<TransposicaoAdicao> {
                 children: <Widget>[
                    SizedBox(height: 20.0,),
                     Text(
-                         'Agregue',
+                         'Facilidade',
                          style: TextStyle(
                            fontFamily: 'Montserrat',
                            fontSize: 12.0,

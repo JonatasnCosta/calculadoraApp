@@ -1,5 +1,8 @@
+import 'package:calculadoraapp/Funcoes/TransposicaoAdicao.dart';
 import 'package:calculadoraapp/Home.dart';
 import 'package:flutter/material.dart';
+import 'package:calculadoraapp/Funcoes/TransposicaoGraudePerto.dart';
+import 'package:calculadoraapp/Funcoes/TransposicaoCilindrico.dart';
 
 
 
@@ -8,12 +11,20 @@ class Transposicao extends StatefulWidget {
   _TransposicaoState createState() => _TransposicaoState();
 }
 
-class _TransposicaoState extends State<Transposicao> {
-
+class _TransposicaoState extends State<Transposicao> with SingleTickerProviderStateMixin
+{
+ TabController tabController;
+ @override
+ void initState() {
+    
+    super.initState();
+    tabController = TabController(vsync: this, length: 3);
+  }
 
  @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xfff9efeb),
       body: ListView(
         children: <Widget>[
            SizedBox(height: 15.0),
@@ -46,18 +57,59 @@ class _TransposicaoState extends State<Transposicao> {
               ]
               ),
         ),
-         Padding(
-          padding: EdgeInsets.all(14.0),
-          child: Text(
-            'Transposição de lentes',
-            style: TextStyle(
-                fontFamily: 'Montserrat',
-                fontSize: 40.0,
-                fontWeight: FontWeight.w500),
-          ),
-        ),
-        
-
+          Padding(
+            padding: EdgeInsets.only(left: 15.0),
+            child: TabBar(
+              controller: tabController,
+              indicatorColor: Colors.transparent,
+              labelColor: Colors.black,
+              unselectedLabelColor: Colors.grey.withOpacity(0.5),
+              isScrollable: true,
+              tabs: <Widget>[
+                Tab(
+                  child: Text(
+                    'Saber Adição',
+                    style: TextStyle(
+                      fontFamily: 'Montserrat',
+                      fontSize: 17.0,
+                      fontWeight: FontWeight.bold
+                     ),
+                  ),
+                ),
+                Tab(
+                  child: Text(
+                    'Saber Grau de perto',
+                    style: TextStyle(
+                      fontFamily: 'Montserrat',
+                      fontSize: 17.0,
+                      fontWeight: FontWeight.bold
+                     ),
+                  ),
+                ),
+                Tab(
+                  child: Text(
+                    'Cilindrico Positivo',
+                    style: TextStyle(
+                      fontFamily: 'Montserrat',
+                      fontSize: 17.0,
+                      fontWeight: FontWeight.bold
+                     ),
+                  ),
+                )
+              ],
+              )
+            ),
+           Container(
+             height: MediaQuery.of(context).size.height -200.0,
+             child: TabBarView(
+               controller: tabController,
+                children: <Widget>[
+                  TransposicaoAdicao(),
+                  TransposicaoGraudePerto(),
+                  TransposicaoCilindrico()
+                ],
+              )
+           )  
         ],
       ),
     );
