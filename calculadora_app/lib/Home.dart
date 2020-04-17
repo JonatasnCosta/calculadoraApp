@@ -1,6 +1,5 @@
-import 'package:calculadoraapp/MenuCalculadora.dart';
-import 'package:calculadoraapp/MenuOS.dart';
-import 'package:calculadoraapp/MenuTransposicao.dart';
+import 'package:calculadoraapp/MenusHome/MenuCalculadora.dart';
+import 'package:calculadoraapp/MenusHome/MenuOS.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -113,7 +112,7 @@ with SingleTickerProviderStateMixin {
                 children: <Widget>[
                   MenuOS(),
                   MenuCalculadora(),
-                  MenuTransposicao()
+                  MenuCalculadora()
                 ],
               )
            )
