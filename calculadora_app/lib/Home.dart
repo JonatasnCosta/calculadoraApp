@@ -36,7 +36,9 @@ with SingleTickerProviderStateMixin {
                   onPressed: () {}
                 ),
                 FloatingActionButton(
-                  onPressed: () {},
+                  onPressed: () {
+                     Navigator.of(context).push(MaterialPageRoute(builder:(context) => Home()));
+                  },
                   backgroundColor: Colors.grey.withOpacity(0.3),
                   mini: true,
                   elevation: 0.0,
