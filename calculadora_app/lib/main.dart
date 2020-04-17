@@ -18,4 +18,5 @@ void main() {
 //Ponto de integração para receber a opção de compartilhar
 //Ponto de integração feito com sucesso da calculadora
 //Ponto de integração para mudar a lógica
+//Ponto de integração para receber conteúdo de transposição
 
