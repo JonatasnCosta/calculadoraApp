@@ -1,5 +1,5 @@
-import 'package:calculadoraapp/Funcoes/OrdemGerada.dart';
 import 'package:calculadoraapp/Home.dart';
+import 'package:calculadoraapp/SubFuncaoOrdemdeservico/OrdemGerada.dart';
 import 'package:flutter/material.dart';
 
 //import 'package:calculadoraapp/PdfPreviewScreen.dart';

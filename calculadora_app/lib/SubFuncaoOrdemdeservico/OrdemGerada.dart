@@ -1,6 +1,6 @@
 import 'package:calculadoraapp/Funcoes/OrdemServico.dart';
 import 'package:calculadoraapp/Home.dart';
-import 'package:calculadoraapp/PdfPreviewScreen.dart';
+import 'package:calculadoraapp/PdfViews/PdfPreviewScreen.dart';
 import 'package:flutter/material.dart';
 import 'dart:io';
 import 'package:path_provider/path_provider.dart';

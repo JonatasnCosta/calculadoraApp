@@ -1,6 +1,6 @@
-import 'package:calculadoraapp/Funcoes/PDFteste.dart';
-import 'package:calculadoraapp/Home.dart';
 import 'package:flutter/material.dart';
+import 'package:calculadoraapp/Home.dart';
+import 'package:calculadoraapp/PdfViews/PDFDiametro.dart';
 import 'dart:io';
 import 'package:path_provider/path_provider.dart';
 import 'package:pdf/pdf.dart';
@@ -299,7 +299,7 @@ class _CalculadoraState extends State<Calculadora> {
                String documentPath = documentDirectory.path;
                String fullPath = "$documentPath/Diâmetro de lentes.pdf";
                Navigator.push(context, MaterialPageRoute(
-            builder: (context) => PDFteste(path: fullPath,)));
+            builder: (context) => PDFDiametro(path: fullPath,)));
             },
             ),
           ),
