@@ -9,6 +9,87 @@ class FuncaoAdicao extends StatefulWidget {
 }
 
 class _FuncaoAdicaoState extends State<FuncaoAdicao> {
+  
+  TextEditingController _controllerEsfODLonge = TextEditingController();
+  TextEditingController _controllerCILOD = TextEditingController();
+  TextEditingController _controllerEIXOOD = TextEditingController();
+
+  TextEditingController _controllerEsfOELonge = TextEditingController();
+  TextEditingController _controllerCILOE = TextEditingController();
+  TextEditingController _controllerEIXOOE = TextEditingController();
+
+  TextEditingController _controllerEsfODPerto = TextEditingController();
+  TextEditingController _controllerEsfOEPerto = TextEditingController();
+
+  String _erro = "";
+  
+  double adicaoOD = 0;
+  double adicaoOE = 0;
+  double adicaoFinal = 0;
+  double cilOD= 0;
+  double eixoOD= 0;
+  double cilOE= 0;
+  double eixoOE= 0;
+  double valorOD=0;
+  double valorOE=0;
+  
+
+
+  var
+  esfODlonge,
+  esfOElonge,
+  esfODperto,
+  esfOEperto;
+  
+  
+  
+
+
+  void _resultadoGraudePerto(BuildContext context){
+  double esfODlonge = double.tryParse(  _controllerEsfODLonge.text);
+  double cilood = double.tryParse(  _controllerCILOD.text);
+  double eixood = double.tryParse(  _controllerEIXOOD.text);
+  
+  double esfOElonge = double.tryParse(  _controllerEsfOELonge.text);
+  double cilooe = double.tryParse(  _controllerCILOE.text);
+  double eixooe = double.tryParse(  _controllerEIXOOE.text);
+
+  double esfODperto = double.tryParse(  _controllerEsfODPerto.text);
+  double esfOEperto = double.tryParse(  _controllerEsfOEPerto.text);
+  
+  if (esfODlonge == null|| esfOElonge == null ||esfODperto == null || esfOEperto == null ) {
+   setState(() {
+     _erro = "Use somente o ponto (.) para fazer o calculo. ";
+   });
+ } 
+ else {
+ setState(() {
+  adicaoOD=esfODlonge - esfODperto;
+  adicaoOE=esfOElonge - esfOEperto;
+   valorOD= esfODlonge;
+   valorOE= esfOElonge;
+   cilOD= cilood;
+   eixoOD = eixood ;
+   cilOE= cilooe;
+   eixoOE = eixooe ;
+   
+ }
+ );
+ }
+ if (adicaoOD == adicaoOE) {
+   setState(() {
+    adicaoFinal = adicaoOD; 
+   });
+ } else {
+  
+  setState(() {
+     _erro = "Use somente o ponto (.) para fazer o calculo. ";
+  });
+ }
+} 
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,7 +135,339 @@ class _FuncaoAdicaoState extends State<FuncaoAdicao> {
                 fontWeight: FontWeight.w500),
           ),
         ),
-         
+         Padding(
+            padding: EdgeInsets.only(top: 10.0, left: 70.0, right: 70.0),
+            child: Container(
+              padding: EdgeInsets.only(left: 45.0),
+              height: 50.0,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(25.0),
+                color: Color(0xff399d63)
+              ),
+              child: Center(
+                child: TextField(
+                   keyboardType: TextInputType.text,
+                   decoration: InputDecoration(
+                    border: InputBorder.none,
+                    hintText: 'Esf OD Longe',
+                    hintStyle: TextStyle(
+                      fontFamily: 'Montserrat',
+                      fontSize: 15.0,
+                      color: Colors.black
+                    ),
+                  ),
+                  controller: _controllerEsfODLonge,
+                 ),
+              ),
+            ),
+          ),
+           Padding(
+            padding: EdgeInsets.only(top: 5.0, left: 70.0, right: 70.0),
+            child: Container(
+              padding: EdgeInsets.only(left: 45.0),
+              height: 50.0,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(25.0),
+                color: Color(0xff399d63)
+              ),
+              child: Center(
+                child: TextField(
+                   keyboardType: TextInputType.text,
+                   decoration: InputDecoration(
+                    border: InputBorder.none,
+                    hintText: 'Cil',
+                    hintStyle: TextStyle(
+                      fontFamily: 'Montserrat',
+                      fontSize: 15.0,
+                      color: Colors.black
+                    ),
+                  ),
+                  controller: _controllerCILOD,
+                 ),
+              ),
+            ),
+          ),
+           Padding(
+            padding: EdgeInsets.only(top: 5.0, left: 70.0, right: 70.0),
+            child: Container(
+              padding: EdgeInsets.only(left: 45.0),
+              height: 50.0,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(25.0),
+                color: Color(0xff399d63)
+              ),
+              child: Center(
+                child: TextField(
+                   keyboardType: TextInputType.text,
+                   decoration: InputDecoration(
+                    border: InputBorder.none,
+                    hintText: 'Eixo',
+                    hintStyle: TextStyle(
+                      fontFamily: 'Montserrat',
+                      fontSize: 15.0,
+                      color: Colors.black
+                    ),
+                  ),
+                  controller: _controllerEIXOOD,
+                 ),
+              ),
+            ),
+          ),
+         Padding(
+            padding: EdgeInsets.only(top: 5.0, left: 70.0, right: 70.0),
+            child: Container(
+              padding: EdgeInsets.only(left: 45.0),
+              height: 50.0,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(25.0),
+                color: Color(0xff399d63)
+              ),
+              child: Center(
+                child: TextField(
+                   keyboardType: TextInputType.text,
+                   decoration: InputDecoration(
+                    border: InputBorder.none,
+                    hintText: 'Esf OE Longe',
+                    hintStyle: TextStyle(
+                      fontFamily: 'Montserrat',
+                      fontSize: 15.0,
+                      color: Colors.black
+                    ),
+                  ),
+                  controller: _controllerEsfOELonge,
+                 ),
+              ),
+            ),
+          ),
+           Padding(
+            padding: EdgeInsets.only(top: 5.0, left: 70.0, right: 70.0),
+            child: Container(
+              padding: EdgeInsets.only(left: 45.0),
+              height: 50.0,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(25.0),
+                color: Color(0xff399d63)
+              ),
+              child: Center(
+                child: TextField(
+                   keyboardType: TextInputType.text,
+                   decoration: InputDecoration(
+                    border: InputBorder.none,
+                    hintText: 'Cil',
+                    hintStyle: TextStyle(
+                      fontFamily: 'Montserrat',
+                      fontSize: 15.0,
+                      color: Colors.black
+                    ),
+                  ),
+                  controller: _controllerCILOE,
+                 ),
+              ),
+            ),
+          ),
+           Padding(
+            padding: EdgeInsets.only(top: 5.0, left: 70.0, right: 70.0),
+            child: Container(
+              padding: EdgeInsets.only(left: 45.0),
+              height: 50.0,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(25.0),
+                color: Color(0xff399d63)
+              ),
+              child: Center(
+                child: TextField(
+                   keyboardType: TextInputType.text,
+                   decoration: InputDecoration(
+                    border: InputBorder.none,
+                    hintText: 'Eixo',
+                    hintStyle: TextStyle(
+                      fontFamily: 'Montserrat',
+                      fontSize: 15.0,
+                      color: Colors.black
+                    ),
+                  ),
+                  controller: _controllerEIXOOE,
+                 ),
+              ),
+            ),
+          ),
+         Padding(
+            padding: EdgeInsets.only(top: 5.0, left: 70.0, right: 70.0),
+            child: Container(
+              padding: EdgeInsets.only(left: 45.0),
+              height: 50.0,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(25.0),
+                color: Color(0xff399d63)
+              ),
+              child: Center(
+                child: TextField(
+                   keyboardType: TextInputType.text,
+                   decoration: InputDecoration(
+                    border: InputBorder.none,
+                    hintText: 'Esf OD de Perto',
+                    hintStyle: TextStyle(
+                      fontFamily: 'Montserrat',
+                      fontSize: 15.0,
+                      color: Colors.black
+                    ),
+                  ),
+                  controller: _controllerEsfODPerto,
+                 ),
+              ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(top: 5.0, left: 70.0, right: 70.0),
+            child: Container(
+              padding: EdgeInsets.only(left: 45.0),
+              height: 50.0,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(25.0),
+                color: Color(0xff399d63)
+              ),
+              child: Center(
+                child: TextField(
+                   keyboardType: TextInputType.text,
+                   decoration: InputDecoration(
+                    border: InputBorder.none,
+                    hintText: 'Esf OE de Perto',
+                    hintStyle: TextStyle(
+                      fontFamily: 'Montserrat',
+                      fontSize: 15.0,
+                      color: Colors.black
+                    ),
+                  ),
+                  controller: _controllerEsfOEPerto,
+                 ),
+              ),
+            ),
+          ),
+          Padding( 
+            padding: EdgeInsets.only(top: 5.0, left: 70.0, right: 70.0, bottom: 40.0),
+            child: RaisedButton(
+              color: Color(0xff399d63),
+              textColor: Colors.black,
+              padding: EdgeInsets.all(15.0),
+              child: Text('Calcular'),
+              shape: RoundedRectangleBorder(
+              borderRadius: new BorderRadius.circular(18.0),
+              side: BorderSide(color: Color(0xff399d63))
+              ),
+              onPressed: (){
+              _resultadoGraudePerto(context);
+              }
+            ),
+           ),
+            Padding(padding: EdgeInsets.only(top: 10.0, left: 70.0, right: 40.0),
+          child: Text(_erro,
+          style: TextStyle(
+            fontFamily:  'Montserrat',
+            fontSize: 20.0,
+            color: Colors.black
+          ),
+          ),
+          ),
+          Row(
+          children: <Widget>[
+             Row(
+             children: <Widget>[
+                Padding(padding: EdgeInsets.only( top: 10.0, left: 20.0,bottom: 10.0),
+          child: Text("OD $valorOD",
+          style: TextStyle(
+            fontFamily:  'Montserrat',
+            fontSize: 20.0,
+            color: Colors.black
+          ),
+          ),
+          ),
+             ],
+           ),
+            Row(
+             children: <Widget>[
+                Padding(padding: EdgeInsets.only( top: 10.0, left: 20.0,bottom: 10.0),
+          child: Text("CIL - $cilOD",
+          style: TextStyle(
+            fontFamily:  'Montserrat',
+            fontSize: 20.0,
+            color: Colors.black
+          ),
+          ),
+          ),
+             ],
+           ),
+            Row(
+             children: <Widget>[
+                Padding(padding: EdgeInsets.only( top: 10.0, left: 20.0,bottom: 10.0),
+          child: Text("EIXO $eixoOD",
+          style: TextStyle(
+            fontFamily:  'Montserrat',
+            fontSize: 20.0,
+            color: Colors.black
+          ),
+          ),
+          ),
+             ],
+           )
+          ],
+          ),
+           
+           Row(
+          children: <Widget>[
+             Row(
+             children: <Widget>[
+                Padding(padding: EdgeInsets.only( top: 10.0, left: 20.0,bottom: 10.0),
+          child: Text("OE $valorOE",
+          style: TextStyle(
+            fontFamily:  'Montserrat',
+            fontSize: 20.0,
+            color: Colors.black
+          ),
+          ),
+          ),
+             ],
+           ),
+            Row(
+             children: <Widget>[
+                Padding(padding: EdgeInsets.only( top: 10.0, left: 20.0,bottom: 10.0),
+          child: Text("CIL - $cilOE ",
+          style: TextStyle(
+            fontFamily:  'Montserrat',
+            fontSize: 20.0,
+            color: Colors.black
+          ),
+          ),
+          ),
+             ],
+           ),
+            Row(
+             children: <Widget>[
+                Padding(padding: EdgeInsets.only( top: 10.0, left: 20.0,bottom: 10.0),
+          child: Text("EIXO $eixoOE",
+          style: TextStyle(
+            fontFamily:  'Montserrat',
+            fontSize: 20.0,
+            color: Colors.black
+          ),
+          ),
+          ),
+             ],
+           )
+          ],
+          ),
+          Row(
+            children: <Widget>[
+             Padding(padding: EdgeInsets.only( top: 10.0, left: 20.0,bottom: 30.0),
+             child:  Text('ADD $adicaoFinal',
+             style: TextStyle(
+            fontFamily:  'Montserrat',
+            fontSize: 20.0,
+            color: Colors.black
+             ),
+             )
+             ), 
+            ],
+          )
         ],
       ),
     );
