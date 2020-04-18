@@ -1,3 +1,4 @@
+import 'package:calculadoraapp/SubFuncaoTransposicao/FuncaoGraudePerto.dart';
 import 'package:flutter/material.dart';
 
 
@@ -122,7 +123,7 @@ class _TransposicaoGraudePertoState extends State<TransposicaoGraudePerto> {
                      ),
                      child: InkWell(
                        onTap: (){
-                         //Rota
+                          Navigator.of(context).push(MaterialPageRoute(builder:(context) => FuncaoGraudePerto()));
                        },
                        child: Center(
                          child: Icon(

@@ -1,3 +1,4 @@
+import 'package:calculadoraapp/SubFuncaoTransposicao/FuncaoAdicao.dart';
 import 'package:flutter/material.dart';
 
 
@@ -123,7 +124,7 @@ class _TransposicaoAdicaoState extends State<TransposicaoAdicao> {
                      ),
                      child: InkWell(
                        onTap: (){
-                         //Rota
+                          Navigator.of(context).push(MaterialPageRoute(builder:(context) => FuncaoAdicao()));
                        },
                        child: Center(
                          child: Icon(
