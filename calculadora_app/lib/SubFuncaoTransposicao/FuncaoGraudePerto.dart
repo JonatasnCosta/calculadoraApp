@@ -121,16 +121,6 @@ class _FuncaoGraudePertoState extends State<FuncaoGraudePerto> {
           ),
         ),
          Padding(
-          padding:  EdgeInsets.only(top: 10.0, left: 25.0),
-          child: Text(
-            'Digite o grau do Olho Direito :',
-            style: TextStyle(
-                fontFamily: 'Montserrat',
-                fontSize: 20.0,
-                fontWeight: FontWeight.w500),
-          ),
-        ),
-         Padding(
             padding: EdgeInsets.only(top: 10.0, left: 70.0, right: 70.0),
             child: Container(
               padding: EdgeInsets.only(left: 45.0),
@@ -144,7 +134,7 @@ class _FuncaoGraudePertoState extends State<FuncaoGraudePerto> {
                    keyboardType: TextInputType.text,
                    decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'Esf',
+                    hintText: 'Esf     OD Longe',
                     hintStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
@@ -170,7 +160,7 @@ class _FuncaoGraudePertoState extends State<FuncaoGraudePerto> {
                    keyboardType: TextInputType.text,
                    decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'Cil',
+                    hintText: 'Cil     OD Longe',
                     hintStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
@@ -183,7 +173,7 @@ class _FuncaoGraudePertoState extends State<FuncaoGraudePerto> {
             ),
           ),
            Padding(
-            padding: EdgeInsets.only(top: 5.0, left: 70.0, right: 70.0),
+            padding: EdgeInsets.only(top: 5.0, left: 70.0, right: 70.0, bottom: 30.0),
             child: Container(
               padding: EdgeInsets.only(left: 45.0),
               height: 50.0,
@@ -196,7 +186,7 @@ class _FuncaoGraudePertoState extends State<FuncaoGraudePerto> {
                    keyboardType: TextInputType.text,
                    decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'Eixo',
+                    hintText: 'Eixo  OD Longe',
                     hintStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
@@ -208,19 +198,6 @@ class _FuncaoGraudePertoState extends State<FuncaoGraudePerto> {
               ),
             ),
           ),
-
-
-
-          Padding(
-          padding: EdgeInsets.only(top: 10.0, left: 25.0),
-          child: Text(
-            'Digite o grau do Olho Esquerdo :',
-            style: TextStyle(
-                fontFamily: 'Montserrat',
-                fontSize: 20.0,
-                fontWeight: FontWeight.w500),
-          ),
-        ),
          Padding(
             padding: EdgeInsets.only(top: 5.0, left: 70.0, right: 70.0),
             child: Container(
@@ -235,7 +212,7 @@ class _FuncaoGraudePertoState extends State<FuncaoGraudePerto> {
                    keyboardType: TextInputType.text,
                    decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'Esf',
+                    hintText: 'Esf    OE Longe',
                     hintStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
@@ -261,7 +238,7 @@ class _FuncaoGraudePertoState extends State<FuncaoGraudePerto> {
                    keyboardType: TextInputType.text,
                    decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'Cil',
+                    hintText: 'Cil     OE Longe',
                     hintStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
@@ -274,7 +251,7 @@ class _FuncaoGraudePertoState extends State<FuncaoGraudePerto> {
             ),
           ),
            Padding(
-            padding: EdgeInsets.only(top: 5.0, left: 70.0, right: 70.0),
+            padding: EdgeInsets.only(top: 5.0, left: 70.0, right: 70.0, bottom: 30.0),
             child: Container(
               padding: EdgeInsets.only(left: 45.0),
               height: 50.0,
@@ -287,7 +264,7 @@ class _FuncaoGraudePertoState extends State<FuncaoGraudePerto> {
                    keyboardType: TextInputType.text,
                    decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'Eixo',
+                    hintText: 'Eixo  OE Longe',
                     hintStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
@@ -299,16 +276,6 @@ class _FuncaoGraudePertoState extends State<FuncaoGraudePerto> {
               ),
             ),
           ),
-          Padding(
-          padding:  EdgeInsets.only(top: 10.0, left: 25.0),
-          child: Text(
-            'Digite o grau da  Adição :',
-            style: TextStyle(
-                fontFamily: 'Montserrat',
-                fontSize: 20.0,
-                fontWeight: FontWeight.w500),
-          ),
-        ),
          Padding(
             padding: EdgeInsets.only(top: 5.0, left: 70.0, right: 70.0),
             child: Container(
@@ -351,8 +318,8 @@ class _FuncaoGraudePertoState extends State<FuncaoGraudePerto> {
               }
             ),
            ),
-            Padding(padding: EdgeInsets.only(top: 10.0, left: 70.0, right: 40.0),
-          child: Text(_erro,
+           Padding(padding: EdgeInsets.only(top: 5.0, left: 20.0, right: 40.0),
+          child: Text('Grau de perto:',
           style: TextStyle(
             fontFamily:  'Montserrat',
             fontSize: 20.0,
@@ -403,7 +370,6 @@ class _FuncaoGraudePertoState extends State<FuncaoGraudePerto> {
            )
           ],
           ),
-           
            Row(
           children: <Widget>[
              Row(
@@ -446,8 +412,16 @@ class _FuncaoGraudePertoState extends State<FuncaoGraudePerto> {
              ],
            )
           ],
+          ),
+            Padding(padding: EdgeInsets.only(top: 10.0, left: 70.0, right: 40.0),
+          child: Text(_erro,
+          style: TextStyle(
+            fontFamily:  'Montserrat',
+            fontSize: 20.0,
+            color: Colors.black
+          ),
+          ),
           )
-
         ],
       ),
     );

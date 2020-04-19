@@ -149,7 +149,7 @@ class _FuncaoAdicaoState extends State<FuncaoAdicao> {
                    keyboardType: TextInputType.text,
                    decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'Esf OD Longe',
+                    hintText: 'Esf     OD Longe',
                     hintStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
@@ -175,7 +175,7 @@ class _FuncaoAdicaoState extends State<FuncaoAdicao> {
                    keyboardType: TextInputType.text,
                    decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'Cil',
+                    hintText: 'Cil     OD Longe',
                     hintStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
@@ -188,7 +188,7 @@ class _FuncaoAdicaoState extends State<FuncaoAdicao> {
             ),
           ),
            Padding(
-            padding: EdgeInsets.only(top: 5.0, left: 70.0, right: 70.0),
+            padding: EdgeInsets.only(top: 5.0, left: 70.0, right: 70.0, bottom: 30.0),
             child: Container(
               padding: EdgeInsets.only(left: 45.0),
               height: 50.0,
@@ -201,7 +201,7 @@ class _FuncaoAdicaoState extends State<FuncaoAdicao> {
                    keyboardType: TextInputType.text,
                    decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'Eixo',
+                    hintText: 'Eixo  OD Longe',
                     hintStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
@@ -227,7 +227,7 @@ class _FuncaoAdicaoState extends State<FuncaoAdicao> {
                    keyboardType: TextInputType.text,
                    decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'Esf OE Longe',
+                    hintText: 'Esf    OE Longe',
                     hintStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
@@ -253,7 +253,7 @@ class _FuncaoAdicaoState extends State<FuncaoAdicao> {
                    keyboardType: TextInputType.text,
                    decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'Cil',
+                    hintText: 'Cil     OE Longe',
                     hintStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
@@ -266,7 +266,7 @@ class _FuncaoAdicaoState extends State<FuncaoAdicao> {
             ),
           ),
            Padding(
-            padding: EdgeInsets.only(top: 5.0, left: 70.0, right: 70.0),
+            padding: EdgeInsets.only(top: 5.0, left: 70.0, right: 70.0, bottom: 30.0),
             child: Container(
               padding: EdgeInsets.only(left: 45.0),
               height: 50.0,
@@ -279,7 +279,7 @@ class _FuncaoAdicaoState extends State<FuncaoAdicao> {
                    keyboardType: TextInputType.text,
                    decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'Eixo',
+                    hintText: 'Eixo  OE Longe',
                     hintStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
@@ -305,7 +305,7 @@ class _FuncaoAdicaoState extends State<FuncaoAdicao> {
                    keyboardType: TextInputType.text,
                    decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'Esf OD de Perto',
+                    hintText: 'Esf    OD Perto',
                     hintStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
@@ -318,7 +318,7 @@ class _FuncaoAdicaoState extends State<FuncaoAdicao> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 5.0, left: 70.0, right: 70.0),
+            padding: EdgeInsets.only(top: 5.0, left: 70.0, right: 70.0, bottom: 30.0),
             child: Container(
               padding: EdgeInsets.only(left: 45.0),
               height: 50.0,
@@ -331,7 +331,7 @@ class _FuncaoAdicaoState extends State<FuncaoAdicao> {
                    keyboardType: TextInputType.text,
                    decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'Esf OE de Perto',
+                    hintText: 'Esf    OE Perto',
                     hintStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
@@ -359,20 +359,11 @@ class _FuncaoAdicaoState extends State<FuncaoAdicao> {
               }
             ),
            ),
-            Padding(padding: EdgeInsets.only(top: 10.0, left: 70.0, right: 40.0),
-          child: Text(_erro,
-          style: TextStyle(
-            fontFamily:  'Montserrat',
-            fontSize: 20.0,
-            color: Colors.black
-          ),
-          ),
-          ),
           Row(
           children: <Widget>[
              Row(
              children: <Widget>[
-                Padding(padding: EdgeInsets.only( top: 10.0, left: 20.0,bottom: 10.0),
+                Padding(padding: EdgeInsets.only( top: 10.0, left: 30.0,bottom: 10.0),
           child: Text("OD $valorOD",
           style: TextStyle(
             fontFamily:  'Montserrat',
@@ -411,12 +402,11 @@ class _FuncaoAdicaoState extends State<FuncaoAdicao> {
            )
           ],
           ),
-           
-           Row(
+          Row(
           children: <Widget>[
              Row(
              children: <Widget>[
-                Padding(padding: EdgeInsets.only( top: 10.0, left: 20.0,bottom: 10.0),
+                Padding(padding: EdgeInsets.only( top: 10.0, left: 30.0,bottom: 10.0),
           child: Text("OE $valorOE",
           style: TextStyle(
             fontFamily:  'Montserrat',
@@ -457,7 +447,7 @@ class _FuncaoAdicaoState extends State<FuncaoAdicao> {
           ),
           Row(
             children: <Widget>[
-             Padding(padding: EdgeInsets.only( top: 10.0, left: 20.0,bottom: 30.0),
+             Padding(padding: EdgeInsets.only( top: 10.0, left: 30.0,bottom: 10.0),
              child:  Text('ADD $adicaoFinal',
              style: TextStyle(
             fontFamily:  'Montserrat',
@@ -467,7 +457,16 @@ class _FuncaoAdicaoState extends State<FuncaoAdicao> {
              )
              ), 
             ],
-          )
+          ),
+           Padding(padding: EdgeInsets.only(top: 10.0, left: 70.0, right: 40.0),
+          child: Text(_erro,
+          style: TextStyle(
+            fontFamily:  'Montserrat',
+            fontSize: 20.0,
+            color: Colors.black
+          ),
+          ),
+          ),
         ],
       ),
     );
