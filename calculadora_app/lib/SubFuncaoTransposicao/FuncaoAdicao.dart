@@ -33,8 +33,6 @@ class _FuncaoAdicaoState extends State<FuncaoAdicao> {
   double valorOD=0;
   double valorOE=0;
   
-
-
   var
   esfODlonge,
   esfOElonge,
@@ -42,55 +40,62 @@ class _FuncaoAdicaoState extends State<FuncaoAdicao> {
   esfOEperto;
   
   
-  
-
-
   void _resultadoGraudePerto(BuildContext context){
-  double esfODlonge = double.tryParse(  _controllerEsfODLonge.text);
-  double cilood = double.tryParse(  _controllerCILOD.text);
-  double eixood = double.tryParse(  _controllerEIXOOD.text);
+  //Método para calcular a adição
+  double esfODlonge = double.tryParse(_controllerEsfODLonge.text);
+  double cilODLonge = double.tryParse(_controllerCILOD.text);
+  double eixoODLonge = double.tryParse(_controllerEIXOOD.text);
   
-  double esfOElonge = double.tryParse(  _controllerEsfOELonge.text);
-  double cilooe = double.tryParse(  _controllerCILOE.text);
-  double eixooe = double.tryParse(  _controllerEIXOOE.text);
+  double esfOElonge = double.tryParse(_controllerEsfOELonge.text);
+  double cilOELonge = double.tryParse(_controllerCILOE.text);
+  double eixoOELonge = double.tryParse(_controllerEIXOOE.text);
 
-  double esfODperto = double.tryParse(  _controllerEsfODPerto.text);
-  double esfOEperto = double.tryParse(  _controllerEsfOEPerto.text);
+  double esfODperto = double.tryParse(_controllerEsfODPerto.text);
+  double esfOEperto = double.tryParse(_controllerEsfOEPerto.text);
   
   if (esfODlonge == null|| esfOElonge == null ||esfODperto == null || esfOEperto == null ) {
    setState(() {
-     _erro = "Use somente o ponto (.) para fazer o calculo. ";
+     _erro = "Use somente o ponto (.) para fazer o calculo. Caso o esferico for plano use o 0.00 .";
    });
  } 
  else {
  setState(() {
-  adicaoOD=esfODlonge - esfODperto;
-  adicaoOE=esfOElonge - esfOEperto;
-   valorOD= esfODlonge;
-   valorOE= esfOElonge;
-   cilOD= cilood;
-   eixoOD = eixood ;
-   cilOE= cilooe;
-   eixoOE = eixooe ;
-   
- }
+  adicaoOD= esfODlonge - esfODperto;
+  adicaoOE= esfOElonge - esfOEperto;
+  valorOD= esfODlonge;
+  valorOE= esfOElonge; 
+  }
  );
  }
- if (adicaoOD == adicaoOE) {
+ if (adicaoOD == adicaoOE  || adicaoOE == adicaoOD || 
+ cilOD  == cilODLonge  || 
+ eixoOD == eixoODLonge || 
+ cilOE == cilOELonge   || 
+ eixoOE == eixoOELonge 
+ ) {
    setState(() {
     adicaoFinal = adicaoOD; 
+    
+    cilOD= cilODLonge;
+    eixoOD= eixoODLonge;
+   
+    cilOE= cilOELonge;
+    eixoOE= eixoOELonge ;
+    
    });
- } else {
-  
-  setState(() {
-     _erro = "Use somente o ponto (.) para fazer o calculo. ";
-  });
  }
+ if (cilOD == null || eixoOD == null || cilOE == null || eixoOE == null) {
+   setState(() {
+    cilOD  = 0.0;
+    eixoOD = 0.0;
+    cilOE  = 0.0;
+    eixoOE = 0.0;
+   });
+
+ }
+
 } 
-
-
-
-  @override
+@override
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(
@@ -344,7 +349,7 @@ class _FuncaoAdicaoState extends State<FuncaoAdicao> {
             ),
           ),
           Padding( 
-            padding: EdgeInsets.only(top: 5.0, left: 70.0, right: 70.0, bottom: 40.0),
+            padding: EdgeInsets.only(top: 5.0, left: 70.0, right: 70.0, bottom: 10.0),
             child: RaisedButton(
               color: Color(0xff399d63),
               textColor: Colors.black,
@@ -356,6 +361,22 @@ class _FuncaoAdicaoState extends State<FuncaoAdicao> {
               ),
               onPressed: (){
               _resultadoGraudePerto(context);
+              }
+            ),
+           ),
+            Padding( 
+            padding: EdgeInsets.only(top: 5.0, left: 70.0, right: 70.0, bottom: 20.0),
+            child: RaisedButton(
+              color: Color(0xff399d63),
+              textColor: Colors.black,
+              padding: EdgeInsets.all(15.0),
+              child: Text('Novo Calculo'),
+              shape: RoundedRectangleBorder(
+              borderRadius: new BorderRadius.circular(18.0),
+              side: BorderSide(color: Color(0xff399d63))
+              ),
+              onPressed: (){
+               Navigator.of(context).push(MaterialPageRoute(builder:(context) => FuncaoAdicao()));
               }
             ),
            ),
@@ -458,7 +479,7 @@ class _FuncaoAdicaoState extends State<FuncaoAdicao> {
              ), 
             ],
           ),
-           Padding(padding: EdgeInsets.only(top: 10.0, left: 70.0, right: 40.0),
+           Padding(padding: EdgeInsets.only(top: 10.0, left: 70.0, right: 40.0, bottom: 30.0),
           child: Text(_erro,
           style: TextStyle(
             fontFamily:  'Montserrat',
