@@ -380,6 +380,15 @@ class _FuncaoAdicaoState extends State<FuncaoAdicao> {
               }
             ),
            ),
+            Padding(padding: EdgeInsets.only(top: 10.0, left: 30.0, right: 40.0),
+          child: Text('Grau para multifocal:',
+          style: TextStyle(
+            fontFamily:  'Montserrat',
+            fontSize: 20.0,
+            color: Colors.black
+          ),
+          ),
+          ),
           Row(
           children: <Widget>[
              Row(

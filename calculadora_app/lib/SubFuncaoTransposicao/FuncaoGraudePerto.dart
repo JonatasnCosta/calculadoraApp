@@ -33,46 +33,65 @@ class _FuncaoGraudePertoState extends State<FuncaoGraudePerto> {
 
 
   var
-  esfod,
-  add,
-  eixood,
-  esfoe;
-  
+  esfODlonge,
+  esfOElonge,
+  add;
 
 
   void _resultadoGraudePerto(BuildContext context){
-  double esfod = double.tryParse(  _controllerEsfOD.text);
-  double cilood = double.tryParse(  _controllerCILOD.text);
-  double eixood = double.tryParse(  _controllerEIXOOD.text);
+  double esfODlonge = double.tryParse(  _controllerEsfOD.text);
+  double cilODLonge = double.tryParse(  _controllerCILOD.text);
+  double eixoODLonge = double.tryParse(  _controllerEIXOOD.text);
   
-  double esfoe = double.tryParse(  _controllerEsfOE.text);
-  double cilooe = double.tryParse(  _controllerCILOE.text);
-  double eixooe = double.tryParse(  _controllerEIXOOE.text);
+  double esfOElonge = double.tryParse(  _controllerEsfOE.text);
+  double cilOELonge = double.tryParse(  _controllerCILOE.text);
+  double eixoOELonge = double.tryParse(  _controllerEIXOOE.text);
   
   double add = double.tryParse(  _controllerADD.text);
   
   
   
 
- if (esfod == null|| esfoe == null) {
+ if (esfODlonge == null|| esfOElonge == null) {
    setState(() {
      _erro = "Use somente o ponto (.) para fazer o calculo. ";
    });
  } 
  else {
  setState(() {
-   graudePertoOD= esfod + add;
-   cilOD= cilood;
-   eixoOD = eixood ;
-
-
-   graudePertoOE= esfoe + add;
-   cilOE= cilooe;
-   eixoOE = eixooe ;
+   graudePertoOD= esfODlonge + add;
+   cilOD= cilODLonge;
+   eixoOD = eixoODLonge ;
+   
+   graudePertoOE= esfOElonge + add;
+   cilOE= cilOELonge;
+   eixoOE =  eixoOELonge ;
    
  }
  );
  }
+
+ if (cilOD  == cilODLonge  || eixoOD == eixoODLonge || cilOE == cilOELonge   ||  eixoOE == eixoOELonge ) {
+
+setState(() {
+  cilOD= cilODLonge;
+  eixoOD= eixoODLonge;
+   
+  cilOE= cilOELonge;
+  eixoOE= eixoOELonge ;
+});
+   
+ }
+  if (cilOD == null || eixoOD == null || cilOE == null || eixoOE == null) {
+   setState(() {
+    cilOD  = 0.0;
+    eixoOD = 0.0;
+    cilOE  = 0.0;
+    eixoOE = 0.0;
+   });
+
+ }
+ 
 } 
 
   @override
@@ -303,7 +322,7 @@ class _FuncaoGraudePertoState extends State<FuncaoGraudePerto> {
             ),
           ),
            Padding( 
-            padding: EdgeInsets.only(top: 5.0, left: 70.0, right: 70.0, bottom: 40.0),
+            padding: EdgeInsets.only(top: 5.0, left: 70.0, right: 70.0, bottom: 10.0),
             child: RaisedButton(
               color: Color(0xff399d63),
               textColor: Colors.black,
@@ -318,8 +337,24 @@ class _FuncaoGraudePertoState extends State<FuncaoGraudePerto> {
               }
             ),
            ),
+           Padding( 
+            padding: EdgeInsets.only(top: 5.0, left: 70.0, right: 70.0, bottom: 20.0),
+            child: RaisedButton(
+              color: Color(0xff399d63),
+              textColor: Colors.black,
+              padding: EdgeInsets.all(15.0),
+              child: Text('Novo Calculo'),
+              shape: RoundedRectangleBorder(
+              borderRadius: new BorderRadius.circular(18.0),
+              side: BorderSide(color: Color(0xff399d63))
+              ),
+              onPressed: (){
+               Navigator.of(context).push(MaterialPageRoute(builder:(context) => FuncaoGraudePerto()));
+              }
+            ),
+           ),
            Padding(padding: EdgeInsets.only(top: 5.0, left: 20.0, right: 40.0),
-          child: Text('Grau de perto:',
+          child: Text('Grau para perto:',
           style: TextStyle(
             fontFamily:  'Montserrat',
             fontSize: 20.0,
