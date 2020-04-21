@@ -478,7 +478,7 @@ class _FuncaoAdicaoState extends State<FuncaoAdicao> {
           Row(
             children: <Widget>[
              Padding(padding: EdgeInsets.only( top: 10.0, left: 30.0,bottom: 10.0),
-             child:  Text('ADD $adicaoFinal',
+             child:  Text('AD $adicaoFinal',
              style: TextStyle(
             fontFamily:  'Montserrat',
             fontSize: 20.0,

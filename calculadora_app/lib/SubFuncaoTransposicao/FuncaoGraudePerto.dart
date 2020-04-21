@@ -52,13 +52,23 @@ class _FuncaoGraudePertoState extends State<FuncaoGraudePerto> {
   
   
 
- if (esfODlonge == null|| esfOElonge == null) {
+ if (esfODlonge == null|| esfOElonge == null ) {
    setState(() {
-     _erro = "Use somente o ponto (.) para fazer o calculo. ";
+     _erro = "Use somente o (.) para fazer o calculo. Caso o esferico for plano use o 0.00 .";
+     
+     esfODlonge = 0.0;
+     cilODLonge =0.0;
+     eixoODLonge =0.0;
+
+      esfOElonge =0.0;
+      cilOELonge =0.0;
+      eixoOELonge =0.0;
+      add =0.0;
    });
  } 
- else {
- setState(() {
+ if (esfODlonge == esfODlonge || esfOElonge == esfOElonge ) {
+   setState(() {
+  
    graudePertoOD= esfODlonge + add;
    cilOD= cilODLonge;
    eixoOD = eixoODLonge ;
@@ -66,31 +76,41 @@ class _FuncaoGraudePertoState extends State<FuncaoGraudePerto> {
    graudePertoOE= esfOElonge + add;
    cilOE= cilOELonge;
    eixoOE =  eixoOELonge ;
-   
- }
- );
- }
+   });
+ } 
 
- if (cilOD  == cilODLonge  || eixoOD == eixoODLonge || cilOE == cilOELonge   ||  eixoOE == eixoOELonge ) {
-
-setState(() {
-  cilOD= cilODLonge;
-  eixoOD= eixoODLonge;
-   
-  cilOE= cilOELonge;
-  eixoOE= eixoOELonge ;
-});
-   
- }
-  if (cilOD == null || eixoOD == null || cilOE == null || eixoOE == null) {
+ if (cilOD == null ) {
    setState(() {
-    cilOD  = 0.0;
-    eixoOD = 0.0;
-    cilOE  = 0.0;
+    cilOD  = 0.0; 
+   });
+ } else {
+   cilOD= cilODLonge;
+ }
+
+ if ( eixoOD == null) {
+   setState(() {
+    eixoOD = 0.0; 
+   });
+ } else {
+  eixoOD= eixoODLonge; 
+ }
+ if (cilOE == null) {
+  setState(() {
+  cilOE  = 0.0;
+  }); 
+ } else {
+   cilOE= cilOELonge;
+ }
+
+ if ( eixoOE == null) {
+   setState(() {
     eixoOE = 0.0;
    });
-
+ } else {
+   eixoOE= eixoOELonge ; 
  }
+
+ 
  
 } 
 
@@ -367,7 +387,7 @@ setState(() {
              Row(
              children: <Widget>[
                 Padding(padding: EdgeInsets.only( top: 10.0, left: 20.0,bottom: 10.0),
-          child: Text("OD  $graudePertoOD",
+          child: Text("OD + $graudePertoOD",
           style: TextStyle(
             fontFamily:  'Montserrat',
             fontSize: 20.0,
@@ -380,7 +400,7 @@ setState(() {
             Row(
              children: <Widget>[
                 Padding(padding: EdgeInsets.only( top: 10.0, left: 20.0,bottom: 10.0),
-          child: Text("CIL - $cilOD",
+          child: Text("CIL  $cilOD",
           style: TextStyle(
             fontFamily:  'Montserrat',
             fontSize: 20.0,
@@ -410,7 +430,7 @@ setState(() {
              Row(
              children: <Widget>[
                 Padding(padding: EdgeInsets.only( top: 10.0, left: 20.0,bottom: 10.0),
-          child: Text("OE  $graudePertoOE",
+          child: Text("OE + $graudePertoOE",
           style: TextStyle(
             fontFamily:  'Montserrat',
             fontSize: 20.0,
@@ -423,7 +443,7 @@ setState(() {
             Row(
              children: <Widget>[
                 Padding(padding: EdgeInsets.only( top: 10.0, left: 20.0,bottom: 10.0),
-          child: Text("CIL - $cilOE ",
+          child: Text("CIL  $cilOE ",
           style: TextStyle(
             fontFamily:  'Montserrat',
             fontSize: 20.0,
