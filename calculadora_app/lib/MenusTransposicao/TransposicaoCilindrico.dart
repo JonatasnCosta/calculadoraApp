@@ -1,3 +1,4 @@
+import 'package:calculadoraapp/SubFuncaoTransposicao/FuncaoCilindricopositivo.dart';
 import 'package:flutter/material.dart';
 
 
@@ -121,7 +122,7 @@ class _TransposicaoCilindricoState extends State<TransposicaoCilindrico> {
                      ),
                      child: InkWell(
                        onTap: (){
-                         //Rota
+                          Navigator.of(context).push(MaterialPageRoute(builder:(context) => FuncaoCilindricopositivo()));
                        },
                        child: Center(
                          child: Icon(

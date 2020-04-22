@@ -1,5 +1,5 @@
+import 'package:calculadoraapp/Funcoes/Transposicao.dart';
 import 'package:calculadoraapp/Home.dart';
-import 'package:calculadoraapp/MenusTransposicao/TransposicaoGraudePerto.dart';
 import 'package:flutter/material.dart';
 
 
@@ -23,18 +23,14 @@ class _FuncaoGraudePertoState extends State<FuncaoGraudePerto> {
   double graudePertoOD= 0;
   double cilOD= 0;
   double eixoOD= 0;
-  
   double graudePertoOE= 0;
   double cilOE= 0;
   double eixoOE= 0;
   
-
-
   var
   esfODlonge,
   esfOElonge,
   add;
-
 
   void _resultadoGraudePerto(BuildContext context){
   double esfODlonge = double.tryParse(  _controllerEsfOD.text);
@@ -47,72 +43,63 @@ class _FuncaoGraudePertoState extends State<FuncaoGraudePerto> {
   
   double add = double.tryParse(  _controllerADD.text);
   
-  if (esfODlonge == null) {
+  if(esfODlonge == null){
   setState(() {
     esfODlonge = 0.0;
   });
-}
- else {
+}else{
    esfODlonge= esfODlonge;
  }
   
-  if (esfOElonge == null) {
+  if(esfOElonge == null){
   setState(() {
     esfOElonge = 0.0;
   });
-}
- else {
+}else{
    esfOElonge= esfOElonge;
  }
  
- if (esfODlonge == esfODlonge || esfOElonge == esfOElonge) {
-   setState(() {
-  
+ if(esfODlonge == esfODlonge || esfOElonge == esfOElonge){
+   setState((){
    graudePertoOD= esfODlonge + add;
    cilOD= cilODLonge;
-   eixoOD = eixoODLonge ;
+   eixoOD= eixoODLonge;
    
    graudePertoOE= esfOElonge + add;
    cilOE= cilOELonge;
-   eixoOE =  eixoOELonge ;
+   eixoOE=  eixoOELonge;
    });
  } 
- 
-
- if (cilOD == null ) {
-   setState(() {
-    cilOD  = 0.0; 
+ if(cilOD == null ){
+   setState((){
+    cilOD= 0.0; 
    });
- } else {
+ }else {
    cilOD= cilODLonge;
  }
-
- if ( eixoOD == null) {
-   setState(() {
-    eixoOD = 0.0; 
+ if(eixoOD == null){
+   setState((){
+    eixoOD= 0.0; 
    });
- } else {
+ }else{
   eixoOD= eixoODLonge; 
  }
- if (cilOE == null) {
-  setState(() {
-  cilOE  = 0.0;
+ if(cilOE == null){
+  setState((){
+  cilOE= 0.0;
   }); 
- } else {
+ }else{
    cilOE= cilOELonge;
  }
-
- if ( eixoOE == null) {
-   setState(() {
-    eixoOE = 0.0;
+ if(eixoOE == null){
+   setState((){
+    eixoOE= 0.0;
    });
- } else {
-   eixoOE= eixoOELonge ; 
+ }else{
+   eixoOE= eixoOELonge; 
  } 
-
 } 
-
-  @override
+@override
  Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(
@@ -128,7 +115,7 @@ class _FuncaoGraudePertoState extends State<FuncaoGraudePerto> {
                 IconButton(
                   icon: Icon(Icons.arrow_back), 
                   onPressed: () {
-                    Navigator.of(context).pop(MaterialPageRoute(builder:(context) => TransposicaoGraudePerto()));
+                    Navigator.of(context).push(MaterialPageRoute(builder:(context) => Transposicao()));
                   }
                 ),
                 FloatingActionButton(
@@ -376,15 +363,12 @@ class _FuncaoGraudePertoState extends State<FuncaoGraudePerto> {
           style: TextStyle(
             fontFamily:  'Montserrat',
             fontSize: 20.0,
-            color: Colors.black
-          ),
-          ),
-          ),
+            color: Colors.black),),),
           Row(
-          children: <Widget>[
+            children: <Widget>[
              Row(
              children: <Widget>[
-                Padding(padding: EdgeInsets.only( top: 10.0, left: 20.0,bottom: 10.0),
+                Padding(padding: EdgeInsets.only( top: 10.0, left: 20.0),
           child: Text("OD + $graudePertoOD",
           style: TextStyle(
             fontFamily:  'Montserrat',
@@ -397,7 +381,7 @@ class _FuncaoGraudePertoState extends State<FuncaoGraudePerto> {
            ),
             Row(
              children: <Widget>[
-                Padding(padding: EdgeInsets.only( top: 10.0, left: 20.0,bottom: 10.0),
+                Padding(padding: EdgeInsets.only( top: 10.0, left: 20.0),
           child: Text("CIL  $cilOD",
           style: TextStyle(
             fontFamily:  'Montserrat',
@@ -410,24 +394,20 @@ class _FuncaoGraudePertoState extends State<FuncaoGraudePerto> {
            ),
             Row(
              children: <Widget>[
-                Padding(padding: EdgeInsets.only( top: 10.0, left: 20.0,bottom: 10.0),
+                Padding(padding: EdgeInsets.only( top: 10.0, left: 20.0),
           child: Text("EIXO $eixoOD",
           style: TextStyle(
             fontFamily:  'Montserrat',
             fontSize: 20.0,
-            color: Colors.black
-          ),
-          ),
-          ),
-             ],
+            color: Colors.black),),),],
            )
           ],
           ),
-           Row(
+          Row(
           children: <Widget>[
              Row(
              children: <Widget>[
-                Padding(padding: EdgeInsets.only( top: 10.0, left: 20.0,bottom: 10.0),
+                Padding(padding: EdgeInsets.only( top: 10.0, left: 20.0,bottom: 30.0),
           child: Text("OE + $graudePertoOE",
           style: TextStyle(
             fontFamily:  'Montserrat',
@@ -440,7 +420,7 @@ class _FuncaoGraudePertoState extends State<FuncaoGraudePerto> {
            ),
             Row(
              children: <Widget>[
-                Padding(padding: EdgeInsets.only( top: 10.0, left: 20.0,bottom: 10.0),
+                Padding(padding: EdgeInsets.only( top: 10.0, left: 20.0,bottom: 30.0),
           child: Text("CIL  $cilOE ",
           style: TextStyle(
             fontFamily:  'Montserrat',
@@ -453,7 +433,7 @@ class _FuncaoGraudePertoState extends State<FuncaoGraudePerto> {
            ),
             Row(
              children: <Widget>[
-                Padding(padding: EdgeInsets.only( top: 10.0, left: 20.0,bottom: 10.0),
+                Padding(padding: EdgeInsets.only( top: 10.0, left: 20.0,bottom: 30.0),
           child: Text("EIXO $eixoOE",
           style: TextStyle(
             fontFamily:  'Montserrat',

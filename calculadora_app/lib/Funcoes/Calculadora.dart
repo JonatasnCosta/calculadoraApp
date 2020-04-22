@@ -25,10 +25,10 @@ class _CalculadoraState extends State<Calculadora> {
   double diametro = 0; 
      
      var
-     aro  ,
-     ponte ,
-     menorDnp ,
-     maiorDiagonal  ;
+     aro,
+     ponte,
+     menorDnp,
+     maiorDiagonal;
   
  void _resultadodiametro(BuildContext context){
   double aro = double.tryParse(  _controllerAro.text);
@@ -54,7 +54,7 @@ class _CalculadoraState extends State<Calculadora> {
   writeOnPdf(){
     pdf.addPage(
       pw.MultiPage(
-        pageFormat: PdfPageFormat.a4,
+        pageFormat: PdfPageFormat.a3,
         margin: pw.EdgeInsets.all(32),
          build: (pw.Context context){
           return <pw.Widget>  [
@@ -74,7 +74,7 @@ class _CalculadoraState extends State<Calculadora> {
                fontSize: 30.0,
              )
            ),
-            pw.Paragraph(text: _erro,
+            pw.Paragraph(text: "$diametro",
             style: pw.TextStyle(
                fontSize: 30.0,
              )
