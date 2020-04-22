@@ -21,7 +21,6 @@ class _FuncaoAdicaoState extends State<FuncaoAdicao> {
   TextEditingController _controllerEsfODPerto = TextEditingController();
   TextEditingController _controllerEsfOEPerto = TextEditingController();
 
-  String _erro = "";
   
   double adicaoOD = 0;
   double adicaoOE = 0;
@@ -53,46 +52,77 @@ class _FuncaoAdicaoState extends State<FuncaoAdicao> {
   double esfODperto = double.tryParse(_controllerEsfODPerto.text);
   double esfOEperto = double.tryParse(_controllerEsfOEPerto.text);
   
-  if (esfODlonge == null|| esfOElonge == null ||esfODperto == null || esfOEperto == null ) {
-   setState(() {
-     _erro = "Use somente o ponto (.) para fazer o calculo. Caso o esferico for plano use o 0.00 .";
-   });
- } 
+ 
+ if (esfODlonge == null) {
+  setState(() {
+    esfODlonge = 0.0;
+  });
+}
  else {
- setState(() {
+   esfODlonge= esfODlonge;
+ }
+  
+  if (esfOElonge == null) {
+  setState(() {
+    esfOElonge = 0.0;
+  });
+}
+ else {
+   esfOElonge= esfOElonge;
+ }
+ 
+ if (esfODlonge == esfODlonge || esfOElonge == esfOElonge) {
+   setState(() {
+  
   adicaoOD= esfODlonge - esfODperto;
   adicaoOE= esfOElonge - esfOEperto;
+  
   valorOD= esfODlonge;
+  cilOD= cilODLonge;
+  eixoOD = eixoODLonge ;
+  
   valorOE= esfOElonge; 
-  }
- );
- }
- if (adicaoOD == adicaoOE  || adicaoOE == adicaoOD || 
- cilOD  == cilODLonge  || 
- eixoOD == eixoODLonge || 
- cilOE == cilOELonge   || 
- eixoOE == eixoOELonge 
- ) {
+  cilOE= cilOELonge;
+  eixoOE =  eixoOELonge ;
+});
+ } 
+ 
+ if (adicaoOD == adicaoOE  || adicaoOE == adicaoOD) {
    setState(() {
     adicaoFinal = adicaoOD; 
-    
-    cilOD= cilODLonge;
-    eixoOD= eixoODLonge;
-   
-    cilOE= cilOELonge;
-    eixoOE= eixoOELonge ;
-    
    });
  }
- if (cilOD == null || eixoOD == null || cilOE == null || eixoOE == null) {
+ if (cilOD == null ) {
    setState(() {
-    cilOD  = 0.0;
-    eixoOD = 0.0;
-    cilOE  = 0.0;
+    cilOD  = 0.0; 
+   });
+ } else {
+   cilOD= cilODLonge;
+ }
+
+ if ( eixoOD == null) {
+   setState(() {
+    eixoOD = 0.0; 
+   });
+ } else {
+  eixoOD= eixoODLonge; 
+ }
+ if (cilOE == null) {
+  setState(() {
+  cilOE  = 0.0;
+  }); 
+ } else {
+   cilOE= cilOELonge;
+ }
+
+ if ( eixoOE == null) {
+   setState(() {
     eixoOE = 0.0;
    });
+ } else {
+   eixoOE= eixoOELonge ; 
+ } 
 
- }
 
 } 
 @override
@@ -390,10 +420,11 @@ class _FuncaoAdicaoState extends State<FuncaoAdicao> {
           ),
           ),
           Row(
+          mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
              Row(
              children: <Widget>[
-                Padding(padding: EdgeInsets.only( top: 10.0, left: 30.0,bottom: 10.0),
+                Padding(padding: EdgeInsets.only( top: 10.0, left: 30.0),
           child: Text("OD $valorOD",
           style: TextStyle(
             fontFamily:  'Montserrat',
@@ -406,8 +437,8 @@ class _FuncaoAdicaoState extends State<FuncaoAdicao> {
            ),
             Row(
              children: <Widget>[
-                Padding(padding: EdgeInsets.only( top: 10.0, left: 20.0,bottom: 10.0),
-          child: Text("CIL - $cilOD",
+                Padding(padding: EdgeInsets.only( top: 10.0, left: 30.0),
+          child: Text("CIL $cilOD",
           style: TextStyle(
             fontFamily:  'Montserrat',
             fontSize: 20.0,
@@ -419,7 +450,7 @@ class _FuncaoAdicaoState extends State<FuncaoAdicao> {
            ),
             Row(
              children: <Widget>[
-                Padding(padding: EdgeInsets.only( top: 10.0, left: 20.0,bottom: 10.0),
+                Padding(padding: EdgeInsets.only( top: 10.0, left: 30.0),
           child: Text("EIXO $eixoOD",
           style: TextStyle(
             fontFamily:  'Montserrat',
@@ -430,13 +461,14 @@ class _FuncaoAdicaoState extends State<FuncaoAdicao> {
           ),
              ],
            )
-          ],
+          ]
           ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
              Row(
              children: <Widget>[
-                Padding(padding: EdgeInsets.only( top: 10.0, left: 30.0,bottom: 10.0),
+                Padding(padding: EdgeInsets.only( top: 10.0, left: 30.0),
           child: Text("OE $valorOE",
           style: TextStyle(
             fontFamily:  'Montserrat',
@@ -449,8 +481,8 @@ class _FuncaoAdicaoState extends State<FuncaoAdicao> {
            ),
             Row(
              children: <Widget>[
-                Padding(padding: EdgeInsets.only( top: 10.0, left: 20.0,bottom: 10.0),
-          child: Text("CIL - $cilOE ",
+                Padding(padding: EdgeInsets.only( top: 10.0, left: 30.0),
+          child: Text("CIL $cilOE ",
           style: TextStyle(
             fontFamily:  'Montserrat',
             fontSize: 20.0,
@@ -462,7 +494,7 @@ class _FuncaoAdicaoState extends State<FuncaoAdicao> {
            ),
             Row(
              children: <Widget>[
-                Padding(padding: EdgeInsets.only( top: 10.0, left: 20.0,bottom: 10.0),
+                Padding(padding: EdgeInsets.only( top: 10.0, left: 30.0),
           child: Text("EIXO $eixoOE",
           style: TextStyle(
             fontFamily:  'Montserrat',
@@ -477,8 +509,8 @@ class _FuncaoAdicaoState extends State<FuncaoAdicao> {
           ),
           Row(
             children: <Widget>[
-             Padding(padding: EdgeInsets.only( top: 10.0, left: 30.0,bottom: 10.0),
-             child:  Text('AD $adicaoFinal',
+             Padding(padding: EdgeInsets.only( top: 10.0, left: 30.0,bottom: 50.0),
+             child:  Text('ADIÇÃO $adicaoFinal',
              style: TextStyle(
             fontFamily:  'Montserrat',
             fontSize: 20.0,
@@ -487,16 +519,7 @@ class _FuncaoAdicaoState extends State<FuncaoAdicao> {
              )
              ), 
             ],
-          ),
-           Padding(padding: EdgeInsets.only(top: 10.0, left: 70.0, right: 40.0, bottom: 30.0),
-          child: Text(_erro,
-          style: TextStyle(
-            fontFamily:  'Montserrat',
-            fontSize: 20.0,
-            color: Colors.black
-          ),
-          ),
-          ),
+          )
         ],
       ),
     );

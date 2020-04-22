@@ -19,8 +19,6 @@ class _FuncaoGraudePertoState extends State<FuncaoGraudePerto> {
   TextEditingController _controllerEIXOOE = TextEditingController();
 
   TextEditingController _controllerADD = TextEditingController();
-
-  String _erro = "";
   
   double graudePertoOD= 0;
   double cilOD= 0;
@@ -49,24 +47,25 @@ class _FuncaoGraudePertoState extends State<FuncaoGraudePerto> {
   
   double add = double.tryParse(  _controllerADD.text);
   
+  if (esfODlonge == null) {
+  setState(() {
+    esfODlonge = 0.0;
+  });
+}
+ else {
+   esfODlonge= esfODlonge;
+ }
   
-  
-
- if (esfODlonge == null|| esfOElonge == null ) {
-   setState(() {
-     _erro = "Use somente o (.) para fazer o calculo. Caso o esferico for plano use o 0.00 .";
-     
-     esfODlonge = 0.0;
-     cilODLonge =0.0;
-     eixoODLonge =0.0;
-
-      esfOElonge =0.0;
-      cilOELonge =0.0;
-      eixoOELonge =0.0;
-      add =0.0;
-   });
- } 
- if (esfODlonge == esfODlonge || esfOElonge == esfOElonge ) {
+  if (esfOElonge == null) {
+  setState(() {
+    esfOElonge = 0.0;
+  });
+}
+ else {
+   esfOElonge= esfOElonge;
+ }
+ 
+ if (esfODlonge == esfODlonge || esfOElonge == esfOElonge) {
    setState(() {
   
    graudePertoOD= esfODlonge + add;
@@ -78,6 +77,7 @@ class _FuncaoGraudePertoState extends State<FuncaoGraudePerto> {
    eixoOE =  eixoOELonge ;
    });
  } 
+ 
 
  if (cilOD == null ) {
    setState(() {
@@ -108,10 +108,8 @@ class _FuncaoGraudePertoState extends State<FuncaoGraudePerto> {
    });
  } else {
    eixoOE= eixoOELonge ; 
- }
+ } 
 
- 
- 
 } 
 
   @override
@@ -468,15 +466,6 @@ class _FuncaoGraudePertoState extends State<FuncaoGraudePerto> {
            )
           ],
           ),
-            Padding(padding: EdgeInsets.only(top: 10.0, left: 70.0, right: 40.0),
-          child: Text(_erro,
-          style: TextStyle(
-            fontFamily:  'Montserrat',
-            fontSize: 20.0,
-            color: Colors.black
-          ),
-          ),
-          )
         ],
       ),
     );
