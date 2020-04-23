@@ -53,6 +53,7 @@ class _FuncaoAdicaoState extends State<FuncaoAdicao> {
   double esfOEperto = double.tryParse(_controllerEsfOEPerto.text);
   
  
+
  if (esfODlonge == null) {
   setState(() {
     esfODlonge = 0.0;
@@ -74,8 +75,8 @@ class _FuncaoAdicaoState extends State<FuncaoAdicao> {
  if (esfODlonge == esfODlonge || esfOElonge == esfOElonge) {
    setState(() {
   
-  adicaoOD= esfODlonge - esfODperto;
-  adicaoOE= esfOElonge - esfOEperto;
+  adicaoOD=  esfODperto - esfODlonge ;
+  adicaoOE=  esfOEperto - esfOElonge ;
   
   valorOD= esfODlonge;
   cilOD= cilODLonge;
@@ -92,6 +93,10 @@ class _FuncaoAdicaoState extends State<FuncaoAdicao> {
     adicaoFinal = adicaoOD; 
    });
  }
+ else{
+   valorOD = esfODlonge;
+ }
+
  if (cilOD == null ) {
    setState(() {
     cilOD  = 0.0; 

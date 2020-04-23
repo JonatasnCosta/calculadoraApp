@@ -21,7 +21,6 @@ class _CalculadoraState extends State<Calculadora> {
   TextEditingController _controllerMenorDnp = TextEditingController();
   TextEditingController _controllerMaiorDiagonal = TextEditingController();
 
-  String _erro = "";
   double diametro = 0; 
      
      var
@@ -39,7 +38,10 @@ class _CalculadoraState extends State<Calculadora> {
 
  if (aro == null|| ponte == null || menorDnp == null || maiorDiagonal == null) {
    setState(() {
-     _erro = "Use somente o ponto (.) para fazer o calculo. ";
+     aro = 0.0;
+     ponte = 0.0;
+     menorDnp = 0.0;
+     maiorDiagonal =0.0;
    });
  } 
  else {
@@ -258,15 +260,22 @@ class _CalculadoraState extends State<Calculadora> {
               }
             ),
            ),
-          Padding(padding: EdgeInsets.only(top: 10.0, left: 70.0, right: 40.0),
-          child: Text(_erro,
-          style: TextStyle(
-            fontFamily:  'Montserrat',
-            fontSize: 20.0,
-            color: Colors.black
-          ),
-          ),
-          ), 
+            Padding( 
+            padding: EdgeInsets.only(top: 5.0, left: 70.0, right: 70.0),
+            child: RaisedButton(
+              color: Color(0xff399d63),
+              textColor: Colors.black,
+              padding: EdgeInsets.all(15.0),
+              child: Text('Novo Calculo'),
+              shape: RoundedRectangleBorder(
+              borderRadius: new BorderRadius.circular(18.0),
+              side: BorderSide(color: Color(0xff399d63))
+              ),
+              onPressed: (){
+                Navigator.of(context).push(MaterialPageRoute(builder:(context) => Calculadora()));
+              }
+            ),
+           ), 
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
@@ -279,16 +288,7 @@ class _CalculadoraState extends State<Calculadora> {
           ),
           ),
           ),
-          Padding(padding: EdgeInsets.only(top: 30.0, left: 10.0, bottom: 50.0),
-          child: IconButton(
-            icon:  Icon(Icons.library_add
-            ),
-            onPressed: () {
-            Navigator.of(context).push(MaterialPageRoute(builder:(context) => Calculadora()));
-                },
-              ),
-             ),
-          Padding(padding: EdgeInsets.only(top: 30.0, left: 10.0, bottom: 50.0),
+          Padding(padding: EdgeInsets.only(top: 30.0, left: 30.0, bottom: 50.0),
           child: IconButton(
             icon: Icon(Icons.search
             ), 
@@ -302,6 +302,7 @@ class _CalculadoraState extends State<Calculadora> {
             builder: (context) => PDFDiametro(path: fullPath,)));
             },
             ),
+            
           ),
           Padding(padding: EdgeInsets.only(top: 30.0, left: 10.0, bottom: 50.0),
           child: IconButton(
@@ -313,7 +314,7 @@ class _CalculadoraState extends State<Calculadora> {
               ),
              )
             ],
-          )
+          ),
         ],
       ),
     );

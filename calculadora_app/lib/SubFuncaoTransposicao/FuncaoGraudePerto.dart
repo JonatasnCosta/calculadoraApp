@@ -327,7 +327,7 @@ class _FuncaoGraudePertoState extends State<FuncaoGraudePerto> {
             ),
           ),
            Padding( 
-            padding: EdgeInsets.only(top: 5.0, left: 70.0, right: 70.0, bottom: 10.0),
+            padding: EdgeInsets.only(top: 30.0, left: 70.0, right: 70.0, bottom: 5.0),
             child: RaisedButton(
               color: Color(0xff399d63),
               textColor: Colors.black,
