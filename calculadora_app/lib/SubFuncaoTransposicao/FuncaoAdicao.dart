@@ -78,24 +78,35 @@ class _FuncaoAdicaoState extends State<FuncaoAdicao> {
   adicaoOD=  esfODperto - esfODlonge ;
   adicaoOE=  esfOEperto - esfOElonge ;
   
-  valorOD= esfODlonge;
+  
   cilOD= cilODLonge;
   eixoOD = eixoODLonge ;
-  
-  valorOE= esfOElonge; 
   cilOE= cilOELonge;
   eixoOE =  eixoOELonge ;
 });
  } 
- 
- if (adicaoOD == adicaoOE  || adicaoOE == adicaoOD) {
+if (adicaoOD == adicaoOE  || adicaoOE == adicaoOD) {
    setState(() {
     adicaoFinal = adicaoOD; 
    });
  }
- else{
+ 
+ if (valorOD == null) {
+   setState(() {
+     valorOD =0.0;
+   });
+ } else {
    valorOD = esfODlonge;
  }
+
+ if (valorOE == null) {
+   setState(() {
+     valorOE =0.0;
+   });
+ } else {
+   valorOE = esfOElonge;
+ }
+
 
  if (cilOD == null ) {
    setState(() {
@@ -384,7 +395,7 @@ class _FuncaoAdicaoState extends State<FuncaoAdicao> {
             ),
           ),
           Padding( 
-            padding: EdgeInsets.only(top: 5.0, left: 70.0, right: 70.0, bottom: 10.0),
+            padding: EdgeInsets.only(top: 5.0, left: 70.0, right: 70.0, bottom: 5.0),
             child: RaisedButton(
               color: Color(0xff399d63),
               textColor: Colors.black,
