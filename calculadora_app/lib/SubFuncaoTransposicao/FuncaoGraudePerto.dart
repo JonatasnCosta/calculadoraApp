@@ -1,6 +1,7 @@
 import 'package:calculadoraapp/Funcoes/Transposicao.dart';
 import 'package:calculadoraapp/Home.dart';
 import 'package:flutter/material.dart';
+import "package:calculadoraapp/ResultadoTransposicao/ResultadoGraudePerto.dart";
 
 
 
@@ -98,6 +99,19 @@ class _FuncaoGraudePertoState extends State<FuncaoGraudePerto> {
  }else{
    eixoOE= eixoOELonge; 
  } 
+Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => ResultadoGraudePerto( 
+          graudePertoOD: graudePertoOD = graudePertoOD,
+          graudePertoOE: graudePertoOE = graudePertoOE,
+          cilOD: cilOD = cilOD,
+          eixoOD: eixoOD = eixoOD,
+          cilOE:  cilOE=  cilOE,
+          eixoOE: eixoOE= eixoOE,
+
+         ),   
+        ));
 } 
 @override
  Widget build(BuildContext context) {
@@ -327,7 +341,7 @@ class _FuncaoGraudePertoState extends State<FuncaoGraudePerto> {
             ),
           ),
            Padding( 
-            padding: EdgeInsets.only(top: 30.0, left: 70.0, right: 70.0, bottom: 5.0),
+            padding: EdgeInsets.only(top: 30.0, left: 70.0, right: 70.0, bottom: 30.0),
             child: RaisedButton(
               color: Color(0xff399d63),
               textColor: Colors.black,
@@ -341,111 +355,7 @@ class _FuncaoGraudePertoState extends State<FuncaoGraudePerto> {
               _resultadoGraudePerto(context);
               }
             ),
-           ),
-           Padding( 
-            padding: EdgeInsets.only(top: 5.0, left: 70.0, right: 70.0, bottom: 20.0),
-            child: RaisedButton(
-              color: Color(0xff399d63),
-              textColor: Colors.black,
-              padding: EdgeInsets.all(15.0),
-              child: Text('Novo Calculo'),
-              shape: RoundedRectangleBorder(
-              borderRadius: new BorderRadius.circular(18.0),
-              side: BorderSide(color: Color(0xff399d63))
-              ),
-              onPressed: (){
-               Navigator.of(context).push(MaterialPageRoute(builder:(context) => FuncaoGraudePerto()));
-              }
-            ),
-           ),
-           Padding(padding: EdgeInsets.only(top: 5.0, left: 20.0, right: 40.0),
-          child: Text('Grau para perto:',
-          style: TextStyle(
-            fontFamily:  'Montserrat',
-            fontSize: 20.0,
-            color: Colors.black),),),
-          Row(
-            children: <Widget>[
-             Row(
-             children: <Widget>[
-                Padding(padding: EdgeInsets.only( top: 10.0, left: 20.0),
-          child: Text("OD + $graudePertoOD",
-          style: TextStyle(
-            fontFamily:  'Montserrat',
-            fontSize: 20.0,
-            color: Colors.black
-          ),
-          ),
-          ),
-             ],
-           ),
-            Row(
-             children: <Widget>[
-                Padding(padding: EdgeInsets.only( top: 10.0, left: 20.0),
-          child: Text("CIL  $cilOD",
-          style: TextStyle(
-            fontFamily:  'Montserrat',
-            fontSize: 20.0,
-            color: Colors.black
-          ),
-          ),
-          ),
-             ],
-           ),
-            Row(
-             children: <Widget>[
-                Padding(padding: EdgeInsets.only( top: 10.0, left: 20.0),
-          child: Text("EIXO $eixoOD",
-          style: TextStyle(
-            fontFamily:  'Montserrat',
-            fontSize: 20.0,
-            color: Colors.black),),),],
            )
-          ],
-          ),
-          Row(
-          children: <Widget>[
-             Row(
-             children: <Widget>[
-                Padding(padding: EdgeInsets.only( top: 10.0, left: 20.0,bottom: 30.0),
-          child: Text("OE + $graudePertoOE",
-          style: TextStyle(
-            fontFamily:  'Montserrat',
-            fontSize: 20.0,
-            color: Colors.black
-          ),
-          ),
-          ),
-             ],
-           ),
-            Row(
-             children: <Widget>[
-                Padding(padding: EdgeInsets.only( top: 10.0, left: 20.0,bottom: 30.0),
-          child: Text("CIL  $cilOE ",
-          style: TextStyle(
-            fontFamily:  'Montserrat',
-            fontSize: 20.0,
-            color: Colors.black
-          ),
-          ),
-          ),
-             ],
-           ),
-            Row(
-             children: <Widget>[
-                Padding(padding: EdgeInsets.only( top: 10.0, left: 20.0,bottom: 30.0),
-          child: Text("EIXO $eixoOE",
-          style: TextStyle(
-            fontFamily:  'Montserrat',
-            fontSize: 20.0,
-            color: Colors.black
-          ),
-          ),
-          ),
-             ],
-           )
-          ],
-          ),
         ],
       ),
     );
