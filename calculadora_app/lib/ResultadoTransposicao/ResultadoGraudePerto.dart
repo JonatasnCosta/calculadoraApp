@@ -8,12 +8,6 @@ import 'package:printing/printing.dart';
 import 'dart:io';
 import 'package:calculadoraapp/PdfViews/PDFDiametro.dart';
 
-
-
-
-
-
-
 class ResultadoGraudePerto extends StatefulWidget {
 
  final double graudePertoOD;
@@ -38,7 +32,7 @@ class ResultadoGraudePerto extends StatefulWidget {
 }
 
 class _ResultadoGraudePertoState extends State<ResultadoGraudePerto> {
-  TextEditingController _controllerNumeroCliente = TextEditingController(); 
+TextEditingController _controllerNumeroCliente = TextEditingController(); 
 TextEditingController _controllerNomeotica = TextEditingController();
 TextEditingController _controllerData = TextEditingController();
 TextEditingController _controllerOS = TextEditingController();
@@ -46,7 +40,6 @@ TextEditingController _controllerTipodelente = TextEditingController();
 TextEditingController _controllerTratamento = TextEditingController();
 TextEditingController _controllerDNPOD = TextEditingController();
 TextEditingController _controllerDNPOE = TextEditingController();
-TextEditingController _controllerAltura = TextEditingController();
 TextEditingController _controllerDiametro = TextEditingController();
 TextEditingController _controllerTipodearo = TextEditingController();
 TextEditingController _controllerObservacoes = TextEditingController();
@@ -232,21 +225,6 @@ TextEditingController _controllerObservacoes = TextEditingController();
              )
             ),
              pw.Paragraph(text: _controllerDNPOE.text,
-             style: pw.TextStyle(
-               fontSize: 30.0,
-             )
-             ),
-              ]
-            ),
-             pw.Row(
-              children: [
-                 pw.Paragraph(
-                text: "Altura: ",
-                style: pw.TextStyle(
-               fontSize: 30.0,
-             )
-            ),
-             pw.Paragraph(text: _controllerAltura.text,
              style: pw.TextStyle(
                fontSize: 30.0,
              )
@@ -671,32 +649,6 @@ TextEditingController _controllerObservacoes = TextEditingController();
                    keyboardType: TextInputType.number,
                   decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'Altura',
-                    hintStyle: TextStyle(
-                      fontFamily: 'Montserrat',
-                      fontSize: 15.0,
-                      color: Colors.black
-                    ),
-                  ),
-                  controller: _controllerAltura,
-                ),
-              ),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(top: 10.0, left: 30.0, right: 30.0),
-            child: Container(
-              padding: EdgeInsets.only(left: 45.0),
-              height: 50.0,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(25.0),
-                color: Color(0xff399d63)
-              ),
-              child: Center(
-                child: TextField(
-                   keyboardType: TextInputType.number,
-                  decoration: InputDecoration(
-                    border: InputBorder.none,
                     hintText: 'Diâmetro',
                     hintStyle: TextStyle(
                       fontFamily: 'Montserrat',
@@ -818,7 +770,5 @@ TextEditingController _controllerObservacoes = TextEditingController();
        ],
      ),
     );
-  }
-  
-  
+  } 
 }
