@@ -2,7 +2,7 @@ import 'package:calculadoraapp/Home.dart';
 import 'package:calculadoraapp/SubFuncaoOrdemdeservico/OrdemGerada.dart';
 import 'package:flutter/material.dart';
 
-//import 'package:calculadoraapp/PdfPreviewScreen.dart';
+
 
 
 
@@ -48,9 +48,9 @@ TextEditingController _controllerObservacoes = TextEditingController();
               children: <Widget>[
                 //Icones
                 IconButton(
-                  icon: Icon(Icons.library_add), 
+                  icon: Icon(Icons.arrow_back), 
                   onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(builder:(context) => OrdemServico()));
+                    Navigator.of(context).push(MaterialPageRoute(builder:(context) => Home()));
                   }
                 ),
                   FloatingActionButton(
