@@ -281,7 +281,7 @@ TextEditingController _controllerObservacoes = TextEditingController();
   Future savePdf() async{
     Directory documentDirectory = await getApplicationDocumentsDirectory();
     String documentPath = documentDirectory.path;
-    File file = File("$documentPath/Diâmetro de lentes.pdf");
+    File file = File("$documentPath/Pedido O.S:$_controllerOS.pdf");
     file.writeAsBytesSync(pdf.save());
   }
  
@@ -729,7 +729,7 @@ TextEditingController _controllerObservacoes = TextEditingController();
               await savePdf();
                Directory documentDirectory = await getApplicationDocumentsDirectory();
                String documentPath = documentDirectory.path;
-               String fullPath = "$documentPath/Diâmetro de lentes.pdf";
+               String fullPath = "$documentPath/Pedido O.S:$_controllerOS.pdf";
                Navigator.push(context, MaterialPageRoute(
             builder: (context) => PDFDiametro(path: fullPath,)));
               },
@@ -747,7 +747,7 @@ TextEditingController _controllerObservacoes = TextEditingController();
               side: BorderSide(color: Color(0xff399d63))
               ),
               onPressed: () async{
-                 await Printing.sharePdf(bytes: pdf.save(), filename: 'Diâmetro de lentes.pdf');
+                 await Printing.sharePdf(bytes: pdf.save(), filename:'Pedido O.S:$_controllerOS.pdf');
               },
             ),
           ),
