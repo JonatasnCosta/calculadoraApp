@@ -27,6 +27,10 @@ class _FuncaoCilindricopositivoState extends State<FuncaoCilindricopositivo> {
   double valorOD=0;
   double valorOE=0;
 
+   _resultadoGrauCilindrico(BuildContext context){
+    
+   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -240,7 +244,7 @@ class _FuncaoCilindricopositivoState extends State<FuncaoCilindricopositivo> {
               side: BorderSide(color: Color(0xff399d63))
               ),
               onPressed: (){
-              //  _resultadoGraudePerto(context);
+                _resultadoGrauCilindrico(context);
               }
             ),
            ),

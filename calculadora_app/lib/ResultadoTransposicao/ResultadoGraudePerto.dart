@@ -43,6 +43,7 @@ TextEditingController _controllerDNPOE = TextEditingController();
 TextEditingController _controllerDiametro = TextEditingController();
 TextEditingController _controllerTipodearo = TextEditingController();
 TextEditingController _controllerObservacoes = TextEditingController();
+
  final pdf = pw.Document();
   
   writeOnPdf(){
@@ -280,7 +281,7 @@ TextEditingController _controllerObservacoes = TextEditingController();
   Future savePdf() async{
     Directory documentDirectory = await getApplicationDocumentsDirectory();
     String documentPath = documentDirectory.path;
-    File file = File("$documentPath/Pedido O.S.pdf");
+    File file = File("$documentPath/Ordem de serviço.pdf");
     file.writeAsBytesSync(pdf.save());
   }
  
@@ -728,7 +729,7 @@ TextEditingController _controllerObservacoes = TextEditingController();
               await savePdf();
                Directory documentDirectory = await getApplicationDocumentsDirectory();
                String documentPath = documentDirectory.path;
-               String fullPath = "$documentPath/Pedido O.S.pdf";
+               String fullPath = "$documentPath/Ordem de serviço.pdf";
                Navigator.push(context, MaterialPageRoute(
             builder: (context) => PDFDiametro(path: fullPath,)));
               },
@@ -746,7 +747,7 @@ TextEditingController _controllerObservacoes = TextEditingController();
               side: BorderSide(color: Color(0xff399d63))
               ),
               onPressed: () async{
-                 await Printing.sharePdf(bytes: pdf.save(), filename:'Pedido O.S.pdf');
+                 await Printing.sharePdf(bytes: pdf.save(), filename:'Ordem de serviço.pdf');
               },
             ),
           ),

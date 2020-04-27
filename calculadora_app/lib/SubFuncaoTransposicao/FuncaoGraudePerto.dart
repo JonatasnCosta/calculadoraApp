@@ -328,7 +328,7 @@ Navigator.push(
                    keyboardType: TextInputType.text,
                    decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'ADD',
+                    hintText: 'Adição',
                     hintStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
@@ -341,7 +341,7 @@ Navigator.push(
             ),
           ),
            Padding( 
-            padding: EdgeInsets.only(top: 30.0, left: 70.0, right: 70.0, bottom: 30.0),
+            padding: EdgeInsets.only(top: 30.0, left: 70.0, right: 70.0, bottom: 5.0),
             child: RaisedButton(
               color: Color(0xff399d63),
               textColor: Colors.black,
@@ -353,6 +353,22 @@ Navigator.push(
               ),
               onPressed: (){
               _resultadoGraudePerto(context);
+              }
+            ),
+           ),
+           Padding( 
+            padding: EdgeInsets.only(top: 5.0, left: 70.0, right: 70.0, bottom: 20.0),
+            child: RaisedButton(
+              color: Color(0xff399d63),
+              textColor: Colors.black,
+              padding: EdgeInsets.all(15.0),
+              child: Text('Novo Calculo'),
+              shape: RoundedRectangleBorder(
+              borderRadius: new BorderRadius.circular(18.0),
+              side: BorderSide(color: Color(0xff399d63))
+              ),
+              onPressed: (){
+               Navigator.of(context).push(MaterialPageRoute(builder:(context) => FuncaoGraudePerto()));
               }
             ),
            )
