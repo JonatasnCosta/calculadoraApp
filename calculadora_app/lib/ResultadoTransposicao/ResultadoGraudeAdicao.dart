@@ -1,5 +1,5 @@
 import 'package:calculadoraapp/Home.dart';
-import 'package:calculadoraapp/SubFuncaoTransposicao/FuncaoGraudePerto.dart';
+import 'package:calculadoraapp/SubFuncaoTransposicao/FuncaoAdicao.dart';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:pdf/pdf.dart';
@@ -16,6 +16,7 @@ class ResultadoGraudeAdicao extends StatefulWidget {
  final double eixoOE;
  final double valorOD;
  final double valorOE;
+ 
 
   ResultadoGraudeAdicao({Key key, @required 
   this.cilOD,
@@ -154,7 +155,7 @@ TextEditingController _controllerObservacoes = TextEditingController();
              pw.Row(
               children: [
                 pw.Paragraph(
-                text: "OD: + ",
+                text: "OD:  ${widget.valorOD}",
                 style: pw.TextStyle(
                fontSize: 30.0,
              )
@@ -179,7 +180,7 @@ TextEditingController _controllerObservacoes = TextEditingController();
              pw.Row(
               children: [
                  pw.Paragraph(
-                text: "OE: + ",
+                text: "OE: ${widget.valorOE} ",
                 style: pw.TextStyle(
                fontSize: 30.0,
              )
@@ -195,6 +196,21 @@ TextEditingController _controllerObservacoes = TextEditingController();
              )
              ),
               pw.Paragraph(text:'  Eixo  ${widget.eixoOE}',
+             style: pw.TextStyle(
+               fontSize: 30.0,
+             )
+             ),
+              ]
+            ),
+            pw.Row(
+              children: [
+                pw.Paragraph(
+                text: "Adição:",
+                style: pw.TextStyle(
+               fontSize: 30.0,
+             )
+            ),
+             pw.Paragraph(text: "  ${widget.adicaoFinal}",
              style: pw.TextStyle(
                fontSize: 30.0,
              )
@@ -301,7 +317,7 @@ TextEditingController _controllerObservacoes = TextEditingController();
                 IconButton(
                   icon: Icon(Icons.arrow_back), 
                   onPressed: () {
-                    Navigator.of(context).pop(MaterialPageRoute(builder:(context) => FuncaoGraudePerto()));
+                    Navigator.of(context).pop(MaterialPageRoute(builder:(context) => FuncaoAdicao()));
                   }
                 ),
                 FloatingActionButton(
@@ -344,7 +360,7 @@ TextEditingController _controllerObservacoes = TextEditingController();
              Row(
              children: <Widget>[
                 Padding(padding: EdgeInsets.only( top: 10.0, left: 30.0),
-          child: Text("OD ",
+          child: Text("OD ${widget.valorOD}",
           style: TextStyle(
             fontFamily:  'Montserrat',
             fontSize: 20.0,
@@ -357,7 +373,7 @@ TextEditingController _controllerObservacoes = TextEditingController();
             Row(
              children: <Widget>[
                 Padding(padding: EdgeInsets.only( top: 10.0, left: 30.0),
-          child: Text("CIL ",
+          child: Text("CIL ${widget.cilOD} ",
           style: TextStyle(
             fontFamily:  'Montserrat',
             fontSize: 20.0,
@@ -370,7 +386,7 @@ TextEditingController _controllerObservacoes = TextEditingController();
             Row(
              children: <Widget>[
                 Padding(padding: EdgeInsets.only( top: 10.0, left: 30.0),
-          child: Text("EIXO ",
+          child: Text("EIXO ${widget.eixoOD}",
           style: TextStyle(
             fontFamily:  'Montserrat',
             fontSize: 20.0,
@@ -388,7 +404,7 @@ TextEditingController _controllerObservacoes = TextEditingController();
              Row(
              children: <Widget>[
                 Padding(padding: EdgeInsets.only( top: 10.0, left: 30.0),
-          child: Text("OE ",
+          child: Text("OE ${widget.valorOE}",
           style: TextStyle(
             fontFamily:  'Montserrat',
             fontSize: 20.0,
@@ -401,7 +417,7 @@ TextEditingController _controllerObservacoes = TextEditingController();
             Row(
              children: <Widget>[
                 Padding(padding: EdgeInsets.only( top: 10.0, left: 30.0),
-          child: Text("CIL ",
+          child: Text("CIL ${widget.cilOE}",
           style: TextStyle(
             fontFamily:  'Montserrat',
             fontSize: 20.0,
@@ -414,7 +430,7 @@ TextEditingController _controllerObservacoes = TextEditingController();
             Row(
              children: <Widget>[
                 Padding(padding: EdgeInsets.only( top: 10.0, left: 30.0),
-          child: Text("EIXO ",
+          child: Text("EIXO ${widget.eixoOE}",
           style: TextStyle(
             fontFamily:  'Montserrat',
             fontSize: 20.0,
@@ -428,8 +444,8 @@ TextEditingController _controllerObservacoes = TextEditingController();
           ),
           Row(
             children: <Widget>[
-             Padding(padding: EdgeInsets.only( top: 10.0, left: 30.0,bottom: 50.0),
-             child:  Text('ADIÇÃO ',
+             Padding(padding: EdgeInsets.only( top: 10.0, left: 30.0,bottom: 10.0),
+             child:  Text('ADIÇÃO ${widget.adicaoFinal}',
              style: TextStyle(
             fontFamily:  'Montserrat',
             fontSize: 20.0,
@@ -784,7 +800,7 @@ TextEditingController _controllerObservacoes = TextEditingController();
               side: BorderSide(color: Color(0xff399d63))
               ),
               onPressed: (){
-               Navigator.of(context).push(MaterialPageRoute(builder:(context) => FuncaoGraudePerto()));
+               Navigator.of(context).push(MaterialPageRoute(builder:(context) => FuncaoAdicao()));
               }
             ),
            )

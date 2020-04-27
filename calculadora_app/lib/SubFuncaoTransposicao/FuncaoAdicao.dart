@@ -33,6 +33,7 @@ class _FuncaoAdicaoState extends State<FuncaoAdicao> {
   double eixoOE= 0;
   double valorOD=0;
   double valorOE=0;
+  double teste1 =0;
   
   var
   esfODlonge,
@@ -74,12 +75,11 @@ class _FuncaoAdicaoState extends State<FuncaoAdicao> {
    esfOElonge= esfOElonge;
  }
  
- if (esfODlonge == esfODlonge || esfOElonge == esfOElonge) {
+ if (esfODlonge == esfODlonge && esfOElonge == esfOElonge) {
    setState(() {
   
   adicaoOD=  esfODperto - esfODlonge ;
   adicaoOE=  esfOEperto - esfOElonge ;
-  
   
   cilOD= cilODLonge;
   eixoOD = eixoODLonge ;
@@ -87,7 +87,7 @@ class _FuncaoAdicaoState extends State<FuncaoAdicao> {
   eixoOE =  eixoOELonge ;
 });
  } 
-if (adicaoOD == adicaoOE  || adicaoOE == adicaoOD) {
+if (adicaoOD == adicaoOE  && adicaoOE == adicaoOD) {
    setState(() {
     adicaoFinal = adicaoOD; 
    });
@@ -139,8 +139,7 @@ if (adicaoOD == adicaoOE  || adicaoOE == adicaoOD) {
  } else {
    eixoOE= eixoOELonge ; 
  } 
-
-        Navigator.push(
+     Navigator.push(
         context,
         MaterialPageRoute(
           builder: (context) => ResultadoGraudeAdicao( 
@@ -153,9 +152,6 @@ if (adicaoOD == adicaoOE  || adicaoOE == adicaoOD) {
           eixoOE: eixoOE= eixoOE,
           ),   
         ));
- 
-
-
 } 
 @override
   Widget build(BuildContext context) {
