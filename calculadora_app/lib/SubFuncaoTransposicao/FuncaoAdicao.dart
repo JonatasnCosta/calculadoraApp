@@ -1,6 +1,8 @@
 import 'package:calculadoraapp/Funcoes/Transposicao.dart';
 import 'package:calculadoraapp/Home.dart';
+import 'package:calculadoraapp/ResultadoTransposicao/ResultadoGraudeAdicao.dart';
 import 'package:flutter/material.dart';
+
 
 
 class FuncaoAdicao extends StatefulWidget {
@@ -138,7 +140,6 @@ if (adicaoOD == adicaoOE  || adicaoOE == adicaoOD) {
  } else {
    eixoOE= eixoOELonge ; 
  } 
-
 
 } 
 @override

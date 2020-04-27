@@ -60,7 +60,8 @@ class _FuncaoGraudePertoState extends State<FuncaoGraudePerto> {
    esfOElonge= esfOElonge;
  }
  
- if(esfODlonge == esfODlonge || esfOElonge == esfOElonge){
+ if(esfODlonge == esfODlonge && esfOElonge == esfOElonge){
+   
    setState((){
    graudePertoOD= esfODlonge + add;
    cilOD= cilODLonge;

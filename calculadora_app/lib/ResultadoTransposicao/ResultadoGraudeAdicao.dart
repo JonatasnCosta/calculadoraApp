@@ -8,8 +8,8 @@ import 'package:printing/printing.dart';
 import 'dart:io';
 import 'package:calculadoraapp/PdfViews/PDFDiametro.dart';
 
-class ResultadoGraudePerto extends StatefulWidget {
-
+class ResultadoGraudeAdicao extends StatefulWidget {
+ final double adicaoFinal;
  final double graudePertoOD;
  final double graudePertoOE;
  final double cilOD;
@@ -17,21 +17,22 @@ class ResultadoGraudePerto extends StatefulWidget {
  final double cilOE;
  final double eixoOE;
 
-  ResultadoGraudePerto( {Key key, @required 
+  ResultadoGraudeAdicao( {Key key, @required 
   this.graudePertoOD,
   this.graudePertoOE,
   this.cilOD,
   this.eixoOD,
   this.cilOE,
   this.eixoOE,
+  this.adicaoFinal,
   
   }) : super(key: key);
 
   @override
-  _ResultadoGraudePertoState createState() => _ResultadoGraudePertoState();
+  _ResultadoGraudeAdicaoState createState() => _ResultadoGraudeAdicaoState();
 }
 
-class _ResultadoGraudePertoState extends State<ResultadoGraudePerto> {
+class _ResultadoGraudeAdicaoState extends State<ResultadoGraudeAdicao> {
 TextEditingController _controllerNumeroCliente = TextEditingController(); 
 TextEditingController _controllerNomeotica = TextEditingController();
 TextEditingController _controllerData = TextEditingController();
