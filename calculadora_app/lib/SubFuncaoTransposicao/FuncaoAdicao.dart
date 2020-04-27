@@ -109,7 +109,6 @@ if (adicaoOD == adicaoOE  || adicaoOE == adicaoOD) {
    valorOE = esfOElonge;
  }
 
-
  if (cilOD == null ) {
    setState(() {
     cilOD  = 0.0; 
@@ -140,6 +139,22 @@ if (adicaoOD == adicaoOE  || adicaoOE == adicaoOD) {
  } else {
    eixoOE= eixoOELonge ; 
  } 
+
+        Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => ResultadoGraudeAdicao( 
+          adicaoFinal: adicaoFinal = adicaoFinal,
+          valorOD: valorOD = valorOD,
+          valorOE: valorOE = valorOE,
+          cilOD: cilOD = cilOD,
+          eixoOD: eixoOD = eixoOD,
+          cilOE:  cilOE=  cilOE,
+          eixoOE: eixoOE= eixoOE,
+          ),   
+        ));
+ 
+
 
 } 
 @override
@@ -426,118 +441,8 @@ if (adicaoOD == adicaoOE  || adicaoOE == adicaoOD) {
                Navigator.of(context).push(MaterialPageRoute(builder:(context) => FuncaoAdicao()));
               }
             ),
-           ),
-            Padding(padding: EdgeInsets.only(top: 10.0, left: 30.0, right: 40.0),
-          child: Text('Grau para multifocal:',
-          style: TextStyle(
-            fontFamily:  'Montserrat',
-            fontSize: 20.0,
-            color: Colors.black
-          ),
-          ),
-          ),
-          Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-             Row(
-             children: <Widget>[
-                Padding(padding: EdgeInsets.only( top: 10.0, left: 30.0),
-          child: Text("OD $valorOD",
-          style: TextStyle(
-            fontFamily:  'Montserrat',
-            fontSize: 20.0,
-            color: Colors.black
-          ),
-          ),
-          ),
-             ],
-           ),
-            Row(
-             children: <Widget>[
-                Padding(padding: EdgeInsets.only( top: 10.0, left: 30.0),
-          child: Text("CIL $cilOD",
-          style: TextStyle(
-            fontFamily:  'Montserrat',
-            fontSize: 20.0,
-            color: Colors.black
-          ),
-          ),
-          ),
-             ],
-           ),
-            Row(
-             children: <Widget>[
-                Padding(padding: EdgeInsets.only( top: 10.0, left: 30.0),
-          child: Text("EIXO $eixoOD",
-          style: TextStyle(
-            fontFamily:  'Montserrat',
-            fontSize: 20.0,
-            color: Colors.black
-          ),
-          ),
-          ),
-             ],
            )
-          ]
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-             Row(
-             children: <Widget>[
-                Padding(padding: EdgeInsets.only( top: 10.0, left: 30.0),
-          child: Text("OE $valorOE",
-          style: TextStyle(
-            fontFamily:  'Montserrat',
-            fontSize: 20.0,
-            color: Colors.black
-          ),
-          ),
-          ),
-             ],
-           ),
-            Row(
-             children: <Widget>[
-                Padding(padding: EdgeInsets.only( top: 10.0, left: 30.0),
-          child: Text("CIL $cilOE ",
-          style: TextStyle(
-            fontFamily:  'Montserrat',
-            fontSize: 20.0,
-            color: Colors.black
-          ),
-          ),
-          ),
-             ],
-           ),
-            Row(
-             children: <Widget>[
-                Padding(padding: EdgeInsets.only( top: 10.0, left: 30.0),
-          child: Text("EIXO $eixoOE",
-          style: TextStyle(
-            fontFamily:  'Montserrat',
-            fontSize: 20.0,
-            color: Colors.black
-          ),
-          ),
-          ),
-             ],
-           )
-          ],
-          ),
-          Row(
-            children: <Widget>[
-             Padding(padding: EdgeInsets.only( top: 10.0, left: 30.0,bottom: 50.0),
-             child:  Text('ADIÇÃO $adicaoFinal',
-             style: TextStyle(
-            fontFamily:  'Montserrat',
-            fontSize: 20.0,
-            color: Colors.black
-             ),
-             )
-             ), 
-            ],
-          )
-        ],
+         ],
       ),
     );
   }

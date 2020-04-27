@@ -10,20 +10,20 @@ import 'package:calculadoraapp/PdfViews/PDFDiametro.dart';
 
 class ResultadoGraudeAdicao extends StatefulWidget {
  final double adicaoFinal;
- final double graudePertoOD;
- final double graudePertoOE;
  final double cilOD;
  final double eixoOD;
  final double cilOE;
  final double eixoOE;
+ final double valorOD;
+ final double valorOE;
 
-  ResultadoGraudeAdicao( {Key key, @required 
-  this.graudePertoOD,
-  this.graudePertoOE,
+  ResultadoGraudeAdicao({Key key, @required 
   this.cilOD,
   this.eixoOD,
   this.cilOE,
   this.eixoOE,
+  this.valorOD,
+  this.valorOE,
   this.adicaoFinal,
   
   }) : super(key: key);
@@ -159,7 +159,7 @@ TextEditingController _controllerObservacoes = TextEditingController();
                fontSize: 30.0,
              )
             ),
-             pw.Paragraph(text:'${widget.graudePertoOD} ',
+             pw.Paragraph(text:' ',
              style: pw.TextStyle(
                fontSize: 30.0,
              )
@@ -184,7 +184,7 @@ TextEditingController _controllerObservacoes = TextEditingController();
                fontSize: 30.0,
              )
             ),
-             pw.Paragraph(text:'${widget.graudePertoOE}',
+             pw.Paragraph(text:'',
              style: pw.TextStyle(
                fontSize: 30.0,
              )
@@ -323,25 +323,14 @@ TextEditingController _controllerObservacoes = TextEditingController();
          Padding(
           padding: EdgeInsets.all(14.0),
           child: Text(
-            'Resultado grau de perto',
+            'Resultado grau do Multifocal',
             style: TextStyle(
                 fontFamily: 'Montserrat',
                 fontSize: 40.0,
                 fontWeight: FontWeight.w500),
           ),
-        ),
-         Padding(padding: EdgeInsets.only(top: 20.0, left: 20.0, right: 40.0),
-          child: Text('Grau para perto:',
-          style: TextStyle(
-            fontFamily:  'Montserrat',
-            fontSize: 25.0,
-            color: Colors.black),),),
-          Row(
-            children: <Widget>[
-             Row(
-             children: <Widget>[
-                Padding(padding: EdgeInsets.only( top: 10.0, left: 20.0),
-          child: Text("OD + ${widget.graudePertoOD}",
+        ), Padding(padding: EdgeInsets.only(top: 10.0, left: 30.0, right: 40.0),
+          child: Text('Grau para multifocal:',
           style: TextStyle(
             fontFamily:  'Montserrat',
             fontSize: 20.0,
@@ -349,38 +338,13 @@ TextEditingController _controllerObservacoes = TextEditingController();
           ),
           ),
           ),
-             ],
-           ),
-            Row(
-             children: <Widget>[
-                Padding(padding: EdgeInsets.only( top: 10.0, left: 20.0),
-          child: Text("CIL ${widget.cilOD}",
-          style: TextStyle(
-            fontFamily:  'Montserrat',
-            fontSize: 20.0,
-            color: Colors.black
-          ),
-          ),
-          ),
-             ],
-           ),
-            Row(
-             children: <Widget>[
-                Padding(padding: EdgeInsets.only( top: 10.0, left: 20.0),
-          child: Text("EIXO ${widget.eixoOD}",
-          style: TextStyle(
-            fontFamily:  'Montserrat',
-            fontSize: 20.0,
-            color: Colors.black),),),],
-           )
-          ],
-          ),
           Row(
+          mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
              Row(
              children: <Widget>[
-                Padding(padding: EdgeInsets.only( top: 10.0, left: 20.0,bottom: 10.0),
-          child: Text("OE + ${widget.graudePertoOE}",
+                Padding(padding: EdgeInsets.only( top: 10.0, left: 30.0),
+          child: Text("OD ",
           style: TextStyle(
             fontFamily:  'Montserrat',
             fontSize: 20.0,
@@ -392,8 +356,8 @@ TextEditingController _controllerObservacoes = TextEditingController();
            ),
             Row(
              children: <Widget>[
-                Padding(padding: EdgeInsets.only( top: 10.0, left: 20.0,bottom: 10.0),
-          child: Text("CIL  ${widget.cilOE} ",
+                Padding(padding: EdgeInsets.only( top: 10.0, left: 30.0),
+          child: Text("CIL ",
           style: TextStyle(
             fontFamily:  'Montserrat',
             fontSize: 20.0,
@@ -405,8 +369,52 @@ TextEditingController _controllerObservacoes = TextEditingController();
            ),
             Row(
              children: <Widget>[
-                Padding(padding: EdgeInsets.only( top: 10.0, left: 20.0,bottom: 10.0),
-          child: Text("EIXO ${widget.eixoOE}",
+                Padding(padding: EdgeInsets.only( top: 10.0, left: 30.0),
+          child: Text("EIXO ",
+          style: TextStyle(
+            fontFamily:  'Montserrat',
+            fontSize: 20.0,
+            color: Colors.black
+          ),
+          ),
+          ),
+             ],
+           )
+          ]
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+          children: <Widget>[
+             Row(
+             children: <Widget>[
+                Padding(padding: EdgeInsets.only( top: 10.0, left: 30.0),
+          child: Text("OE ",
+          style: TextStyle(
+            fontFamily:  'Montserrat',
+            fontSize: 20.0,
+            color: Colors.black
+          ),
+          ),
+          ),
+             ],
+           ),
+            Row(
+             children: <Widget>[
+                Padding(padding: EdgeInsets.only( top: 10.0, left: 30.0),
+          child: Text("CIL ",
+          style: TextStyle(
+            fontFamily:  'Montserrat',
+            fontSize: 20.0,
+            color: Colors.black
+          ),
+          ),
+          ),
+             ],
+           ),
+            Row(
+             children: <Widget>[
+                Padding(padding: EdgeInsets.only( top: 10.0, left: 30.0),
+          child: Text("EIXO ",
           style: TextStyle(
             fontFamily:  'Montserrat',
             fontSize: 20.0,
@@ -418,7 +426,20 @@ TextEditingController _controllerObservacoes = TextEditingController();
            )
           ],
           ),
-           Padding(padding: EdgeInsets.only(top: 20.0, left: 20.0, right: 40.0),
+          Row(
+            children: <Widget>[
+             Padding(padding: EdgeInsets.only( top: 10.0, left: 30.0,bottom: 50.0),
+             child:  Text('ADIÇÃO ',
+             style: TextStyle(
+            fontFamily:  'Montserrat',
+            fontSize: 20.0,
+            color: Colors.black
+             ),
+             )
+             ), 
+            ],
+          ),
+         Padding(padding: EdgeInsets.only(top: 20.0, left: 20.0, right: 40.0),
           child: Text('Gerar ordem de serviço:',
           style: TextStyle(
             fontFamily:  'Montserrat',
