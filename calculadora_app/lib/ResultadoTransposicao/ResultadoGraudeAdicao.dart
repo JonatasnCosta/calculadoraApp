@@ -357,19 +357,32 @@ final pdf = pw.Document();
           Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-             Row(
-             children: <Widget>[
-                Padding(padding: EdgeInsets.only( top: 10.0, left: 20.0),
-          child: Text("OD ${widget.valorOD}",
-          style: TextStyle(
+            Row(
+           children: <Widget>[
+            Padding(padding: EdgeInsets.only(top: 10.0, left: 20.0),
+           child:  widget.valorOD > 0 ? 
+           Container(
+             child: 
+             Text('OD +${widget.valorOD}',
+             style: TextStyle(
             fontFamily:  'Montserrat',
             fontSize: 20.0,
             color: Colors.black
           ),
+             ),
+             ) : 
+          Container(
+            child: Text('OD ${widget.valorOD}',
+            style: TextStyle(
+            fontFamily:  'Montserrat',
+            fontSize: 20.0,
+            color: Colors.black
           ),
-          ),
-             ],
+            ),
            ),
+          ),
+           ],
+            ),
             Row(
              children: <Widget>[
                 Padding(padding: EdgeInsets.only( top: 10.0, left: 20.0),
@@ -403,15 +416,28 @@ final pdf = pw.Document();
           children: <Widget>[
              Row(
              children: <Widget>[
-                Padding(padding: EdgeInsets.only( top: 10.0, left: 20.0),
-          child: Text("OE ${widget.valorOE}",
-          style: TextStyle(
+                Padding(padding: EdgeInsets.only(top: 10.0, left: 20.0),
+           child:  widget.valorOE > 0 ? 
+           Container(
+             child: 
+             Text('OE +${widget.valorOE}',
+             style: TextStyle(
             fontFamily:  'Montserrat',
             fontSize: 20.0,
             color: Colors.black
           ),
+             ),
+             ) : 
+          Container(
+            child: Text('OE ${widget.valorOE}',
+            style: TextStyle(
+            fontFamily:  'Montserrat',
+            fontSize: 20.0,
+            color: Colors.black
           ),
-          ),
+            ),
+           ),
+          ), 
              ],
            ),
             Row(
