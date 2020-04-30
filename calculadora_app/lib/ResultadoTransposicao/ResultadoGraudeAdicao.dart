@@ -154,17 +154,22 @@ final pdf = pw.Document();
             ),
              pw.Row(
               children: [
-                pw.Paragraph(
-                text: "OD:  ${widget.valorOD}",
+              widget.valorOD > 0 ? 
+              pw.Container(child:  pw.Paragraph(
+                text: "OD: + ${widget.valorOD}",
                 style: pw.TextStyle(
                fontSize: 30.0,
              )
             ),
-             pw.Paragraph(text:' ',
-             style: pw.TextStyle(
+            ): 
+            pw.Container(
+              child: pw.Paragraph(
+                text: "OD ${widget.valorOD}",
+                 style: pw.TextStyle(
                fontSize: 30.0,
-             )
-             ),
+               )
+              ),
+            ),
              pw.Paragraph(text:'  Cil ${widget.cilOD}',
              style: pw.TextStyle(
                fontSize: 30.0,
@@ -179,30 +184,35 @@ final pdf = pw.Document();
             ),
              pw.Row(
               children: [
-                 pw.Paragraph(
-                text:"OE:  ${widget.valorOE}",
+              widget.valorOE > 0 ? 
+              pw.Container(child:  pw.Paragraph(
+                text: "OE: + ${widget.valorOE}",
                 style: pw.TextStyle(
                fontSize: 30.0,
              )
             ),
-             pw.Paragraph(text:'',
-             style: pw.TextStyle(
+            ): 
+            pw.Container(
+              child: pw.Paragraph(
+                text: "OE ${widget.valorOE}",
+                 style: pw.TextStyle(
                fontSize: 30.0,
-             )
-             ),
+               )
+              ),
+            ),
              pw.Paragraph(text:'  Cil ${widget.cilOE}',
              style: pw.TextStyle(
                fontSize: 30.0,
              )
              ),
-              pw.Paragraph(text:'  Eixo ${widget.eixoOE}',
+              pw.Paragraph(text:'  Eixo ${widget.eixoOE} ',
              style: pw.TextStyle(
                fontSize: 30.0,
              )
              ),
-              ]
+            ]
             ),
-            pw.Row(
+           pw.Row(
               children: [
                 pw.Paragraph(
                 text: "Adição:",
