@@ -7,6 +7,7 @@ import 'package:pdf/widgets.dart' as pw;
 import 'package:printing/printing.dart';
 import 'dart:io';
 import 'package:calculadoraapp/PdfViews/PDFDiametro.dart';
+import 'package:intl/intl.dart';
 
 class ResultadoGraudeAdicao extends StatefulWidget {
  final double adicaoFinal;
@@ -45,6 +46,8 @@ TextEditingController _controllerDNPOE = TextEditingController();
 TextEditingController _controllerDiametro = TextEditingController();
 TextEditingController _controllerTipodearo = TextEditingController();
 TextEditingController _controllerObservacoes = TextEditingController();
+NumberFormat nf = NumberFormat("0.00");
+NumberFormat fn = NumberFormat("0");
 final pdf = pw.Document();
   
   writeOnPdf(){
@@ -373,30 +376,47 @@ final pdf = pw.Document();
            child:  widget.valorOD > 0 ? 
            Container(
              child: 
-             Text('OD +${widget.valorOD}',
-             style: TextStyle(
-            fontFamily:  'Montserrat',
-            fontSize: 20.0,
-            color: Colors.black
-          ),
-             ),
+           Row(children: <Widget>[
+                   Text('OD: +',
+                style: TextStyle(
+                  fontFamily: 'Montserrat',
+                  fontSize: 20.0
+                ),
+               ),
+               Text(nf.format(widget.valorOD),
+                style: TextStyle(
+                  fontFamily: 'Montserrat',
+                  fontSize: 20.0
+                ),
+                ),
+                ],
+                )
              ) : 
           Container(
-            child: Text('OD ${widget.valorOD}',
-            style: TextStyle(
-            fontFamily:  'Montserrat',
-            fontSize: 20.0,
-            color: Colors.black
-          ),
-            ),
+            child: Row(
+                children: <Widget>[
+                   Text('OD: ',
+                style: TextStyle(
+                  fontFamily: 'Montserrat',
+                  fontSize: 20.0
+                ),
+               ),
+               Text(nf.format(widget.valorOD),
+                style: TextStyle(
+                  fontFamily: 'Montserrat',
+                  fontSize: 20.0
+                ),
+                ),
+                ],
+                )
            ),
           ),
            ],
             ),
             Row(
              children: <Widget>[
-                Padding(padding: EdgeInsets.only( top: 10.0, left: 20.0),
-          child: Text("CIL ${widget.cilOD} ",
+                Padding(padding: EdgeInsets.only( top: 10.0, left: 5.0),
+          child: Text("CIL: ",
           style: TextStyle(
             fontFamily:  'Montserrat',
             fontSize: 20.0,
@@ -406,10 +426,21 @@ final pdf = pw.Document();
           ),
              ],
            ),
+           Row(children: <Widget>[
+              Padding(padding: EdgeInsets.only(top: 10.0, left: 5.0),
+              child: Text(nf.format(widget.cilOD),
+                style: TextStyle(
+                  fontFamily: 'Montserrat',
+                  fontSize: 20.0
+                ),
+                ),
+            )
+           ],
+           ),
             Row(
              children: <Widget>[
-                Padding(padding: EdgeInsets.only( top: 10.0, left: 20.0),
-          child: Text("EIXO ${widget.eixoOD}",
+                Padding(padding: EdgeInsets.only( top: 10.0, left: 10.0),
+          child: Text("EIXO: ",
           style: TextStyle(
             fontFamily:  'Montserrat',
             fontSize: 20.0,
@@ -418,9 +449,23 @@ final pdf = pw.Document();
           ),
           ),
              ],
-           )
+           ),
+           Row(
+             children: <Widget>[
+                Padding(padding: EdgeInsets.only( top: 10.0, left: 5.0),
+          child: Text(fn.format(widget.eixoOD),
+          style: TextStyle(
+            fontFamily:  'Montserrat',
+            fontSize: 20.0,
+            color: Colors.black
+          ),
+          ),
+          ),
+             ],
+           ),
           ]
           ),
+           
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
@@ -430,30 +475,72 @@ final pdf = pw.Document();
            child:  widget.valorOE > 0 ? 
            Container(
              child: 
-             Text('OE +${widget.valorOE}',
-             style: TextStyle(
-            fontFamily:  'Montserrat',
-            fontSize: 20.0,
-            color: Colors.black
-          ),
-             ),
+             Row(
+                children: <Widget>[
+                   Text('OE: +',
+                style: TextStyle(
+                  fontFamily: 'Montserrat',
+                  fontSize: 20.0
+                ),
+               ),
+               Text(nf.format(widget.valorOE),
+                style: TextStyle(
+                  fontFamily: 'Montserrat',
+                  fontSize: 20.0
+                ),
+                ),
+                ],
+                )
              ) : 
           Container(
-            child: Text('OE ${widget.valorOE}',
-            style: TextStyle(
-            fontFamily:  'Montserrat',
-            fontSize: 20.0,
-            color: Colors.black
-          ),
-            ),
+            child: Row(
+                children: <Widget>[
+                   Text('OE: ',
+                style: TextStyle(
+                  fontFamily: 'Montserrat',
+                  fontSize: 20.0
+                ),
+               ),
+               Text(nf.format(widget.valorOE),
+                style: TextStyle(
+                  fontFamily: 'Montserrat',
+                  fontSize: 20.0
+                ),
+                ),
+                ],
+                )
            ),
           ), 
              ],
            ),
             Row(
              children: <Widget>[
-                Padding(padding: EdgeInsets.only( top: 10.0, left: 20.0),
-          child: Text("CIL ${widget.cilOE}",
+                Padding(padding: EdgeInsets.only( top: 10.0, left: 5.0),
+          child: Text("CIL: ",
+          style: TextStyle(
+            fontFamily:  'Montserrat',
+            fontSize: 20.0,
+            color: Colors.black
+          ),
+          ),
+          ),
+             ],
+           ),
+            Row(children: <Widget>[
+              Padding(padding: EdgeInsets.only(top: 10.0, left: 5.0),
+              child: Text(nf.format(widget.cilOE),
+                style: TextStyle(
+                  fontFamily: 'Montserrat',
+                  fontSize: 20.0
+                ),
+                ),
+            )
+           ],
+           ),
+           Row(
+             children: <Widget>[
+                Padding(padding: EdgeInsets.only( top: 10.0, left: 10.0),
+          child: Text("EIXO: ",
           style: TextStyle(
             fontFamily:  'Montserrat',
             fontSize: 20.0,
@@ -465,8 +552,8 @@ final pdf = pw.Document();
            ),
             Row(
              children: <Widget>[
-                Padding(padding: EdgeInsets.only( top: 10.0, left: 20.0),
-          child: Text("EIXO ${widget.eixoOE}",
+                Padding(padding: EdgeInsets.only( top: 10.0, left: 5.0),
+          child: Text(fn.format(widget.eixoOE),
           style: TextStyle(
             fontFamily:  'Montserrat',
             fontSize: 20.0,
@@ -481,13 +568,22 @@ final pdf = pw.Document();
           Row(
             children: <Widget>[
              Padding(padding: EdgeInsets.only( top: 10.0, left: 20.0, bottom: 10.0),
-             child:  Text('ADIÇÃO ${widget.adicaoFinal}',
-             style: TextStyle(
-            fontFamily:  'Montserrat',
-            fontSize: 20.0,
-            color: Colors.black
-             ),
-             )
+             child:  Row(
+                children: <Widget>[
+                   Text('Adição  ',
+                style: TextStyle(
+                  fontFamily: 'Montserrat',
+                  fontSize: 20.0
+                ),
+               ),
+               Text(nf.format(widget.adicaoFinal),
+                style: TextStyle(
+                  fontFamily: 'Montserrat',
+                  fontSize: 20.0
+                ),
+                ),
+                ],
+                )
              ), 
             ],
           ),

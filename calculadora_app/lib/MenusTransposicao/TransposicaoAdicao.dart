@@ -26,7 +26,7 @@ class _TransposicaoAdicaoState extends State<TransposicaoAdicao> {
            controller: _scrollController,
            scrollDirection: Axis.horizontal,
            children: <Widget>[
-            getMenuCard('Agilidade nos seus calculos', 'Saber grau', ' de Adição')
+            getMenuCard('Agilidade nos seus calculos', 'Saber grau', ' de adição')
            ]
           )
         ),

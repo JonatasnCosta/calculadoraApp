@@ -9,7 +9,7 @@ class MenuCalculadora extends StatefulWidget {
 class _MenuCalculadoraState extends State<MenuCalculadora> {
  ScrollController _scrollController;
  List allDescriptions =[
-    'Existem varias maneiras de calcular o diâmentro de lentes. Essa venho pra facilitar.',
+    'Existem varias maneiras de calcular o diâmentro de lentes, essa venho pra facilitar.',
  ];
 
  String description;

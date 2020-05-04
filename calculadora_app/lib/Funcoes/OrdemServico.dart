@@ -250,7 +250,7 @@ TextEditingController _controllerObservacoes = TextEditingController();
                    keyboardType: TextInputType.text,
                   decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'OD:     esf     cil      eixo',
+                    hintText: 'OD:     Esf     Cil      Eixo',
                     hintStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
@@ -276,7 +276,7 @@ TextEditingController _controllerObservacoes = TextEditingController();
                    keyboardType: TextInputType.text,
                   decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'OE:     esf     cil      eixo',
+                    hintText: 'OE:     Esf     Cil      Eixo',
                     hintStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
@@ -302,7 +302,7 @@ TextEditingController _controllerObservacoes = TextEditingController();
                    keyboardType: TextInputType.text,
                   decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'ADD',
+                    hintText: 'Adição',
                     hintStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
@@ -471,7 +471,7 @@ TextEditingController _controllerObservacoes = TextEditingController();
             ),
           ),
            Padding( 
-            padding: EdgeInsets.only(top: 10.0, left: 30.0, right: 30.0, bottom: 40.0),
+            padding: EdgeInsets.only(top: 10.0, left: 30.0, right: 30.0, bottom: 100.0),
             child: RaisedButton(
               color: Color(0xff399d63),
               textColor: Colors.black,
@@ -488,7 +488,6 @@ TextEditingController _controllerObservacoes = TextEditingController();
           ),
         ],
       ),
-            
   );
 
   }

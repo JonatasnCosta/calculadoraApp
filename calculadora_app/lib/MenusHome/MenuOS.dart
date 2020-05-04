@@ -45,7 +45,7 @@ class _MenuOSState extends State<MenuOS> {
            controller: _scrollController,
            scrollDirection: Axis.horizontal,
            children: <Widget>[
-            getMenuCard('Agilidade aos seus pedidos', 'Pedido Laboratório', 'Ordem de serviço')
+            getMenuCard('Agilidade aos seus pedidos', 'Pedido de Lentes', 'Ordem de serviço')
            ]
           )
         ),

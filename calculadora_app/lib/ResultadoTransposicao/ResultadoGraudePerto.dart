@@ -341,7 +341,7 @@ TextEditingController _controllerObservacoes = TextEditingController();
              Row(
              children: <Widget>[
                 Padding(padding: EdgeInsets.only( top: 10.0, left: 20.0),
-          child: Text("OD + ${widget.graudePertoOD}",
+          child: Text("OD: + ${widget.graudePertoOD}",
           style: TextStyle(
             fontFamily:  'Montserrat',
             fontSize: 20.0,
@@ -354,7 +354,7 @@ TextEditingController _controllerObservacoes = TextEditingController();
             Row(
              children: <Widget>[
                 Padding(padding: EdgeInsets.only( top: 10.0, left: 20.0),
-          child: Text("CIL ${widget.cilOD}",
+          child: Text("CIL: ${widget.cilOD}",
           style: TextStyle(
             fontFamily:  'Montserrat',
             fontSize: 20.0,
@@ -367,7 +367,7 @@ TextEditingController _controllerObservacoes = TextEditingController();
             Row(
              children: <Widget>[
                 Padding(padding: EdgeInsets.only( top: 10.0, left: 20.0),
-          child: Text("EIXO ${widget.eixoOD}",
+          child: Text("EIXO: ${widget.eixoOD}",
           style: TextStyle(
             fontFamily:  'Montserrat',
             fontSize: 20.0,
@@ -380,7 +380,7 @@ TextEditingController _controllerObservacoes = TextEditingController();
              Row(
              children: <Widget>[
                 Padding(padding: EdgeInsets.only( top: 10.0, left: 20.0,bottom: 10.0),
-          child: Text("OE + ${widget.graudePertoOE}",
+          child: Text("OE: + ${widget.graudePertoOE}",
           style: TextStyle(
             fontFamily:  'Montserrat',
             fontSize: 20.0,
@@ -393,7 +393,7 @@ TextEditingController _controllerObservacoes = TextEditingController();
             Row(
              children: <Widget>[
                 Padding(padding: EdgeInsets.only( top: 10.0, left: 20.0,bottom: 10.0),
-          child: Text("CIL  ${widget.cilOE} ",
+          child: Text("CIL:  ${widget.cilOE} ",
           style: TextStyle(
             fontFamily:  'Montserrat',
             fontSize: 20.0,
@@ -406,7 +406,7 @@ TextEditingController _controllerObservacoes = TextEditingController();
             Row(
              children: <Widget>[
                 Padding(padding: EdgeInsets.only( top: 10.0, left: 20.0,bottom: 10.0),
-          child: Text("EIXO ${widget.eixoOE}",
+          child: Text("EIXO: ${widget.eixoOE}",
           style: TextStyle(
             fontFamily:  'Montserrat',
             fontSize: 20.0,
@@ -504,8 +504,7 @@ TextEditingController _controllerObservacoes = TextEditingController();
               ),
             ),
           ),
-         
-           Padding(
+          Padding(
             padding: EdgeInsets.only(top: 10.0, left: 30.0, right: 30.0),
             child: Container(
               padding: EdgeInsets.only(left: 45.0),
