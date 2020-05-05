@@ -6,6 +6,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 import 'package:printing/printing.dart';
+import 'package:intl/intl.dart';
 
 
 
@@ -20,6 +21,7 @@ class _CalculadoraState extends State<Calculadora> {
   TextEditingController _controllerPonte = TextEditingController();
   TextEditingController _controllerMenorDnp = TextEditingController();
   TextEditingController _controllerMaiorDiagonal = TextEditingController();
+  NumberFormat fn = NumberFormat("0");
 
   double diametro = 0; 
      
@@ -76,7 +78,7 @@ class _CalculadoraState extends State<Calculadora> {
                fontSize: 30.0,
              )
            ),
-            pw.Paragraph(text: "$diametro",
+            pw.Paragraph(text: fn.format(diametro),
             style: pw.TextStyle(
                fontSize: 30.0,
              )
@@ -280,7 +282,7 @@ class _CalculadoraState extends State<Calculadora> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
              Padding(padding: EdgeInsets.only( top: 10.0, left: 20.0,bottom: 100.0),
-          child: Text("Diâmetro:  $diametro",
+          child: Text("Diâmetro:",
           style: TextStyle(
             fontFamily:  'Montserrat',
             fontSize: 20.0,
@@ -288,6 +290,19 @@ class _CalculadoraState extends State<Calculadora> {
           ),
           ),
           ),
+            Padding(padding: EdgeInsets.only( top: 10.0, left: 10.0,bottom: 100.0),
+          child: Text(fn.format(diametro),
+          style: TextStyle(
+            fontFamily:  'Montserrat',
+            fontSize: 20.0,
+            color: Colors.black
+          ),
+          ),
+          ),
+
+
+
+
           Padding(padding: EdgeInsets.only(top: 10.0, left: 30.0, bottom: 100.0),
           child: IconButton(
             icon: Icon(Icons.search

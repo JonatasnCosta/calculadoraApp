@@ -7,6 +7,7 @@ import 'package:pdf/widgets.dart' as pw;
 import 'package:printing/printing.dart';
 import 'dart:io';
 import 'package:calculadoraapp/PdfViews/PDFDiametro.dart';
+import 'package:intl/intl.dart';
 
 class ResultadoGraudePerto extends StatefulWidget {
 
@@ -43,6 +44,8 @@ TextEditingController _controllerDNPOE = TextEditingController();
 TextEditingController _controllerDiametro = TextEditingController();
 TextEditingController _controllerTipodearo = TextEditingController();
 TextEditingController _controllerObservacoes = TextEditingController();
+NumberFormat nf = NumberFormat("0.00");
+NumberFormat fn = NumberFormat("0");
 
  final pdf = pw.Document();
   
@@ -51,8 +54,6 @@ TextEditingController _controllerObservacoes = TextEditingController();
       pw.MultiPage(
         pageFormat: PdfPageFormat.a3,
         margin: pw.EdgeInsets.all(32),
-        
-
         build: (pw.Context context){
           return <pw.Widget>  [
             pw.Header(
@@ -153,53 +154,157 @@ TextEditingController _controllerObservacoes = TextEditingController();
             ),
              pw.Row(
               children: [
-                pw.Paragraph(
-                text: "OD: + ",
+              widget.graudePertoOD > 0 ? 
+              pw.Container(
+                child: pw.Row(children: [
+                   pw.Paragraph(
+                text: "OD: +",
                 style: pw.TextStyle(
                fontSize: 30.0,
              )
             ),
-             pw.Paragraph(text:'${widget.graudePertoOD} ',
-             style: pw.TextStyle(
+             pw.Paragraph(
+                text: nf.format(widget.graudePertoOD),
+                style: pw.TextStyle(
                fontSize: 30.0,
              )
-             ),
-             pw.Paragraph(text:'  Cil  ${widget.cilOD} ',
-             style: pw.TextStyle(
+            ),
+                ]
+              )
+            ): 
+            pw.Container(
+              child: pw.Row(children: [
+               pw.Paragraph(
+                text: "OD  ",
+                 style: pw.TextStyle(
+               fontSize: 30.0,
+               )
+              ),
+              pw.Paragraph(
+                text: nf.format(widget.graudePertoOD),
+                style: pw.TextStyle(
                fontSize: 30.0,
              )
-             ),
-              pw.Paragraph(text:'  Eixo  ${widget.eixoOD} ',
-             style: pw.TextStyle(
+            )
+              ]
+             )
+            ),
+            pw.Padding(padding: pw.EdgeInsets.only(left: 20.0),
+            child:  pw.Container(
+              child: pw.Row(children: [
+               pw.Paragraph(
+                text: "Cil  ",
+                 style: pw.TextStyle(
+               fontSize: 30.0,
+               )
+              ),
+              pw.Paragraph(
+                text: nf.format(widget.cilOD),
+                style: pw.TextStyle(
                fontSize: 30.0,
              )
-             ),
+            )
+              ]
+             )
+            ),
+            ),
+            pw.Padding(padding: pw.EdgeInsets.only(left: 20.0),
+            child:  pw.Container(
+              child: pw.Row(children: [
+               pw.Paragraph(
+                text: "Eixo  ",
+                 style: pw.TextStyle(
+               fontSize: 30.0,
+               )
+              ),
+              pw.Paragraph(
+                text: fn.format(widget.eixoOD),
+                style: pw.TextStyle(
+               fontSize: 30.0,
+             )
+            )
+              ]
+             )
+            ),
+            ),
             ]
             ),
-             pw.Row(
+              pw.Row(
               children: [
-                 pw.Paragraph(
-                text: "OE: + ",
+              widget.graudePertoOE > 0 ? 
+              pw.Container(
+                child: pw.Row(children: [
+                   pw.Paragraph(
+                text: "OE: +",
                 style: pw.TextStyle(
                fontSize: 30.0,
              )
             ),
-             pw.Paragraph(text:'${widget.graudePertoOE}',
-             style: pw.TextStyle(
+             pw.Paragraph(
+                text: nf.format(widget.graudePertoOE),
+                style: pw.TextStyle(
                fontSize: 30.0,
              )
-             ),
-             pw.Paragraph(text:'  Cil  ${widget.cilOE}',
-             style: pw.TextStyle(
+            ),
+                ]
+              )
+            ): 
+            pw.Container(
+              child: pw.Row(children: [
+               pw.Paragraph(
+                text: "OE  ",
+                 style: pw.TextStyle(
+               fontSize: 30.0,
+               )
+              ),
+              pw.Paragraph(
+                text: nf.format(widget.graudePertoOE),
+                style: pw.TextStyle(
                fontSize: 30.0,
              )
-             ),
-              pw.Paragraph(text:'  Eixo  ${widget.eixoOE}',
-             style: pw.TextStyle(
-               fontSize: 30.0,
-             )
-             ),
+            )
               ]
+             )
+            ),
+            pw.Padding(padding: pw.EdgeInsets.only(left: 20.0),
+            child:  pw.Container(
+              child: pw.Row(children: [
+               pw.Paragraph(
+                text: "Cil  ",
+                 style: pw.TextStyle(
+               fontSize: 30.0,
+               )
+              ),
+              pw.Paragraph(
+                text: nf.format(widget.cilOE),
+                style: pw.TextStyle(
+               fontSize: 30.0,
+             )
+            )
+              ]
+             )
+            ),
+            ),
+            pw.Padding(padding: pw.EdgeInsets.only(left: 20.0),
+            child:  pw.Container(
+              child: pw.Row(children: [
+               pw.Paragraph(
+                text: "Eixo  ",
+                 style: pw.TextStyle(
+               fontSize: 30.0,
+               )
+              ),
+              pw.Paragraph(
+                text: fn.format(widget.eixoOE),
+                style: pw.TextStyle(
+               fontSize: 30.0,
+             )
+            )
+              ]
+             )
+            ),
+            ),
+            ]
             ),
              pw.Row(
               children: [
@@ -336,51 +441,57 @@ TextEditingController _controllerObservacoes = TextEditingController();
             fontFamily:  'Montserrat',
             fontSize: 25.0,
             color: Colors.black),),),
+         
           Row(
-            children: <Widget>[
-             Row(
-             children: <Widget>[
-                Padding(padding: EdgeInsets.only( top: 10.0, left: 20.0),
-          child: Text("OD: + ${widget.graudePertoOD}",
-          style: TextStyle(
-            fontFamily:  'Montserrat',
-            fontSize: 20.0,
-            color: Colors.black
-          ),
-          ),
-          ),
-             ],
-           ),
-            Row(
-             children: <Widget>[
-                Padding(padding: EdgeInsets.only( top: 10.0, left: 20.0),
-          child: Text("CIL: ${widget.cilOD}",
-          style: TextStyle(
-            fontFamily:  'Montserrat',
-            fontSize: 20.0,
-            color: Colors.black
-          ),
-          ),
-          ),
-             ],
-           ),
-            Row(
-             children: <Widget>[
-                Padding(padding: EdgeInsets.only( top: 10.0, left: 20.0),
-          child: Text("EIXO: ${widget.eixoOD}",
-          style: TextStyle(
-            fontFamily:  'Montserrat',
-            fontSize: 20.0,
-            color: Colors.black),),),],
-           )
-          ],
-          ),
-          Row(
+          mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-             Row(
+            Row(
+           children: <Widget>[
+            Padding(padding: EdgeInsets.only(top: 10.0, left: 20.0),
+           child:  widget.graudePertoOD > 0 ? 
+           Container(
+             child: 
+           Row(children: <Widget>[
+                   Text('OD: +',
+                style: TextStyle(
+                  fontFamily: 'Montserrat',
+                  fontSize: 20.0
+                ),
+               ),
+               Text(nf.format(widget.graudePertoOD),
+                style: TextStyle(
+                  fontFamily: 'Montserrat',
+                  fontSize: 20.0
+                ),
+                ),
+                ],
+                )
+             ) : 
+          Container(
+            child: Row(
+                children: <Widget>[
+                   Text('OD: ',
+                style: TextStyle(
+                  fontFamily: 'Montserrat',
+                  fontSize: 20.0
+                ),
+               ),
+               Text(nf.format(widget.graudePertoOD),
+                style: TextStyle(
+                  fontFamily: 'Montserrat',
+                  fontSize: 20.0
+                ),
+                ),
+                ],
+                )
+           ),
+          ),
+           ],
+            ),
+            Row(
              children: <Widget>[
-                Padding(padding: EdgeInsets.only( top: 10.0, left: 20.0,bottom: 10.0),
-          child: Text("OE: + ${widget.graudePertoOE}",
+                Padding(padding: EdgeInsets.only( top: 10.0, left: 5.0),
+          child: Text("CIL: ",
           style: TextStyle(
             fontFamily:  'Montserrat',
             fontSize: 20.0,
@@ -390,10 +501,21 @@ TextEditingController _controllerObservacoes = TextEditingController();
           ),
              ],
            ),
+           Row(children: <Widget>[
+              Padding(padding: EdgeInsets.only(top: 10.0, left: 5.0),
+              child: Text(nf.format(widget.cilOD),
+                style: TextStyle(
+                  fontFamily: 'Montserrat',
+                  fontSize: 20.0
+                ),
+                ),
+            )
+           ],
+           ),
             Row(
              children: <Widget>[
-                Padding(padding: EdgeInsets.only( top: 10.0, left: 20.0,bottom: 10.0),
-          child: Text("CIL:  ${widget.cilOE} ",
+                Padding(padding: EdgeInsets.only( top: 10.0, left: 10.0),
+          child: Text("EIXO: ",
           style: TextStyle(
             fontFamily:  'Montserrat',
             fontSize: 20.0,
@@ -403,10 +525,10 @@ TextEditingController _controllerObservacoes = TextEditingController();
           ),
              ],
            ),
-            Row(
+           Row(
              children: <Widget>[
-                Padding(padding: EdgeInsets.only( top: 10.0, left: 20.0,bottom: 10.0),
-          child: Text("EIXO: ${widget.eixoOE}",
+                Padding(padding: EdgeInsets.only( top: 10.0, left: 5.0),
+          child: Text(fn.format(widget.eixoOD),
           style: TextStyle(
             fontFamily:  'Montserrat',
             fontSize: 20.0,
@@ -415,9 +537,108 @@ TextEditingController _controllerObservacoes = TextEditingController();
           ),
           ),
              ],
-           )
-          ],
+           ),
+          ]
           ),
+           Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: <Widget>[
+            Row(
+           children: <Widget>[
+            Padding(padding: EdgeInsets.only(top: 10.0, left: 20.0),
+           child:  widget.graudePertoOE > 0 ? 
+           Container(
+             child: 
+           Row(children: <Widget>[
+                   Text('OE: +',
+                style: TextStyle(
+                  fontFamily: 'Montserrat',
+                  fontSize: 20.0
+                ),
+               ),
+               Text(nf.format(widget.graudePertoOE),
+                style: TextStyle(
+                  fontFamily: 'Montserrat',
+                  fontSize: 20.0
+                ),
+                ),
+                ],
+                )
+             ) : 
+          Container(
+            child: Row(
+                children: <Widget>[
+                   Text('OE: ',
+                style: TextStyle(
+                  fontFamily: 'Montserrat',
+                  fontSize: 20.0
+                ),
+               ),
+               Text(nf.format(widget.graudePertoOE),
+                style: TextStyle(
+                  fontFamily: 'Montserrat',
+                  fontSize: 20.0
+                ),
+                ),
+                ],
+                )
+           ),
+          ),
+           ],
+            ),
+            Row(
+             children: <Widget>[
+                Padding(padding: EdgeInsets.only( top: 10.0, left: 5.0),
+          child: Text("CIL: ",
+          style: TextStyle(
+            fontFamily:  'Montserrat',
+            fontSize: 20.0,
+            color: Colors.black
+          ),
+          ),
+          ),
+             ],
+           ),
+           Row(children: <Widget>[
+              Padding(padding: EdgeInsets.only(top: 10.0, left: 5.0),
+              child: Text(nf.format(widget.cilOE),
+                style: TextStyle(
+                  fontFamily: 'Montserrat',
+                  fontSize: 20.0
+                ),
+                ),
+            )
+           ],
+           ),
+            Row(
+             children: <Widget>[
+                Padding(padding: EdgeInsets.only( top: 10.0, left: 10.0),
+          child: Text("EIXO: ",
+          style: TextStyle(
+            fontFamily:  'Montserrat',
+            fontSize: 20.0,
+            color: Colors.black
+          ),
+          ),
+          ),
+             ],
+           ),
+           Row(
+             children: <Widget>[
+                Padding(padding: EdgeInsets.only( top: 10.0, left: 5.0),
+          child: Text(fn.format(widget.eixoOE),
+          style: TextStyle(
+            fontFamily:  'Montserrat',
+            fontSize: 20.0,
+            color: Colors.black
+          ),
+          ),
+          ),
+             ],
+           ),
+          ]
+          ),
+         
            Padding(padding: EdgeInsets.only(top: 20.0, left: 20.0, right: 40.0),
           child: Text('Gerar ordem de serviço:',
           style: TextStyle(
