@@ -158,78 +158,178 @@ final pdf = pw.Document();
              pw.Row(
               children: [
               widget.valorOD > 0 ? 
-              pw.Container(child:  pw.Paragraph(
-                text: "OD: + ${widget.valorOD}",
+              pw.Container(
+                child: pw.Row(children: [
+                   pw.Paragraph(
+                text: "OD: +",
                 style: pw.TextStyle(
                fontSize: 30.0,
              )
             ),
+             pw.Paragraph(
+                text: nf.format(widget.valorOD),
+                style: pw.TextStyle(
+               fontSize: 30.0,
+             )
+            ),
+                ]
+              )
             ): 
             pw.Container(
-              child: pw.Paragraph(
-                text: "OD ${widget.valorOD}",
+              child: pw.Row(children: [
+               pw.Paragraph(
+                text: "OD  ",
                  style: pw.TextStyle(
                fontSize: 30.0,
                )
               ),
+              pw.Paragraph(
+                text: nf.format(widget.valorOD),
+                style: pw.TextStyle(
+               fontSize: 30.0,
+             )
+            )
+              ]
+             )
             ),
-             pw.Paragraph(text:'  Cil ${widget.cilOD}',
-             style: pw.TextStyle(
+            pw.Padding(padding: pw.EdgeInsets.only(left: 20.0),
+            child:  pw.Container(
+              child: pw.Row(children: [
+               pw.Paragraph(
+                text: "Cil  ",
+                 style: pw.TextStyle(
+               fontSize: 30.0,
+               )
+              ),
+              pw.Paragraph(
+                text: nf.format(widget.cilOD),
+                style: pw.TextStyle(
                fontSize: 30.0,
              )
-             ),
-              pw.Paragraph(text:'  Eixo ${widget.eixoOD} ',
-             style: pw.TextStyle(
+            )
+              ]
+             )
+            ),
+            ),
+            pw.Padding(padding: pw.EdgeInsets.only(left: 20.0),
+            child:  pw.Container(
+              child: pw.Row(children: [
+               pw.Paragraph(
+                text: "Eixo  ",
+                 style: pw.TextStyle(
+               fontSize: 30.0,
+               )
+              ),
+              pw.Paragraph(
+                text: fn.format(widget.eixoOD),
+                style: pw.TextStyle(
                fontSize: 30.0,
              )
-             ),
+            )
+              ]
+             )
+            ),
+            ),
             ]
             ),
-             pw.Row(
+              pw.Row(
               children: [
               widget.valorOE > 0 ? 
-              pw.Container(child:  pw.Paragraph(
-                text: "OE: + ${widget.valorOE}",
+              pw.Container(
+                child: pw.Row(children: [
+                   pw.Paragraph(
+                text: "OE: +",
                 style: pw.TextStyle(
                fontSize: 30.0,
              )
             ),
+             pw.Paragraph(
+                text: nf.format(widget.valorOE),
+                style: pw.TextStyle(
+               fontSize: 30.0,
+             )
+            ),
+                ]
+              )
             ): 
             pw.Container(
-              child: pw.Paragraph(
-                text: "OE ${widget.valorOE}",
+              child: pw.Row(children: [
+               pw.Paragraph(
+                text: "OE  ",
                  style: pw.TextStyle(
                fontSize: 30.0,
                )
               ),
+              pw.Paragraph(
+                text: nf.format(widget.valorOE),
+                style: pw.TextStyle(
+               fontSize: 30.0,
+             )
+            )
+              ]
+             )
             ),
-             pw.Paragraph(text:'  Cil ${widget.cilOE}',
-             style: pw.TextStyle(
+            pw.Padding(padding: pw.EdgeInsets.only(left: 20.0),
+            child:  pw.Container(
+              child: pw.Row(children: [
+               pw.Paragraph(
+                text: "Cil  ",
+                 style: pw.TextStyle(
+               fontSize: 30.0,
+               )
+              ),
+              pw.Paragraph(
+                text: nf.format(widget.cilOE),
+                style: pw.TextStyle(
                fontSize: 30.0,
              )
-             ),
-              pw.Paragraph(text:'  Eixo ${widget.eixoOE} ',
-             style: pw.TextStyle(
+            )
+              ]
+             )
+            ),
+            ),
+            pw.Padding(padding: pw.EdgeInsets.only(left: 20.0),
+            child:  pw.Container(
+              child: pw.Row(children: [
+               pw.Paragraph(
+                text: "Eixo  ",
+                 style: pw.TextStyle(
+               fontSize: 30.0,
+               )
+              ),
+              pw.Paragraph(
+                text: fn.format(widget.eixoOE),
+                style: pw.TextStyle(
                fontSize: 30.0,
              )
-             ),
+            )
+              ]
+             )
+            ),
+            ),
             ]
             ),
+            
+            
            pw.Row(
               children: [
                 pw.Paragraph(
-                text: "Adição:",
+                text: "Adição: ",
                 style: pw.TextStyle(
                fontSize: 30.0,
              )
             ),
-             pw.Paragraph(text:" ${widget.adicaoFinal}",
+             pw.Paragraph(
+               text: nf.format(widget.adicaoFinal),
              style: pw.TextStyle(
                fontSize: 30.0,
              )
              ),
               ]
             ),
+            
+            
+            
              pw.Row(
               children: [
                 pw.Paragraph(
