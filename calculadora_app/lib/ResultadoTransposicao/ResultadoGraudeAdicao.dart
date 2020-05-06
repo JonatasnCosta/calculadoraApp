@@ -709,8 +709,8 @@ final pdf = pw.Document();
                    keyboardType: TextInputType.number,
                    decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'Número de cliente ',
-                    hintStyle: TextStyle(
+                    labelText: 'Número de cliente ',
+                    labelStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
                       color: Colors.black
@@ -735,8 +735,8 @@ final pdf = pw.Document();
                    keyboardType: TextInputType.text,
                    decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'Ótica ',
-                    hintStyle: TextStyle(
+                    labelText: 'Ótica ',
+                    labelStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
                       color: Colors.black
@@ -761,8 +761,8 @@ final pdf = pw.Document();
                    keyboardType: TextInputType.datetime,
                   decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'Data',
-                    hintStyle: TextStyle(
+                    labelText: 'Data',
+                    labelStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
                       color: Colors.black
@@ -788,8 +788,8 @@ final pdf = pw.Document();
                   keyboardType: TextInputType.number,
                   decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'Número O.S',
-                    hintStyle: TextStyle(
+                    labelText: 'Número O.S',
+                    labelStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
                       color: Colors.black
@@ -814,8 +814,8 @@ final pdf = pw.Document();
                    keyboardType: TextInputType.text,
                   decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'Tipo de Lente',
-                    hintStyle: TextStyle(
+                    labelText: 'Tipo de Lente',
+                    labelStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
                       color: Colors.black
@@ -840,8 +840,8 @@ final pdf = pw.Document();
                    keyboardType: TextInputType.text,
                   decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'Tratamento',
-                    hintStyle: TextStyle(
+                    labelText: 'Tratamento',
+                    labelStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
                       color: Colors.black
@@ -866,8 +866,8 @@ final pdf = pw.Document();
                    keyboardType: TextInputType.text,
                   decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'DNP: OD',
-                    hintStyle: TextStyle(
+                    labelText: 'DNP: OD',
+                    labelStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
                       color: Colors.black
@@ -892,8 +892,8 @@ final pdf = pw.Document();
                    keyboardType: TextInputType.text,
                   decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'DNP: OE',
-                    hintStyle: TextStyle(
+                    labelText: 'DNP: OE',
+                    labelStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
                       color: Colors.black
@@ -918,8 +918,8 @@ final pdf = pw.Document();
                    keyboardType: TextInputType.number,
                   decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'Diâmetro',
-                    hintStyle: TextStyle(
+                    labelText: 'Diâmetro',
+                    labelStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
                       color: Colors.black
@@ -944,8 +944,8 @@ final pdf = pw.Document();
                    keyboardType: TextInputType.text,
                   decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'Tipo de aro',
-                    hintStyle: TextStyle(
+                    labelText: 'Tipo de aro',
+                    labelStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
                       color: Colors.black
@@ -970,8 +970,8 @@ final pdf = pw.Document();
                    keyboardType: TextInputType.text,
                   decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'Observações',
-                    hintStyle: TextStyle(
+                    labelText: 'Observações',
+                    labelStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
                       color: Colors.black

@@ -90,8 +90,8 @@ class _FuncaoCilindricopositivoState extends State<FuncaoCilindricopositivo> {
                    keyboardType: TextInputType.text,
                    decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'Esf     OD Longe',
-                    hintStyle: TextStyle(
+                    labelText: 'Esf     OD Longe',
+                    labelStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
                       color: Colors.black
@@ -116,8 +116,8 @@ class _FuncaoCilindricopositivoState extends State<FuncaoCilindricopositivo> {
                    keyboardType: TextInputType.text,
                    decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'Cil Positivo  OD ',
-                    hintStyle: TextStyle(
+                    labelText: 'Cil Positivo  OD ',
+                    labelStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
                       color: Colors.black
@@ -142,8 +142,8 @@ class _FuncaoCilindricopositivoState extends State<FuncaoCilindricopositivo> {
                    keyboardType: TextInputType.text,
                    decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'Eixo  OD',
-                    hintStyle: TextStyle(
+                    labelText: 'Eixo  OD',
+                    labelStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
                       color: Colors.black
@@ -168,8 +168,8 @@ class _FuncaoCilindricopositivoState extends State<FuncaoCilindricopositivo> {
                    keyboardType: TextInputType.text,
                    decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'Esf    OE Longe',
-                    hintStyle: TextStyle(
+                    labelText: 'Esf    OE Longe',
+                    labelStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
                       color: Colors.black
@@ -194,8 +194,8 @@ class _FuncaoCilindricopositivoState extends State<FuncaoCilindricopositivo> {
                    keyboardType: TextInputType.text,
                    decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'Cil Positivo  OE',
-                    hintStyle: TextStyle(
+                    labelText: 'Cil Positivo  OE',
+                    labelStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
                       color: Colors.black
@@ -220,8 +220,8 @@ class _FuncaoCilindricopositivoState extends State<FuncaoCilindricopositivo> {
                    keyboardType: TextInputType.text,
                    decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'Eixo OE ',
-                    hintStyle: TextStyle(
+                    labelText: 'Eixo OE ',
+                    labelStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
                       color: Colors.black

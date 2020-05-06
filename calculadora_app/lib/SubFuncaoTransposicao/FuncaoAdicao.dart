@@ -212,8 +212,8 @@ if (adicaoOD == adicaoOE  && adicaoOE == adicaoOD) {
                    keyboardType: TextInputType.text,
                    decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'Esf     OD Longe',
-                    hintStyle: TextStyle(
+                    labelText: 'Esf     OD Longe',
+                    labelStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
                       color: Colors.black
@@ -238,8 +238,8 @@ if (adicaoOD == adicaoOE  && adicaoOE == adicaoOD) {
                    keyboardType: TextInputType.text,
                    decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'Cil     OD Longe',
-                    hintStyle: TextStyle(
+                    labelText: 'Cil     OD Longe',
+                    labelStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
                       color: Colors.black
@@ -264,8 +264,8 @@ if (adicaoOD == adicaoOE  && adicaoOE == adicaoOD) {
                    keyboardType: TextInputType.text,
                    decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'Eixo  OD Longe',
-                    hintStyle: TextStyle(
+                    labelText: 'Eixo  OD Longe',
+                    labelStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
                       color: Colors.black
@@ -290,8 +290,8 @@ if (adicaoOD == adicaoOE  && adicaoOE == adicaoOD) {
                    keyboardType: TextInputType.text,
                    decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'Esf    OE Longe',
-                    hintStyle: TextStyle(
+                    labelText: 'Esf    OE Longe',
+                    labelStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
                       color: Colors.black
@@ -316,8 +316,8 @@ if (adicaoOD == adicaoOE  && adicaoOE == adicaoOD) {
                    keyboardType: TextInputType.text,
                    decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'Cil     OE Longe',
-                    hintStyle: TextStyle(
+                    labelText: 'Cil     OE Longe',
+                    labelStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
                       color: Colors.black
@@ -342,8 +342,8 @@ if (adicaoOD == adicaoOE  && adicaoOE == adicaoOD) {
                    keyboardType: TextInputType.text,
                    decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'Eixo  OE Longe',
-                    hintStyle: TextStyle(
+                    labelText: 'Eixo  OE Longe',
+                    labelStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
                       color: Colors.black
@@ -368,8 +368,8 @@ if (adicaoOD == adicaoOE  && adicaoOE == adicaoOD) {
                    keyboardType: TextInputType.text,
                    decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'Esf    OD Perto',
-                    hintStyle: TextStyle(
+                    labelText: 'Esf    OD Perto',
+                    labelStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
                       color: Colors.black
@@ -394,8 +394,8 @@ if (adicaoOD == adicaoOE  && adicaoOE == adicaoOD) {
                    keyboardType: TextInputType.text,
                    decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'Esf    OE Perto',
-                    hintStyle: TextStyle(
+                    labelText: 'Esf    OE Perto',
+                    labelStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
                       color: Colors.black

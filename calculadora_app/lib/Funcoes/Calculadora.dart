@@ -156,8 +156,8 @@ class _CalculadoraState extends State<Calculadora> {
                    keyboardType: TextInputType.text,
                   decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'Aro',
-                    hintStyle: TextStyle(
+                    labelText: 'Aro',
+                    labelStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
                       color: Colors.black
@@ -182,8 +182,8 @@ class _CalculadoraState extends State<Calculadora> {
                    keyboardType: TextInputType.text,
                   decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'Ponte',
-                    hintStyle: TextStyle(
+                    labelText: 'Ponte',
+                    labelStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
                       color: Colors.black
@@ -208,8 +208,8 @@ class _CalculadoraState extends State<Calculadora> {
                    keyboardType: TextInputType.text,
                   decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'Menor DNP',
-                    hintStyle: TextStyle(
+                    labelText: 'Menor DNP',
+                    labelStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
                       color: Colors.black
@@ -234,8 +234,8 @@ class _CalculadoraState extends State<Calculadora> {
                    keyboardType: TextInputType.text,
                   decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'Maior diagonal',
-                    hintStyle: TextStyle(
+                    labelText: 'Maior diagonal',
+                    labelStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
                       color: Colors.black

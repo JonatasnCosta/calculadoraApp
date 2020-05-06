@@ -172,8 +172,8 @@ Navigator.push(
                    keyboardType: TextInputType.text,
                    decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'Esf     OD Longe',
-                    hintStyle: TextStyle(
+                    labelText: 'Esf     OD Longe',
+                    labelStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
                       color: Colors.black
@@ -198,8 +198,8 @@ Navigator.push(
                    keyboardType: TextInputType.text,
                    decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'Cil     OD Longe',
-                    hintStyle: TextStyle(
+                    labelText: 'Cil     OD Longe',
+                    labelStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
                       color: Colors.black
@@ -224,8 +224,8 @@ Navigator.push(
                    keyboardType: TextInputType.text,
                    decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'Eixo  OD Longe',
-                    hintStyle: TextStyle(
+                    labelText: 'Eixo  OD Longe',
+                    labelStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
                       color: Colors.black
@@ -250,8 +250,8 @@ Navigator.push(
                    keyboardType: TextInputType.text,
                    decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'Esf    OE Longe',
-                    hintStyle: TextStyle(
+                    labelText: 'Esf    OE Longe',
+                    labelStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
                       color: Colors.black
@@ -276,8 +276,8 @@ Navigator.push(
                    keyboardType: TextInputType.text,
                    decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'Cil     OE Longe',
-                    hintStyle: TextStyle(
+                    labelText: 'Cil     OE Longe',
+                    labelStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
                       color: Colors.black
@@ -302,8 +302,8 @@ Navigator.push(
                    keyboardType: TextInputType.text,
                    decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'Eixo  OE Longe',
-                    hintStyle: TextStyle(
+                    labelText: 'Eixo  OE Longe',
+                    labelStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
                       color: Colors.black
@@ -328,8 +328,8 @@ Navigator.push(
                    keyboardType: TextInputType.text,
                    decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'Adição',
-                    hintStyle: TextStyle(
+                    labelText: 'Adição',
+                    labelStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
                       color: Colors.black
