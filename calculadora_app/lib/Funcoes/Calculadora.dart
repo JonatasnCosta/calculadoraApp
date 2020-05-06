@@ -24,12 +24,10 @@ class _CalculadoraState extends State<Calculadora> {
   NumberFormat fn = NumberFormat("0");
 
   double diametro = 0; 
-     
-     var
-     aro,
-     ponte,
-     menorDnp,
-     maiorDiagonal;
+  double aro = 0;
+  double ponte = 0;
+  double menorDnp = 0;
+  double maiorDiagonal = 0;
   
  void _resultadodiametro(BuildContext context){
   double aro = double.tryParse(  _controllerAro.text);
@@ -40,10 +38,10 @@ class _CalculadoraState extends State<Calculadora> {
 
  if (aro == null|| ponte == null || menorDnp == null || maiorDiagonal == null) {
    setState(() {
-     aro = 0.0;
-     ponte = 0.0;
-     menorDnp = 0.0;
-     maiorDiagonal =0.0;
+     aro = 0;
+     ponte = 0;
+     menorDnp = 0;
+     maiorDiagonal = 0;
    });
  } 
  else {
@@ -69,8 +67,68 @@ class _CalculadoraState extends State<Calculadora> {
                fontSize: 40.0,
              )
               ),
+            ), 
+            pw.Row(
+              children: [
+                pw.Paragraph(
+             text: "Aro: ",
+             style: pw.TextStyle(
+               fontSize: 30.0,
+             )
+           ),
+            pw.Paragraph(text: _controllerAro.text,
+            style: pw.TextStyle(
+               fontSize: 30.0,
+             )
+            ),
+              ],
+            ),
+             pw.Row(
+              children: [
+                pw.Paragraph(
+             text: "Ponte: ",
+             style: pw.TextStyle(
+               fontSize: 30.0,
+             )
+           ),
+            pw.Paragraph(text: _controllerPonte.text,
+            style: pw.TextStyle(
+               fontSize: 30.0,
+             )
+            ),
+              ],
             ),
             pw.Row(
+              children: [
+                pw.Paragraph(
+             text: "Menor DNP: ",
+             style: pw.TextStyle(
+               fontSize: 30.0,
+             )
+           ),
+            pw.Paragraph(text: _controllerMenorDnp.text,
+            style: pw.TextStyle(
+               fontSize: 30.0,
+             )
+            ),
+              ],
+            ),
+             pw.Row(
+              children: [
+                pw.Paragraph(
+             text: "Maior diagonal: ",
+             style: pw.TextStyle(
+               fontSize: 30.0,
+             )
+           ),
+            pw.Paragraph(text: _controllerMaiorDiagonal.text,
+            style: pw.TextStyle(
+               fontSize: 30.0,
+             )
+            ),
+              ],
+            ),
+             pw.Row(
               children: [
                 pw.Paragraph(
              text: "Diâmetro: ",
