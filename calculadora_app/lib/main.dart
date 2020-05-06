@@ -19,4 +19,5 @@ void main() {
 //Ponto de integração feito com sucesso da calculadora
 //Ponto de integração para mudar a lógica
 //Ponto de integração para receber conteúdo de transposição
+//Ponto de integração para corrigir erro
 
