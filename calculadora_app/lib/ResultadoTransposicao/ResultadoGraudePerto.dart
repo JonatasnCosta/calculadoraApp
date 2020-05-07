@@ -8,6 +8,7 @@ import 'package:printing/printing.dart';
 import 'dart:io';
 import 'package:calculadoraapp/PdfViews/PDFDiametro.dart';
 import 'package:intl/intl.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 class ResultadoGraudePerto extends StatefulWidget {
 
@@ -44,6 +45,7 @@ TextEditingController _controllerDNPOE = TextEditingController();
 TextEditingController _controllerDiametro = TextEditingController();
 TextEditingController _controllerTipodearo = TextEditingController();
 TextEditingController _controllerObservacoes = TextEditingController();
+var maskFormatter = new MaskTextInputFormatter(mask: '##/##/####', filter: { "#": RegExp(r'[0-9]') }); 
 NumberFormat nf = NumberFormat("0.00");
 NumberFormat fn = NumberFormat("0");
 
@@ -710,7 +712,8 @@ NumberFormat fn = NumberFormat("0");
               ),
               child: Center(
                 child: TextField(
-                   keyboardType: TextInputType.datetime,
+                  inputFormatters: [maskFormatter],
+                  keyboardType: TextInputType.phone,
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     labelText: 'Data',

@@ -1,6 +1,7 @@
 import 'package:calculadoraapp/Home.dart';
 import 'package:calculadoraapp/SubFuncaoOrdemdeservico/OrdemGerada.dart';
 import 'package:flutter/material.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 
 
@@ -29,7 +30,7 @@ TextEditingController _controllerAltura = TextEditingController();
 TextEditingController _controllerDiametro = TextEditingController();
 TextEditingController _controllerTipodearo = TextEditingController();
 TextEditingController _controllerObservacoes = TextEditingController();
-  
+var maskFormatter = new MaskTextInputFormatter(mask: '##/##/####', filter: { "#": RegExp(r'[0-9]') });  
 
   
   @override
@@ -142,7 +143,8 @@ TextEditingController _controllerObservacoes = TextEditingController();
               ),
               child: Center(
                 child: TextField(
-                   keyboardType: TextInputType.datetime,
+                  inputFormatters: [maskFormatter],
+                  keyboardType: TextInputType.phone,
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     labelText: 'Data',
