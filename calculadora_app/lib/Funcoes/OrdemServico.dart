@@ -171,7 +171,7 @@ var maskFormatter = new MaskTextInputFormatter(mask: '##/##/####', filter: { "#"
               ),
               child: Center(
                 child: TextField(
-                  keyboardType: TextInputType.number,
+                  keyboardType: TextInputType.text,
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     labelText: 'Número O.S',
