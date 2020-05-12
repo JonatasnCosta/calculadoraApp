@@ -1,4 +1,3 @@
-import 'package:calculadoraapp/Home.dart';
 import 'package:calculadoraapp/SubFuncaoTransposicao/FuncaoGraudePerto.dart';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
@@ -443,12 +442,12 @@ NumberFormat fn = NumberFormat("0");
                 IconButton(
                   icon: Icon(Icons.arrow_back), 
                   onPressed: () {
-                    Navigator.of(context).pop(MaterialPageRoute(builder:(context) => FuncaoGraudePerto()));
+                    Navigator.of(context).pop();
                   }
                 ),
                 FloatingActionButton(
                   onPressed: () {
-                     Navigator.of(context).push(MaterialPageRoute(builder:(context) => Home()));
+                     Navigator.of(context).pop();
                   },
                   backgroundColor: Colors.grey.withOpacity(0.3),
                   mini: true,

@@ -1,5 +1,3 @@
-import 'package:calculadoraapp/Funcoes/Transposicao.dart';
-import 'package:calculadoraapp/Home.dart';
 import 'package:flutter/material.dart';
 import "package:calculadoraapp/ResultadoTransposicao/ResultadoGraudePerto.dart";
 import 'package:firebase_admob/firebase_admob.dart';
@@ -165,12 +163,12 @@ Navigator.push(
                 IconButton(
                   icon: Icon(Icons.arrow_back), 
                   onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(builder:(context) => Transposicao()));
+                     Navigator.of(context).pop();
                   }
                 ),
                 FloatingActionButton(
                   onPressed: () {
-                     Navigator.of(context).push(MaterialPageRoute(builder:(context) => Home()));
+                      Navigator.of(context).pop();
                   },
                   backgroundColor: Colors.grey.withOpacity(0.3),
                   mini: true,

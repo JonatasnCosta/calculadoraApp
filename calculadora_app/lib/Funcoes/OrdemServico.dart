@@ -1,4 +1,3 @@
-import 'package:calculadoraapp/Home.dart';
 import 'package:calculadoraapp/SubFuncaoOrdemdeservico/OrdemGerada.dart';
 import 'package:flutter/material.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
@@ -71,7 +70,6 @@ var maskFormatter = new MaskTextInputFormatter(mask: '##/##/####', filter: { "#"
   Widget build(BuildContext context) {
   
       return Scaffold(
-        
         body: ListView(
           children: <Widget>[
             SizedBox(height: 15.0),
@@ -85,12 +83,12 @@ var maskFormatter = new MaskTextInputFormatter(mask: '##/##/####', filter: { "#"
                 IconButton(
                   icon: Icon(Icons.arrow_back), 
                   onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(builder:(context) => Home()));
+                     Navigator.of(context).pop();
                   }
                 ),
                   FloatingActionButton(
                   onPressed: () {
-                     Navigator.of(context).push(MaterialPageRoute(builder:(context) => Home()));
+                     Navigator.of(context).pop();
                   },
                   backgroundColor: Colors.grey.withOpacity(0.3),
                   mini: true,

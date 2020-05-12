@@ -1,4 +1,3 @@
-import 'package:calculadoraapp/Home.dart';
 import 'package:calculadoraapp/SubFuncaoTransposicao/FuncaoAdicao.dart';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
@@ -468,12 +467,12 @@ final pdf = pw.Document();
                 IconButton(
                   icon: Icon(Icons.arrow_back), 
                   onPressed: () {
-                    Navigator.of(context).pop(MaterialPageRoute(builder:(context) => FuncaoAdicao()));
+                     Navigator.of(context).pop();
                   }
                 ),
                 FloatingActionButton(
                   onPressed: () {
-                     Navigator.of(context).push(MaterialPageRoute(builder:(context) => Home()));
+                      Navigator.of(context).pop();
                   },
                   backgroundColor: Colors.grey.withOpacity(0.3),
                   mini: true,

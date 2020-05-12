@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:calculadoraapp/Home.dart';
 import 'package:calculadoraapp/PdfViews/PDFDiametro.dart';
 import 'dart:io';
 import 'package:path_provider/path_provider.dart';
@@ -202,12 +201,12 @@ static const  MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(
                 IconButton(
                   icon: Icon(Icons.arrow_back), 
                   onPressed: () {
-                    Navigator.of(context).pop(MaterialPageRoute(builder:(context) => Home()));
+                     Navigator.of(context).pop();
                   }
                 ),
                 FloatingActionButton(
                   onPressed: () {
-                     Navigator.of(context).push(MaterialPageRoute(builder:(context) => Home()));
+                      Navigator.of(context).pop();
                   },
                   backgroundColor: Colors.grey.withOpacity(0.3),
                   mini: true,
