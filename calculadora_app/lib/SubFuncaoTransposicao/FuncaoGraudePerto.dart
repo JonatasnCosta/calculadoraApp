@@ -2,6 +2,9 @@ import 'package:calculadoraapp/Funcoes/Transposicao.dart';
 import 'package:calculadoraapp/Home.dart';
 import 'package:flutter/material.dart';
 import "package:calculadoraapp/ResultadoTransposicao/ResultadoGraudePerto.dart";
+import 'package:firebase_admob/firebase_admob.dart';
+
+const String testDevice = '721A33913C7D7D311A5FB39652B0084B';
 
 
 
@@ -11,6 +14,39 @@ class FuncaoGraudePerto extends StatefulWidget {
 }
 
 class _FuncaoGraudePertoState extends State<FuncaoGraudePerto> {
+
+ static const  MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(
+    testDevices: testDevice != null ? <String>[testDevice] : null,
+    nonPersonalizedAds: true,
+    keywords: <String>['Mortgage', 'Attorney'],
+  );
+ 
+   BannerAd _bannerAd;
+   BannerAd createBannerAd(){
+    return BannerAd(
+    adUnitId:'ca-app-pub-7677202089790115/3031795472', 
+    size: AdSize.smartBanner,
+     targetingInfo: targetingInfo,
+     listener: (MobileAdEvent event) {
+    print("BannerAd $event");
+     });
+ }
+ @override
+ void initState(){
+ FirebaseAdMob.instance.initialize(appId:'ca-app-pub-7677202089790115~7992122892');
+ _bannerAd = createBannerAd()
+ ..load()
+ ..show();
+  super.initState();
+ }
+
+ @override
+  void dispose() {
+    _bannerAd.dispose();
+    super.dispose();
+  }
+
+
   TextEditingController _controllerEsfOD = TextEditingController();
   TextEditingController _controllerCILOD = TextEditingController();
   TextEditingController _controllerEIXOOD = TextEditingController();
@@ -357,7 +393,7 @@ Navigator.push(
             ),
            ),
            Padding( 
-            padding: EdgeInsets.only(top: 5.0, left: 70.0, right: 70.0, bottom: 20.0),
+            padding: EdgeInsets.only(top: 5.0, left: 70.0, right: 70.0, bottom: 60.0),
             child: RaisedButton(
               color: Color(0xff399d63),
               textColor: Colors.black,

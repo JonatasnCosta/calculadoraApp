@@ -2,9 +2,9 @@ import 'package:calculadoraapp/Home.dart';
 import 'package:calculadoraapp/SubFuncaoOrdemdeservico/OrdemGerada.dart';
 import 'package:flutter/material.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
+import 'package:firebase_admob/firebase_admob.dart';
 
-
-
+const String testDevice = '721A33913C7D7D311A5FB39652B0084B';
 
 
 
@@ -15,6 +15,40 @@ class OrdemServico extends StatefulWidget {
 
 
 class _OrdemServicoState extends State<OrdemServico> {
+
+static const  MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(
+    testDevices: testDevice != null ? <String>[testDevice] : null,
+    nonPersonalizedAds: true,
+    keywords: <String>['Mortgage', 'Attorney'],
+  );
+ 
+   BannerAd _bannerAd;
+   BannerAd createBannerAd(){
+    return BannerAd(
+    adUnitId:'ca-app-pub-7677202089790115/3031795472', 
+    size: AdSize.smartBanner,
+     targetingInfo: targetingInfo,
+     listener: (MobileAdEvent event) {
+    print("BannerAd $event");
+     });
+ }
+ @override
+ void initState(){
+ FirebaseAdMob.instance.initialize(appId:'ca-app-pub-7677202089790115~7992122892');
+ _bannerAd = createBannerAd()
+ ..load()
+ ..show();
+  super.initState();
+ }
+
+ @override
+  void dispose() {
+    _bannerAd.dispose();
+    super.dispose();
+  }
+
+
+
  TextEditingController _controllerNumeroCliente = TextEditingController(); 
 TextEditingController _controllerNomeotica = TextEditingController();
 TextEditingController _controllerData = TextEditingController();

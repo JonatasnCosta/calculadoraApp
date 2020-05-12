@@ -29,7 +29,7 @@ dependencies:
   printing: ^3.3.1
   intl: ^0.15.7
   mask_text_input_formatter: ^1.0.6
-
+  firebase_admob: ^0.9.3+2
 
 
 

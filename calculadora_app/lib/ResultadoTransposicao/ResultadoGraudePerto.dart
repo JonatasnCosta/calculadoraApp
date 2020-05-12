@@ -9,6 +9,9 @@ import 'dart:io';
 import 'package:calculadoraapp/PdfViews/PDFDiametro.dart';
 import 'package:intl/intl.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
+import 'package:firebase_admob/firebase_admob.dart';
+
+const String testDevice = '721A33913C7D7D311A5FB39652B0084B';
 
 class ResultadoGraudePerto extends StatefulWidget {
 
@@ -34,6 +37,38 @@ class ResultadoGraudePerto extends StatefulWidget {
 }
 
 class _ResultadoGraudePertoState extends State<ResultadoGraudePerto> {
+
+static const  MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(
+    testDevices: testDevice != null ? <String>[testDevice] : null,
+    nonPersonalizedAds: true,
+    keywords: <String>['Mortgage', 'Attorney'],
+  );
+ 
+   BannerAd _bannerAd;
+   BannerAd createBannerAd(){
+    return BannerAd(
+    adUnitId:'ca-app-pub-7677202089790115/3031795472', 
+    size: AdSize.smartBanner,
+     targetingInfo: targetingInfo,
+     listener: (MobileAdEvent event) {
+    print("BannerAd $event");
+     });
+ }
+ @override
+ void initState(){
+ FirebaseAdMob.instance.initialize(appId:'ca-app-pub-7677202089790115~7992122892');
+ _bannerAd = createBannerAd()
+ ..load()
+ ..show();
+  super.initState();
+ }
+
+ @override
+  void dispose() {
+    _bannerAd.dispose();
+    super.dispose();
+  }
+
 TextEditingController _controllerNumeroCliente = TextEditingController(); 
 TextEditingController _controllerNomeotica = TextEditingController();
 TextEditingController _controllerData = TextEditingController();
@@ -975,7 +1010,7 @@ NumberFormat fn = NumberFormat("0");
             ),
           ),
           Padding( 
-            padding: EdgeInsets.only(top: 10.0, left: 30.0, right: 30.0, bottom: 50.0),
+            padding: EdgeInsets.only(top: 10.0, left: 30.0, right: 30.0, bottom: 60.0),
             child: RaisedButton(
               color: Color(0xff399d63),
               textColor: Colors.black,
