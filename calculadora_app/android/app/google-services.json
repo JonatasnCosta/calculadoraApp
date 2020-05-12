@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "751192941194",
+    "firebase_url": "https://kit-optica.firebaseio.com",
+    "project_id": "kit-optica",
+    "storage_bucket": "kit-optica.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:751192941194:android:1c31bbfd688ea2c5a68373",
+        "android_client_info": {
+          "package_name": "com.jonatasprogramador.calculadora_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "751192941194-94tualn55tojd0e12a74l6sr3btih76s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXHTdqmEcg86ito_eyWrMaZeobA0Wf8zc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "751192941194-94tualn55tojd0e12a74l6sr3btih76s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

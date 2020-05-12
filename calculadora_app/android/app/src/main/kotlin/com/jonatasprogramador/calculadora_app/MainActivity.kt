@@ -1,4 +1,4 @@
-package com.company.calculadoraapp
+package com.jonatasprogramador.calculadora_app
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity
