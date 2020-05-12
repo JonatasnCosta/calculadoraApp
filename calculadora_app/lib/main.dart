@@ -21,4 +21,5 @@ void main() {
 //Ponto de integração para receber conteúdo de transposição
 //Ponto de integração para corrigir erro
 //Ponto de integração para receber o firebase
+//Ponto de integração para receber o admob
 
