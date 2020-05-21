@@ -14,6 +14,7 @@ class OrdemGerada extends StatelessWidget  {
   final String textonome;
   final String textodata;
   final String textoos;
+  final String textonr;
   final String textotipodelente;
   final String textotratamento;
   final String textoodgrau;
@@ -32,6 +33,7 @@ class OrdemGerada extends StatelessWidget  {
   this.textonome,
    this.textodata,
    this.textoos,
+   this.textonr,
    this.textotipodelente,
    this.textotratamento,
    this.textoodgrau,
@@ -125,6 +127,21 @@ class OrdemGerada extends StatelessWidget  {
              )
              ),
              ]
+            ),
+            pw.Row(
+              children: [
+                pw.Paragraph(
+                text: "Número da NR: ",
+                style: pw.TextStyle(
+               fontSize: 30.0,
+             )
+            ),
+             pw.Paragraph(text: textonr,
+             style: pw.TextStyle(
+               fontSize: 30.0,
+             )
+             ),
+             ]
             ), pw.Row(
               children: [
                 pw.Paragraph(
@@ -188,7 +205,7 @@ class OrdemGerada extends StatelessWidget  {
              pw.Row(
               children: [
                 pw.Paragraph(
-                text: "ADD: ",
+                text: "Adição: ",
                 style: pw.TextStyle(
                fontSize: 30.0,
              )

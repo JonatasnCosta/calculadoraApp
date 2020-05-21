@@ -72,6 +72,7 @@ TextEditingController _controllerNumeroCliente = TextEditingController();
 TextEditingController _controllerNomeotica = TextEditingController();
 TextEditingController _controllerData = TextEditingController();
 TextEditingController _controllerOS = TextEditingController();
+TextEditingController _controllerNR = TextEditingController();
 TextEditingController _controllerTipodelente = TextEditingController();
 TextEditingController _controllerTratamento = TextEditingController();
 TextEditingController _controllerDNPOD = TextEditingController();
@@ -159,7 +160,23 @@ NumberFormat fn = NumberFormat("0");
              )
              ),
              ]
-            ), pw.Row(
+            ),
+             pw.Row(
+              children: [
+                pw.Paragraph(
+                text: "Número da NR: ",
+                style: pw.TextStyle(
+               fontSize: 30.0,
+             )
+            ),
+             pw.Paragraph(text: _controllerNR.text,
+             style: pw.TextStyle(
+               fontSize: 30.0,
+             )
+             ),
+             ]
+            ),
+             pw.Row(
               children: [
                 pw.Paragraph(
                 text: "Tipo de lente: ",
@@ -705,6 +722,32 @@ NumberFormat fn = NumberFormat("0");
                     ),
                   ),
                   controller: _controllerNumeroCliente,
+                ),
+              ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(top: 10.0, left: 30.0, right: 30.0),
+            child: Container(
+              padding: EdgeInsets.only(left: 45.0),
+              height: 50.0,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(25.0),
+                color: Color(0xff399d63)
+              ),
+              child: Center(
+                child: TextField(
+                  keyboardType: TextInputType.text,
+                  decoration: InputDecoration(
+                    border: InputBorder.none,
+                    labelText: 'Número da NR',
+                    labelStyle: TextStyle(
+                      fontFamily: 'Montserrat',
+                      fontSize: 15.0,
+                      color: Colors.black
+                    ),
+                  ),
+                  controller: _controllerNR
                 ),
               ),
             ),
