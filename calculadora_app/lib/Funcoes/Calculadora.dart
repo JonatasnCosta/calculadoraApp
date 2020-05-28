@@ -51,6 +51,7 @@ static const  MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(
   TextEditingController _controllerPonte = TextEditingController();
   TextEditingController _controllerMenorDnp = TextEditingController();
   TextEditingController _controllerMaiorDiagonal = TextEditingController();
+  TextEditingController _controllerVertical = TextEditingController();
   NumberFormat fn = NumberFormat("0");
 
   double diametro = 0; 
@@ -101,7 +102,7 @@ static const  MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(
             pw.Row(
               children: [
                 pw.Paragraph(
-             text: "Aro: ",
+             text: "Aro  (Diagonal maior): ",
              style: pw.TextStyle(
                fontSize: 30.0,
              )
@@ -137,6 +138,21 @@ static const  MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(
              )
            ),
             pw.Paragraph(text: _controllerMenorDnp.text,
+            style: pw.TextStyle(
+               fontSize: 30.0,
+             )
+            ),
+              ],
+            ),
+             pw.Row(
+              children: [
+                pw.Paragraph(
+             text: "Vertical: ",
+             style: pw.TextStyle(
+               fontSize: 30.0,
+             )
+           ),
+            pw.Paragraph(text: _controllerVertical.text,
             style: pw.TextStyle(
                fontSize: 30.0,
              )
@@ -244,7 +260,7 @@ static const  MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(
                    keyboardType: TextInputType.text,
                   decoration: InputDecoration(
                     border: InputBorder.none,
-                    labelText: 'Aro',
+                    labelText: 'Aro  (Diagonal maior)',
                     labelStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
@@ -304,6 +320,32 @@ static const  MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(
                     ),
                   ),
                  controller: _controllerMenorDnp,
+                ),
+              ),
+            ),
+          ),
+           Padding(
+            padding: EdgeInsets.only(top: 10.0, left: 70.0, right: 70.0),
+            child: Container(
+              padding: EdgeInsets.only(left: 45.0),
+              height: 50.0,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(25.0),
+                color: Color(0xff399d63)
+              ),
+              child: Center(
+                child: TextField(
+                   keyboardType: TextInputType.text,
+                  decoration: InputDecoration(
+                    border: InputBorder.none,
+                    labelText: 'Vertical',
+                    labelStyle: TextStyle(
+                      fontFamily: 'Montserrat',
+                      fontSize: 15.0,
+                      color: Colors.black
+                    ),
+                  ),
+                controller: _controllerVertical,
                 ),
               ),
             ),
