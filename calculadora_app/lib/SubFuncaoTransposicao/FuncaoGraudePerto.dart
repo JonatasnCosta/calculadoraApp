@@ -193,7 +193,7 @@ Navigator.push(
           ),
         ),
          Padding(
-            padding: EdgeInsets.only(top: 10.0, left: 70.0, right: 70.0),
+            padding: EdgeInsets.only(top: 10.0, left: 20.0, right: 30.0),
             child: Container(
               padding: EdgeInsets.only(left: 45.0),
               height: 50.0,
@@ -206,7 +206,7 @@ Navigator.push(
                    keyboardType: TextInputType.text,
                    decoration: InputDecoration(
                     border: InputBorder.none,
-                    labelText: 'Esf     OD Longe',
+                    labelText: 'Esférico  Olho direito longe',
                     labelStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
@@ -219,7 +219,7 @@ Navigator.push(
             ),
           ),
            Padding(
-            padding: EdgeInsets.only(top: 5.0, left: 70.0, right: 70.0),
+            padding: EdgeInsets.only(top: 5.0, left: 20.0, right: 30.0),
             child: Container(
               padding: EdgeInsets.only(left: 45.0),
               height: 50.0,
@@ -232,7 +232,7 @@ Navigator.push(
                    keyboardType: TextInputType.text,
                    decoration: InputDecoration(
                     border: InputBorder.none,
-                    labelText: 'Cil     OD Longe',
+                    labelText: 'Cilíndrico Olho direito longe',
                     labelStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
@@ -245,7 +245,7 @@ Navigator.push(
             ),
           ),
            Padding(
-            padding: EdgeInsets.only(top: 5.0, left: 70.0, right: 70.0, bottom: 30.0),
+            padding: EdgeInsets.only(top: 5.0, left: 20.0, right: 30.0, bottom: 30.0),
             child: Container(
               padding: EdgeInsets.only(left: 45.0),
               height: 50.0,
@@ -258,7 +258,7 @@ Navigator.push(
                    keyboardType: TextInputType.text,
                    decoration: InputDecoration(
                     border: InputBorder.none,
-                    labelText: 'Eixo  OD Longe',
+                    labelText: 'Eixo  Olho direito longe',
                     labelStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
@@ -271,7 +271,7 @@ Navigator.push(
             ),
           ),
          Padding(
-            padding: EdgeInsets.only(top: 5.0, left: 70.0, right: 70.0),
+            padding: EdgeInsets.only(top: 5.0, left: 20.0, right: 30.0),
             child: Container(
               padding: EdgeInsets.only(left: 45.0),
               height: 50.0,
@@ -284,7 +284,7 @@ Navigator.push(
                    keyboardType: TextInputType.text,
                    decoration: InputDecoration(
                     border: InputBorder.none,
-                    labelText: 'Esf    OE Longe',
+                    labelText: 'Esférico  Olho esquerdo longe',
                     labelStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
@@ -297,7 +297,7 @@ Navigator.push(
             ),
           ),
            Padding(
-            padding: EdgeInsets.only(top: 5.0, left: 70.0, right: 70.0),
+            padding: EdgeInsets.only(top: 5.0, left: 20.0, right: 30.0),
             child: Container(
               padding: EdgeInsets.only(left: 45.0),
               height: 50.0,
@@ -310,7 +310,7 @@ Navigator.push(
                    keyboardType: TextInputType.text,
                    decoration: InputDecoration(
                     border: InputBorder.none,
-                    labelText: 'Cil     OE Longe',
+                    labelText: 'Cilíndrico Olho esquerdo longe',
                     labelStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
@@ -323,7 +323,7 @@ Navigator.push(
             ),
           ),
            Padding(
-            padding: EdgeInsets.only(top: 5.0, left: 70.0, right: 70.0, bottom: 30.0),
+            padding: EdgeInsets.only(top: 5.0, left: 20.0, right: 30.0, bottom: 30.0),
             child: Container(
               padding: EdgeInsets.only(left: 45.0),
               height: 50.0,
@@ -336,7 +336,7 @@ Navigator.push(
                    keyboardType: TextInputType.text,
                    decoration: InputDecoration(
                     border: InputBorder.none,
-                    labelText: 'Eixo  OE Longe',
+                    labelText: 'Eixo  Olho esquerdo longe',
                     labelStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
@@ -349,7 +349,7 @@ Navigator.push(
             ),
           ),
          Padding(
-            padding: EdgeInsets.only(top: 5.0, left: 70.0, right: 70.0),
+            padding: EdgeInsets.only(top: 5.0, left: 20.0, right: 30.0),
             child: Container(
               padding: EdgeInsets.only(left: 45.0),
               height: 50.0,
@@ -375,7 +375,7 @@ Navigator.push(
             ),
           ),
            Padding( 
-            padding: EdgeInsets.only(top: 30.0, left: 70.0, right: 70.0, bottom: 5.0),
+            padding: EdgeInsets.only(top: 30.0, left: 20.0, right: 30.0, bottom: 5.0),
             child: RaisedButton(
               color: Color(0xff399d63),
               textColor: Colors.black,
@@ -391,7 +391,7 @@ Navigator.push(
             ),
            ),
            Padding( 
-            padding: EdgeInsets.only(top: 5.0, left: 70.0, right: 70.0, bottom: 60.0),
+            padding: EdgeInsets.only(top: 5.0, left: 20.0, right: 30.0, bottom: 60.0),
             child: RaisedButton(
               color: Color(0xff399d63),
               textColor: Colors.black,

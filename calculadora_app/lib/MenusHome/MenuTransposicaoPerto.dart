@@ -141,7 +141,7 @@ class _MenuTransposicaoPerto extends State<MenuTransposicaoPerto> {
                          menuName,
                          style: TextStyle(
                            fontFamily: 'Montserrat',
-                           fontSize: 20.0,
+                           fontSize: 19.0,
                            fontWeight: FontWeight.w600,
                            color: Color(0xff8ac7a4)
                          ),
