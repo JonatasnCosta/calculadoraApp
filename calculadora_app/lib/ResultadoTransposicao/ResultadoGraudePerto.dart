@@ -701,7 +701,7 @@ NumberFormat fn = NumberFormat("0");
             ),
             ),
             Padding(
-            padding: EdgeInsets.only(top: 10.0, left: 30.0, right: 30.0),
+            padding: EdgeInsets.only(top: 10.0, left: 20.0, right: 30.0),
             child: Container(
               padding: EdgeInsets.only(left: 45.0),
               height: 50.0,
@@ -727,7 +727,7 @@ NumberFormat fn = NumberFormat("0");
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 10.0, left: 30.0, right: 30.0),
+            padding: EdgeInsets.only(top: 10.0, left: 20.0, right: 30.0),
             child: Container(
               padding: EdgeInsets.only(left: 45.0),
               height: 50.0,
@@ -753,7 +753,7 @@ NumberFormat fn = NumberFormat("0");
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 10.0, left: 30.0, right: 30.0),
+            padding: EdgeInsets.only(top: 10.0, left: 20.0, right: 30.0),
             child: Container(
               padding: EdgeInsets.only(left: 45.0),
               height: 50.0,
@@ -779,7 +779,7 @@ NumberFormat fn = NumberFormat("0");
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 10.0, left: 30.0, right: 30.0),
+            padding: EdgeInsets.only(top: 10.0, left: 20.0, right: 30.0),
             child: Container(
               padding: EdgeInsets.only(left: 45.0),
               height: 50.0,
@@ -806,7 +806,7 @@ NumberFormat fn = NumberFormat("0");
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 10.0, left: 30.0, right: 30.0),
+            padding: EdgeInsets.only(top: 10.0, left: 20.0, right: 30.0),
             child: Container(
               padding: EdgeInsets.only(left: 45.0),
               height: 50.0,
@@ -832,7 +832,7 @@ NumberFormat fn = NumberFormat("0");
             ),
           ),
            Padding(
-            padding: EdgeInsets.only(top: 10.0, left: 30.0, right: 30.0),
+            padding: EdgeInsets.only(top: 10.0, left: 20.0, right: 30.0),
             child: Container(
               padding: EdgeInsets.only(left: 45.0),
               height: 50.0,
@@ -858,7 +858,7 @@ NumberFormat fn = NumberFormat("0");
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 10.0, left: 30.0, right: 30.0),
+            padding: EdgeInsets.only(top: 10.0, left: 20.0, right: 30.0),
             child: Container(
               padding: EdgeInsets.only(left: 45.0),
               height: 50.0,
@@ -884,7 +884,7 @@ NumberFormat fn = NumberFormat("0");
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 10.0, left: 30.0, right: 30.0),
+            padding: EdgeInsets.only(top: 10.0, left: 20.0, right: 30.0),
             child: Container(
               padding: EdgeInsets.only(left: 45.0),
               height: 50.0,
@@ -910,7 +910,7 @@ NumberFormat fn = NumberFormat("0");
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 10.0, left: 30.0, right: 30.0),
+            padding: EdgeInsets.only(top: 10.0, left: 20.0, right: 30.0),
             child: Container(
               padding: EdgeInsets.only(left: 45.0),
               height: 50.0,
@@ -936,7 +936,7 @@ NumberFormat fn = NumberFormat("0");
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 10.0, left: 30.0, right: 30.0),
+            padding: EdgeInsets.only(top: 10.0, left: 20.0, right: 30.0),
             child: Container(
               padding: EdgeInsets.only(left: 45.0),
               height: 50.0,
@@ -962,7 +962,7 @@ NumberFormat fn = NumberFormat("0");
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 10.0, left: 30.0, right: 30.0),
+            padding: EdgeInsets.only(top: 10.0, left: 20.0, right: 30.0),
             child: Container(
               padding: EdgeInsets.only(left: 45.0),
               height: 50.0,
@@ -988,7 +988,7 @@ NumberFormat fn = NumberFormat("0");
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 10.0, left: 30.0, right: 30.0, bottom: 20.0),
+            padding: EdgeInsets.only(top: 10.0, left: 20.0, right: 30.0, bottom: 20.0),
             child: Container(
               padding: EdgeInsets.only(left: 45.0),
               height: 50.0,
@@ -1014,7 +1014,7 @@ NumberFormat fn = NumberFormat("0");
             ),
           ),
           Padding( 
-            padding: EdgeInsets.only(top: 50.0, left: 30.0, right: 30.0),
+            padding: EdgeInsets.only(top: 50.0, left: 20.0, right: 30.0),
             child: RaisedButton(
               color: Color(0xff399d63),
               textColor: Colors.black,
@@ -1036,7 +1036,7 @@ NumberFormat fn = NumberFormat("0");
             ),
           ),
           Padding( 
-            padding: EdgeInsets.only(top: 10.0, left: 30.0, right: 30.0),
+            padding: EdgeInsets.only(top: 10.0, left: 20.0, right: 30.0),
             child: RaisedButton(
               color: Color(0xff399d63),
               textColor: Colors.black,
@@ -1052,7 +1052,7 @@ NumberFormat fn = NumberFormat("0");
             ),
           ),
           Padding( 
-            padding: EdgeInsets.only(top: 10.0, left: 30.0, right: 30.0, bottom: 60.0),
+            padding: EdgeInsets.only(top: 10.0, left: 20.0, right: 30.0, bottom: 60.0),
             child: RaisedButton(
               color: Color(0xff399d63),
               textColor: Colors.black,
