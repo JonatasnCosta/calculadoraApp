@@ -1,6 +1,7 @@
 import 'package:calculadoraapp/MenusHome/MenuCalculadora.dart';
 import 'package:calculadoraapp/MenusHome/MenuOS.dart';
 import 'package:calculadoraapp/MenusHome/MenuTransposicao.dart';
+import 'package:calculadoraapp/MenusHome/MenuTransposicaoPerto.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -14,7 +15,7 @@ with SingleTickerProviderStateMixin {
   TabController tabController;
   @override 
   void initState(){
-    tabController = TabController (vsync: this, length: 3);
+    tabController = TabController (vsync: this, length: 4);
     super.initState();
   }
 
@@ -94,14 +95,24 @@ with SingleTickerProviderStateMixin {
                 ),
                 Tab(
                   child: Text(
-                    'Transposição',
+                    'Transposição Adição',
                     style: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 17.0,
                       fontWeight: FontWeight.bold
                      ),
                   ),
-                )
+                ),
+                Tab(
+                  child: Text(
+                    'Transposição Perto',
+                    style: TextStyle(
+                      fontFamily: 'Montserrat',
+                      fontSize: 17.0,
+                      fontWeight: FontWeight.bold
+                     ),
+                  ),
+                ) 
               ],
               )
             ),
@@ -113,7 +124,8 @@ with SingleTickerProviderStateMixin {
                 children: <Widget>[
                   MenuOS(),
                   MenuCalculadora(),
-                  MenuTransposicao()
+                  MenuTransposicao(),
+                  MenuTransposicaoPerto()
                 ],
               )
            )

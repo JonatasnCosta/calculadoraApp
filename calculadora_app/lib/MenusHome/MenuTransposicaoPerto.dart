@@ -1,17 +1,15 @@
-
-
-import 'package:calculadoraapp/SubFuncaoTransposicao/FuncaoAdicao.dart';
+import 'package:calculadoraapp/SubFuncaoTransposicao/FuncaoGraudePerto.dart';
 import 'package:flutter/material.dart';
 
-class MenuTransposicao extends StatefulWidget {
+class MenuTransposicaoPerto extends StatefulWidget {
   @override
-  _MenuTransposicao createState() => _MenuTransposicao();
+  _MenuTransposicaoPerto createState() => _MenuTransposicaoPerto();
 }
 
-class _MenuTransposicao extends State<MenuTransposicao> {
+class _MenuTransposicaoPerto extends State<MenuTransposicaoPerto> {
  ScrollController _scrollController;
  List allDescriptions =[
-    'Deixe os calculos complicados com a gente.',
+    'Calculo rápido & preciso.',
  ];
 
  String description;
@@ -47,7 +45,7 @@ class _MenuTransposicao extends State<MenuTransposicao> {
            controller: _scrollController,
            scrollDirection: Axis.horizontal,
            children: <Widget>[
-            getMenuCard('Confiança & Inovação', 'Transposição Receita', 'Saber Adição')
+            getMenuCard('Confiança & Inovação', 'Transposição Receita', 'Saber grau de perto')
            ]
           )
         ),
@@ -257,7 +255,7 @@ class _MenuTransposicao extends State<MenuTransposicao> {
             ),
             child:InkWell(
               onTap: (){
-                Navigator.of(context).push(MaterialPageRoute(builder:(context) => FuncaoAdicao()));
+                Navigator.of(context).push(MaterialPageRoute(builder:(context) => FuncaoGraudePerto()));
                 },
               child:  Center(
               child: Icon(
