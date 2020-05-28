@@ -45,7 +45,7 @@ class _MenuTransposicaoPerto extends State<MenuTransposicaoPerto> {
            controller: _scrollController,
            scrollDirection: Axis.horizontal,
            children: <Widget>[
-            getMenuCard('Confiança & Inovação', 'Transposição Receita', 'Saber grau de perto')
+            getMenuCard('Rapidez & Perfeição', 'Transposição Receita', 'Saber grau de perto')
            ]
           )
         ),
