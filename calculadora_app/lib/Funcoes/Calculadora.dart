@@ -411,7 +411,7 @@ static const  MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
-             Padding(padding: EdgeInsets.only( top: 10.0, left: 60.0,bottom: 100.0),
+             Padding(padding: EdgeInsets.only( top: 10.0, left: 60.0,bottom: 50.0),
           child: Text("Diâmetro:",
           style: TextStyle(
             fontFamily:  'Montserrat',
@@ -420,7 +420,7 @@ static const  MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(
           ),
           ),
           ),
-            Padding(padding: EdgeInsets.only( top: 10.0, left: 10.0,bottom: 100.0),
+            Padding(padding: EdgeInsets.only( top: 10.0, left: 10.0,bottom: 50.0),
           child: Text(fn.format(diametro),
           style: TextStyle(
             fontFamily:  'Montserrat',
@@ -429,7 +429,7 @@ static const  MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(
           ),
           ),
           ),
-          Padding(padding: EdgeInsets.only(top: 10.0, left: 20.0, bottom: 100.0),
+          Padding(padding: EdgeInsets.only(top: 10.0, left: 20.0, bottom: 50.0),
           child: IconButton(
             icon: Icon(Icons.search
             ), 
@@ -445,7 +445,7 @@ static const  MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(
             ),
             
           ),
-          Padding(padding: EdgeInsets.only(top: 10.0, left: 10.0, bottom: 100.0),
+          Padding(padding: EdgeInsets.only(top: 10.0, left: 10.0, bottom: 50.0),
           child: IconButton(
             icon:  Icon(Icons.share
             ),

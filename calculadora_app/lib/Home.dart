@@ -85,7 +85,7 @@ with SingleTickerProviderStateMixin {
                 ),
                 Tab(
                   child: Text(
-                    'Diâmetro de lentes',
+                    'Diâmetro de Lentes',
                     style: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 17.0,
