@@ -398,8 +398,15 @@ static const  MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(
               borderRadius: new BorderRadius.circular(18.0),
               side: BorderSide(color: Color(0xff399d63))
               ),
-              onPressed: (){
+              onPressed: () async{
               _resultadodiametro(context);
+                writeOnPdf();
+              await savePdf();
+             Directory documentDirectory = await getApplicationDocumentsDirectory();
+               String documentPath = documentDirectory.path;
+               String fullPath = "$documentPath/Diâmetro de lentes.pdf";
+               Navigator.push(context, MaterialPageRoute(
+            builder: (context) => PDFDiametro(path: fullPath,)));
               }
             ),
            ),
