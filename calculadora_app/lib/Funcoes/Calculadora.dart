@@ -7,6 +7,7 @@ import 'package:pdf/widgets.dart' as pw;
 import 'package:printing/printing.dart';
 import 'package:intl/intl.dart';
 import 'package:firebase_admob/firebase_admob.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 const String testDevice = '721A33913C7D7D311A5FB39652B0084B';
 
@@ -52,6 +53,11 @@ static const  MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(
   TextEditingController _controllerMenorDnp = TextEditingController();
   TextEditingController _controllerMaiorDiagonal = TextEditingController();
   TextEditingController _controllerVertical = TextEditingController();
+  var maskFormatter = new MaskTextInputFormatter(mask: '##.#', filter: { "#": RegExp(r'[0-9]') });
+  var maskFormatterAro = new MaskTextInputFormatter(mask: '##', filter: { "#": RegExp(r'[0-9]') });  
+  var maskFormatterPonte = new MaskTextInputFormatter(mask: '##', filter: { "#": RegExp(r'[0-9]') }); 
+  var maskFormatterVertical = new MaskTextInputFormatter(mask: '##', filter: { "#": RegExp(r'[0-9]') }); 
+  var maskFormatterDiagonalMaior = new MaskTextInputFormatter(mask: '##', filter: { "#": RegExp(r'[0-9]') }); 
   NumberFormat fn = NumberFormat("0");
 
   double diametro = 0; 
@@ -102,7 +108,7 @@ static const  MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(
             pw.Row(
               children: [
                 pw.Paragraph(
-             text: "Aro  (Diagonal maior): ",
+             text: "Aro : ",
              style: pw.TextStyle(
                fontSize: 30.0,
              )
@@ -257,10 +263,11 @@ static const  MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(
               ),
               child: Center(
                 child: TextField(
-                   keyboardType: TextInputType.text,
+                   keyboardType: TextInputType.number,
+                   inputFormatters: [maskFormatterAro],
                   decoration: InputDecoration(
                     border: InputBorder.none,
-                    labelText: 'Aro  (Diagonal maior)',
+                    labelText: 'Aro',
                     labelStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
@@ -283,7 +290,8 @@ static const  MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(
               ),
               child: Center(
                 child: TextField(
-                   keyboardType: TextInputType.text,
+                   keyboardType: TextInputType.number,
+                   inputFormatters: [maskFormatterPonte],
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     labelText: 'Ponte',
@@ -309,7 +317,8 @@ static const  MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(
               ),
               child: Center(
                 child: TextField(
-                   keyboardType: TextInputType.text,
+                   keyboardType: TextInputType.number,
+                   inputFormatters: [maskFormatter],
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     labelText: 'Menor DNP',
@@ -335,7 +344,8 @@ static const  MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(
               ),
               child: Center(
                 child: TextField(
-                   keyboardType: TextInputType.text,
+                   keyboardType: TextInputType.number,
+                   inputFormatters: [maskFormatterVertical],
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     labelText: 'Vertical',
@@ -361,7 +371,8 @@ static const  MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(
               ),
               child: Center(
                 child: TextField(
-                   keyboardType: TextInputType.text,
+                   keyboardType: TextInputType.number,
+                    inputFormatters: [maskFormatterDiagonalMaior],
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     labelText: 'Maior diagonal',
