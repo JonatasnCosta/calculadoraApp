@@ -84,6 +84,8 @@ TextEditingController _controllerDiametro = TextEditingController();
 TextEditingController _controllerTipodearo = TextEditingController();
 TextEditingController _controllerObservacoes = TextEditingController();
 var maskFormatter = new MaskTextInputFormatter(mask: '##/##/####', filter: { "#": RegExp(r'[0-9]') });  
+var maskFormatterDNPOD = new MaskTextInputFormatter(mask: '##.#', filter: { "#": RegExp(r'[0-9]') });
+var maskFormatterDNPOE = new MaskTextInputFormatter(mask: '##.#', filter: { "#": RegExp(r'[0-9]') });
 NumberFormat nf = NumberFormat("0.00");
 NumberFormat fn = NumberFormat("0");
 final pdf = pw.Document();
@@ -808,7 +810,7 @@ final pdf = pw.Document();
               child: Center(
                 child: TextField(
                   inputFormatters: [maskFormatter],
-                  keyboardType: TextInputType.phone,
+                  keyboardType: TextInputType.number,
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     labelText: 'Data',
@@ -861,7 +863,7 @@ final pdf = pw.Document();
               ),
               child: Center(
                 child: TextField(
-                  keyboardType: TextInputType.text,
+                  keyboardType: TextInputType.number,
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     labelText: 'Número da NR',
@@ -939,7 +941,8 @@ final pdf = pw.Document();
               ),
               child: Center(
                 child: TextField(
-                   keyboardType: TextInputType.text,
+                   keyboardType: TextInputType.number,
+                    inputFormatters: [maskFormatterDNPOD],
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     labelText: 'DNP: OD',
@@ -965,7 +968,8 @@ final pdf = pw.Document();
               ),
               child: Center(
                 child: TextField(
-                   keyboardType: TextInputType.text,
+                   keyboardType: TextInputType.number,
+                    inputFormatters: [maskFormatterDNPOE],
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     labelText: 'DNP: OE',
@@ -1064,7 +1068,7 @@ final pdf = pw.Document();
               color: Color(0xff399d63),
               textColor: Colors.black,
               padding: EdgeInsets.all(15.0),
-              child: Text('Visualizar Ordem de serviço'),
+              child: Text('Gerar Ordem de serviço'),
               shape: RoundedRectangleBorder(
               borderRadius: new BorderRadius.circular(18.0),
               side: BorderSide(color: Color(0xff399d63))
@@ -1092,7 +1096,8 @@ final pdf = pw.Document();
               side: BorderSide(color: Color(0xff399d63))
               ),
               onPressed: () async{
-                 await Printing.sharePdf(bytes: pdf.save(), filename:'Ordem de serviço.pdf');
+                await Printing.sharePdf(bytes: pdf.save(), filename:'Ordem de serviço.pdf');
+                  writeOnPdf();
               },
             ),
           ),

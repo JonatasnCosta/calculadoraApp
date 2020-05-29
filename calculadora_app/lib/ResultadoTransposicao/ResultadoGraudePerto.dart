@@ -81,6 +81,8 @@ TextEditingController _controllerDiametro = TextEditingController();
 TextEditingController _controllerTipodearo = TextEditingController();
 TextEditingController _controllerObservacoes = TextEditingController();
 var maskFormatter = new MaskTextInputFormatter(mask: '##/##/####', filter: { "#": RegExp(r'[0-9]') }); 
+var maskFormatterDNPOD = new MaskTextInputFormatter(mask: '##.#', filter: { "#": RegExp(r'[0-9]') });
+var maskFormatterDNPOE = new MaskTextInputFormatter(mask: '##.#', filter: { "#": RegExp(r'[0-9]') });
 NumberFormat nf = NumberFormat("0.00");
 NumberFormat fn = NumberFormat("0");
 
@@ -737,32 +739,6 @@ NumberFormat fn = NumberFormat("0");
               ),
               child: Center(
                 child: TextField(
-                  keyboardType: TextInputType.text,
-                  decoration: InputDecoration(
-                    border: InputBorder.none,
-                    labelText: 'Número da NR',
-                    labelStyle: TextStyle(
-                      fontFamily: 'Montserrat',
-                      fontSize: 15.0,
-                      color: Colors.black
-                    ),
-                  ),
-                  controller: _controllerNR
-                ),
-              ),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(top: 10.0, left: 20.0, right: 30.0),
-            child: Container(
-              padding: EdgeInsets.only(left: 45.0),
-              height: 50.0,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(25.0),
-                color: Color(0xff399d63)
-              ),
-              child: Center(
-                child: TextField(
                    keyboardType: TextInputType.text,
                    decoration: InputDecoration(
                     border: InputBorder.none,
@@ -790,7 +766,7 @@ NumberFormat fn = NumberFormat("0");
               child: Center(
                 child: TextField(
                   inputFormatters: [maskFormatter],
-                  keyboardType: TextInputType.phone,
+                  keyboardType: TextInputType.number,
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     labelText: 'Data',
@@ -827,6 +803,32 @@ NumberFormat fn = NumberFormat("0");
                     ),
                   ),
                   controller: _controllerOS,
+                ),
+              ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(top: 10.0, left: 20.0, right: 30.0),
+            child: Container(
+              padding: EdgeInsets.only(left: 45.0),
+              height: 50.0,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(25.0),
+                color: Color(0xff399d63)
+              ),
+              child: Center(
+                child: TextField(
+                  keyboardType: TextInputType.number,
+                  decoration: InputDecoration(
+                    border: InputBorder.none,
+                    labelText: 'Número da NR',
+                    labelStyle: TextStyle(
+                      fontFamily: 'Montserrat',
+                      fontSize: 15.0,
+                      color: Colors.black
+                    ),
+                  ),
+                  controller: _controllerNR
                 ),
               ),
             ),
@@ -894,7 +896,8 @@ NumberFormat fn = NumberFormat("0");
               ),
               child: Center(
                 child: TextField(
-                   keyboardType: TextInputType.text,
+                   keyboardType: TextInputType.number,
+                    inputFormatters: [maskFormatterDNPOD],
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     labelText: 'DNP: OD',
@@ -920,7 +923,8 @@ NumberFormat fn = NumberFormat("0");
               ),
               child: Center(
                 child: TextField(
-                   keyboardType: TextInputType.text,
+                   keyboardType: TextInputType.number,
+                    inputFormatters: [maskFormatterDNPOE],
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     labelText: 'DNP: OE',
@@ -1019,7 +1023,7 @@ NumberFormat fn = NumberFormat("0");
               color: Color(0xff399d63),
               textColor: Colors.black,
               padding: EdgeInsets.all(15.0),
-              child: Text('Visualizar Ordem de serviço'),
+              child: Text('Gerar Ordem de serviço'),
               shape: RoundedRectangleBorder(
               borderRadius: new BorderRadius.circular(18.0),
               side: BorderSide(color: Color(0xff399d63))
