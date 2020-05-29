@@ -336,7 +336,7 @@ class OrdemGerada extends StatelessWidget  {
                 ),
                 FloatingActionButton(
                   onPressed: () {
-                     Navigator.of(context).push(MaterialPageRoute(builder:(context) => Home()));
+                     Navigator.pop(context, MaterialPageRoute(builder: (context) => Home()));
                   },
                   backgroundColor: Colors.grey.withOpacity(0.3),
                   mini: true,

@@ -1,3 +1,4 @@
+import 'package:calculadoraapp/Home.dart';
 import 'package:calculadoraapp/SubFuncaoTransposicao/FuncaoGraudePerto.dart';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
@@ -466,7 +467,7 @@ NumberFormat fn = NumberFormat("0");
                 ),
                 FloatingActionButton(
                   onPressed: () {
-                     Navigator.of(context).pop();
+                     Navigator.pop(context, MaterialPageRoute(builder: (context) => Home()));
                   },
                   backgroundColor: Colors.grey.withOpacity(0.3),
                   mini: true,

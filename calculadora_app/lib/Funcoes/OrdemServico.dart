@@ -1,3 +1,4 @@
+import 'package:calculadoraapp/Home.dart';
 import 'package:calculadoraapp/SubFuncaoOrdemdeservico/OrdemGerada.dart';
 import 'package:flutter/material.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
@@ -89,7 +90,7 @@ var maskFormatter = new MaskTextInputFormatter(mask: '##/##/####', filter: { "#"
                 ),
                   FloatingActionButton(
                   onPressed: () {
-                     Navigator.of(context).pop();
+                     Navigator.pop(context, MaterialPageRoute(builder: (context) => Home()));
                   },
                   backgroundColor: Colors.grey.withOpacity(0.3),
                   mini: true,

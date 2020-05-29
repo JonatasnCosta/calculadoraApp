@@ -1,3 +1,4 @@
+import 'package:calculadoraapp/Home.dart';
 import 'package:calculadoraapp/ResultadoTransposicao/ResultadoGraudeAdicao.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_admob/firebase_admob.dart';
@@ -206,7 +207,7 @@ if (adicaoOD == adicaoOE  && adicaoOE == adicaoOD) {
                 ),
                 FloatingActionButton(
                   onPressed: () {
-                      Navigator.of(context).pop();
+                       Navigator.pop(context, MaterialPageRoute(builder: (context) => Home()));
                   },
                   backgroundColor: Colors.grey.withOpacity(0.3),
                   mini: true,

@@ -1,3 +1,4 @@
+import 'package:calculadoraapp/Home.dart';
 import 'package:calculadoraapp/SubFuncaoTransposicao/FuncaoAdicao.dart';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
@@ -486,7 +487,7 @@ final pdf = pw.Document();
                 ),
                 FloatingActionButton(
                   onPressed: () {
-                      Navigator.of(context).pop();
+                      Navigator.pop(context, MaterialPageRoute(builder: (context) => Home()));
                   },
                   backgroundColor: Colors.grey.withOpacity(0.3),
                   mini: true,

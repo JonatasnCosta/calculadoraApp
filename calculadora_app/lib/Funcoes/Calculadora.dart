@@ -1,3 +1,4 @@
+import 'package:calculadoraapp/Home.dart';
 import 'package:flutter/material.dart';
 import 'package:calculadoraapp/PdfViews/PDFDiametro.dart';
 import 'dart:io';
@@ -228,7 +229,7 @@ static const  MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(
                 ),
                 FloatingActionButton(
                   onPressed: () {
-                      Navigator.of(context).pop();
+                      Navigator.pop(context, MaterialPageRoute(builder: (context) => Home()));
                   },
                   backgroundColor: Colors.grey.withOpacity(0.3),
                   mini: true,
