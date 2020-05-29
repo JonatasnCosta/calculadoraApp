@@ -56,8 +56,8 @@ static const  MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(
   var maskFormatter = new MaskTextInputFormatter(mask: '##.#', filter: { "#": RegExp(r'[0-9]') });
   var maskFormatterAro = new MaskTextInputFormatter(mask: '##', filter: { "#": RegExp(r'[0-9]') });  
   var maskFormatterPonte = new MaskTextInputFormatter(mask: '##', filter: { "#": RegExp(r'[0-9]') }); 
-  var maskFormatterVertical = new MaskTextInputFormatter(mask: '##', filter: { "#": RegExp(r'[0-9]') }); 
-  var maskFormatterDiagonalMaior = new MaskTextInputFormatter(mask: '##', filter: { "#": RegExp(r'[0-9]') }); 
+  var maskFormatterVertical = new MaskTextInputFormatter(mask: '##.#', filter: { "#": RegExp(r'[0-9]') }); 
+  var maskFormatterDiagonalMaior = new MaskTextInputFormatter(mask: '##.#', filter: { "#": RegExp(r'[0-9]') }); 
   NumberFormat fn = NumberFormat("0");
 
   double diametro = 0; 
