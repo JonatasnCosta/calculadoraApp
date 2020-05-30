@@ -1,4 +1,3 @@
-import 'package:calculadoraapp/SubFuncaoTransposicao/FuncaoAdicao.dart';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:pdf/pdf.dart';
@@ -503,19 +502,6 @@ final pdf = pw.Document();
                      Navigator.of(context).pop();
                   }
                 ),
-                FloatingActionButton(
-                  onPressed: () {
-                      Navigator.pop(context, MaterialPageRoute(builder: (context) => FuncaoAdicao()));
-                  },
-                  backgroundColor: Colors.grey.withOpacity(0.3),
-                  mini: true,
-                  elevation: 0.0,
-                  child:
-                      Icon(
-                        Icons.short_text, 
-                        color: Colors.black, size: 17.0
-                        ),
-                )
               ]
               ),
         ),
@@ -1133,7 +1119,7 @@ final pdf = pw.Document();
             ),
           ),
           Padding( 
-            padding: EdgeInsets.only(top: 10.0, left: 20.0, right: 30.0),
+            padding: EdgeInsets.only(top: 10.0, left: 20.0, right: 30.0, bottom: 60.0),
             child: RaisedButton(
               color: Color(0xff399d63),
               textColor: Colors.black,
@@ -1148,23 +1134,7 @@ final pdf = pw.Document();
                   writeOnPdf();
               },
             ),
-          ),
-          Padding( 
-            padding: EdgeInsets.only(top: 10.0, left: 20.0, right: 30.0, bottom: 60.0),
-            child: RaisedButton(
-              color: Color(0xff399d63),
-              textColor: Colors.black,
-              padding: EdgeInsets.all(15.0),
-              child: Text('Novo Calculo'),
-              shape: RoundedRectangleBorder(
-              borderRadius: new BorderRadius.circular(18.0),
-              side: BorderSide(color: Color(0xff399d63))
-              ),
-              onPressed: (){
-               Navigator.of(context).push(MaterialPageRoute(builder:(context) => FuncaoAdicao()));
-              }
-            ),
-           )
+          )
        ],
      ),
     );

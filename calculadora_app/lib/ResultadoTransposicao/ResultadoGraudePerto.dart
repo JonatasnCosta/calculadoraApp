@@ -1,5 +1,3 @@
-import 'package:calculadoraapp/Home.dart';
-import 'package:calculadoraapp/SubFuncaoTransposicao/FuncaoGraudePerto.dart';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:pdf/pdf.dart';
@@ -484,19 +482,6 @@ NumberFormat fn = NumberFormat("0");
                     Navigator.of(context).pop();
                   }
                 ),
-                FloatingActionButton(
-                  onPressed: () {
-                     Navigator.pop(context, MaterialPageRoute(builder: (context) => Home()));
-                  },
-                  backgroundColor: Colors.grey.withOpacity(0.3),
-                  mini: true,
-                  elevation: 0.0,
-                  child:
-                      Icon(
-                        Icons.short_text, 
-                        color: Colors.black, size: 17.0
-                        ),
-                )
               ]
               ),
         ),
@@ -1089,7 +1074,7 @@ NumberFormat fn = NumberFormat("0");
             ),
           ),
           Padding( 
-            padding: EdgeInsets.only(top: 10.0, left: 20.0, right: 30.0),
+            padding: EdgeInsets.only(top: 10.0, left: 20.0, right: 30.0, bottom: 60.0),
             child: RaisedButton(
               color: Color(0xff399d63),
               textColor: Colors.black,
@@ -1103,23 +1088,7 @@ NumberFormat fn = NumberFormat("0");
                  await Printing.sharePdf(bytes: pdf.save(), filename:'Ordem de serviço.pdf');
               },
             ),
-          ),
-          Padding( 
-            padding: EdgeInsets.only(top: 10.0, left: 20.0, right: 30.0, bottom: 60.0),
-            child: RaisedButton(
-              color: Color(0xff399d63),
-              textColor: Colors.black,
-              padding: EdgeInsets.all(15.0),
-              child: Text('Novo Calculo'),
-              shape: RoundedRectangleBorder(
-              borderRadius: new BorderRadius.circular(18.0),
-              side: BorderSide(color: Color(0xff399d63))
-              ),
-              onPressed: (){
-               Navigator.of(context).push(MaterialPageRoute(builder:(context) => FuncaoGraudePerto()));
-              }
-            ),
-           )
+          )
        ],
      ),
     );
