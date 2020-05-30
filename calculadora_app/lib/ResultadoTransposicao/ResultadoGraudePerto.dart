@@ -78,12 +78,16 @@ TextEditingController _controllerTipodelente = TextEditingController();
 TextEditingController _controllerTratamento = TextEditingController();
 TextEditingController _controllerDNPOD = TextEditingController();
 TextEditingController _controllerDNPOE = TextEditingController();
+TextEditingController _controllerAltura = TextEditingController();
 TextEditingController _controllerDiametro = TextEditingController();
 TextEditingController _controllerTipodearo = TextEditingController();
 TextEditingController _controllerObservacoes = TextEditingController();
 var maskFormatter = new MaskTextInputFormatter(mask: '##/##/####', filter: { "#": RegExp(r'[0-9]') }); 
 var maskFormatterDNPOD = new MaskTextInputFormatter(mask: '##.#', filter: { "#": RegExp(r'[0-9]') });
 var maskFormatterDNPOE = new MaskTextInputFormatter(mask: '##.#', filter: { "#": RegExp(r'[0-9]') });
+var maskFormatterDiametro = new MaskTextInputFormatter(mask: '##', filter: { "#": RegExp(r'[0-9]') });
+var maskFormatterAltura = new MaskTextInputFormatter(mask: '##', filter: { "#": RegExp(r'[0-9]') });
+  
 NumberFormat nf = NumberFormat("0.00");
 NumberFormat fn = NumberFormat("0");
 
@@ -386,6 +390,21 @@ NumberFormat fn = NumberFormat("0");
              )
             ),
              pw.Paragraph(text: _controllerDNPOE.text,
+             style: pw.TextStyle(
+               fontSize: 30.0,
+             )
+             ),
+              ]
+            ),
+             pw.Row(
+              children: [
+                 pw.Paragraph(
+                text: "Altura: ",
+                style: pw.TextStyle(
+               fontSize: 30.0,
+             )
+            ),
+             pw.Paragraph(text: _controllerAltura.text,
              style: pw.TextStyle(
                fontSize: 30.0,
              )
@@ -940,6 +959,34 @@ NumberFormat fn = NumberFormat("0");
               ),
             ),
           ),
+           Padding(
+            padding: EdgeInsets.only(top: 10.0, left: 20.0, right: 30.0),
+            child: Container(
+              padding: EdgeInsets.only(left: 45.0),
+              height: 50.0,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(25.0),
+                color: Color(0xff399d63)
+              ),
+              child: Center(
+                child: TextField(
+                   keyboardType: TextInputType.number,
+                   inputFormatters: [maskFormatterAltura],
+                  decoration: InputDecoration(
+                    border: InputBorder.none,
+                    labelText: 'Altura',
+                    labelStyle: TextStyle(
+                      fontFamily: 'Montserrat',
+                      fontSize: 15.0,
+                      color: Colors.black
+                    ),
+                  ),
+                  controller: _controllerAltura,
+                ),
+              ),
+            ),
+          ),
+         
           Padding(
             padding: EdgeInsets.only(top: 10.0, left: 20.0, right: 30.0),
             child: Container(
@@ -952,6 +999,7 @@ NumberFormat fn = NumberFormat("0");
               child: Center(
                 child: TextField(
                    keyboardType: TextInputType.number,
+                    inputFormatters: [maskFormatterDiametro],
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     labelText: 'Diâmetro',

@@ -65,8 +65,12 @@ TextEditingController _controllerAltura = TextEditingController();
 TextEditingController _controllerDiametro = TextEditingController();
 TextEditingController _controllerTipodearo = TextEditingController();
 TextEditingController _controllerObservacoes = TextEditingController();
-var maskFormatter = new MaskTextInputFormatter(mask: '##/##/####', filter: { "#": RegExp(r'[0-9]') });  
-
+var maskFormatter = new MaskTextInputFormatter(mask: '##/##/####', filter: { "#": RegExp(r'[0-9]') }); 
+var maskFormatterAdicao = new MaskTextInputFormatter(mask: '#.##', filter: { "#": RegExp(r'[0-9]') }); 
+var maskFormatterDNPOD = new MaskTextInputFormatter(mask: '##.#', filter: { "#": RegExp(r'[0-9]') }); 
+var maskFormatterDNPOE = new MaskTextInputFormatter(mask: '##.#', filter: { "#": RegExp(r'[0-9]') }); 
+var maskFormatterAltura = new MaskTextInputFormatter(mask: '##', filter: { "#": RegExp(r'[0-9]') });
+var maskFormatterDiametro = new MaskTextInputFormatter(mask: '##', filter: { "#": RegExp(r'[0-9]') });
   
   @override
   Widget build(BuildContext context) {
@@ -177,8 +181,8 @@ var maskFormatter = new MaskTextInputFormatter(mask: '##/##/####', filter: { "#"
               ),
               child: Center(
                 child: TextField(
-                  inputFormatters: [maskFormatter],
-                  keyboardType: TextInputType.phone,
+                  keyboardType: TextInputType.number,
+                   inputFormatters: [maskFormatter],
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     labelText: 'Data',
@@ -231,7 +235,7 @@ var maskFormatter = new MaskTextInputFormatter(mask: '##/##/####', filter: { "#"
               ),
               child: Center(
                 child: TextField(
-                  keyboardType: TextInputType.text,
+                  keyboardType: TextInputType.number,
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     labelText: 'Número da NR',
@@ -361,7 +365,8 @@ var maskFormatter = new MaskTextInputFormatter(mask: '##/##/####', filter: { "#"
               ),
               child: Center(
                 child: TextField(
-                   keyboardType: TextInputType.text,
+                   keyboardType: TextInputType.number,
+                    inputFormatters: [maskFormatterAdicao],
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     labelText: 'Adição',
@@ -387,7 +392,8 @@ var maskFormatter = new MaskTextInputFormatter(mask: '##/##/####', filter: { "#"
               ),
               child: Center(
                 child: TextField(
-                   keyboardType: TextInputType.text,
+                   keyboardType: TextInputType.number,
+                   inputFormatters: [maskFormatterDNPOD],
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     labelText: 'DNP: OD',
@@ -413,7 +419,8 @@ var maskFormatter = new MaskTextInputFormatter(mask: '##/##/####', filter: { "#"
               ),
               child: Center(
                 child: TextField(
-                   keyboardType: TextInputType.text,
+                   keyboardType: TextInputType.number,
+                   inputFormatters: [maskFormatterDNPOE],
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     labelText: 'DNP: OE',
@@ -440,6 +447,7 @@ var maskFormatter = new MaskTextInputFormatter(mask: '##/##/####', filter: { "#"
               child: Center(
                 child: TextField(
                    keyboardType: TextInputType.number,
+                   inputFormatters: [maskFormatterAltura],
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     labelText: 'Altura',
@@ -466,6 +474,7 @@ var maskFormatter = new MaskTextInputFormatter(mask: '##/##/####', filter: { "#"
               child: Center(
                 child: TextField(
                    keyboardType: TextInputType.number,
+                    inputFormatters: [maskFormatterDiametro],
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     labelText: 'Diâmetro',
