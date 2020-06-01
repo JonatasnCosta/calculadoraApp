@@ -92,7 +92,7 @@ var maskFormatterDiametro = new MaskTextInputFormatter(mask: '##', filter: { "#"
   
 NumberFormat nf = NumberFormat("0.00");
 NumberFormat fn = NumberFormat("0");
- bool _isButtonDisabled = true;
+bool _isButtonDisabled = true;
 
 final pdf = pw.Document();
   
