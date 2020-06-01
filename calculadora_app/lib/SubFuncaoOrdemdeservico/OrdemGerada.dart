@@ -331,12 +331,12 @@ class OrdemGerada extends StatelessWidget  {
                 IconButton(
                   icon: Icon(Icons.arrow_back), 
                   onPressed: () {
-                    Navigator.of(context).pop(MaterialPageRoute(builder:(context) => OrdemServico()));
+                    Navigator.of(context).pop();
                   }
                 ),
                 FloatingActionButton(
                   onPressed: () {
-                     Navigator.pop(context, MaterialPageRoute(builder: (context) => Home()));
+                     Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
                   },
                   backgroundColor: Colors.grey.withOpacity(0.3),
                   mini: true,
