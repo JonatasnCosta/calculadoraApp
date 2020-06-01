@@ -366,7 +366,7 @@ class OrdemGerada extends StatelessWidget  {
               color: Color(0xff399d63),
               textColor: Colors.black,
               padding: EdgeInsets.all(15.0),
-              child: Text('Visualizar Ordem de serviço'),
+              child: Text('Gerar Ordem de serviço'),
               shape: RoundedRectangleBorder(
               borderRadius: new BorderRadius.circular(18.0),
               side: BorderSide(color: Color(0xff399d63))

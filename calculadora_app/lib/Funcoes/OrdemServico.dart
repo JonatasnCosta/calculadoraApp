@@ -547,7 +547,7 @@ var maskFormatterDiametro = new MaskTextInputFormatter(mask: '##', filter: { "#"
               color: Color(0xff399d63),
               textColor: Colors.black,
               padding: EdgeInsets.all(15.0),
-              child: Text('Gerar Ordem de serviço'),
+              child: Text('Fazer pedido'),
               shape: RoundedRectangleBorder(
               borderRadius: new BorderRadius.circular(18.0),
               side: BorderSide(color: Color(0xff399d63))
