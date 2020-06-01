@@ -229,7 +229,7 @@ static const  MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(
                 ),
                 FloatingActionButton(
                   onPressed: () {
-                      Navigator.pop(context, MaterialPageRoute(builder: (context) => Home()));
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
                   },
                   backgroundColor: Colors.grey.withOpacity(0.3),
                   mini: true,
