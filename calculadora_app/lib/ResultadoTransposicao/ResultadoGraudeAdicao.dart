@@ -92,6 +92,8 @@ var maskFormatterDiametro = new MaskTextInputFormatter(mask: '##', filter: { "#"
   
 NumberFormat nf = NumberFormat("0.00");
 NumberFormat fn = NumberFormat("0");
+ bool _isButtonDisabled = true;
+
 final pdf = pw.Document();
   
   writeOnPdf(){
@@ -1116,20 +1118,12 @@ final pdf = pw.Document();
               color: Color(0xff399d63),
               textColor: Colors.black,
               padding: EdgeInsets.all(15.0),
-              child: Text('Gerar Ordem de serviço'),
+              child: Text(_isButtonDisabled ? 'Gerar Ordem de serviço' : 'Botão de compartilhar habilitado'),
               shape: RoundedRectangleBorder(
               borderRadius: new BorderRadius.circular(18.0),
               side: BorderSide(color: Color(0xff399d63))
               ),
-              onPressed: () async{
-                writeOnPdf();
-              await savePdf();
-               Directory documentDirectory = await getApplicationDocumentsDirectory();
-               String documentPath = documentDirectory.path;
-               String fullPath = "$documentPath/Ordem de serviço.pdf";
-               Navigator.push(context, MaterialPageRoute(
-            builder: (context) => PDFDiametro(path: fullPath,)));
-              },
+              onPressed: _alternaButton 
             ),
           ),
           Padding( 
@@ -1143,14 +1137,30 @@ final pdf = pw.Document();
               borderRadius: new BorderRadius.circular(18.0),
               side: BorderSide(color: Color(0xff399d63))
               ),
-              onPressed: () async{
+              onPressed:  _isButtonDisabled ? null : () async{
                 await Printing.sharePdf(bytes: pdf.save(), filename:'Ordem de serviço.pdf');
                   writeOnPdf();
-              },
+              }
             ),
           )
        ],
      ),
     );
+    
   } 
+   _alternaButton() {
+      setState(() => _isButtonDisabled = !_isButtonDisabled);
+      setState(() async{
+                writeOnPdf();
+              await savePdf();
+               Directory documentDirectory = await getApplicationDocumentsDirectory();
+               String documentPath = documentDirectory.path;
+               String fullPath = "$documentPath/Ordem de serviço.pdf";
+               Navigator.push(context, MaterialPageRoute(
+            builder: (context) => PDFDiametro(path: fullPath,)));
+              }
+      );
+      
+   }
+  
 }
