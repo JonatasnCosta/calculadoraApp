@@ -94,7 +94,7 @@ var maskFormatterDiametro = new MaskTextInputFormatter(mask: '##', filter: { "#"
                 ),
                   FloatingActionButton(
                   onPressed: () {
-                     Navigator.pop(context, MaterialPageRoute(builder: (context) => Home()));
+                     Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
                   },
                   backgroundColor: Colors.grey.withOpacity(0.3),
                   mini: true,
@@ -462,7 +462,7 @@ var maskFormatterDiametro = new MaskTextInputFormatter(mask: '##', filter: { "#"
               ),
             ),
           ),
-          Padding(
+           Padding(
             padding: EdgeInsets.only(top: 10.0, left: 30.0, right: 30.0),
             child: Container(
               padding: EdgeInsets.only(left: 45.0),
@@ -489,7 +489,7 @@ var maskFormatterDiametro = new MaskTextInputFormatter(mask: '##', filter: { "#"
               ),
             ),
           ),
-          Padding(
+             Padding(
             padding: EdgeInsets.only(top: 10.0, left: 30.0, right: 30.0),
             child: Container(
               padding: EdgeInsets.only(left: 45.0),
@@ -542,7 +542,7 @@ var maskFormatterDiametro = new MaskTextInputFormatter(mask: '##', filter: { "#"
             ),
           ),
            Padding( 
-            padding: EdgeInsets.only(top: 10.0, left: 30.0, right: 30.0, bottom: 100.0),
+            padding: EdgeInsets.only(top: 10.0, left: 30.0, right: 30.0, bottom: 60.0),
             child: RaisedButton(
               color: Color(0xff399d63),
               textColor: Colors.black,

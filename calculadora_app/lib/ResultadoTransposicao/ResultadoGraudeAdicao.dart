@@ -1,3 +1,4 @@
+import 'package:calculadoraapp/Home.dart';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:pdf/pdf.dart';
@@ -502,6 +503,19 @@ final pdf = pw.Document();
                      Navigator.of(context).pop();
                   }
                 ),
+                 FloatingActionButton(
+                  onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
+                  },
+                  backgroundColor: Colors.grey.withOpacity(0.3),
+                  mini: true,
+                  elevation: 0.0,
+                  child:
+                      Icon(
+                        Icons.short_text, 
+                        color: Colors.black, size: 17.0
+                        ),
+                )
               ]
               ),
         ),
