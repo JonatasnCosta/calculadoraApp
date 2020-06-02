@@ -1118,7 +1118,7 @@ final pdf = pw.Document();
               color: Color(0xff399d63),
               textColor: Colors.black,
               padding: EdgeInsets.all(15.0),
-              child: Text(_isButtonDisabled ? 'Gerar Ordem de serviço' : 'Botão de compartilhar habilitado'),
+              child: Text(_isButtonDisabled ? 'Gerar Ordem de serviço' : 'Ordem de serviço gerada'),
               shape: RoundedRectangleBorder(
               borderRadius: new BorderRadius.circular(18.0),
               side: BorderSide(color: Color(0xff399d63))
