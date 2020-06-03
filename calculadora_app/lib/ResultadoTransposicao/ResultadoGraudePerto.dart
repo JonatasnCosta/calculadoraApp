@@ -137,21 +137,6 @@ bool _isButtonDisabled = true;
             ),
               ]
             ),
-            pw.Row(
-              children: [
-                 pw.Paragraph(
-                text: "Data: ",
-                style: pw.TextStyle(
-               fontSize: 30.0,
-             )
-            ),
-            pw.Paragraph(text: _controllerData.text,
-            style: pw.TextStyle(
-               fontSize: 30.0,
-             )
-            ),
-            ]
-            ),
              pw.Row(
               children: [
                 pw.Paragraph(
@@ -166,6 +151,21 @@ bool _isButtonDisabled = true;
              )
              ),
              ]
+            ),
+            pw.Row(
+              children: [
+                 pw.Paragraph(
+                text: "Data: ",
+                style: pw.TextStyle(
+               fontSize: 30.0,
+             )
+            ),
+            pw.Paragraph(text: _controllerData.text,
+            style: pw.TextStyle(
+               fontSize: 30.0,
+             )
+            ),
+            ]
             ),
              pw.Row(
               children: [
@@ -773,6 +773,32 @@ bool _isButtonDisabled = true;
               ),
             ),
           ),
+           Padding(
+            padding: EdgeInsets.only(top: 10.0, left: 20.0, right: 30.0),
+            child: Container(
+              padding: EdgeInsets.only(left: 45.0),
+              height: 50.0,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(25.0),
+                color: Color(0xff399d63)
+              ),
+              child: Center(
+                child: TextField(
+                  keyboardType: TextInputType.text,
+                  decoration: InputDecoration(
+                    border: InputBorder.none,
+                    labelText: 'Número O.S',
+                    labelStyle: TextStyle(
+                      fontFamily: 'Montserrat',
+                      fontSize: 15.0,
+                      color: Colors.black
+                    ),
+                  ),
+                  controller: _controllerOS,
+                ),
+              ),
+            ),
+          ),
           Padding(
             padding: EdgeInsets.only(top: 10.0, left: 20.0, right: 30.0),
             child: Container(
@@ -796,32 +822,6 @@ bool _isButtonDisabled = true;
                     ),
                   ),
                   controller: _controllerData,
-                ),
-              ),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(top: 10.0, left: 20.0, right: 30.0),
-            child: Container(
-              padding: EdgeInsets.only(left: 45.0),
-              height: 50.0,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(25.0),
-                color: Color(0xff399d63)
-              ),
-              child: Center(
-                child: TextField(
-                  keyboardType: TextInputType.text,
-                  decoration: InputDecoration(
-                    border: InputBorder.none,
-                    labelText: 'Número O.S',
-                    labelStyle: TextStyle(
-                      fontFamily: 'Montserrat',
-                      fontSize: 15.0,
-                      color: Colors.black
-                    ),
-                  ),
-                  controller: _controllerOS,
                 ),
               ),
             ),
