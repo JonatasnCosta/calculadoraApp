@@ -1,8 +1,13 @@
 import 'package:calculadoraapp/Home.dart';
-import 'package:calculadoraapp/SubFuncaoOrdemdeservico/OrdemGerada.dart';
 import 'package:flutter/material.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:firebase_admob/firebase_admob.dart';
+import 'package:calculadoraapp/PdfViews/PdfPreviewScreen.dart';
+import 'dart:io';
+import 'package:path_provider/path_provider.dart';
+import 'package:pdf/pdf.dart';
+import 'package:pdf/widgets.dart' as pw;
+import 'package:printing/printing.dart';
 
 const String testDevice = '721A33913C7D7D311A5FB39652B0084B';
 
@@ -71,7 +76,275 @@ var maskFormatterDNPOD = new MaskTextInputFormatter(mask: '##.#', filter: { "#":
 var maskFormatterDNPOE = new MaskTextInputFormatter(mask: '##.#', filter: { "#": RegExp(r'[0-9]') }); 
 var maskFormatterAltura = new MaskTextInputFormatter(mask: '##', filter: { "#": RegExp(r'[0-9]') });
 var maskFormatterDiametro = new MaskTextInputFormatter(mask: '##', filter: { "#": RegExp(r'[0-9]') });
+
+bool _isButtonDisabled = true;
+
+ final pdf = pw.Document();
+
+  writeOnPdf(){
+    pdf.addPage(
+      pw.MultiPage(
+        pageFormat: PdfPageFormat.a3,
+        margin: pw.EdgeInsets.all(32),
+        
+
+        build: (pw.Context context){
+          return <pw.Widget>  [
+            pw.Header(
+              level: 0,
+              child: pw.Text("Ordem de serviço",
+              style: pw.TextStyle(
+               fontSize: 40.0,
+             )
+              ),
+            ),
+             pw.Row(
+              children: [
+                pw.Paragraph(
+             text: "Número de Cliente: ",
+             style: pw.TextStyle(
+               fontSize: 30.0,
+             )
+           ),
+            pw.Paragraph(text: _controllerNumeroCliente.text,
+            style: pw.TextStyle(
+               fontSize: 30.0,
+             )
+            ),
+              ]
+            ),
+             pw.Row(
+              children: [
+                pw.Paragraph(
+             text: "Ótica: ",
+             style: pw.TextStyle(
+               fontSize: 30.0,
+             )
+           ),
+            pw.Paragraph(text: _controllerNomeotica.text,
+            style: pw.TextStyle(
+               fontSize: 30.0,
+             )
+            ),
+              ]
+            ),
+            pw.Row(
+              children: [
+                 pw.Paragraph(
+                text: "Data: ",
+                style: pw.TextStyle(
+               fontSize: 30.0,
+             )
+            ),
+            pw.Paragraph(text: _controllerData.text,
+            style: pw.TextStyle(
+               fontSize: 30.0,
+             )
+            ),
+            ]
+            ),
+             pw.Row(
+              children: [
+                pw.Paragraph(
+                text: "Número O.S: ",
+                style: pw.TextStyle(
+               fontSize: 30.0,
+             )
+            ),
+             pw.Paragraph(text: _controllerOS.text,
+             style: pw.TextStyle(
+               fontSize: 30.0,
+             )
+             ),
+             ]
+            ),
+            pw.Row(
+              children: [
+                pw.Paragraph(
+                text: "Número da NR: ",
+                style: pw.TextStyle(
+               fontSize: 30.0,
+             )
+            ),
+             pw.Paragraph(text: _controllerNR.text,
+             style: pw.TextStyle(
+               fontSize: 30.0,
+             )
+             ),
+             ]
+            ), pw.Row(
+              children: [
+                pw.Paragraph(
+                text: "Tipo de lente: ",
+                style: pw.TextStyle(
+               fontSize: 30.0,
+             )
+            ),
+             pw.Paragraph(text: _controllerTipodelente.text,
+             style: pw.TextStyle(
+               fontSize: 30.0,
+             )
+             ),
+              ]
+            ), pw.Row(
+              children: [
+                pw.Paragraph(
+                text: "Tratamento: ",
+                style: pw.TextStyle(
+               fontSize: 30.0,
+             )
+            ),
+             pw.Paragraph(text: _controllerTratamento.text,
+             style: pw.TextStyle(
+               fontSize: 30.0,
+             )
+             ), 
+              ]
+            ),
+             pw.Row(
+              children: [
+                pw.Paragraph(
+                text: "OD: ",
+                style: pw.TextStyle(
+               fontSize: 30.0,
+             )
+            ),
+             pw.Paragraph(text: _controllerODGrau.text,
+             style: pw.TextStyle(
+               fontSize: 30.0,
+             )
+             ),
+                
+              ]
+            ),
+             pw.Row(
+              children: [
+                 pw.Paragraph(
+                text: "OE: ",
+                style: pw.TextStyle(
+               fontSize: 30.0,
+             )
+            ),
+             pw.Paragraph(text: _controllerOEGrau.text,
+             style: pw.TextStyle(
+               fontSize: 30.0,
+             )
+             ),
+              ]
+            ),
+             pw.Row(
+              children: [
+                pw.Paragraph(
+                text: "Adição: ",
+                style: pw.TextStyle(
+               fontSize: 30.0,
+             )
+            ),
+            pw.Paragraph(text: _controllerADD.text,
+            style: pw.TextStyle(
+               fontSize: 30.0,
+             )
+             ),
+              ]
+            ),
+             pw.Row(
+              children: [
+                pw.Paragraph(
+                text: "DNP OD: ",
+                style: pw.TextStyle(
+               fontSize: 30.0,
+             )
+            ),
+             pw.Paragraph(text: _controllerDNPOD.text,
+             style: pw.TextStyle(
+               fontSize: 30.0,
+             )
+             ),
+              ]
+            ),
+             pw.Row(
+              children: [
+                 pw.Paragraph(
+                text: "DNP OE: ",
+                style: pw.TextStyle(
+               fontSize: 30.0,
+             )
+            ),
+             pw.Paragraph(text: _controllerDNPOE.text,
+             style: pw.TextStyle(
+               fontSize: 30.0,
+             )
+             ),
+              ]
+            ),
+             pw.Row(
+              children: [
+                 pw.Paragraph(
+                text: "Altura: ",
+                style: pw.TextStyle(
+               fontSize: 30.0,
+             )
+            ),
+             pw.Paragraph(text: _controllerAltura.text,
+             style: pw.TextStyle(
+               fontSize: 30.0,
+             )
+             ),
+              ]
+            ),
+             pw.Row(
+              children: [
+                 pw.Paragraph(
+                text: "Diâmetro: ",
+                style: pw.TextStyle(
+               fontSize: 30.0,
+             )
+            ),
+             pw.Paragraph(text: _controllerDiametro.text,
+             style: pw.TextStyle(
+               fontSize: 30.0,
+             )
+             ),
+              ]
+            ),
+             pw.Row(
+              children: [
+                 pw.Paragraph(
+                text: "Tipo de aro: ",
+                style: pw.TextStyle(
+               fontSize: 30.0,
+             )
+            ),
+             pw.Paragraph(text: _controllerTipodearo.text,
+             style: pw.TextStyle(
+               fontSize: 30.0,
+             )
+             ),
+              ]
+            ),
+              pw.Paragraph(
+                text: "Observações:",
+                style: pw.TextStyle(
+               fontSize: 30.0,
+             )
+            ),
+             pw.Paragraph(text: _controllerObservacoes.text,
+             style: pw.TextStyle(
+               fontSize: 30.0,
+             )
+             ),
+          ];
+        },
+     )
+    );
+  }
   
+   Future savePdf() async{
+    Directory documentDirectory = await getApplicationDocumentsDirectory();
+    String documentPath = documentDirectory.path;
+    File file = File("$documentPath/Ordem de serviço.pdf");
+    file.writeAsBytesSync(pdf.save());
+  }
   @override
   Widget build(BuildContext context) {
   
@@ -542,71 +815,74 @@ var maskFormatterDiametro = new MaskTextInputFormatter(mask: '##', filter: { "#"
             ),
           ),
            Padding( 
-            padding: EdgeInsets.only(top: 10.0, left: 30.0, right: 30.0, bottom: 60.0),
+            padding: EdgeInsets.only(top: 50.0, left: 20.0, right: 30.0),
             child: RaisedButton(
               color: Color(0xff399d63),
               textColor: Colors.black,
               padding: EdgeInsets.all(15.0),
-              child: Text('Fazer pedido'),
+              child: Text(_isButtonDisabled ? 'Gerar Ordem de serviço' : 'Ordem de serviço gerada'),
+              shape: RoundedRectangleBorder(
+              borderRadius: new BorderRadius.circular(18.0),
+              side: BorderSide(color: Color(0xff399d63))
+              ),
+              onPressed: _alternaButton 
+            ),
+          ),
+           Padding( 
+            padding: EdgeInsets.only(top: 5.0, left: 20.0, right: 30.0),
+            child: RaisedButton(
+              color: Color(0xff399d63),
+              textColor: Colors.black,
+              padding: EdgeInsets.all(15.0),
+              child: Text('Novo Calculo'),
               shape: RoundedRectangleBorder(
               borderRadius: new BorderRadius.circular(18.0),
               side: BorderSide(color: Color(0xff399d63))
               ),
               onPressed: (){
-                _enviardadosParaOrdemGerada(context);
+               Navigator.of(context).push(MaterialPageRoute(builder:(context) => OrdemServico()));
               }
             ),
-          ),
+           ),
+           Padding( 
+            padding: EdgeInsets.only(top: 5.0, left: 20.0, right: 30.0, bottom: 60.0),
+            child: RaisedButton(
+              color: Color(0xff399d63),
+              textColor: Colors.black,
+              padding: EdgeInsets.all(15.0),
+              child: Text('Compartilhar Ordem de serviço'),
+              shape: RoundedRectangleBorder(
+              borderRadius: new BorderRadius.circular(18.0),
+              side: BorderSide(color: Color(0xff399d63))
+              ),
+              onPressed:  _isButtonDisabled ? null : () async{
+                await Printing.sharePdf(bytes: pdf.save(), filename:'Ordem de serviço.pdf');
+                  writeOnPdf();
+              }
+            ),
+          )
+          
         ],
       ),
   );
 
   }
-  void _enviardadosParaOrdemGerada(BuildContext context) {
-    String nomeotica = _controllerNomeotica.text;
-    String numerocliente = _controllerNumeroCliente.text;
-    String data = _controllerData.text;
-    String os = _controllerOS.text;
-    String nr = _controllerNR.text;
-    String tipodelente = _controllerTipodelente.text;
-    String tratamento = _controllerTratamento.text;
-    String odgrau = _controllerODGrau.text;
-    String oegrau = _controllerOEGrau.text;
-    String add = _controllerADD.text;
-    String dnpod = _controllerDNPOD.text;
-    String dnpoe = _controllerDNPOE.text;
-    String altura = _controllerAltura.text;
-    String diametro = _controllerDiametro.text;
-    String tipodearo = _controllerTipodearo.text;
-    String obeservacoes = _controllerObservacoes.text;
-    // Transforma os dados em string
-    
-    Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => OrdemGerada( 
-           texonumerocliente: numerocliente,
-           textonome : nomeotica,
-           textodata : data,
-           textoos : os,
-           textonr : nr,
-           textotipodelente: tipodelente,
-           textotratamento: tratamento,
-           textoodgrau: odgrau,
-           textooegrau: oegrau,
-           textoadd: add,
-           textodnpod: dnpod,
-           textodnpoe: dnpoe,
-           textoaltura: altura,
-           textodiametro: diametro,
-           textotipodearo: tipodearo,
-           textoobs: obeservacoes,
-
-          ),   
-        ));
-         // Método para capturar os dados
-        // obtendo o texto do local da String e iniciando a tela secundária
-  }
+  
+     _alternaButton() {
+      setState(() => _isButtonDisabled = !_isButtonDisabled);
+      setState(() async{
+                writeOnPdf();
+              await savePdf();
+               Directory documentDirectory = await getApplicationDocumentsDirectory();
+               String documentPath = documentDirectory.path;
+               String fullPath = "$documentPath/Ordem de serviço.pdf";
+               Navigator.push(context, MaterialPageRoute(
+            builder: (context) => PdfPreviewScreen(path: fullPath,)));
+              }
+      );
+      
+   }     
+  
 }
 
 
