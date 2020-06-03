@@ -1,3 +1,4 @@
+import 'package:calculadoraapp/DiametroComparti.dart';
 import 'package:calculadoraapp/Home.dart';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
@@ -1079,6 +1080,22 @@ bool _isButtonDisabled = true;
               onPressed: _alternaButton 
             ),
           ),
+           Padding( 
+            padding: EdgeInsets.only(top: 10.0, left: 20.0, right: 30.0),
+            child: RaisedButton(
+              color: Color(0xff399d63),
+              textColor: Colors.black,
+              padding: EdgeInsets.all(15.0),
+              child: Text('Calcular Diâmetro da lente'),
+              shape: RoundedRectangleBorder(
+              borderRadius: new BorderRadius.circular(18.0),
+              side: BorderSide(color: Color(0xff399d63))
+              ),
+              onPressed: (){
+               Navigator.of(context).push(MaterialPageRoute(builder:(context) => DimetroComparti()));
+              }
+            ),
+           ),
           Padding( 
             padding: EdgeInsets.only(top: 10.0, left: 20.0, right: 30.0, bottom: 60.0),
             child: RaisedButton(
