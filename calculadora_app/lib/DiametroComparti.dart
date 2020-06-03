@@ -269,7 +269,7 @@ class _DimetroCompartiState extends State<DimetroComparti> {
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
-             Padding(padding: EdgeInsets.only( top: 10.0, left: 60.0, bottom: 40.0),
+             Padding(padding: EdgeInsets.only( top: 20.0, left: 120.0),
           child: Text("Diâmetro:",
           style: TextStyle(
             fontFamily:  'Montserrat',
@@ -278,7 +278,7 @@ class _DimetroCompartiState extends State<DimetroComparti> {
           ),
           ),
           ),
-            Padding(padding: EdgeInsets.only( top: 10.0, left: 10.0, bottom: 40.0),
+            Padding(padding: EdgeInsets.only( top: 20.0, left: 10.0),
           child: Text(fn.format(diametro),
           style: TextStyle(
             fontFamily:  'Montserrat',
