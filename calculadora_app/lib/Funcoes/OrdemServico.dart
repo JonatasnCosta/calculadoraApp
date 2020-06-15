@@ -65,6 +65,7 @@ TextEditingController _controllerTratamento = TextEditingController();
 TextEditingController _controllerODGrau = TextEditingController();
 TextEditingController _controllerOEGrau = TextEditingController();
 TextEditingController _controllerADD = TextEditingController();
+TextEditingController _controllerDP = TextEditingController();
 TextEditingController _controllerDNPOD = TextEditingController();
 TextEditingController _controllerDNPOE = TextEditingController();
 TextEditingController _controllerAltura = TextEditingController();
@@ -72,7 +73,8 @@ TextEditingController _controllerDiametro = TextEditingController();
 TextEditingController _controllerTipodearo = TextEditingController();
 TextEditingController _controllerObservacoes = TextEditingController();
 var maskFormatter = new MaskTextInputFormatter(mask: '##/##/####', filter: { "#": RegExp(r'[0-9]') }); 
-var maskFormatterAdicao = new MaskTextInputFormatter(mask: '#.##', filter: { "#": RegExp(r'[0-9]') }); 
+var maskFormatterAdicao = new MaskTextInputFormatter(mask: '#.##', filter: { "#": RegExp(r'[0-9]') });
+var maskFormatterDP = new MaskTextInputFormatter(mask: '##', filter: { "#": RegExp(r'[0-9]') });
 var maskFormatterDNPOD = new MaskTextInputFormatter(mask: '##.#', filter: { "#": RegExp(r'[0-9]') }); 
 var maskFormatterDNPOE = new MaskTextInputFormatter(mask: '##.#', filter: { "#": RegExp(r'[0-9]') }); 
 var maskFormatterAltura = new MaskTextInputFormatter(mask: '##', filter: { "#": RegExp(r'[0-9]') });
@@ -242,6 +244,21 @@ bool _isButtonDisabled = true;
             ),
             pw.Paragraph(text: _controllerADD.text,
             style: pw.TextStyle(
+               fontSize: 30.0,
+             )
+             ),
+              ]
+            ),
+             pw.Row(
+              children: [
+                pw.Paragraph(
+                text: "DP: ",
+                style: pw.TextStyle(
+               fontSize: 30.0,
+             )
+            ),
+             pw.Paragraph(text: _controllerDP.text,
+             style: pw.TextStyle(
                fontSize: 30.0,
              )
              ),
@@ -649,6 +666,33 @@ bool _isButtonDisabled = true;
                     ),
                   ),
                   controller: _controllerADD,
+                ),
+              ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(top: 10.0, left: 30.0, right: 30.0),
+            child: Container(
+              padding: EdgeInsets.only(left: 45.0),
+              height: 50.0,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(25.0),
+               color: Color(0xff399d63)
+              ),
+              child: Center(
+                child: TextField(
+                   keyboardType: TextInputType.number,
+                   inputFormatters: [maskFormatterDP],
+                  decoration: InputDecoration(
+                    border: InputBorder.none,
+                    labelText: 'DP',
+                    labelStyle: TextStyle(
+                      fontFamily: 'Montserrat',
+                      fontSize: 15.0,
+                      color: Colors.black
+                    ),
+                  ),
+                  controller: _controllerDP,
                 ),
               ),
             ),
