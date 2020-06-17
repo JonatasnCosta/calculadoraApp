@@ -2,6 +2,7 @@ import 'package:calculadoraapp/Home.dart';
 import 'package:flutter/material.dart';
 import "package:calculadoraapp/ResultadoTransposicao/ResultadoGraudePerto.dart";
 import 'package:firebase_admob/firebase_admob.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 const String testDevice = '721A33913C7D7D311A5FB39652B0084B';
 
@@ -55,6 +56,16 @@ class _FuncaoGraudePertoState extends State<FuncaoGraudePerto> {
   TextEditingController _controllerEIXOOE = TextEditingController();
 
   TextEditingController _controllerADD = TextEditingController();
+
+  var maskFormatterODLonge = new MaskTextInputFormatter(mask: '##.##', filter: { "#": RegExp(r'[+--0-9PLpl]')});
+  var maskFormatterCILODLonge = new MaskTextInputFormatter(mask: '##.##', filter: { "#": RegExp(r'[+--0-9]')});
+  var maskFormatterEixoODLonge = new MaskTextInputFormatter(mask: '###', filter: { "#": RegExp(r'[0-9]') });
+ 
+  var maskFormatterOELonge = new MaskTextInputFormatter(mask: '##.##', filter: { "#": RegExp(r'[+--0-9PLpl]')});
+  var maskFormatterCILOELonge = new MaskTextInputFormatter(mask: '##.##', filter: { "#": RegExp(r'[+--0-9]')});
+  var maskFormatterEixoOELonge = new MaskTextInputFormatter(mask: '###', filter: { "#": RegExp(r'[0-9]') });
+
+  var maskFormatterAdicao = new MaskTextInputFormatter(mask: '#.##', filter: { "#": RegExp(r'[0-9]') });
   
   double graudePertoOD= 0;
   double cilOD= 0;
@@ -204,6 +215,7 @@ Navigator.push(
               ),
               child: Center(
                 child: TextField(
+                  inputFormatters: [maskFormatterODLonge],
                    keyboardType: TextInputType.text,
                    decoration: InputDecoration(
                     border: InputBorder.none,
@@ -230,6 +242,7 @@ Navigator.push(
               ),
               child: Center(
                 child: TextField(
+                  inputFormatters: [maskFormatterCILODLonge],
                    keyboardType: TextInputType.text,
                    decoration: InputDecoration(
                     border: InputBorder.none,
@@ -256,7 +269,8 @@ Navigator.push(
               ),
               child: Center(
                 child: TextField(
-                   keyboardType: TextInputType.text,
+                  inputFormatters: [maskFormatterEixoODLonge],
+                   keyboardType: TextInputType.number,
                    decoration: InputDecoration(
                     border: InputBorder.none,
                     labelText: 'Eixo  Olho direito longe',
@@ -282,6 +296,7 @@ Navigator.push(
               ),
               child: Center(
                 child: TextField(
+                  inputFormatters: [maskFormatterOELonge],
                    keyboardType: TextInputType.text,
                    decoration: InputDecoration(
                     border: InputBorder.none,
@@ -308,6 +323,7 @@ Navigator.push(
               ),
               child: Center(
                 child: TextField(
+                  inputFormatters: [maskFormatterCILOELonge],
                    keyboardType: TextInputType.text,
                    decoration: InputDecoration(
                     border: InputBorder.none,
@@ -334,7 +350,8 @@ Navigator.push(
               ),
               child: Center(
                 child: TextField(
-                   keyboardType: TextInputType.text,
+                  inputFormatters: [maskFormatterEixoOELonge],
+                   keyboardType: TextInputType.number,
                    decoration: InputDecoration(
                     border: InputBorder.none,
                     labelText: 'Eixo  Olho esquerdo longe',
@@ -360,7 +377,8 @@ Navigator.push(
               ),
               child: Center(
                 child: TextField(
-                   keyboardType: TextInputType.text,
+                  inputFormatters: [maskFormatterAdicao],
+                   keyboardType: TextInputType.number,
                    decoration: InputDecoration(
                     border: InputBorder.none,
                     labelText: 'Adição',
