@@ -58,16 +58,16 @@ class _FuncaoAdicaoState extends State<FuncaoAdicao> {
   TextEditingController _controllerEsfODPerto = TextEditingController();
   TextEditingController _controllerEsfOEPerto = TextEditingController();
   
-  var maskFormatterODLonge = new MaskTextInputFormatter(mask: '##.##', filter: { "#": RegExp(r'[+--0-9]') });
-  var maskFormatterCILODLonge = new MaskTextInputFormatter(mask: '##.##', filter: { "#": RegExp(r'[+--0-9]') });
+  var maskFormatterODLonge = new MaskTextInputFormatter(mask: '##.##', filter: { "#": RegExp(r'[+--0-9PLpl]')});
+  var maskFormatterCILODLonge = new MaskTextInputFormatter(mask: '##.##', filter: { "#": RegExp(r'[+--0-9PLpl]') });
   var maskFormatterEixoODLonge = new MaskTextInputFormatter(mask: '###', filter: { "#": RegExp(r'[0-9]') });
  
-  var maskFormatterOELonge = new MaskTextInputFormatter(mask: '##.##', filter: { "#": RegExp(r'[+--0-9]') });
-  var maskFormatterCILOELonge = new MaskTextInputFormatter(mask: '##.##', filter: { "#": RegExp(r'[+--0-9]') });
+  var maskFormatterOELonge = new MaskTextInputFormatter(mask: '##.##', filter: { "#": RegExp(r'[+--0-9PLpl]') });
+  var maskFormatterCILOELonge = new MaskTextInputFormatter(mask: '##.##', filter: { "#": RegExp(r'[+--0-9PLpl]') });
   var maskFormatterEixoOELonge = new MaskTextInputFormatter(mask: '###', filter: { "#": RegExp(r'[0-9]') });
 
-  var maskFormatterODPerto = new MaskTextInputFormatter(mask: '##.##', filter: { "#": RegExp(r'[+--0-9]') });
-  var maskFormatterOEPerto = new MaskTextInputFormatter(mask: '##.##', filter: { "#": RegExp(r'[+--0-9]') });
+  var maskFormatterODPerto = new MaskTextInputFormatter(mask: '##.##', filter: { "#": RegExp(r'[+--0-9PLpl]') });
+  var maskFormatterOEPerto = new MaskTextInputFormatter(mask: '##.##', filter: { "#": RegExp(r'[+--0-9PLpl]') });
   
   double adicaoOD = 0;
   double adicaoOE = 0;
