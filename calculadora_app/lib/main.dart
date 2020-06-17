@@ -26,5 +26,6 @@ void main() {
 //Ponto de integração para receber o segundo teste de receber o ponto automaticamente
 //Ponto de integração para receber o modificação do botão ordem de serviço
 //Ponto de integração para receber a opção para receber a opção de enviar a oredem de serviço com o.s
+//Ponto de integração para receber a formatação do função de adição
 
 
