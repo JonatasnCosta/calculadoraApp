@@ -2,12 +2,14 @@ import 'package:calculadoraapp/Home.dart';
 import 'package:calculadoraapp/ResultadoTransposicao/ResultadoGraudeAdicao.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_admob/firebase_admob.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 const String testDevice = '721A33913C7D7D311A5FB39652B0084B';
 
 
 
 class FuncaoAdicao extends StatefulWidget {
+  FuncaoAdicao({Key key}) : super(key: key);
   @override
   _FuncaoAdicaoState createState() => _FuncaoAdicaoState();
 }
@@ -55,7 +57,17 @@ class _FuncaoAdicaoState extends State<FuncaoAdicao> {
 
   TextEditingController _controllerEsfODPerto = TextEditingController();
   TextEditingController _controllerEsfOEPerto = TextEditingController();
+  
+  var maskFormatterODLonge = new MaskTextInputFormatter(mask: '##.##', filter: { "#": RegExp(r'[+--0-9]') });
+  var maskFormatterCILODLonge = new MaskTextInputFormatter(mask: '##.##', filter: { "#": RegExp(r'[+--0-9]') });
+  var maskFormatterEixoODLonge = new MaskTextInputFormatter(mask: '###', filter: { "#": RegExp(r'[0-9]') });
+ 
+  var maskFormatterOELonge = new MaskTextInputFormatter(mask: '##.##', filter: { "#": RegExp(r'[+--0-9]') });
+  var maskFormatterCILOELonge = new MaskTextInputFormatter(mask: '##.##', filter: { "#": RegExp(r'[+--0-9]') });
+  var maskFormatterEixoOELonge = new MaskTextInputFormatter(mask: '###', filter: { "#": RegExp(r'[0-9]') });
 
+  var maskFormatterODPerto = new MaskTextInputFormatter(mask: '##.##', filter: { "#": RegExp(r'[+--0-9]') });
+  var maskFormatterOEPerto = new MaskTextInputFormatter(mask: '##.##', filter: { "#": RegExp(r'[+--0-9]') });
   
   double adicaoOD = 0;
   double adicaoOE = 0;
@@ -186,6 +198,8 @@ if (adicaoOD == adicaoOE  && adicaoOE == adicaoOD) {
           ),   
         ));
 } 
+
+
 @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -242,6 +256,7 @@ if (adicaoOD == adicaoOE  && adicaoOE == adicaoOD) {
               ),
               child: Center(
                 child: TextField(
+                  inputFormatters: [maskFormatterODLonge],
                    keyboardType: TextInputType.text,
                    decoration: InputDecoration(
                     border: InputBorder.none,
@@ -257,6 +272,7 @@ if (adicaoOD == adicaoOE  && adicaoOE == adicaoOD) {
               ),
             ),
           ),
+          //Esférico  Olho direito longe
            Padding(
             padding: EdgeInsets.only(top: 5.0, left: 20.0, right: 30.0),
             child: Container(
@@ -268,6 +284,7 @@ if (adicaoOD == adicaoOE  && adicaoOE == adicaoOD) {
               ),
               child: Center(
                 child: TextField(
+                  inputFormatters: [maskFormatterCILODLonge],
                    keyboardType: TextInputType.text,
                    decoration: InputDecoration(
                     border: InputBorder.none,
@@ -283,6 +300,7 @@ if (adicaoOD == adicaoOE  && adicaoOE == adicaoOD) {
               ),
             ),
           ),
+          //Cilíndrico Olho direito longe
            Padding(
             padding: EdgeInsets.only(top: 5.0, left: 20.0, right: 30.0, bottom: 30.0),
             child: Container(
@@ -294,7 +312,8 @@ if (adicaoOD == adicaoOE  && adicaoOE == adicaoOD) {
               ),
               child: Center(
                 child: TextField(
-                   keyboardType: TextInputType.text,
+                  inputFormatters: [maskFormatterEixoODLonge],
+                   keyboardType: TextInputType.number,
                    decoration: InputDecoration(
                     border: InputBorder.none,
                     labelText: 'Eixo  Olho direito longe',
@@ -309,6 +328,7 @@ if (adicaoOD == adicaoOE  && adicaoOE == adicaoOD) {
               ),
             ),
           ),
+         // Eixo  Olho direito longe
          Padding(
             padding: EdgeInsets.only(top: 5.0, left: 20.0, right: 30.0),
             child: Container(
@@ -320,6 +340,7 @@ if (adicaoOD == adicaoOE  && adicaoOE == adicaoOD) {
               ),
               child: Center(
                 child: TextField(
+                 inputFormatters: [maskFormatterOELonge],
                    keyboardType: TextInputType.text,
                    decoration: InputDecoration(
                     border: InputBorder.none,
@@ -335,6 +356,7 @@ if (adicaoOD == adicaoOE  && adicaoOE == adicaoOD) {
               ),
             ),
           ),
+          //Esférico  Olho esquerdo longe
            Padding(
             padding: EdgeInsets.only(top: 5.0, left: 20.0, right: 30.0),
             child: Container(
@@ -346,6 +368,7 @@ if (adicaoOD == adicaoOE  && adicaoOE == adicaoOD) {
               ),
               child: Center(
                 child: TextField(
+                  inputFormatters: [maskFormatterCILOELonge],
                    keyboardType: TextInputType.text,
                    decoration: InputDecoration(
                     border: InputBorder.none,
@@ -361,6 +384,7 @@ if (adicaoOD == adicaoOE  && adicaoOE == adicaoOD) {
               ),
             ),
           ),
+           //Cilíndrico Olho esquerdo longe
            Padding(
             padding: EdgeInsets.only(top: 5.0, left: 20.0, right: 30.0, bottom: 30.0),
             child: Container(
@@ -372,7 +396,8 @@ if (adicaoOD == adicaoOE  && adicaoOE == adicaoOD) {
               ),
               child: Center(
                 child: TextField(
-                   keyboardType: TextInputType.text,
+                  inputFormatters: [maskFormatterEixoOELonge],
+                   keyboardType: TextInputType.number,
                    decoration: InputDecoration(
                     border: InputBorder.none,
                     labelText: 'Eixo  Olho esquerdo longe',
@@ -387,6 +412,7 @@ if (adicaoOD == adicaoOE  && adicaoOE == adicaoOD) {
               ),
             ),
           ),
+           //Eixo  Olho esquerdo longe
          Padding(
             padding: EdgeInsets.only(top: 5.0, left: 20.0, right: 30.0),
             child: Container(
@@ -398,6 +424,7 @@ if (adicaoOD == adicaoOE  && adicaoOE == adicaoOD) {
               ),
               child: Center(
                 child: TextField(
+                 inputFormatters: [maskFormatterODPerto],
                    keyboardType: TextInputType.text,
                    decoration: InputDecoration(
                     border: InputBorder.none,
@@ -413,6 +440,7 @@ if (adicaoOD == adicaoOE  && adicaoOE == adicaoOD) {
               ),
             ),
           ),
+          //Esférico  Olho direito perto
           Padding(
             padding: EdgeInsets.only(top: 5.0, left: 20.0, right: 30.0, bottom: 30.0),
             child: Container(
@@ -424,6 +452,7 @@ if (adicaoOD == adicaoOE  && adicaoOE == adicaoOD) {
               ),
               child: Center(
                 child: TextField(
+                 inputFormatters: [maskFormatterOEPerto],
                    keyboardType: TextInputType.text,
                    decoration: InputDecoration(
                     border: InputBorder.none,
@@ -439,6 +468,7 @@ if (adicaoOD == adicaoOE  && adicaoOE == adicaoOD) {
               ),
             ),
           ),
+          //Esférico  Olho esquerdo perto
           Padding( 
             padding: EdgeInsets.only(top: 5.0, left: 20.0, right: 30.0, bottom: 5.0),
             child: RaisedButton(
