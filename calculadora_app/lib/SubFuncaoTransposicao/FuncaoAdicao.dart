@@ -257,7 +257,8 @@ if (adicaoOD == adicaoOE  && adicaoOE == adicaoOD) {
               child: Center(
                 child: TextField(
                   inputFormatters: [maskFormatterODLonge],
-                   keyboardType: TextInputType.text,
+                  keyboardType: TextInputType.text,
+                  // keyboardType: TextInputType.numberWithOptions(signed: true),
                    decoration: InputDecoration(
                     border: InputBorder.none,
                     labelText: 'Esférico  Olho direito longe',
