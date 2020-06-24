@@ -93,6 +93,7 @@ var maskFormatterDP = new MaskTextInputFormatter(mask: '##', filter: { "#": RegE
 NumberFormat nf = NumberFormat("0.00");
 NumberFormat fn = NumberFormat("0");
 bool _isButtonDisabled = true;
+String os = '';
  final pdf = pw.Document();
   
   writeOnPdf(){
@@ -479,7 +480,7 @@ bool _isButtonDisabled = true;
   Future savePdf() async{
     Directory documentDirectory = await getApplicationDocumentsDirectory();
     String documentPath = documentDirectory.path;
-    File file = File("$documentPath/Ordem de serviço.pdf");
+    File file = File("$documentPath/OS:$os.pdf");
     file.writeAsBytesSync(pdf.save());
   }
  
@@ -1153,7 +1154,7 @@ bool _isButtonDisabled = true;
               side: BorderSide(color: Color(0xff399d63))
               ),
               onPressed:  _isButtonDisabled ? null : () async{
-                await Printing.sharePdf(bytes: pdf.save(), filename:'Ordem de serviço.pdf');
+                await Printing.sharePdf(bytes: pdf.save(), filename:'OS:$os.pdf');
                   writeOnPdf();
               }
             ),
@@ -1162,14 +1163,20 @@ bool _isButtonDisabled = true;
      ),
     );
   } 
+     void _converter(){
+   os = (_controllerOS.text);
+  }
    _alternaButton() {
+       setState(() {
+        _converter();
+      });
       setState(() => _isButtonDisabled = !_isButtonDisabled);
       setState(() async{
                 writeOnPdf();
               await savePdf();
                Directory documentDirectory = await getApplicationDocumentsDirectory();
                String documentPath = documentDirectory.path;
-               String fullPath = "$documentPath/Ordem de serviço.pdf";
+               String fullPath = "$documentPath/OS:$os.pdf";
                Navigator.push(context, MaterialPageRoute(
             builder: (context) => PDFDiametro(path: fullPath,)));
               }

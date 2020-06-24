@@ -15,7 +15,8 @@ const String testDevice = '721A33913C7D7D311A5FB39652B0084B';
 
 
 class OrdemServico extends StatefulWidget {
-  @override
+
+ @override
   _OrdemServicoState createState() => _OrdemServicoState();
 }
 
@@ -55,7 +56,7 @@ static const  MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(
 
 
 
- TextEditingController _controllerNumeroCliente = TextEditingController(); 
+TextEditingController _controllerNumeroCliente = TextEditingController(); 
 TextEditingController _controllerNomeotica = TextEditingController();
 TextEditingController _controllerData = TextEditingController();
 TextEditingController _controllerOS = TextEditingController();
@@ -82,8 +83,12 @@ var maskFormatterDiametro = new MaskTextInputFormatter(mask: '##', filter: { "#"
 
 bool _isButtonDisabled = true;
 
- final pdf = pw.Document();
+String os = '';
 
+
+
+
+ final pdf = pw.Document();
   writeOnPdf(){
     pdf.addPage(
       pw.MultiPage(
@@ -359,7 +364,7 @@ bool _isButtonDisabled = true;
    Future savePdf() async{
     Directory documentDirectory = await getApplicationDocumentsDirectory();
     String documentPath = documentDirectory.path;
-    File file = File("$documentPath/Ordem de serviço.pdf");
+    File file = File("$documentPath/OS:$os.pdf");
     file.writeAsBytesSync(pdf.save());
   }
   @override
@@ -868,7 +873,8 @@ bool _isButtonDisabled = true;
               borderRadius: new BorderRadius.circular(18.0),
               side: BorderSide(color: Color(0xff399d63))
               ),
-              onPressed: _alternaButton 
+              onPressed: 
+              _alternaButton 
             ),
           ),
             Padding( 
@@ -899,7 +905,7 @@ bool _isButtonDisabled = true;
               side: BorderSide(color: Color(0xff399d63))
               ),
               onPressed:  _isButtonDisabled ? null : () async{
-                await Printing.sharePdf(bytes: pdf.save(), filename:'Ordem de serviço.pdf');
+                await Printing.sharePdf(bytes: pdf.save(), filename:'OS:$os.pdf');
                   writeOnPdf();
               }
             ),
@@ -919,29 +925,35 @@ bool _isButtonDisabled = true;
                Navigator.of(context).push(MaterialPageRoute(builder:(context) => OrdemServico()));
               }
             ),
-           ),
-          
+           ), 
         ],
       ),
-  );
-
+  );    
   }
-  
+  void _converter(){
+   os = (_controllerOS.text);
+  }
+     
      _alternaButton() {
+      setState(() {
+        _converter();
+      });
       setState(() => _isButtonDisabled = !_isButtonDisabled);
       setState(() async{
                 writeOnPdf();
               await savePdf();
                Directory documentDirectory = await getApplicationDocumentsDirectory();
                String documentPath = documentDirectory.path;
-               String fullPath = "$documentPath/Ordem de serviço.pdf";
+               String fullPath = "$documentPath/OS:$os.pdf";
                Navigator.push(context, MaterialPageRoute(
             builder: (context) => PdfPreviewScreen(path: fullPath,)));
-              }
+              }        
       );
-      
    }     
-  
 }
+
+
+  
+
 
 
