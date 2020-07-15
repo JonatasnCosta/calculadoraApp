@@ -564,9 +564,8 @@ class _OrdemServicoState extends State<OrdemServico> {
                     Text(
                       'OD:',
                       style: TextStyle(
-                          fontFamily: 'Varela',
+                          fontFamily: 'Montserrat',
                           fontSize: 14.0,
-                          fontWeight: FontWeight.bold,
                           color: Colors.black),
                     ),
                     Padding(padding: EdgeInsets.only(top: 10.0)),
@@ -787,9 +786,8 @@ class _OrdemServicoState extends State<OrdemServico> {
                     Text(
                       'Cil:',
                       style: TextStyle(
-                          fontFamily: 'Varela',
+                          fontFamily: 'Montserrat',
                           fontSize: 14.0,
-                          fontWeight: FontWeight.bold,
                           color: Colors.black),
                     ),
                     Padding(padding: EdgeInsets.only(top: 10.0)),
@@ -882,9 +880,8 @@ class _OrdemServicoState extends State<OrdemServico> {
                     Text(
                       'Eixo:',
                       style: TextStyle(
-                          fontFamily: 'Varela',
+                          fontFamily: 'Montserrat',
                           fontSize: 14.0,
-                          fontWeight: FontWeight.bold,
                           color: Colors.black),
                     ),
                     Padding(padding: EdgeInsets.only(top: 10.0)),
@@ -955,9 +952,8 @@ class _OrdemServicoState extends State<OrdemServico> {
                     Text(
                       'OE:',
                       style: TextStyle(
-                          fontFamily: 'Varela',
+                          fontFamily: 'Montserrat',
                           fontSize: 14.0,
-                          fontWeight: FontWeight.bold,
                           color: Colors.black),
                     ),
                     Padding(padding: EdgeInsets.only(top: 10.0)),
@@ -1178,9 +1174,8 @@ class _OrdemServicoState extends State<OrdemServico> {
                     Text(
                       'Cil:',
                       style: TextStyle(
-                          fontFamily: 'Varela',
+                          fontFamily: 'Montserrat',
                           fontSize: 14.0,
-                          fontWeight: FontWeight.bold,
                           color: Colors.black),
                     ),
                     Padding(padding: EdgeInsets.only(top: 10.0)),
@@ -1273,9 +1268,8 @@ class _OrdemServicoState extends State<OrdemServico> {
                     Text(
                       'Eixo:',
                       style: TextStyle(
-                          fontFamily: 'Varela',
+                          fontFamily: 'Montserrat',
                           fontSize: 14.0,
-                          fontWeight: FontWeight.bold,
                           color: Colors.black),
                     ),
                     Padding(padding: EdgeInsets.only(top: 10.0)),
@@ -1346,9 +1340,8 @@ class _OrdemServicoState extends State<OrdemServico> {
                   Text(
                     'Adição:',
                     style: TextStyle(
-                        fontFamily: 'Varela',
+                        fontFamily: 'Montserrat',
                         fontSize: 14.0,
-                        fontWeight: FontWeight.bold,
                         color: Colors.black),
                   ),
                   Padding(padding: EdgeInsets.only(top: 10.0)),
