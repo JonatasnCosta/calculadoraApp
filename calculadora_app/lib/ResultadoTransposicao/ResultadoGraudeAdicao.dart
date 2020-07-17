@@ -14,24 +14,23 @@ import 'package:firebase_admob/firebase_admob.dart';
 const String testDevice = '721A33913C7D7D311A5FB39652B0084B';
 
 class ResultadoGraudeAdicao extends StatefulWidget {
- final double adicaoFinal;
- final double cilOD;
- final double eixoOD;
- final double cilOE;
- final double eixoOE;
- final double valorOD;
- final double valorOE;
- 
+  final double adicaoFinal;
+  final double cilOD;
+  final double eixoOD;
+  final double cilOE;
+  final double eixoOE;
+  final double valorOD;
+  final double valorOE;
 
-  ResultadoGraudeAdicao({Key key, @required 
-  this.cilOD,
-  this.eixoOD,
-  this.cilOE,
-  this.eixoOE,
-  this.valorOD,
-  this.valorOE,
-  this.adicaoFinal,
-  
+  ResultadoGraudeAdicao({
+    Key key,
+    @required this.cilOD,
+    this.eixoOD,
+    this.cilOE,
+    this.eixoOE,
+    this.valorOD,
+    this.valorOE,
+    this.adicaoFinal,
   }) : super(key: key);
 
   @override
@@ -39,773 +38,687 @@ class ResultadoGraudeAdicao extends StatefulWidget {
 }
 
 class _ResultadoGraudeAdicaoState extends State<ResultadoGraudeAdicao> {
-
- static const  MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(
+  static const MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(
     testDevices: testDevice != null ? <String>[testDevice] : null,
     nonPersonalizedAds: true,
     keywords: <String>['Mortgage', 'Attorney'],
   );
- 
-   BannerAd _bannerAd;
-   BannerAd createBannerAd(){
-    return BannerAd(
-    adUnitId:'ca-app-pub-7677202089790115/3031795472', 
-    size: AdSize.smartBanner,
-     targetingInfo: targetingInfo,
-     listener: (MobileAdEvent event) {
-    print("BannerAd $event");
-     });
- }
- @override
- void initState(){
- FirebaseAdMob.instance.initialize(appId:'ca-app-pub-7677202089790115~7992122892');
- _bannerAd = createBannerAd()
- ..load()
- ..show();
-  super.initState();
- }
 
- @override
+  BannerAd _bannerAd;
+  BannerAd createBannerAd() {
+    return BannerAd(
+        adUnitId: 'ca-app-pub-7677202089790115/3031795472',
+        size: AdSize.smartBanner,
+        targetingInfo: targetingInfo,
+        listener: (MobileAdEvent event) {
+          print("BannerAd $event");
+        });
+  }
+
+  @override
+  void initState() {
+    FirebaseAdMob.instance
+        .initialize(appId: 'ca-app-pub-7677202089790115~7992122892');
+    _bannerAd = createBannerAd()
+      ..load()
+      ..show();
+    super.initState();
+  }
+
+  @override
   void dispose() {
     _bannerAd.dispose();
     super.dispose();
   }
 
+  TextEditingController _controllerNumeroCliente = TextEditingController();
+  TextEditingController _controllerNomeotica = TextEditingController();
+  TextEditingController _controllerData = TextEditingController();
+  TextEditingController _controllerOS = TextEditingController();
+  TextEditingController _controllerNR = TextEditingController();
+  TextEditingController _controllerTipodelente = TextEditingController();
+  TextEditingController _controllerTratamento = TextEditingController();
+  TextEditingController _controllerDP = TextEditingController();
+  TextEditingController _controllerDNPOD = TextEditingController();
+  TextEditingController _controllerDNPOE = TextEditingController();
+  TextEditingController _controllerAltura = TextEditingController();
+  TextEditingController _controllerDiametro = TextEditingController();
+  TextEditingController _controllerTipodearo = TextEditingController();
+  TextEditingController _controllerObservacoes = TextEditingController();
+  var maskFormatter = new MaskTextInputFormatter(
+      mask: '##/##/####', filter: {"#": RegExp(r'[0-9]')});
+  var maskFormatterDP =
+      new MaskTextInputFormatter(mask: '##', filter: {"#": RegExp(r'[0-9]')});
+  var maskFormatterDNPOD =
+      new MaskTextInputFormatter(mask: '##.#', filter: {"#": RegExp(r'[0-9]')});
+  var maskFormatterDNPOE =
+      new MaskTextInputFormatter(mask: '##.#', filter: {"#": RegExp(r'[0-9]')});
+  var maskFormatterAltura =
+      new MaskTextInputFormatter(mask: '##', filter: {"#": RegExp(r'[0-9]')});
+  var maskFormatterDiametro =
+      new MaskTextInputFormatter(mask: '##', filter: {"#": RegExp(r'[0-9]')});
 
-TextEditingController _controllerNumeroCliente = TextEditingController(); 
-TextEditingController _controllerNomeotica = TextEditingController();
-TextEditingController _controllerData = TextEditingController();
-TextEditingController _controllerOS = TextEditingController();
-TextEditingController _controllerNR = TextEditingController();
-TextEditingController _controllerTipodelente = TextEditingController();
-TextEditingController _controllerTratamento = TextEditingController();
-TextEditingController _controllerDP = TextEditingController();
-TextEditingController _controllerDNPOD = TextEditingController();
-TextEditingController _controllerDNPOE = TextEditingController();
-TextEditingController _controllerAltura = TextEditingController();
-TextEditingController _controllerDiametro = TextEditingController();
-TextEditingController _controllerTipodearo = TextEditingController();
-TextEditingController _controllerObservacoes = TextEditingController();
-var maskFormatter = new MaskTextInputFormatter(mask: '##/##/####', filter: { "#": RegExp(r'[0-9]') });
-var maskFormatterDP = new MaskTextInputFormatter(mask: '##', filter: { "#": RegExp(r'[0-9]') });  
-var maskFormatterDNPOD = new MaskTextInputFormatter(mask: '##.#', filter: { "#": RegExp(r'[0-9]') });
-var maskFormatterDNPOE = new MaskTextInputFormatter(mask: '##.#', filter: { "#": RegExp(r'[0-9]') });
-var maskFormatterAltura = new MaskTextInputFormatter(mask: '##', filter: { "#": RegExp(r'[0-9]') });
-var maskFormatterDiametro = new MaskTextInputFormatter(mask: '##', filter: { "#": RegExp(r'[0-9]') });
-  
-NumberFormat nf = NumberFormat("0.00");
-NumberFormat fn = NumberFormat("0");
-bool _isButtonDisabled = true;
-String os = '';
+  NumberFormat nf = NumberFormat("0.00");
+  NumberFormat fn = NumberFormat("0");
+  bool _isButtonDisabled = true;
+  String os = '';
 
-final pdf = pw.Document();
-  
-  writeOnPdf(){
-    pdf.addPage(
-      pw.MultiPage(
-        pageFormat: PdfPageFormat.a3,
-        margin: pw.EdgeInsets.all(32),
-        
+  final pdf = pw.Document();
 
-        build: (pw.Context context){
-          return <pw.Widget>  [
-            pw.Header(
-              level: 0,
-              child: pw.Text("Ordem de serviço",
-              style: pw.TextStyle(
-               fontSize: 40.0,
-             )
-              ),
-            ),
-             pw.Row(
-              children: [
-                pw.Paragraph(
-             text: "Número de Cliente: ",
-             style: pw.TextStyle(
-               fontSize: 30.0,
-             )
-           ),
-            pw.Paragraph(text: _controllerNumeroCliente.text,
-            style: pw.TextStyle(
-               fontSize: 30.0,
-             )
-            ),
-              ]
-            ),
-             pw.Row(
-              children: [
-                pw.Paragraph(
-             text: "Ótica: ",
-             style: pw.TextStyle(
-               fontSize: 30.0,
-             )
-           ),
-            pw.Paragraph(text: _controllerNomeotica.text,
-            style: pw.TextStyle(
-               fontSize: 30.0,
-             )
-            ),
-              ]
-            ),
-             pw.Row(
-              children: [
-                pw.Paragraph(
+  writeOnPdf() {
+    pdf.addPage(pw.MultiPage(
+      pageFormat: PdfPageFormat.a3,
+      margin: pw.EdgeInsets.all(32),
+      build: (pw.Context context) {
+        return <pw.Widget>[
+          pw.Header(
+            level: 0,
+            child: pw.Text("Ordem de serviço",
+                style: pw.TextStyle(
+                  fontSize: 40.0,
+                )),
+          ),
+          pw.Row(children: [
+            pw.Paragraph(
+                text: "Número de Cliente: ",
+                style: pw.TextStyle(
+                  fontSize: 30.0,
+                )),
+            pw.Paragraph(
+                text: _controllerNumeroCliente.text,
+                style: pw.TextStyle(
+                  fontSize: 30.0,
+                )),
+          ]),
+          pw.Row(children: [
+            pw.Paragraph(
+                text: "Ótica: ",
+                style: pw.TextStyle(
+                  fontSize: 30.0,
+                )),
+            pw.Paragraph(
+                text: _controllerNomeotica.text,
+                style: pw.TextStyle(
+                  fontSize: 30.0,
+                )),
+          ]),
+          pw.Row(children: [
+            pw.Paragraph(
                 text: "Número O.S: ",
                 style: pw.TextStyle(
-               fontSize: 30.0,
-             )
-            ),
-             pw.Paragraph(text: _controllerOS.text,
-             style: pw.TextStyle(
-               fontSize: 30.0,
-             )
-             ),
-             ]
-            ),
-            pw.Row(
-              children: [
-                 pw.Paragraph(
+                  fontSize: 30.0,
+                )),
+            pw.Paragraph(
+                text: _controllerOS.text,
+                style: pw.TextStyle(
+                  fontSize: 30.0,
+                )),
+          ]),
+          pw.Row(children: [
+            pw.Paragraph(
                 text: "Data: ",
                 style: pw.TextStyle(
-               fontSize: 30.0,
-             )
-            ),
-            pw.Paragraph(text: _controllerData.text,
-            style: pw.TextStyle(
-               fontSize: 30.0,
-             )
-            ),
-            ]
-            ),
-             pw.Row(
-              children: [
-                pw.Paragraph(
+                  fontSize: 30.0,
+                )),
+            pw.Paragraph(
+                text: _controllerData.text,
+                style: pw.TextStyle(
+                  fontSize: 30.0,
+                )),
+          ]),
+          pw.Row(children: [
+            pw.Paragraph(
                 text: "Número da NR: ",
                 style: pw.TextStyle(
-               fontSize: 30.0,
-             )
-            ),
-             pw.Paragraph(text: _controllerNR.text,
-             style: pw.TextStyle(
-               fontSize: 30.0,
-             )
-             ),
-             ]
-            ),
-             pw.Row(
-              children: [
-                pw.Paragraph(
+                  fontSize: 30.0,
+                )),
+            pw.Paragraph(
+                text: _controllerNR.text,
+                style: pw.TextStyle(
+                  fontSize: 30.0,
+                )),
+          ]),
+          pw.Row(children: [
+            pw.Paragraph(
                 text: "Tipo de lente: ",
                 style: pw.TextStyle(
-               fontSize: 30.0,
-             )
-            ),
-             pw.Paragraph(text: _controllerTipodelente.text,
-             style: pw.TextStyle(
-               fontSize: 30.0,
-             )
-             ),
-              ]
-            ), pw.Row(
-              children: [
-                pw.Paragraph(
+                  fontSize: 30.0,
+                )),
+            pw.Paragraph(
+                text: _controllerTipodelente.text,
+                style: pw.TextStyle(
+                  fontSize: 30.0,
+                )),
+          ]),
+          pw.Row(children: [
+            pw.Paragraph(
                 text: "Tratamento: ",
                 style: pw.TextStyle(
-               fontSize: 30.0,
-             )
-            ),
-             pw.Paragraph(text: _controllerTratamento.text,
-             style: pw.TextStyle(
-               fontSize: 30.0,
-             )
-             ), 
-              ]
-            ),
-             pw.Row(
-              children: [
-              widget.valorOD > 0 ? 
-              pw.Container(
-                child: pw.Row(children: [
-                   pw.Paragraph(
-                text: "OD: +",
+                  fontSize: 30.0,
+                )),
+            pw.Paragraph(
+                text: _controllerTratamento.text,
                 style: pw.TextStyle(
-               fontSize: 30.0,
-             )
-            ),
-             pw.Paragraph(
-                text: nf.format(widget.valorOD),
-                style: pw.TextStyle(
-               fontSize: 30.0,
-             )
-            ),
-                ]
-              )
-            ): 
-            pw.Container(
-              child: pw.Row(children: [
-               pw.Paragraph(
-                text: "OD  ",
-                 style: pw.TextStyle(
-               fontSize: 30.0,
-               )
-              ),
-              pw.Paragraph(
-                text: nf.format(widget.valorOD),
-                style: pw.TextStyle(
-               fontSize: 30.0,
-             )
-            )
-              ]
-             )
-            ),
-            pw.Padding(padding: pw.EdgeInsets.only(left: 20.0),
-            child:  pw.Container(
-              child: pw.Row(children: [
-               pw.Paragraph(
-                text: "Cil  ",
-                 style: pw.TextStyle(
-               fontSize: 30.0,
-               )
-              ),
-              pw.Paragraph(
-                text: nf.format(widget.cilOD),
-                style: pw.TextStyle(
-               fontSize: 30.0,
-             )
-            )
-              ]
-             )
-            ),
-            ),
-            pw.Padding(padding: pw.EdgeInsets.only(left: 20.0),
-            child:  pw.Container(
-              child: pw.Row(children: [
-               pw.Paragraph(
-                text: "Eixo  ",
-                 style: pw.TextStyle(
-               fontSize: 30.0,
-               )
-              ),
-              pw.Paragraph(
-                text: fn.format(widget.eixoOD),
-                style: pw.TextStyle(
-               fontSize: 30.0,
-             )
-            )
-              ]
-             )
-            ),
-            ),
-            ]
-            ),
-              pw.Row(
-              children: [
-              widget.valorOE > 0 ? 
-              pw.Container(
-                child: pw.Row(children: [
-                   pw.Paragraph(
-                text: "OE: +",
-                style: pw.TextStyle(
-               fontSize: 30.0,
-             )
-            ),
-             pw.Paragraph(
-                text: nf.format(widget.valorOE),
-                style: pw.TextStyle(
-               fontSize: 30.0,
-             )
-            ),
-                ]
-              )
-            ): 
-            pw.Container(
-              child: pw.Row(children: [
-               pw.Paragraph(
-                text: "OE  ",
-                 style: pw.TextStyle(
-               fontSize: 30.0,
-               )
-              ),
-              pw.Paragraph(
-                text: nf.format(widget.valorOE),
-                style: pw.TextStyle(
-               fontSize: 30.0,
-             )
-            )
-              ]
-             )
-            ),
-            pw.Padding(padding: pw.EdgeInsets.only(left: 20.0),
-            child:  pw.Container(
-              child: pw.Row(children: [
-               pw.Paragraph(
-                text: "Cil  ",
-                 style: pw.TextStyle(
-               fontSize: 30.0,
-               )
-              ),
-              pw.Paragraph(
-                text: nf.format(widget.cilOE),
-                style: pw.TextStyle(
-               fontSize: 30.0,
-             )
-            )
-              ]
-             )
-            ),
-            ),
-            pw.Padding(padding: pw.EdgeInsets.only(left: 20.0),
-            child:  pw.Container(
-              child: pw.Row(children: [
-               pw.Paragraph(
-                text: "Eixo  ",
-                 style: pw.TextStyle(
-               fontSize: 30.0,
-               )
-              ),
-              pw.Paragraph(
-                text: fn.format(widget.eixoOE),
-                style: pw.TextStyle(
-               fontSize: 30.0,
-             )
-            )
-              ]
-             )
-            ),
-            ),
-            ]
-            ), 
-           pw.Row(
-              children: [
+                  fontSize: 30.0,
+                )),
+          ]),
+          pw.Row(children: [
+            widget.valorOD > 0
+                ? pw.Container(
+                    child: pw.Row(children: [
+                    pw.Paragraph(
+                        text: "OD: +",
+                        style: pw.TextStyle(
+                          fontSize: 30.0,
+                        )),
+                    pw.Paragraph(
+                        text: nf.format(widget.valorOD),
+                        style: pw.TextStyle(
+                          fontSize: 30.0,
+                        )),
+                  ]))
+                : pw.Container(
+                    child: pw.Row(children: [
+                    pw.Paragraph(
+                        text: "OD  ",
+                        style: pw.TextStyle(
+                          fontSize: 30.0,
+                        )),
+                    pw.Paragraph(
+                        text: nf.format(widget.valorOD),
+                        style: pw.TextStyle(
+                          fontSize: 30.0,
+                        ))
+                  ])),
+            pw.Padding(
+              padding: pw.EdgeInsets.only(left: 20.0),
+              child: pw.Container(
+                  child: pw.Row(children: [
                 pw.Paragraph(
+                    text: "Cil  ",
+                    style: pw.TextStyle(
+                      fontSize: 30.0,
+                    )),
+                pw.Paragraph(
+                    text: nf.format(widget.cilOD),
+                    style: pw.TextStyle(
+                      fontSize: 30.0,
+                    ))
+              ])),
+            ),
+            pw.Padding(
+              padding: pw.EdgeInsets.only(left: 20.0),
+              child: pw.Container(
+                  child: pw.Row(children: [
+                pw.Paragraph(
+                    text: "Eixo  ",
+                    style: pw.TextStyle(
+                      fontSize: 30.0,
+                    )),
+                pw.Paragraph(
+                    text: fn.format(widget.eixoOD),
+                    style: pw.TextStyle(
+                      fontSize: 30.0,
+                    ))
+              ])),
+            ),
+          ]),
+          pw.Row(children: [
+            widget.valorOE > 0
+                ? pw.Container(
+                    child: pw.Row(children: [
+                    pw.Paragraph(
+                        text: "OE: +",
+                        style: pw.TextStyle(
+                          fontSize: 30.0,
+                        )),
+                    pw.Paragraph(
+                        text: nf.format(widget.valorOE),
+                        style: pw.TextStyle(
+                          fontSize: 30.0,
+                        )),
+                  ]))
+                : pw.Container(
+                    child: pw.Row(children: [
+                    pw.Paragraph(
+                        text: "OE  ",
+                        style: pw.TextStyle(
+                          fontSize: 30.0,
+                        )),
+                    pw.Paragraph(
+                        text: nf.format(widget.valorOE),
+                        style: pw.TextStyle(
+                          fontSize: 30.0,
+                        ))
+                  ])),
+            pw.Padding(
+              padding: pw.EdgeInsets.only(left: 20.0),
+              child: pw.Container(
+                  child: pw.Row(children: [
+                pw.Paragraph(
+                    text: "Cil  ",
+                    style: pw.TextStyle(
+                      fontSize: 30.0,
+                    )),
+                pw.Paragraph(
+                    text: nf.format(widget.cilOE),
+                    style: pw.TextStyle(
+                      fontSize: 30.0,
+                    ))
+              ])),
+            ),
+            pw.Padding(
+              padding: pw.EdgeInsets.only(left: 20.0),
+              child: pw.Container(
+                  child: pw.Row(children: [
+                pw.Paragraph(
+                    text: "Eixo  ",
+                    style: pw.TextStyle(
+                      fontSize: 30.0,
+                    )),
+                pw.Paragraph(
+                    text: fn.format(widget.eixoOE),
+                    style: pw.TextStyle(
+                      fontSize: 30.0,
+                    ))
+              ])),
+            ),
+          ]),
+          pw.Row(children: [
+            pw.Paragraph(
                 text: "Adição: ",
                 style: pw.TextStyle(
-               fontSize: 30.0,
-             )
-            ),
-             pw.Paragraph(
-               text: nf.format(widget.adicaoFinal),
-             style: pw.TextStyle(
-               fontSize: 30.0,
-             )
-             ),
-              ]
-            ),
-             pw.Row(
-              children: [
-                pw.Paragraph(
+                  fontSize: 30.0,
+                )),
+            pw.Paragraph(
+                text: nf.format(widget.adicaoFinal),
+                style: pw.TextStyle(
+                  fontSize: 30.0,
+                )),
+          ]),
+          pw.Row(children: [
+            pw.Paragraph(
                 text: "DP: ",
                 style: pw.TextStyle(
-               fontSize: 30.0,
-             )
-            ),
-             pw.Paragraph(text: _controllerDP.text,
-             style: pw.TextStyle(
-               fontSize: 30.0,
-             )
-             ),
-              ]
-            ),
-             pw.Row(
-              children: [
-                pw.Paragraph(
+                  fontSize: 30.0,
+                )),
+            pw.Paragraph(
+                text: _controllerDP.text,
+                style: pw.TextStyle(
+                  fontSize: 30.0,
+                )),
+          ]),
+          pw.Row(children: [
+            pw.Paragraph(
                 text: "DNP OD: ",
                 style: pw.TextStyle(
-               fontSize: 30.0,
-             )
-            ),
-             pw.Paragraph(text: _controllerDNPOD.text,
-             style: pw.TextStyle(
-               fontSize: 30.0,
-             )
-             ),
-              ]
-            ),
-             pw.Row(
-              children: [
-                 pw.Paragraph(
+                  fontSize: 30.0,
+                )),
+            pw.Paragraph(
+                text: _controllerDNPOD.text,
+                style: pw.TextStyle(
+                  fontSize: 30.0,
+                )),
+          ]),
+          pw.Row(children: [
+            pw.Paragraph(
                 text: "DNP OE: ",
                 style: pw.TextStyle(
-               fontSize: 30.0,
-             )
-            ),
-             pw.Paragraph(text: _controllerDNPOE.text,
-             style: pw.TextStyle(
-               fontSize: 30.0,
-             )
-             ),
-              ]
-            ),
-             pw.Row(
-              children: [
-                 pw.Paragraph(
+                  fontSize: 30.0,
+                )),
+            pw.Paragraph(
+                text: _controllerDNPOE.text,
+                style: pw.TextStyle(
+                  fontSize: 30.0,
+                )),
+          ]),
+          pw.Row(children: [
+            pw.Paragraph(
                 text: "Altura: ",
                 style: pw.TextStyle(
-               fontSize: 30.0,
-             )
-            ),
-             pw.Paragraph(text: _controllerAltura.text,
-             style: pw.TextStyle(
-               fontSize: 30.0,
-             )
-             ),
-              ]
-            ),
-             pw.Row(
-              children: [
-                 pw.Paragraph(
+                  fontSize: 30.0,
+                )),
+            pw.Paragraph(
+                text: _controllerAltura.text,
+                style: pw.TextStyle(
+                  fontSize: 30.0,
+                )),
+          ]),
+          pw.Row(children: [
+            pw.Paragraph(
                 text: "Diâmetro: ",
                 style: pw.TextStyle(
-               fontSize: 30.0,
-             )
-            ),
-             pw.Paragraph(text: _controllerDiametro.text,
-             style: pw.TextStyle(
-               fontSize: 30.0,
-             )
-             ),
-              ]
-            ),
-             pw.Row(
-              children: [
-                 pw.Paragraph(
+                  fontSize: 30.0,
+                )),
+            pw.Paragraph(
+                text: _controllerDiametro.text,
+                style: pw.TextStyle(
+                  fontSize: 30.0,
+                )),
+          ]),
+          pw.Row(children: [
+            pw.Paragraph(
                 text: "Tipo de aro: ",
                 style: pw.TextStyle(
-               fontSize: 30.0,
-             )
-            ),
-             pw.Paragraph(text: _controllerTipodearo.text,
-             style: pw.TextStyle(
-               fontSize: 30.0,
-             )
-             ),
-              ]
-            ),
-              pw.Paragraph(
-                text: "Observações:",
+                  fontSize: 30.0,
+                )),
+            pw.Paragraph(
+                text: _controllerTipodearo.text,
                 style: pw.TextStyle(
-               fontSize: 30.0,
-             )
-            ),
-             pw.Paragraph(text: _controllerObservacoes.text,
-             style: pw.TextStyle(
-               fontSize: 30.0,
-             )
-             ),
-          ];
-        },
-     )
-    );
+                  fontSize: 30.0,
+                )),
+          ]),
+          pw.Paragraph(
+              text: "Observações:",
+              style: pw.TextStyle(
+                fontSize: 30.0,
+              )),
+          pw.Paragraph(
+              text: _controllerObservacoes.text,
+              style: pw.TextStyle(
+                fontSize: 30.0,
+              )),
+        ];
+      },
+    ));
   }
-  
-  Future savePdf() async{
+
+  Future savePdf() async {
     Directory documentDirectory = await getApplicationDocumentsDirectory();
     String documentPath = documentDirectory.path;
     File file = File("$documentPath/OS:$os.pdf");
     file.writeAsBytesSync(pdf.save());
   }
- 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-     body: ListView(
-       children: <Widget>[
+      body: ListView(
+        children: <Widget>[
           SizedBox(height: 15.0),
-            Container(
-          width: MediaQuery.of(context).size.width,
-          padding: EdgeInsets.only(right: 10.0),
-          child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                //Icones
-                IconButton(
-                  icon: Icon(Icons.arrow_back), 
-                  onPressed: () {
-                     Navigator.of(context).pop();
-                  }
-                ),
-                 FloatingActionButton(
-                  onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
-                  },
-                  backgroundColor: Colors.grey.withOpacity(0.3),
-                  mini: true,
-                  elevation: 0.0,
-                  child:
-                      Icon(
-                        Icons.short_text, 
-                        color: Colors.black, size: 17.0
-                        ),
-                )
-              ]
-              ),
-        ),
-         Padding(
-          padding: EdgeInsets.all(14.0),
-          child: Text(
-            'Resultado grau do Multifocal',
-            style: TextStyle(
-                fontFamily: 'Montserrat',
-                fontSize: 40.0,
-                fontWeight: FontWeight.w500),
-          ),
-        ), Padding(padding: EdgeInsets.only(top: 10.0, left: 20.0, right: 40.0),
-          child: Text('Grau para multifocal:',
-          style: TextStyle(
-            fontFamily:  'Montserrat',
-            fontSize: 20.0,
-            color: Colors.black
-          ),
-          ),
-          ),
-          Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            Row(
-           children: <Widget>[
-            Padding(padding: EdgeInsets.only(top: 10.0, left: 20.0),
-           child:  widget.valorOD > 0 ? 
-           Container(
-             child: 
-           Row(children: <Widget>[
-                   Text('OD: +',
-                style: TextStyle(
-                  fontFamily: 'Montserrat',
-                  fontSize: 20.0
-                ),
-               ),
-               Text(nf.format(widget.valorOD),
-                style: TextStyle(
-                  fontFamily: 'Montserrat',
-                  fontSize: 20.0
-                ),
-                ),
-                ],
-                )
-             ) : 
           Container(
+            width: MediaQuery.of(context).size.width,
+            padding: EdgeInsets.only(right: 10.0),
             child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                   Text('OD: ',
-                style: TextStyle(
-                  fontFamily: 'Montserrat',
-                  fontSize: 20.0
-                ),
-               ),
-               Text(nf.format(widget.valorOD),
-                style: TextStyle(
-                  fontFamily: 'Montserrat',
-                  fontSize: 20.0
-                ),
-                ),
-                ],
-                )
-           ),
+                  //Icones
+                  IconButton(
+                      icon: Icon(Icons.arrow_back),
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      }),
+                  FloatingActionButton(
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => Home()));
+                    },
+                    backgroundColor: Colors.grey.withOpacity(0.3),
+                    mini: true,
+                    elevation: 0.0,
+                    child:
+                        Icon(Icons.short_text, color: Colors.black, size: 17.0),
+                  )
+                ]),
           ),
-           ],
+          Padding(
+            padding: EdgeInsets.all(14.0),
+            child: Text(
+              'Resultado grau do Multifocal',
+              style: TextStyle(
+                  fontFamily: 'Montserrat',
+                  fontSize: 40.0,
+                  fontWeight: FontWeight.w500),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(top: 10.0, left: 20.0, right: 40.0),
+            child: Text(
+              'Grau para multifocal:',
+              style: TextStyle(
+                  fontFamily: 'Montserrat',
+                  fontSize: 20.0,
+                  color: Colors.black),
+            ),
+          ),
+          Row(mainAxisAlignment: MainAxisAlignment.start, children: <Widget>[
+            Row(
+              children: <Widget>[
+                Padding(
+                  padding: EdgeInsets.only(top: 10.0, left: 20.0),
+                  child: widget.valorOD > 0
+                      ? Container(
+                          child: Row(
+                          children: <Widget>[
+                            Text(
+                              'OD: +',
+                              style: TextStyle(
+                                  fontFamily: 'Montserrat', fontSize: 20.0),
+                            ),
+                            Text(
+                              nf.format(widget.valorOD),
+                              style: TextStyle(
+                                  fontFamily: 'Montserrat', fontSize: 20.0),
+                            ),
+                          ],
+                        ))
+                      : Container(
+                          child: Row(
+                          children: <Widget>[
+                            Text(
+                              'OD: ',
+                              style: TextStyle(
+                                  fontFamily: 'Montserrat', fontSize: 20.0),
+                            ),
+                            Text(
+                              nf.format(widget.valorOD),
+                              style: TextStyle(
+                                  fontFamily: 'Montserrat', fontSize: 20.0),
+                            ),
+                          ],
+                        )),
+                ),
+              ],
             ),
             Row(
-             children: <Widget>[
-                Padding(padding: EdgeInsets.only( top: 10.0, left: 5.0),
-          child: Text("CIL: ",
-          style: TextStyle(
-            fontFamily:  'Montserrat',
-            fontSize: 20.0,
-            color: Colors.black
-          ),
-          ),
-          ),
-             ],
-           ),
-           Row(children: <Widget>[
-              Padding(padding: EdgeInsets.only(top: 10.0, left: 5.0),
-              child: Text(nf.format(widget.cilOD),
-                style: TextStyle(
-                  fontFamily: 'Montserrat',
-                  fontSize: 20.0
+              children: <Widget>[
+                Padding(
+                  padding: EdgeInsets.only(top: 10.0, left: 5.0),
+                  child: Text(
+                    "CIL: ",
+                    style: TextStyle(
+                        fontFamily: 'Montserrat',
+                        fontSize: 20.0,
+                        color: Colors.black),
+                  ),
                 ),
-                ),
-            )
-           ],
-           ),
+              ],
+            ),
             Row(
-             children: <Widget>[
-                Padding(padding: EdgeInsets.only( top: 10.0, left: 10.0),
-          child: Text("EIXO: ",
-          style: TextStyle(
-            fontFamily:  'Montserrat',
-            fontSize: 20.0,
-            color: Colors.black
-          ),
-          ),
-          ),
-             ],
-           ),
-           Row(
-             children: <Widget>[
-                Padding(padding: EdgeInsets.only( top: 10.0, left: 5.0),
-          child: Text(fn.format(widget.eixoOD),
-          style: TextStyle(
-            fontFamily:  'Montserrat',
-            fontSize: 20.0,
-            color: Colors.black
-          ),
-          ),
-          ),
-             ],
-           ),
-          ]
-          ),
-           
+              children: <Widget>[
+                Padding(
+                  padding: EdgeInsets.only(top: 10.0, left: 5.0),
+                  child: Text(
+                    nf.format(widget.cilOD),
+                    style: TextStyle(fontFamily: 'Montserrat', fontSize: 20.0),
+                  ),
+                )
+              ],
+            ),
+            Row(
+              children: <Widget>[
+                Padding(
+                  padding: EdgeInsets.only(top: 10.0, left: 10.0),
+                  child: Text(
+                    "EIXO: ",
+                    style: TextStyle(
+                        fontFamily: 'Montserrat',
+                        fontSize: 20.0,
+                        color: Colors.black),
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              children: <Widget>[
+                Padding(
+                  padding: EdgeInsets.only(top: 10.0, left: 5.0),
+                  child: Text(
+                    fn.format(widget.eixoOD),
+                    style: TextStyle(
+                        fontFamily: 'Montserrat',
+                        fontSize: 20.0,
+                        color: Colors.black),
+                  ),
+                ),
+              ],
+            ),
+          ]),
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-             Row(
-             children: <Widget>[
-                Padding(padding: EdgeInsets.only(top: 10.0, left: 20.0),
-           child:  widget.valorOE > 0 ? 
-           Container(
-             child: 
-             Row(
+            children: <Widget>[
+              Row(
                 children: <Widget>[
-                   Text('OE: +',
-                style: TextStyle(
-                  fontFamily: 'Montserrat',
-                  fontSize: 20.0
-                ),
-               ),
-               Text(nf.format(widget.valorOE),
-                style: TextStyle(
-                  fontFamily: 'Montserrat',
-                  fontSize: 20.0
-                ),
-                ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 10.0, left: 20.0),
+                    child: widget.valorOE > 0
+                        ? Container(
+                            child: Row(
+                            children: <Widget>[
+                              Text(
+                                'OE: +',
+                                style: TextStyle(
+                                    fontFamily: 'Montserrat', fontSize: 20.0),
+                              ),
+                              Text(
+                                nf.format(widget.valorOE),
+                                style: TextStyle(
+                                    fontFamily: 'Montserrat', fontSize: 20.0),
+                              ),
+                            ],
+                          ))
+                        : Container(
+                            child: Row(
+                            children: <Widget>[
+                              Text(
+                                'OE: ',
+                                style: TextStyle(
+                                    fontFamily: 'Montserrat', fontSize: 20.0),
+                              ),
+                              Text(
+                                nf.format(widget.valorOE),
+                                style: TextStyle(
+                                    fontFamily: 'Montserrat', fontSize: 20.0),
+                              ),
+                            ],
+                          )),
+                  ),
                 ],
-                )
-             ) : 
-          Container(
-            child: Row(
+              ),
+              Row(
                 children: <Widget>[
-                   Text('OE: ',
-                style: TextStyle(
-                  fontFamily: 'Montserrat',
-                  fontSize: 20.0
-                ),
-               ),
-               Text(nf.format(widget.valorOE),
-                style: TextStyle(
-                  fontFamily: 'Montserrat',
-                  fontSize: 20.0
-                ),
-                ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 10.0, left: 5.0),
+                    child: Text(
+                      "CIL: ",
+                      style: TextStyle(
+                          fontFamily: 'Montserrat',
+                          fontSize: 20.0,
+                          color: Colors.black),
+                    ),
+                  ),
                 ],
-                )
-           ),
-          ), 
-             ],
-           ),
-            Row(
-             children: <Widget>[
-                Padding(padding: EdgeInsets.only( top: 10.0, left: 5.0),
-          child: Text("CIL: ",
-          style: TextStyle(
-            fontFamily:  'Montserrat',
-            fontSize: 20.0,
-            color: Colors.black
-          ),
-          ),
-          ),
-             ],
-           ),
-            Row(children: <Widget>[
-              Padding(padding: EdgeInsets.only(top: 10.0, left: 5.0),
-              child: Text(nf.format(widget.cilOE),
-                style: TextStyle(
-                  fontFamily: 'Montserrat',
-                  fontSize: 20.0
-                ),
-                ),
-            )
-           ],
-           ),
-           Row(
-             children: <Widget>[
-                Padding(padding: EdgeInsets.only( top: 10.0, left: 10.0),
-          child: Text("EIXO: ",
-          style: TextStyle(
-            fontFamily:  'Montserrat',
-            fontSize: 20.0,
-            color: Colors.black
-          ),
-          ),
-          ),
-             ],
-           ),
-            Row(
-             children: <Widget>[
-                Padding(padding: EdgeInsets.only( top: 10.0, left: 5.0),
-          child: Text(fn.format(widget.eixoOE),
-          style: TextStyle(
-            fontFamily:  'Montserrat',
-            fontSize: 20.0,
-            color: Colors.black
-          ),
-          ),
-          ),
-             ],
-           )
-          ],
+              ),
+              Row(
+                children: <Widget>[
+                  Padding(
+                    padding: EdgeInsets.only(top: 10.0, left: 5.0),
+                    child: Text(
+                      nf.format(widget.cilOE),
+                      style:
+                          TextStyle(fontFamily: 'Montserrat', fontSize: 20.0),
+                    ),
+                  )
+                ],
+              ),
+              Row(
+                children: <Widget>[
+                  Padding(
+                    padding: EdgeInsets.only(top: 10.0, left: 10.0),
+                    child: Text(
+                      "EIXO: ",
+                      style: TextStyle(
+                          fontFamily: 'Montserrat',
+                          fontSize: 20.0,
+                          color: Colors.black),
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                children: <Widget>[
+                  Padding(
+                    padding: EdgeInsets.only(top: 10.0, left: 5.0),
+                    child: Text(
+                      fn.format(widget.eixoOE),
+                      style: TextStyle(
+                          fontFamily: 'Montserrat',
+                          fontSize: 20.0,
+                          color: Colors.black),
+                    ),
+                  ),
+                ],
+              )
+            ],
           ),
           Row(
             children: <Widget>[
-             Padding(padding: EdgeInsets.only( top: 10.0, left: 20.0, bottom: 10.0),
-             child:  Row(
-                children: <Widget>[
-                   Text('Adição  ',
-                style: TextStyle(
-                  fontFamily: 'Montserrat',
-                  fontSize: 20.0
-                ),
-               ),
-               Text(nf.format(widget.adicaoFinal),
-                style: TextStyle(
-                  fontFamily: 'Montserrat',
-                  fontSize: 20.0
-                ),
-                ),
-                ],
-                )
-             ), 
+              Padding(
+                  padding: EdgeInsets.only(top: 10.0, left: 20.0, bottom: 10.0),
+                  child: Row(
+                    children: <Widget>[
+                      Text(
+                        'Adição  ',
+                        style:
+                            TextStyle(fontFamily: 'Montserrat', fontSize: 20.0),
+                      ),
+                      Text(
+                        nf.format(widget.adicaoFinal),
+                        style:
+                            TextStyle(fontFamily: 'Montserrat', fontSize: 20.0),
+                      ),
+                    ],
+                  )),
             ],
           ),
-         Padding(padding: EdgeInsets.only(top: 20.0, left: 20.0, right: 40.0),
-          child: Text('Gerar ordem de serviço:',
-          style: TextStyle(
-            fontFamily:  'Montserrat',
-            fontSize: 25.0,
-            color: Colors.black),
+          Padding(
+            padding: EdgeInsets.only(top: 20.0, left: 20.0, right: 40.0),
+            child: Text(
+              'Gerar ordem de serviço:',
+              style: TextStyle(
+                  fontFamily: 'Montserrat',
+                  fontSize: 25.0,
+                  color: Colors.black),
             ),
-            ),
-            Padding(
+          ),
+          Padding(
             padding: EdgeInsets.only(top: 10.0, left: 20.0, right: 30.0),
             child: Container(
               padding: EdgeInsets.only(left: 45.0),
               height: 50.0,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(25.0),
-                color: Color(0xff399d63)
-              ),
+                  borderRadius: BorderRadius.circular(25.0),
+                  color: Color(0xff399d63)),
               child: Center(
                 child: TextField(
-                   keyboardType: TextInputType.number,
-                   decoration: InputDecoration(
+                  keyboardType: TextInputType.number,
+                  decoration: InputDecoration(
                     border: InputBorder.none,
                     labelText: 'Número de cliente ',
                     labelStyle: TextStyle(
-                      fontFamily: 'Montserrat',
-                      fontSize: 15.0,
-                      color: Colors.black
-                    ),
+                        fontFamily: 'Montserrat',
+                        fontSize: 15.0,
+                        color: Colors.black),
                   ),
                   controller: _controllerNumeroCliente,
                 ),
@@ -818,35 +731,32 @@ final pdf = pw.Document();
               padding: EdgeInsets.only(left: 45.0),
               height: 50.0,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(25.0),
-                color: Color(0xff399d63)
-              ),
+                  borderRadius: BorderRadius.circular(25.0),
+                  color: Color(0xff399d63)),
               child: Center(
                 child: TextField(
-                   keyboardType: TextInputType.text,
-                   decoration: InputDecoration(
+                  keyboardType: TextInputType.text,
+                  decoration: InputDecoration(
                     border: InputBorder.none,
                     labelText: 'Ótica ',
                     labelStyle: TextStyle(
-                      fontFamily: 'Montserrat',
-                      fontSize: 15.0,
-                      color: Colors.black
-                    ),
+                        fontFamily: 'Montserrat',
+                        fontSize: 15.0,
+                        color: Colors.black),
                   ),
                   controller: _controllerNomeotica,
                 ),
               ),
             ),
           ),
-           Padding(
+          Padding(
             padding: EdgeInsets.only(top: 10.0, left: 20.0, right: 30.0),
             child: Container(
               padding: EdgeInsets.only(left: 45.0),
               height: 50.0,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(25.0),
-                color: Color(0xff399d63)
-              ),
+                  borderRadius: BorderRadius.circular(25.0),
+                  color: Color(0xff399d63)),
               child: Center(
                 child: TextField(
                   keyboardType: TextInputType.text,
@@ -854,10 +764,9 @@ final pdf = pw.Document();
                     border: InputBorder.none,
                     labelText: 'Número O.S',
                     labelStyle: TextStyle(
-                      fontFamily: 'Montserrat',
-                      fontSize: 15.0,
-                      color: Colors.black
-                    ),
+                        fontFamily: 'Montserrat',
+                        fontSize: 15.0,
+                        color: Colors.black),
                   ),
                   controller: _controllerOS,
                 ),
@@ -870,9 +779,8 @@ final pdf = pw.Document();
               padding: EdgeInsets.only(left: 45.0),
               height: 50.0,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(25.0),
-                color: Color(0xff399d63)
-              ),
+                  borderRadius: BorderRadius.circular(25.0),
+                  color: Color(0xff399d63)),
               child: Center(
                 child: TextField(
                   inputFormatters: [maskFormatter],
@@ -881,62 +789,56 @@ final pdf = pw.Document();
                     border: InputBorder.none,
                     labelText: 'Data',
                     labelStyle: TextStyle(
-                      fontFamily: 'Montserrat',
-                      fontSize: 15.0,
-                      color: Colors.black
-                    ),
+                        fontFamily: 'Montserrat',
+                        fontSize: 15.0,
+                        color: Colors.black),
                   ),
                   controller: _controllerData,
                 ),
               ),
             ),
           ),
-           Padding(
+          Padding(
             padding: EdgeInsets.only(top: 10.0, left: 20.0, right: 30.0),
             child: Container(
               padding: EdgeInsets.only(left: 45.0),
               height: 50.0,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(25.0),
-                color: Color(0xff399d63)
-              ),
+                  borderRadius: BorderRadius.circular(25.0),
+                  color: Color(0xff399d63)),
               child: Center(
                 child: TextField(
-                  keyboardType: TextInputType.number,
-                  decoration: InputDecoration(
-                    border: InputBorder.none,
-                    labelText: 'Número da NR',
-                    labelStyle: TextStyle(
-                      fontFamily: 'Montserrat',
-                      fontSize: 15.0,
-                      color: Colors.black
+                    keyboardType: TextInputType.number,
+                    decoration: InputDecoration(
+                      border: InputBorder.none,
+                      labelText: 'Número da NR',
+                      labelStyle: TextStyle(
+                          fontFamily: 'Montserrat',
+                          fontSize: 15.0,
+                          color: Colors.black),
                     ),
-                  ),
-                  controller: _controllerNR
-                ),
+                    controller: _controllerNR),
               ),
             ),
           ),
-           Padding(
+          Padding(
             padding: EdgeInsets.only(top: 10.0, left: 20.0, right: 30.0),
             child: Container(
               padding: EdgeInsets.only(left: 45.0),
               height: 50.0,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(25.0),
-                color: Color(0xff399d63)
-              ),
+                  borderRadius: BorderRadius.circular(25.0),
+                  color: Color(0xff399d63)),
               child: Center(
                 child: TextField(
-                   keyboardType: TextInputType.text,
+                  keyboardType: TextInputType.text,
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     labelText: 'Tipo de Lente',
                     labelStyle: TextStyle(
-                      fontFamily: 'Montserrat',
-                      fontSize: 15.0,
-                      color: Colors.black
-                    ),
+                        fontFamily: 'Montserrat',
+                        fontSize: 15.0,
+                        color: Colors.black),
                   ),
                   controller: _controllerTipodelente,
                 ),
@@ -949,20 +851,18 @@ final pdf = pw.Document();
               padding: EdgeInsets.only(left: 45.0),
               height: 50.0,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(25.0),
-                color: Color(0xff399d63)
-              ),
+                  borderRadius: BorderRadius.circular(25.0),
+                  color: Color(0xff399d63)),
               child: Center(
                 child: TextField(
-                   keyboardType: TextInputType.text,
+                  keyboardType: TextInputType.text,
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     labelText: 'Tratamento',
                     labelStyle: TextStyle(
-                      fontFamily: 'Montserrat',
-                      fontSize: 15.0,
-                      color: Colors.black
-                    ),
+                        fontFamily: 'Montserrat',
+                        fontSize: 15.0,
+                        color: Colors.black),
                   ),
                   controller: _controllerTratamento,
                 ),
@@ -975,21 +875,19 @@ final pdf = pw.Document();
               padding: EdgeInsets.only(left: 45.0),
               height: 50.0,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(25.0),
-               color: Color(0xff399d63)
-              ),
+                  borderRadius: BorderRadius.circular(25.0),
+                  color: Color(0xff399d63)),
               child: Center(
                 child: TextField(
-                   keyboardType: TextInputType.number,
-                   inputFormatters: [maskFormatterDP],
+                  keyboardType: TextInputType.number,
+                  inputFormatters: [maskFormatterDP],
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     labelText: 'DP',
                     labelStyle: TextStyle(
-                      fontFamily: 'Montserrat',
-                      fontSize: 15.0,
-                      color: Colors.black
-                    ),
+                        fontFamily: 'Montserrat',
+                        fontSize: 15.0,
+                        color: Colors.black),
                   ),
                   controller: _controllerDP,
                 ),
@@ -1002,21 +900,19 @@ final pdf = pw.Document();
               padding: EdgeInsets.only(left: 45.0),
               height: 50.0,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(25.0),
-               color: Color(0xff399d63)
-              ),
+                  borderRadius: BorderRadius.circular(25.0),
+                  color: Color(0xff399d63)),
               child: Center(
                 child: TextField(
-                   keyboardType: TextInputType.number,
-                    inputFormatters: [maskFormatterDNPOD],
+                  keyboardType: TextInputType.number,
+                  inputFormatters: [maskFormatterDNPOD],
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     labelText: 'DNP: OD',
                     labelStyle: TextStyle(
-                      fontFamily: 'Montserrat',
-                      fontSize: 15.0,
-                      color: Colors.black
-                    ),
+                        fontFamily: 'Montserrat',
+                        fontSize: 15.0,
+                        color: Colors.black),
                   ),
                   controller: _controllerDNPOD,
                 ),
@@ -1029,21 +925,19 @@ final pdf = pw.Document();
               padding: EdgeInsets.only(left: 45.0),
               height: 50.0,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(25.0),
-               color: Color(0xff399d63)
-              ),
+                  borderRadius: BorderRadius.circular(25.0),
+                  color: Color(0xff399d63)),
               child: Center(
                 child: TextField(
-                   keyboardType: TextInputType.number,
-                    inputFormatters: [maskFormatterDNPOE],
+                  keyboardType: TextInputType.number,
+                  inputFormatters: [maskFormatterDNPOE],
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     labelText: 'DNP: OE',
                     labelStyle: TextStyle(
-                      fontFamily: 'Montserrat',
-                      fontSize: 15.0,
-                      color: Colors.black
-                    ),
+                        fontFamily: 'Montserrat',
+                        fontSize: 15.0,
+                        color: Colors.black),
                   ),
                   controller: _controllerDNPOE,
                 ),
@@ -1056,53 +950,47 @@ final pdf = pw.Document();
               padding: EdgeInsets.only(left: 45.0),
               height: 50.0,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(25.0),
-                color: Color(0xff399d63)
-              ),
+                  borderRadius: BorderRadius.circular(25.0),
+                  color: Color(0xff399d63)),
               child: Center(
                 child: TextField(
-                   keyboardType: TextInputType.number,
-                   inputFormatters: [maskFormatterAltura],
+                  keyboardType: TextInputType.number,
+                  inputFormatters: [maskFormatterAltura],
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     labelText: 'Altura',
                     labelStyle: TextStyle(
-                      fontFamily: 'Montserrat',
-                      fontSize: 15.0,
-                      color: Colors.black
-                    ),
+                        fontFamily: 'Montserrat',
+                        fontSize: 15.0,
+                        color: Colors.black),
                   ),
                   controller: _controllerAltura,
                 ),
               ),
             ),
           ),
-          
           Padding(
             padding: EdgeInsets.only(top: 10.0, left: 20.0, right: 30.0),
             child: Container(
               padding: EdgeInsets.only(left: 45.0),
               height: 50.0,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(25.0),
-                color: Color(0xff399d63)
-              ),
+                  borderRadius: BorderRadius.circular(25.0),
+                  color: Color(0xff399d63)),
               child: Center(
-                child: TextField(
-                   keyboardType: TextInputType.number,
-                   inputFormatters: [maskFormatterDiametro],
-                  decoration: InputDecoration(
-                    border: InputBorder.none,
-                    labelText: 'Diâmetro',
-                    labelStyle: TextStyle(
+                  child: TextField(
+                keyboardType: TextInputType.number,
+                inputFormatters: [maskFormatterDiametro],
+                decoration: InputDecoration(
+                  border: InputBorder.none,
+                  labelText: 'Diâmetro',
+                  labelStyle: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 15.0,
-                      color: Colors.black
-                    ),
-                  ),
-                  controller: _controllerDiametro,
-                )
-              ),
+                      color: Colors.black),
+                ),
+                controller: _controllerDiametro,
+              )),
             ),
           ),
           Padding(
@@ -1111,20 +999,18 @@ final pdf = pw.Document();
               padding: EdgeInsets.only(left: 45.0),
               height: 50.0,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(25.0),
-                color: Color(0xff399d63)
-              ),
+                  borderRadius: BorderRadius.circular(25.0),
+                  color: Color(0xff399d63)),
               child: Center(
                 child: TextField(
-                   keyboardType: TextInputType.text,
+                  keyboardType: TextInputType.text,
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     labelText: 'Tipo de aro',
                     labelStyle: TextStyle(
-                      fontFamily: 'Montserrat',
-                      fontSize: 15.0,
-                      color: Colors.black
-                    ),
+                        fontFamily: 'Montserrat',
+                        fontSize: 15.0,
+                        color: Colors.black),
                   ),
                   controller: _controllerTipodearo,
                 ),
@@ -1132,102 +1018,104 @@ final pdf = pw.Document();
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 10.0, left: 20.0, right: 30.0, bottom: 20.0),
+            padding: EdgeInsets.only(
+                top: 10.0, left: 20.0, right: 30.0, bottom: 20.0),
             child: Container(
               padding: EdgeInsets.only(left: 45.0),
               height: 50.0,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(25.0),
-                color: Color(0xff399d63)
-              ),
+                  borderRadius: BorderRadius.circular(25.0),
+                  color: Color(0xff399d63)),
               child: Center(
                 child: TextField(
-                   keyboardType: TextInputType.text,
+                  keyboardType: TextInputType.text,
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     labelText: 'Observações',
                     labelStyle: TextStyle(
-                      fontFamily: 'Montserrat',
-                      fontSize: 15.0,
-                      color: Colors.black
-                    ),
+                        fontFamily: 'Montserrat',
+                        fontSize: 15.0,
+                        color: Colors.black),
                   ),
-                   controller: _controllerObservacoes,
+                  controller: _controllerObservacoes,
                 ),
               ),
             ),
           ),
-          Padding( 
+          Padding(
             padding: EdgeInsets.only(top: 50.0, left: 20.0, right: 30.0),
             child: RaisedButton(
-              color: Color(0xff399d63),
-              textColor: Colors.black,
-              padding: EdgeInsets.all(15.0),
-              child: Text(_isButtonDisabled ? 'Gerar Ordem de serviço' : 'Ordem de serviço gerada'),
-              shape: RoundedRectangleBorder(
-              borderRadius: new BorderRadius.circular(18.0),
-              side: BorderSide(color: Color(0xff399d63))
-              ),
-              onPressed: _alternaButton 
-            ),
+                color: Color(0xff399d63),
+                textColor: Colors.black,
+                padding: EdgeInsets.all(15.0),
+                child: Text(_isButtonDisabled
+                    ? 'Gerar Ordem de serviço'
+                    : 'Ordem de serviço gerada'),
+                shape: RoundedRectangleBorder(
+                    borderRadius: new BorderRadius.circular(18.0),
+                    side: BorderSide(color: Colors.black)),
+                onPressed: _alternaButton),
           ),
-           Padding( 
+          Padding(
             padding: EdgeInsets.only(top: 10.0, left: 20.0, right: 30.0),
             child: RaisedButton(
-              color: Color(0xff399d63),
-              textColor: Colors.black,
-              padding: EdgeInsets.all(15.0),
-              child: Text('Calcular Diâmetro da lente'),
-              shape: RoundedRectangleBorder(
-              borderRadius: new BorderRadius.circular(18.0),
-              side: BorderSide(color: Color(0xff399d63))
-              ),
-              onPressed: (){
-               Navigator.of(context).push(MaterialPageRoute(builder:(context) => DimetroComparti()));
-              }
-            ),
-           ),
-          Padding( 
-            padding: EdgeInsets.only(top: 10.0, left: 20.0, right: 30.0, bottom: 60.0),
+                color: Color(0xff399d63),
+                textColor: Colors.black,
+                padding: EdgeInsets.all(15.0),
+                child: Text('Calcular Diâmetro da lente'),
+                shape: RoundedRectangleBorder(
+                    borderRadius: new BorderRadius.circular(18.0),
+                    side: BorderSide(color: Colors.black)),
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => DimetroComparti()));
+                }),
+          ),
+          Padding(
+            padding: EdgeInsets.only(
+                top: 10.0, left: 20.0, right: 30.0, bottom: 60.0),
             child: RaisedButton(
-              color: Color(0xff399d63),
-              textColor: Colors.black,
-              padding: EdgeInsets.all(15.0),
-              child: Text('Compartilhar Ordem de serviço'),
-              shape: RoundedRectangleBorder(
-              borderRadius: new BorderRadius.circular(18.0),
-              side: BorderSide(color: Color(0xff399d63))
-              ),
-              onPressed:  _isButtonDisabled ? null : () async{
-                await Printing.sharePdf(bytes: pdf.save(), filename:'OS:$os.pdf');
-                  writeOnPdf();
-              }
-            ),
+                color: Color(0xff399d63),
+                textColor: Colors.black,
+                padding: EdgeInsets.all(15.0),
+                child: Text('Compartilhar Ordem de serviço'),
+                shape: RoundedRectangleBorder(
+                    borderRadius: new BorderRadius.circular(18.0),
+                    side: BorderSide(color: Colors.black)),
+                onPressed: _isButtonDisabled
+                    ? null
+                    : () async {
+                        await Printing.sharePdf(
+                            bytes: pdf.save(), filename: 'OS:$os.pdf');
+                        writeOnPdf();
+                      }),
           )
-       ],
-     ),
+        ],
+      ),
     );
-    
-  } 
-   void _converter(){
-   os = (_controllerOS.text);
   }
-   _alternaButton() {
-       setState(() {
-        _converter();
-      });
-      setState(() => _isButtonDisabled = !_isButtonDisabled);
-      setState(() async{
-                writeOnPdf();
-              await savePdf();
-               Directory documentDirectory = await getApplicationDocumentsDirectory();
-               String documentPath = documentDirectory.path;
-               String fullPath = "$documentPath/OS:$os.pdf";
-               Navigator.push(context, MaterialPageRoute(
-            builder: (context) => PDFDiametro(path: fullPath,)));
-              }
-      );
-      
-   }
-  
+
+  void _converter() {
+    os = (_controllerOS.text);
+  }
+
+  _alternaButton() {
+    setState(() {
+      _converter();
+    });
+    setState(() => _isButtonDisabled = !_isButtonDisabled);
+    setState(() async {
+      writeOnPdf();
+      await savePdf();
+      Directory documentDirectory = await getApplicationDocumentsDirectory();
+      String documentPath = documentDirectory.path;
+      String fullPath = "$documentPath/OS:$os.pdf";
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => PDFDiametro(
+                    path: fullPath,
+                  )));
+    });
+  }
 }
