@@ -50,15 +50,15 @@ class _FuncaoGraudePertoState extends State<FuncaoGraudePerto> {
   double graudePertoOE = 0;
   double cilOE = 0;
   double eixoOE = 0;
-  dynamic olhoOD = 'Plano';
-  dynamic olhoOE = 'Plano';
-  dynamic olhoODPerto = 'Plano';
-  dynamic olhoOEPerto = 'Plano';
-  dynamic cilolhoODLonge = '0.00';
-  dynamic olhoODEixo = '0';
-  dynamic cilolhoOElonge = '0.00';
-  dynamic olhoOEEixo = '0';
-  dynamic olhoadicao = '0.75';
+  dynamic olhoOD = '  0.00';
+  dynamic olhoOE = '  0.00';
+  dynamic olhoODPerto = '  0.00';
+  dynamic olhoOEPerto = '  0.00';
+  dynamic cilolhoODLonge = '  0.00';
+  dynamic olhoODEixo = '  0';
+  dynamic cilolhoOElonge = '  0.00';
+  dynamic olhoOEEixo = '  0';
+  dynamic olhoadicao = '  0.75';
 
   var esfODlonge, cilODLonge, eixoODLonge;
   var esfOElonge, cilOELonge, eixoOELonge;
@@ -213,7 +213,7 @@ class _FuncaoGraudePertoState extends State<FuncaoGraudePerto> {
                           });
                         },
                         items: <String>[
-                          'Plano',
+                          '  0.00',
                           '+0.25',
                           '-0.25',
                           '+0.50',
@@ -435,7 +435,7 @@ class _FuncaoGraudePertoState extends State<FuncaoGraudePerto> {
                           });
                         },
                         items: <String>[
-                          '0.00',
+                          '  0.00',
                           '-0.25',
                           '-0.50',
                           '-0.75',
@@ -529,7 +529,7 @@ class _FuncaoGraudePertoState extends State<FuncaoGraudePerto> {
                           });
                         },
                         items: <String>[
-                          '0',
+                          '  0',
                           '5',
                           '10',
                           '15',
@@ -601,7 +601,7 @@ class _FuncaoGraudePertoState extends State<FuncaoGraudePerto> {
                           });
                         },
                         items: <String>[
-                          'Plano',
+                          '  0.00',
                           '+0.25',
                           '-0.25',
                           '+0.50',
@@ -823,7 +823,7 @@ class _FuncaoGraudePertoState extends State<FuncaoGraudePerto> {
                           });
                         },
                         items: <String>[
-                          '0.00',
+                          '  0.00',
                           '-0.25',
                           '-0.50',
                           '-0.75',
@@ -917,7 +917,7 @@ class _FuncaoGraudePertoState extends State<FuncaoGraudePerto> {
                           });
                         },
                         items: <String>[
-                          '0',
+                          '  0',
                           '5',
                           '10',
                           '15',
@@ -989,7 +989,7 @@ class _FuncaoGraudePertoState extends State<FuncaoGraudePerto> {
                         });
                       },
                       items: <String>[
-                        '0.75',
+                        '  0.75',
                         '1.00',
                         '1.25',
                         '1.50',

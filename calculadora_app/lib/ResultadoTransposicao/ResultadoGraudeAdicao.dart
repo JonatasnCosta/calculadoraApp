@@ -1031,7 +1031,7 @@ class _ResultadoGraudeAdicaoState extends State<ResultadoGraudeAdicao> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 10.0, left: 5.0, right: 5.0),
+            padding: EdgeInsets.only(top: 10.0, left: 20.0, right: 30.0),
             child: Container(
               padding: EdgeInsets.only(left: 45.0),
               height: 50.0,

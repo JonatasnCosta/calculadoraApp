@@ -55,14 +55,14 @@ class _FuncaoAdicaoState extends State<FuncaoAdicao> {
   double valorOD = 0;
   double valorOE = 0;
   double teste1 = 0;
-  dynamic olhoOD = 'Plano';
-  dynamic olhoOE = 'Plano';
-  dynamic olhoODPerto = 'Plano';
-  dynamic olhoOEPerto = 'Plano';
-  dynamic cilolhoODLonge = '0.00';
-  dynamic olhoODEixo = '0';
-  dynamic cilolhoOElonge = '0.00';
-  dynamic olhoOEEixo = '0';
+  dynamic olhoOD = '  0.00';
+  dynamic olhoOE = '  0.00';
+  dynamic olhoODPerto = '  0.00';
+  dynamic olhoOEPerto = '  0.00';
+  dynamic cilolhoODLonge = '  0.00';
+  dynamic olhoODEixo = '  0';
+  dynamic cilolhoOElonge = '  0.00';
+  dynamic olhoOEEixo = '  0';
 
   var esfODlonge, cilODLonge, eixoODLonge, esfODperto;
   var esfOElonge, cilOELonge, eixoOELonge, esfOEperto;
@@ -243,7 +243,7 @@ class _FuncaoAdicaoState extends State<FuncaoAdicao> {
                           });
                         },
                         items: <String>[
-                          'Plano',
+                          '  0.00',
                           '+0.25',
                           '-0.25',
                           '+0.50',
@@ -465,7 +465,7 @@ class _FuncaoAdicaoState extends State<FuncaoAdicao> {
                           });
                         },
                         items: <String>[
-                          '0.00',
+                          '  0.00',
                           '-0.25',
                           '-0.50',
                           '-0.75',
@@ -559,7 +559,7 @@ class _FuncaoAdicaoState extends State<FuncaoAdicao> {
                           });
                         },
                         items: <String>[
-                          '0',
+                          '  0',
                           '5',
                           '10',
                           '15',
@@ -631,7 +631,7 @@ class _FuncaoAdicaoState extends State<FuncaoAdicao> {
                           });
                         },
                         items: <String>[
-                          'Plano',
+                          '  0.00',
                           '+0.25',
                           '-0.25',
                           '+0.50',
@@ -853,7 +853,7 @@ class _FuncaoAdicaoState extends State<FuncaoAdicao> {
                           });
                         },
                         items: <String>[
-                          '0.00',
+                          '  0.00',
                           '-0.25',
                           '-0.50',
                           '-0.75',
@@ -947,7 +947,7 @@ class _FuncaoAdicaoState extends State<FuncaoAdicao> {
                           });
                         },
                         items: <String>[
-                          '0',
+                          '  0',
                           '5',
                           '10',
                           '15',
@@ -1019,7 +1019,7 @@ class _FuncaoAdicaoState extends State<FuncaoAdicao> {
                           });
                         },
                         items: <String>[
-                          'Plano',
+                          '  0.00',
                           '+0.25',
                           '-0.25',
                           '+0.50',
@@ -1255,7 +1255,7 @@ class _FuncaoAdicaoState extends State<FuncaoAdicao> {
                           });
                         },
                         items: <String>[
-                          'Plano',
+                          '  0.00',
                           '+0.25',
                           '-0.25',
                           '+0.50',

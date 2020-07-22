@@ -17,15 +17,15 @@ class OrdemServico extends StatefulWidget {
   _OrdemServicoState createState() => _OrdemServicoState();
 }
 
-String od = 'Plano';
-String cilOD = '0.00';
-String eixoOD = '0';
+String od = '  0.00';
+String cilOD = '  0.00';
+String eixoOD = '  0';
 
-String oe = 'Plano';
-String cilOE = '0.00';
-String eixoOE = '0';
+String oe = '  0.00';
+String cilOE = '  0.00';
+String eixoOE = '  0';
 
-String add = '0.00';
+String add = '  0.00';
 
 class _OrdemServicoState extends State<OrdemServico> {
   static const MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(
@@ -577,7 +577,7 @@ class _OrdemServicoState extends State<OrdemServico> {
                           });
                         },
                         items: <String>[
-                          'Plano',
+                          '  0.00',
                           '+0.25',
                           '-0.25',
                           '+0.50',
@@ -799,7 +799,7 @@ class _OrdemServicoState extends State<OrdemServico> {
                           });
                         },
                         items: <String>[
-                          '0.00',
+                          '  0.00',
                           '-0.25',
                           '-0.50',
                           '-0.75',
@@ -893,7 +893,7 @@ class _OrdemServicoState extends State<OrdemServico> {
                           });
                         },
                         items: <String>[
-                          '0',
+                          '  0',
                           '5',
                           '10',
                           '15',
@@ -965,7 +965,7 @@ class _OrdemServicoState extends State<OrdemServico> {
                           });
                         },
                         items: <String>[
-                          'Plano',
+                          '  0.00',
                           '+0.25',
                           '-0.25',
                           '+0.50',
@@ -1187,7 +1187,7 @@ class _OrdemServicoState extends State<OrdemServico> {
                           });
                         },
                         items: <String>[
-                          '0.00',
+                          '  0.00',
                           '-0.25',
                           '-0.50',
                           '-0.75',
@@ -1281,7 +1281,7 @@ class _OrdemServicoState extends State<OrdemServico> {
                           });
                         },
                         items: <String>[
-                          '0',
+                          '  0',
                           '5',
                           '10',
                           '15',
@@ -1353,7 +1353,7 @@ class _OrdemServicoState extends State<OrdemServico> {
                         });
                       },
                       items: <String>[
-                        '0.00',
+                        '  0.00',
                         '0.75',
                         '1.00',
                         '1.25',
