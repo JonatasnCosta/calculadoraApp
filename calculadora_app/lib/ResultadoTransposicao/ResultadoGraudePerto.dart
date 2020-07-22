@@ -82,6 +82,7 @@ class _ResultadoGraudePertoState extends State<ResultadoGraudePerto> {
   TextEditingController _controllerAltura = TextEditingController();
   TextEditingController _controllerDiametro = TextEditingController();
   TextEditingController _controllerTipodearo = TextEditingController();
+  TextEditingController _controllerRefArmacao = TextEditingController();
   TextEditingController _controllerObservacoes = TextEditingController();
   var maskFormatter = new MaskTextInputFormatter(
       mask: '##/##/####', filter: {"#": RegExp(r'[0-9]')});
@@ -389,6 +390,18 @@ class _ResultadoGraudePertoState extends State<ResultadoGraudePerto> {
                 )),
             pw.Paragraph(
                 text: _controllerTipodearo.text,
+                style: pw.TextStyle(
+                  fontSize: 30.0,
+                )),
+          ]),
+          pw.Row(children: [
+            pw.Paragraph(
+                text: "Referência da armação: ",
+                style: pw.TextStyle(
+                  fontSize: 30.0,
+                )),
+            pw.Paragraph(
+                text: _controllerRefArmacao.text,
                 style: pw.TextStyle(
                   fontSize: 30.0,
                 )),
@@ -975,6 +988,29 @@ class _ResultadoGraudePertoState extends State<ResultadoGraudePerto> {
                   ),
                   controller: _controllerTipodearo,
                 ),
+              ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(top: 10.0, left: 5.0, right: 5.0),
+            child: Container(
+              padding: EdgeInsets.only(left: 45.0),
+              height: 50.0,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(25.0),
+                  color: Color(0xff399d63)),
+              child: Center(
+                child: TextField(
+                    keyboardType: TextInputType.text,
+                    decoration: InputDecoration(
+                      border: InputBorder.none,
+                      labelText: 'Referência da armação',
+                      labelStyle: TextStyle(
+                          fontFamily: 'Montserrat',
+                          fontSize: 15.0,
+                          color: Colors.black),
+                    ),
+                    controller: _controllerRefArmacao),
               ),
             ),
           ),
