@@ -45,16 +45,16 @@ class _FuncaoAdicaoState extends State<FuncaoAdicao> {
     super.dispose();
   }
 
-  dynamic adicaoOD = 0;
-  dynamic adicaoOE = 0;
-  dynamic adicaoFinal = 0;
-  dynamic cilOD = 0;
-  dynamic eixoOD = 0;
-  dynamic cilOE = 0;
-  dynamic eixoOE = 0;
-  dynamic valorOD = 0;
-  dynamic valorOE = 0;
-  dynamic teste1 = 0;
+  double adicaoOD = 0;
+  double adicaoOE = 0;
+  double adicaoFinal = 0;
+  double cilOD = 0;
+  double eixoOD = 0;
+  double cilOE = 0;
+  double eixoOE = 0;
+  double valorOD = 0;
+  double valorOE = 0;
+  double teste1 = 0;
   dynamic olhoOD = 'Plano';
   dynamic olhoOE = 'Plano';
   dynamic olhoODPerto = 'Plano';
