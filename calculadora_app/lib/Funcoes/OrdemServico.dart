@@ -1,5 +1,5 @@
 import 'package:calculadoraapp/DiametroComparti.dart';
-import 'package:calculadoraapp/Home.dart';
+//import 'package:calculadoraapp/Home.dart';
 import 'package:flutter/material.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:firebase_admob/firebase_admob.dart';
@@ -10,7 +10,7 @@ import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 import 'package:printing/printing.dart';
 
-const String testDevice = '721A33913C7D7D311A5FB39652B0084B';
+const String testDevice = 'Mobile_id';
 
 class OrdemServico extends StatefulWidget {
   @override
@@ -97,240 +97,243 @@ class _OrdemServicoState extends State<OrdemServico> {
 
   final pdf = pw.Document();
   writeOnPdf() {
-    pdf.addPage(pw.MultiPage(
-      pageFormat: PdfPageFormat.a3,
-      margin: pw.EdgeInsets.all(32),
-      build: (pw.Context context) {
-        return <pw.Widget>[
-          pw.Header(
-            level: 0,
-            child: pw.Text("Ordem de serviço",
-                style: pw.TextStyle(
-                  fontSize: 40.0,
-                )),
-          ),
-          pw.Row(children: [
+    pdf.addPage(
+      pw.MultiPage(
+        pageFormat: PdfPageFormat.a3,
+        margin: pw.EdgeInsets.all(32),
+        build: (pw.Context context) {
+          return <pw.Widget>[
+            pw.Header(
+              level: 0,
+              child: pw.Text("Ordem de serviço",
+                  style: pw.TextStyle(
+                    fontSize: 40.0,
+                  )),
+            ),
+            pw.Row(children: [
+              pw.Paragraph(
+                  text: "Número de Cliente: ",
+                  style: pw.TextStyle(
+                    fontSize: 30.0,
+                  )),
+              pw.Paragraph(
+                  text: _controllerNumeroCliente.text,
+                  style: pw.TextStyle(
+                    fontSize: 30.0,
+                  )),
+            ]),
+            pw.Row(children: [
+              pw.Paragraph(
+                  text: "Ótica: ",
+                  style: pw.TextStyle(
+                    fontSize: 30.0,
+                  )),
+              pw.Paragraph(
+                  text: _controllerNomeotica.text,
+                  style: pw.TextStyle(
+                    fontSize: 30.0,
+                  )),
+            ]),
+            pw.Row(children: [
+              pw.Paragraph(
+                  text: "Número O.S: ",
+                  style: pw.TextStyle(
+                    fontSize: 30.0,
+                  )),
+              pw.Paragraph(
+                  text: _controllerOS.text,
+                  style: pw.TextStyle(
+                    fontSize: 30.0,
+                  )),
+            ]),
+            pw.Row(children: [
+              pw.Paragraph(
+                  text: "Número da NR: ",
+                  style: pw.TextStyle(
+                    fontSize: 30.0,
+                  )),
+              pw.Paragraph(
+                  text: _controllerNR.text,
+                  style: pw.TextStyle(
+                    fontSize: 30.0,
+                  )),
+            ]),
+            pw.Row(children: [
+              pw.Paragraph(
+                  text: "Data: ",
+                  style: pw.TextStyle(
+                    fontSize: 30.0,
+                  )),
+              pw.Paragraph(
+                  text: _controllerData.text,
+                  style: pw.TextStyle(
+                    fontSize: 30.0,
+                  )),
+            ]),
+            pw.Row(children: [
+              pw.Paragraph(
+                  text: "Tipo de lente: ",
+                  style: pw.TextStyle(
+                    fontSize: 30.0,
+                  )),
+              pw.Paragraph(
+                  text: _controllerTipodelente.text,
+                  style: pw.TextStyle(
+                    fontSize: 30.0,
+                  )),
+            ]),
+            pw.Row(children: [
+              pw.Paragraph(
+                  text: "Tratamento: ",
+                  style: pw.TextStyle(
+                    fontSize: 30.0,
+                  )),
+              pw.Paragraph(
+                  text: _controllerTratamento.text,
+                  style: pw.TextStyle(
+                    fontSize: 30.0,
+                  )),
+            ]),
+            pw.Row(children: [
+              pw.Paragraph(
+                  text: "OD: $od ",
+                  style: pw.TextStyle(
+                    fontSize: 30.0,
+                  )),
+              pw.Paragraph(
+                  text: '  Cil:  $cilOD',
+                  style: pw.TextStyle(
+                    fontSize: 30.0,
+                  )),
+              pw.Paragraph(
+                  text: '  Eixo:  $eixoOD',
+                  style: pw.TextStyle(
+                    fontSize: 30.0,
+                  )),
+            ]),
+            pw.Row(children: [
+              pw.Paragraph(
+                  text: "OE: $oe",
+                  style: pw.TextStyle(
+                    fontSize: 30.0,
+                  )),
+              pw.Paragraph(
+                  text: '  Cil:  $cilOE',
+                  style: pw.TextStyle(
+                    fontSize: 30.0,
+                  )),
+              pw.Paragraph(
+                  text: '  Eixo:  $eixoOE',
+                  style: pw.TextStyle(
+                    fontSize: 30.0,
+                  )),
+            ]),
+            pw.Row(children: [
+              pw.Paragraph(
+                  text: "Adição:  $add",
+                  style: pw.TextStyle(
+                    fontSize: 30.0,
+                  )),
+            ]),
+            pw.Row(children: [
+              pw.Paragraph(
+                  text: "DP: ",
+                  style: pw.TextStyle(
+                    fontSize: 30.0,
+                  )),
+              pw.Paragraph(
+                  text: _controllerDP.text,
+                  style: pw.TextStyle(
+                    fontSize: 30.0,
+                  )),
+            ]),
+            pw.Row(children: [
+              pw.Paragraph(
+                  text: "DNP OD: ",
+                  style: pw.TextStyle(
+                    fontSize: 30.0,
+                  )),
+              pw.Paragraph(
+                  text: _controllerDNPOD.text,
+                  style: pw.TextStyle(
+                    fontSize: 30.0,
+                  )),
+            ]),
+            pw.Row(children: [
+              pw.Paragraph(
+                  text: "DNP OE: ",
+                  style: pw.TextStyle(
+                    fontSize: 30.0,
+                  )),
+              pw.Paragraph(
+                  text: _controllerDNPOE.text,
+                  style: pw.TextStyle(
+                    fontSize: 30.0,
+                  )),
+            ]),
+            pw.Row(children: [
+              pw.Paragraph(
+                  text: "Altura: ",
+                  style: pw.TextStyle(
+                    fontSize: 30.0,
+                  )),
+              pw.Paragraph(
+                  text: _controllerAltura.text,
+                  style: pw.TextStyle(
+                    fontSize: 30.0,
+                  )),
+            ]),
+            pw.Row(children: [
+              pw.Paragraph(
+                  text: "Diâmetro: ",
+                  style: pw.TextStyle(
+                    fontSize: 30.0,
+                  )),
+              pw.Paragraph(
+                  text: _controllerDiametro.text,
+                  style: pw.TextStyle(
+                    fontSize: 30.0,
+                  )),
+            ]),
+            pw.Row(children: [
+              pw.Paragraph(
+                  text: "Tipo de aro: ",
+                  style: pw.TextStyle(
+                    fontSize: 30.0,
+                  )),
+              pw.Paragraph(
+                  text: _controllerTipodearo.text,
+                  style: pw.TextStyle(
+                    fontSize: 30.0,
+                  )),
+            ]),
+            pw.Row(children: [
+              pw.Paragraph(
+                  text: "Referência da armação: ",
+                  style: pw.TextStyle(
+                    fontSize: 30.0,
+                  )),
+              pw.Paragraph(
+                  text: _controllerRefArmacao.text,
+                  style: pw.TextStyle(
+                    fontSize: 30.0,
+                  )),
+            ]),
             pw.Paragraph(
-                text: "Número de Cliente: ",
+                text: "Observações:",
                 style: pw.TextStyle(
                   fontSize: 30.0,
                 )),
             pw.Paragraph(
-                text: _controllerNumeroCliente.text,
-                style: pw.TextStyle(
-                  fontSize: 30.0,
-                )),
-          ]),
-          pw.Row(children: [
-            pw.Paragraph(
-                text: "Ótica: ",
-                style: pw.TextStyle(
-                  fontSize: 30.0,
-                )),
-            pw.Paragraph(
-                text: _controllerNomeotica.text,
-                style: pw.TextStyle(
-                  fontSize: 30.0,
-                )),
-          ]),
-          pw.Row(children: [
-            pw.Paragraph(
-                text: "Número O.S: ",
-                style: pw.TextStyle(
-                  fontSize: 30.0,
-                )),
-            pw.Paragraph(
-                text: _controllerOS.text,
-                style: pw.TextStyle(
-                  fontSize: 30.0,
-                )),
-          ]),
-          pw.Row(children: [
-            pw.Paragraph(
-                text: "Número da NR: ",
-                style: pw.TextStyle(
-                  fontSize: 30.0,
-                )),
-            pw.Paragraph(
-                text: _controllerNR.text,
-                style: pw.TextStyle(
-                  fontSize: 30.0,
-                )),
-          ]),
-          pw.Row(children: [
-            pw.Paragraph(
-                text: "Data: ",
-                style: pw.TextStyle(
-                  fontSize: 30.0,
-                )),
-            pw.Paragraph(
-                text: _controllerData.text,
-                style: pw.TextStyle(
-                  fontSize: 30.0,
-                )),
-          ]),
-          pw.Row(children: [
-            pw.Paragraph(
-                text: "Tipo de lente: ",
-                style: pw.TextStyle(
-                  fontSize: 30.0,
-                )),
-            pw.Paragraph(
-                text: _controllerTipodelente.text,
-                style: pw.TextStyle(
-                  fontSize: 30.0,
-                )),
-          ]),
-          pw.Row(children: [
-            pw.Paragraph(
-                text: "Tratamento: ",
-                style: pw.TextStyle(
-                  fontSize: 30.0,
-                )),
-            pw.Paragraph(
-                text: _controllerTratamento.text,
-                style: pw.TextStyle(
-                  fontSize: 30.0,
-                )),
-          ]),
-          pw.Row(children: [
-            pw.Paragraph(
-                text: "OD: $od ",
-                style: pw.TextStyle(
-                  fontSize: 30.0,
-                )),
-            pw.Paragraph(
-                text: '  Cil:  $cilOD',
-                style: pw.TextStyle(
-                  fontSize: 30.0,
-                )),
-            pw.Paragraph(
-                text: '  Eixo:  $eixoOD',
-                style: pw.TextStyle(
-                  fontSize: 30.0,
-                )),
-          ]),
-          pw.Row(children: [
-            pw.Paragraph(
-                text: "OE: $oe",
-                style: pw.TextStyle(
-                  fontSize: 30.0,
-                )),
-            pw.Paragraph(
-                text: '  Cil:  $cilOE',
-                style: pw.TextStyle(
-                  fontSize: 30.0,
-                )),
-            pw.Paragraph(
-                text: '  Eixo:  $eixoOE',
-                style: pw.TextStyle(
-                  fontSize: 30.0,
-                )),
-          ]),
-          pw.Row(children: [
-            pw.Paragraph(
-                text: "Adição:  $add",
-                style: pw.TextStyle(
-                  fontSize: 30.0,
-                )),
-          ]),
-          pw.Row(children: [
-            pw.Paragraph(
-                text: "DP: ",
-                style: pw.TextStyle(
-                  fontSize: 30.0,
-                )),
-            pw.Paragraph(
-                text: _controllerDP.text,
-                style: pw.TextStyle(
-                  fontSize: 30.0,
-                )),
-          ]),
-          pw.Row(children: [
-            pw.Paragraph(
-                text: "DNP OD: ",
-                style: pw.TextStyle(
-                  fontSize: 30.0,
-                )),
-            pw.Paragraph(
-                text: _controllerDNPOD.text,
-                style: pw.TextStyle(
-                  fontSize: 30.0,
-                )),
-          ]),
-          pw.Row(children: [
-            pw.Paragraph(
-                text: "DNP OE: ",
-                style: pw.TextStyle(
-                  fontSize: 30.0,
-                )),
-            pw.Paragraph(
-                text: _controllerDNPOE.text,
-                style: pw.TextStyle(
-                  fontSize: 30.0,
-                )),
-          ]),
-          pw.Row(children: [
-            pw.Paragraph(
-                text: "Altura: ",
-                style: pw.TextStyle(
-                  fontSize: 30.0,
-                )),
-            pw.Paragraph(
-                text: _controllerAltura.text,
-                style: pw.TextStyle(
-                  fontSize: 30.0,
-                )),
-          ]),
-          pw.Row(children: [
-            pw.Paragraph(
-                text: "Diâmetro: ",
-                style: pw.TextStyle(
-                  fontSize: 30.0,
-                )),
-            pw.Paragraph(
-                text: _controllerDiametro.text,
-                style: pw.TextStyle(
-                  fontSize: 30.0,
-                )),
-          ]),
-          pw.Row(children: [
-            pw.Paragraph(
-                text: "Tipo de aro: ",
-                style: pw.TextStyle(
-                  fontSize: 30.0,
-                )),
-            pw.Paragraph(
-                text: _controllerTipodearo.text,
-                style: pw.TextStyle(
-                  fontSize: 30.0,
-                )),
-          ]),
-          pw.Row(children: [
-            pw.Paragraph(
-                text: "Referência da armação: ",
-                style: pw.TextStyle(
-                  fontSize: 30.0,
-                )),
-            pw.Paragraph(
-                text: _controllerRefArmacao.text,
-                style: pw.TextStyle(
-                  fontSize: 30.0,
-                )),
-          ]),
-          pw.Paragraph(
-              text: "Observações:",
-              style: pw.TextStyle(
-                fontSize: 30.0,
-              )),
-          pw.Paragraph(
               text: _controllerObservacoes.text,
               style: pw.TextStyle(
                 fontSize: 30.0,
-              )),
-        ];
-      },
-    ));
+              ),
+            ),
+          ];
+        },
+      ),
+    );
   }
 
   Future savePdf() async {
@@ -358,7 +361,7 @@ class _OrdemServicoState extends State<OrdemServico> {
                       onPressed: () {
                         Navigator.of(context).pop();
                       }),
-                  FloatingActionButton(
+                  /* FloatingActionButton(
                     onPressed: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) => Home()));
@@ -368,7 +371,7 @@ class _OrdemServicoState extends State<OrdemServico> {
                     elevation: 0.0,
                     child:
                         Icon(Icons.short_text, color: Colors.black, size: 17.0),
-                  )
+                  )*/
                 ]),
           ),
           Padding(
@@ -1642,10 +1645,10 @@ class _OrdemServicoState extends State<OrdemServico> {
   }
 
   _alternaButton() {
+    setState(() => _isButtonDisabled = !_isButtonDisabled);
     setState(() {
       _converter();
     });
-    setState(() => _isButtonDisabled = !_isButtonDisabled);
     setState(() async {
       writeOnPdf();
       await savePdf();
@@ -1653,11 +1656,12 @@ class _OrdemServicoState extends State<OrdemServico> {
       String documentPath = documentDirectory.path;
       String fullPath = "$documentPath/OS:$os.pdf";
       Navigator.push(
-          context,
-          MaterialPageRoute(
-              builder: (context) => PdfPreviewScreen(
-                    path: fullPath,
-                  )));
+        context,
+        MaterialPageRoute(
+            builder: (context) => PdfPreviewScreen(
+                  path: fullPath,
+                )),
+      );
     });
   }
 }

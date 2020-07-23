@@ -8,9 +8,6 @@ class PdfPreviewScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return PDFViewerScaffold(
-      path: path,
-    );
+    return PDFViewerScaffold(path: path);
   }
 }
-
