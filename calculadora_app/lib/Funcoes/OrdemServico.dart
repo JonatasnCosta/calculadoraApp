@@ -1,5 +1,5 @@
 import 'package:calculadoraapp/DiametroComparti.dart';
-//import 'package:calculadoraapp/Home.dart';
+import 'package:calculadoraapp/Home.dart';
 import 'package:flutter/material.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:firebase_admob/firebase_admob.dart';
@@ -17,6 +17,7 @@ class OrdemServico extends StatefulWidget {
   _OrdemServicoState createState() => _OrdemServicoState();
 }
 
+String diametro = '  0';
 String od = '  0.00';
 String cilOD = '  0.00';
 String eixoOD = '  0';
@@ -72,7 +73,7 @@ class _OrdemServicoState extends State<OrdemServico> {
   TextEditingController _controllerDNPOD = TextEditingController();
   TextEditingController _controllerDNPOE = TextEditingController();
   TextEditingController _controllerAltura = TextEditingController();
-  TextEditingController _controllerDiametro = TextEditingController();
+
   TextEditingController _controllerTipodearo = TextEditingController();
   TextEditingController _controllerRefArmacao = TextEditingController();
   TextEditingController _controllerObservacoes = TextEditingController();
@@ -290,7 +291,7 @@ class _OrdemServicoState extends State<OrdemServico> {
                     fontSize: 30.0,
                   )),
               pw.Paragraph(
-                  text: _controllerDiametro.text,
+                  text: '$diametro',
                   style: pw.TextStyle(
                     fontSize: 30.0,
                   )),
@@ -361,7 +362,7 @@ class _OrdemServicoState extends State<OrdemServico> {
                       onPressed: () {
                         Navigator.of(context).pop();
                       }),
-                  /* FloatingActionButton(
+                  FloatingActionButton(
                     onPressed: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) => Home()));
@@ -371,7 +372,7 @@ class _OrdemServicoState extends State<OrdemServico> {
                     elevation: 0.0,
                     child:
                         Icon(Icons.short_text, color: Colors.black, size: 17.0),
-                  )*/
+                  )
                 ]),
           ),
           Padding(
@@ -1485,20 +1486,75 @@ class _OrdemServicoState extends State<OrdemServico> {
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(25.0),
                   color: Color(0xff399d63)),
-              child: Center(
-                  child: TextField(
-                keyboardType: TextInputType.number,
-                inputFormatters: [maskFormatterDiametro],
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                  labelText: 'Diâmetro',
-                  labelStyle: TextStyle(
-                      fontFamily: 'Montserrat',
-                      fontSize: 15.0,
-                      color: Colors.black),
-                ),
-                controller: _controllerDiametro,
-              )),
+              child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: <Widget>[
+                    Padding(padding: EdgeInsets.only(top: 10.0)),
+                    Text(
+                      'Diâmetro',
+                      style: TextStyle(
+                          fontFamily: 'Montserrat',
+                          fontSize: 14.0,
+                          color: Colors.black),
+                    ),
+                    Padding(padding: EdgeInsets.only(top: 10.0)),
+                    Text(
+                      ':',
+                      style: TextStyle(
+                          fontFamily: 'Montserrat',
+                          fontSize: 14.0,
+                          color: Colors.black),
+                    ),
+                    Padding(padding: EdgeInsets.only(top: 10.0)),
+                    DropdownButton<String>(
+                        value: diametro,
+                        onChanged: (String newValuediametro) {
+                          setState(() {
+                            diametro = newValuediametro;
+                          });
+                        },
+                        items: <String>[
+                          '  0',
+                          '5',
+                          '10',
+                          '15',
+                          '20',
+                          '25',
+                          '30',
+                          '35',
+                          '40',
+                          '45',
+                          '50',
+                          '55',
+                          '60',
+                          '65',
+                          '70',
+                          '75',
+                          '80',
+                          '85',
+                          '90',
+                          '95',
+                          '100'
+                        ].map<DropdownMenuItem<String>>((String valuediametro) {
+                          return DropdownMenuItem<String>(
+                              value: valuediametro, child: Text(valuediametro));
+                        }).toList()),
+                    Padding(
+                      padding: EdgeInsets.only(left: 37.0, right: 1.0),
+                      child: RaisedButton(
+                          color: Color(0xff399d63),
+                          textColor: Colors.black,
+                          padding: EdgeInsets.all(15.0),
+                          child: Text('Calcular Diâmetro'),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: new BorderRadius.circular(25.0),
+                              side: BorderSide(color: Colors.black)),
+                          onPressed: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => DimetroComparti()));
+                          }),
+                    ),
+                  ]),
             ),
           ),
           Padding(
@@ -1592,21 +1648,6 @@ class _OrdemServicoState extends State<OrdemServico> {
                 color: Color(0xff399d63),
                 textColor: Colors.black,
                 padding: EdgeInsets.all(15.0),
-                child: Text('Calcular Diâmetro da lente'),
-                shape: RoundedRectangleBorder(
-                    borderRadius: new BorderRadius.circular(18.0),
-                    side: BorderSide(color: Colors.black)),
-                onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => DimetroComparti()));
-                }),
-          ),
-          Padding(
-            padding: EdgeInsets.only(top: 10.0, left: 5.0, right: 5.0),
-            child: RaisedButton(
-                color: Color(0xff399d63),
-                textColor: Colors.black,
-                padding: EdgeInsets.all(15.0),
                 child: Text('Compartilhar Ordem de serviço'),
                 shape: RoundedRectangleBorder(
                     borderRadius: new BorderRadius.circular(18.0),
@@ -1630,10 +1671,12 @@ class _OrdemServicoState extends State<OrdemServico> {
                 shape: RoundedRectangleBorder(
                     borderRadius: new BorderRadius.circular(18.0),
                     side: BorderSide(color: Colors.black)),
-                onPressed: () {
-                  Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => OrdemServico()));
-                }),
+                onPressed: _isButtonDisabled
+                    ? null
+                    : () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => OrdemServico()));
+                      }),
           ),
         ],
       ),
