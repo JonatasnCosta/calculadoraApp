@@ -82,8 +82,6 @@ class _ResultadoGraudeAdicaoState extends State<ResultadoGraudeAdicao> {
   TextEditingController _controllerDNPOD = TextEditingController();
   TextEditingController _controllerDNPOE = TextEditingController();
   TextEditingController _controllerAltura = TextEditingController();
-  TextEditingController _controllerDiametro = TextEditingController();
-  TextEditingController _controllerTipodearo = TextEditingController();
   TextEditingController _controllerRefArmacao = TextEditingController();
   TextEditingController _controllerObservacoes = TextEditingController();
   var maskFormatter = new MaskTextInputFormatter(
@@ -103,6 +101,8 @@ class _ResultadoGraudeAdicaoState extends State<ResultadoGraudeAdicao> {
   NumberFormat fn = NumberFormat("0");
   bool _isButtonDisabled = true;
   String os = '';
+  String diametro = '  0';
+  String tipodearo = '  Tipo';
 
   final pdf = pw.Document();
 
@@ -392,7 +392,7 @@ class _ResultadoGraudeAdicaoState extends State<ResultadoGraudeAdicao> {
                   fontSize: 30.0,
                 )),
             pw.Paragraph(
-                text: _controllerDiametro.text,
+                text: '$diametro',
                 style: pw.TextStyle(
                   fontSize: 30.0,
                 )),
@@ -404,7 +404,7 @@ class _ResultadoGraudeAdicaoState extends State<ResultadoGraudeAdicao> {
                   fontSize: 30.0,
                 )),
             pw.Paragraph(
-                text: _controllerTipodearo.text,
+                text: '$tipodearo',
                 style: pw.TextStyle(
                   fontSize: 30.0,
                 )),
@@ -715,7 +715,7 @@ class _ResultadoGraudeAdicaoState extends State<ResultadoGraudeAdicao> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 10.0, left: 20.0, right: 30.0),
+            padding: EdgeInsets.only(top: 10.0, left: 5.0, right: 5.0),
             child: Container(
               padding: EdgeInsets.only(left: 45.0),
               height: 50.0,
@@ -739,7 +739,7 @@ class _ResultadoGraudeAdicaoState extends State<ResultadoGraudeAdicao> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 10.0, left: 20.0, right: 30.0),
+            padding: EdgeInsets.only(top: 10.0, left: 5.0, right: 5.0),
             child: Container(
               padding: EdgeInsets.only(left: 45.0),
               height: 50.0,
@@ -763,7 +763,7 @@ class _ResultadoGraudeAdicaoState extends State<ResultadoGraudeAdicao> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 10.0, left: 20.0, right: 30.0),
+            padding: EdgeInsets.only(top: 10.0, left: 5.0, right: 5.0),
             child: Container(
               padding: EdgeInsets.only(left: 45.0),
               height: 50.0,
@@ -787,7 +787,7 @@ class _ResultadoGraudeAdicaoState extends State<ResultadoGraudeAdicao> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 10.0, left: 20.0, right: 30.0),
+            padding: EdgeInsets.only(top: 10.0, left: 5.0, right: 5.0),
             child: Container(
               padding: EdgeInsets.only(left: 45.0),
               height: 50.0,
@@ -812,7 +812,7 @@ class _ResultadoGraudeAdicaoState extends State<ResultadoGraudeAdicao> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 10.0, left: 20.0, right: 30.0),
+            padding: EdgeInsets.only(top: 10.0, left: 5.0, right: 5.0),
             child: Container(
               padding: EdgeInsets.only(left: 45.0),
               height: 50.0,
@@ -835,7 +835,7 @@ class _ResultadoGraudeAdicaoState extends State<ResultadoGraudeAdicao> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 10.0, left: 20.0, right: 30.0),
+            padding: EdgeInsets.only(top: 10.0, left: 5.0, right: 5.0),
             child: Container(
               padding: EdgeInsets.only(left: 45.0),
               height: 50.0,
@@ -859,7 +859,7 @@ class _ResultadoGraudeAdicaoState extends State<ResultadoGraudeAdicao> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 10.0, left: 20.0, right: 30.0),
+            padding: EdgeInsets.only(top: 10.0, left: 5.0, right: 5.0),
             child: Container(
               padding: EdgeInsets.only(left: 45.0),
               height: 50.0,
@@ -883,7 +883,7 @@ class _ResultadoGraudeAdicaoState extends State<ResultadoGraudeAdicao> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 10.0, left: 20.0, right: 30.0),
+            padding: EdgeInsets.only(top: 10.0, left: 5.0, right: 5.0),
             child: Container(
               padding: EdgeInsets.only(left: 45.0),
               height: 50.0,
@@ -908,7 +908,7 @@ class _ResultadoGraudeAdicaoState extends State<ResultadoGraudeAdicao> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 10.0, left: 20.0, right: 30.0),
+            padding: EdgeInsets.only(top: 10.0, left: 5.0, right: 5.0),
             child: Container(
               padding: EdgeInsets.only(left: 45.0),
               height: 50.0,
@@ -933,7 +933,7 @@ class _ResultadoGraudeAdicaoState extends State<ResultadoGraudeAdicao> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 10.0, left: 20.0, right: 30.0),
+            padding: EdgeInsets.only(top: 10.0, left: 5.0, right: 5.0),
             child: Container(
               padding: EdgeInsets.only(left: 45.0),
               height: 50.0,
@@ -958,7 +958,7 @@ class _ResultadoGraudeAdicaoState extends State<ResultadoGraudeAdicao> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 10.0, left: 20.0, right: 30.0),
+            padding: EdgeInsets.only(top: 10.0, left: 5.0, right: 5.0),
             child: Container(
               padding: EdgeInsets.only(left: 45.0),
               height: 50.0,
@@ -983,55 +983,135 @@ class _ResultadoGraudeAdicaoState extends State<ResultadoGraudeAdicao> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 10.0, left: 20.0, right: 30.0),
+            padding: EdgeInsets.only(top: 10.0, left: 5.0, right: 5.0),
             child: Container(
               padding: EdgeInsets.only(left: 45.0),
               height: 50.0,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(25.0),
                   color: Color(0xff399d63)),
-              child: Center(
-                  child: TextField(
-                keyboardType: TextInputType.number,
-                inputFormatters: [maskFormatterDiametro],
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                  labelText: 'Diâmetro',
-                  labelStyle: TextStyle(
+              child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: <Widget>[
+                    Padding(padding: EdgeInsets.only(top: 10.0)),
+                    Text(
+                      'Diâmetro',
+                      style: TextStyle(
+                          fontFamily: 'Montserrat',
+                          fontSize: 14.0,
+                          color: Colors.black),
+                    ),
+                    Padding(padding: EdgeInsets.only(top: 10.0)),
+                    Text(
+                      ':',
+                      style: TextStyle(
+                          fontFamily: 'Montserrat',
+                          fontSize: 14.0,
+                          color: Colors.black),
+                    ),
+                    Padding(padding: EdgeInsets.only(top: 10.0)),
+                    DropdownButton<String>(
+                        value: diametro,
+                        onChanged: (String newValuediametro) {
+                          setState(() {
+                            diametro = newValuediametro;
+                          });
+                        },
+                        items: <String>[
+                          '  0',
+                          '5',
+                          '10',
+                          '15',
+                          '20',
+                          '25',
+                          '30',
+                          '35',
+                          '40',
+                          '45',
+                          '50',
+                          '51',
+                          '60',
+                          '65',
+                          '70',
+                          '75',
+                          '80',
+                          '85',
+                          '90',
+                          '95',
+                          '100'
+                        ].map<DropdownMenuItem<String>>((String valuediametro) {
+                          return DropdownMenuItem<String>(
+                              value: valuediametro, child: Text(valuediametro));
+                        }).toList()),
+                    Padding(
+                      padding: EdgeInsets.only(left: 37.0, right: 1.0),
+                      child: RaisedButton(
+                          color: Color(0xff399d63),
+                          textColor: Colors.black,
+                          padding: EdgeInsets.all(15.0),
+                          child: Text('Calcular Diâmetro'),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: new BorderRadius.circular(25.0),
+                              side: BorderSide(color: Colors.black)),
+                          onPressed: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => DimetroComparti()));
+                          }),
+                    ),
+                  ]),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(top: 10.0, left: 5.0, right: 5.0),
+            child: Container(
+              padding: EdgeInsets.only(left: 45.0),
+              height: 50.0,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(25.0),
+                  color: Color(0xff399d63)),
+              child: Row(mainAxisAlignment: MainAxisAlignment.start, children: <
+                  Widget>[
+                Padding(padding: EdgeInsets.only(top: 10.0)),
+                Text(
+                  'Tipo de aro',
+                  style: TextStyle(
                       fontFamily: 'Montserrat',
-                      fontSize: 15.0,
+                      fontSize: 14.0,
                       color: Colors.black),
                 ),
-                controller: _controllerDiametro,
-              )),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(top: 10.0, left: 20.0, right: 30.0),
-            child: Container(
-              padding: EdgeInsets.only(left: 45.0),
-              height: 50.0,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(25.0),
-                  color: Color(0xff399d63)),
-              child: Center(
-                child: TextField(
-                  keyboardType: TextInputType.text,
-                  decoration: InputDecoration(
-                    border: InputBorder.none,
-                    labelText: 'Tipo de aro',
-                    labelStyle: TextStyle(
-                        fontFamily: 'Montserrat',
-                        fontSize: 15.0,
-                        color: Colors.black),
-                  ),
-                  controller: _controllerTipodearo,
+                Padding(padding: EdgeInsets.only(top: 10.0)),
+                Text(
+                  ':',
+                  style: TextStyle(
+                      fontFamily: 'Montserrat',
+                      fontSize: 14.0,
+                      color: Colors.black),
                 ),
-              ),
+                Padding(padding: EdgeInsets.only(top: 10.0)),
+                DropdownButton<String>(
+                    value: tipodearo,
+                    onChanged: (String newValuetipodearo) {
+                      setState(() {
+                        tipodearo = newValuetipodearo;
+                      });
+                    },
+                    items: <String>[
+                      '  Tipo',
+                      'Zilo aro total',
+                      'Zilo com nylon',
+                      'Metal aro total',
+                      'Metal nylon',
+                      'Nylon',
+                      'Balgriff'
+                    ].map<DropdownMenuItem<String>>((String valuetipodearo) {
+                      return DropdownMenuItem<String>(
+                          value: valuetipodearo, child: Text(valuetipodearo));
+                    }).toList()),
+              ]),
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 10.0, left: 20.0, right: 30.0),
+            padding: EdgeInsets.only(top: 10.0, left: 5.0, right: 5.0),
             child: Container(
               padding: EdgeInsets.only(left: 45.0),
               height: 50.0,
@@ -1054,8 +1134,8 @@ class _ResultadoGraudeAdicaoState extends State<ResultadoGraudeAdicao> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(
-                top: 10.0, left: 20.0, right: 30.0, bottom: 20.0),
+            padding:
+                EdgeInsets.only(top: 10.0, left: 5.0, right: 5.0, bottom: 20.0),
             child: Container(
               padding: EdgeInsets.only(left: 45.0),
               height: 50.0,
@@ -1079,7 +1159,7 @@ class _ResultadoGraudeAdicaoState extends State<ResultadoGraudeAdicao> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 50.0, left: 20.0, right: 30.0),
+            padding: EdgeInsets.only(top: 10.0, left: 5.0, right: 5.0),
             child: RaisedButton(
                 color: Color(0xff399d63),
                 textColor: Colors.black,
@@ -1093,23 +1173,8 @@ class _ResultadoGraudeAdicaoState extends State<ResultadoGraudeAdicao> {
                 onPressed: _alternaButton),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 10.0, left: 20.0, right: 30.0),
-            child: RaisedButton(
-                color: Color(0xff399d63),
-                textColor: Colors.black,
-                padding: EdgeInsets.all(15.0),
-                child: Text('Calcular Diâmetro da lente'),
-                shape: RoundedRectangleBorder(
-                    borderRadius: new BorderRadius.circular(18.0),
-                    side: BorderSide(color: Colors.black)),
-                onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => DimetroComparti()));
-                }),
-          ),
-          Padding(
-            padding: EdgeInsets.only(
-                top: 10.0, left: 20.0, right: 30.0, bottom: 60.0),
+            padding:
+                EdgeInsets.only(top: 10.0, left: 5.0, right: 5.0, bottom: 60.0),
             child: RaisedButton(
                 color: Color(0xff399d63),
                 textColor: Colors.black,

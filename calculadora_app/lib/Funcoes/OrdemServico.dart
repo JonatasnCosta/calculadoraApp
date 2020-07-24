@@ -17,6 +17,7 @@ class OrdemServico extends StatefulWidget {
   _OrdemServicoState createState() => _OrdemServicoState();
 }
 
+String tipodearo = '  Tipo';
 String diametro = '  0';
 String od = '  0.00';
 String cilOD = '  0.00';
@@ -73,8 +74,6 @@ class _OrdemServicoState extends State<OrdemServico> {
   TextEditingController _controllerDNPOD = TextEditingController();
   TextEditingController _controllerDNPOE = TextEditingController();
   TextEditingController _controllerAltura = TextEditingController();
-
-  TextEditingController _controllerTipodearo = TextEditingController();
   TextEditingController _controllerRefArmacao = TextEditingController();
   TextEditingController _controllerObservacoes = TextEditingController();
   var maskFormatter = new MaskTextInputFormatter(
@@ -303,7 +302,7 @@ class _OrdemServicoState extends State<OrdemServico> {
                     fontSize: 30.0,
                   )),
               pw.Paragraph(
-                  text: _controllerTipodearo.text,
+                  text: '$tipodearo',
                   style: pw.TextStyle(
                     fontSize: 30.0,
                   )),
@@ -1525,7 +1524,7 @@ class _OrdemServicoState extends State<OrdemServico> {
                           '40',
                           '45',
                           '50',
-                          '55',
+                          '51',
                           '60',
                           '65',
                           '70',
@@ -1565,20 +1564,45 @@ class _OrdemServicoState extends State<OrdemServico> {
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(25.0),
                   color: Color(0xff399d63)),
-              child: Center(
-                child: TextField(
-                  keyboardType: TextInputType.text,
-                  decoration: InputDecoration(
-                    border: InputBorder.none,
-                    labelText: 'Tipo de aro',
-                    labelStyle: TextStyle(
-                        fontFamily: 'Montserrat',
-                        fontSize: 15.0,
-                        color: Colors.black),
-                  ),
-                  controller: _controllerTipodearo,
+              child: Row(mainAxisAlignment: MainAxisAlignment.start, children: <
+                  Widget>[
+                Padding(padding: EdgeInsets.only(top: 10.0)),
+                Text(
+                  'Tipo de aro',
+                  style: TextStyle(
+                      fontFamily: 'Montserrat',
+                      fontSize: 14.0,
+                      color: Colors.black),
                 ),
-              ),
+                Padding(padding: EdgeInsets.only(top: 10.0)),
+                Text(
+                  ':',
+                  style: TextStyle(
+                      fontFamily: 'Montserrat',
+                      fontSize: 14.0,
+                      color: Colors.black),
+                ),
+                Padding(padding: EdgeInsets.only(top: 10.0)),
+                DropdownButton<String>(
+                    value: tipodearo,
+                    onChanged: (String newValuetipodearo) {
+                      setState(() {
+                        tipodearo = newValuetipodearo;
+                      });
+                    },
+                    items: <String>[
+                      '  Tipo',
+                      'Zilo aro total',
+                      'Zilo com nylon',
+                      'Metal aro total',
+                      'Metal nylon',
+                      'Nylon',
+                      'Balgriff'
+                    ].map<DropdownMenuItem<String>>((String valuetipodearo) {
+                      return DropdownMenuItem<String>(
+                          value: valuetipodearo, child: Text(valuetipodearo));
+                    }).toList()),
+              ]),
             ),
           ),
           Padding(
