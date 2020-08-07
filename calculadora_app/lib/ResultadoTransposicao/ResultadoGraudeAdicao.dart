@@ -1100,7 +1100,7 @@ class _ResultadoGraudeAdicaoState extends State<ResultadoGraudeAdicao> {
                       'Zilo aro total',
                       'Zilo com nylon',
                       'Metal aro total',
-                      'Metal nylon',
+                      'Metal com nylon',
                       'Nylon',
                       'Balgriff'
                     ].map<DropdownMenuItem<String>>((String valuetipodearo) {
