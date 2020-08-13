@@ -1,5 +1,6 @@
 import 'package:calculadoraapp/DiametroComparti.dart';
 import 'package:calculadoraapp/Home.dart';
+import 'package:calculadoraapp/SubFuncaoTransposicao/FuncaoGraudePerto.dart';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:pdf/pdf.dart';
@@ -94,13 +95,46 @@ class _ResultadoGraudePertoState extends State<ResultadoGraudePerto> {
       new MaskTextInputFormatter(mask: '##', filter: {"#": RegExp(r'[0-9]')});
   var maskFormatterDP =
       new MaskTextInputFormatter(mask: '##', filter: {"#": RegExp(r'[0-9]')});
+  var _currencies = [
+    '  Tipo',
+    'Zilo aro total',
+    'Zilo com nylon',
+    'Metal aro total',
+    'Metal com nylon',
+    'Nylon',
+    'Balgriff'
+  ];
+  var _currentItemSelected = '  Tipo';
+  var _diametro = [
+    '  0',
+    '5',
+    '10',
+    '15',
+    '20',
+    '25',
+    '30',
+    '35',
+    '40',
+    '45',
+    '50',
+    '51',
+    '60',
+    '65',
+    '70',
+    '75',
+    '80',
+    '85',
+    '90',
+    '95',
+    '100'
+  ];
+  var _currentItemSelectedDIAMETRO = '  0';
 
   NumberFormat nf = NumberFormat("0.00");
   NumberFormat fn = NumberFormat("0");
   bool _isButtonDisabled = true;
   String os = '';
-  String diametro = '  0';
-  String tipodearo = '  Tipo';
+
   final pdf = pw.Document();
 
   writeOnPdf() {
@@ -154,24 +188,24 @@ class _ResultadoGraudePertoState extends State<ResultadoGraudePerto> {
           ]),
           pw.Row(children: [
             pw.Paragraph(
-                text: "Data: ",
-                style: pw.TextStyle(
-                  fontSize: 30.0,
-                )),
-            pw.Paragraph(
-                text: _controllerData.text,
-                style: pw.TextStyle(
-                  fontSize: 30.0,
-                )),
-          ]),
-          pw.Row(children: [
-            pw.Paragraph(
                 text: "Número da NR: ",
                 style: pw.TextStyle(
                   fontSize: 30.0,
                 )),
             pw.Paragraph(
                 text: _controllerNR.text,
+                style: pw.TextStyle(
+                  fontSize: 30.0,
+                )),
+          ]),
+          pw.Row(children: [
+            pw.Paragraph(
+                text: "Data: ",
+                style: pw.TextStyle(
+                  fontSize: 30.0,
+                )),
+            pw.Paragraph(
+                text: _controllerData.text,
                 style: pw.TextStyle(
                   fontSize: 30.0,
                 )),
@@ -377,7 +411,7 @@ class _ResultadoGraudePertoState extends State<ResultadoGraudePerto> {
                   fontSize: 30.0,
                 )),
             pw.Paragraph(
-                text: '$diametro',
+                text: '$_currentItemSelectedDIAMETRO ',
                 style: pw.TextStyle(
                   fontSize: 30.0,
                 )),
@@ -389,7 +423,7 @@ class _ResultadoGraudePertoState extends State<ResultadoGraudePerto> {
                   fontSize: 30.0,
                 )),
             pw.Paragraph(
-                text: '$tipodearo',
+                text: '$_currentItemSelected',
                 style: pw.TextStyle(
                   fontSize: 30.0,
                 )),
@@ -757,18 +791,16 @@ class _ResultadoGraudePertoState extends State<ResultadoGraudePerto> {
                   color: Color(0xff399d63)),
               child: Center(
                 child: TextField(
-                  inputFormatters: [maskFormatter],
-                  keyboardType: TextInputType.number,
-                  decoration: InputDecoration(
-                    border: InputBorder.none,
-                    labelText: 'Data',
-                    labelStyle: TextStyle(
-                        fontFamily: 'Montserrat',
-                        fontSize: 15.0,
-                        color: Colors.black),
-                  ),
-                  controller: _controllerData,
-                ),
+                    keyboardType: TextInputType.number,
+                    decoration: InputDecoration(
+                      border: InputBorder.none,
+                      labelText: 'Número da NR',
+                      labelStyle: TextStyle(
+                          fontFamily: 'Montserrat',
+                          fontSize: 15.0,
+                          color: Colors.black),
+                    ),
+                    controller: _controllerNR),
               ),
             ),
           ),
@@ -782,16 +814,18 @@ class _ResultadoGraudePertoState extends State<ResultadoGraudePerto> {
                   color: Color(0xff399d63)),
               child: Center(
                 child: TextField(
-                    keyboardType: TextInputType.number,
-                    decoration: InputDecoration(
-                      border: InputBorder.none,
-                      labelText: 'Número da NR',
-                      labelStyle: TextStyle(
-                          fontFamily: 'Montserrat',
-                          fontSize: 15.0,
-                          color: Colors.black),
-                    ),
-                    controller: _controllerNR),
+                  inputFormatters: [maskFormatter],
+                  keyboardType: TextInputType.number,
+                  decoration: InputDecoration(
+                    border: InputBorder.none,
+                    labelText: 'Data',
+                    labelStyle: TextStyle(
+                        fontFamily: 'Montserrat',
+                        fontSize: 15.0,
+                        color: Colors.black),
+                  ),
+                  controller: _controllerData,
+                ),
               ),
             ),
           ),
@@ -972,38 +1006,20 @@ class _ResultadoGraudePertoState extends State<ResultadoGraudePerto> {
                     ),
                     Padding(padding: EdgeInsets.only(top: 10.0)),
                     DropdownButton<String>(
-                        value: diametro,
-                        onChanged: (String newValuediametro) {
-                          setState(() {
-                            diametro = newValuediametro;
-                          });
-                        },
-                        items: <String>[
-                          '  0',
-                          '5',
-                          '10',
-                          '15',
-                          '20',
-                          '25',
-                          '30',
-                          '35',
-                          '40',
-                          '45',
-                          '50',
-                          '51',
-                          '60',
-                          '65',
-                          '70',
-                          '75',
-                          '80',
-                          '85',
-                          '90',
-                          '95',
-                          '100'
-                        ].map<DropdownMenuItem<String>>((String valuediametro) {
-                          return DropdownMenuItem<String>(
-                              value: valuediametro, child: Text(valuediametro));
-                        }).toList()),
+                      items: _diametro.map((String dropDownStringItem) {
+                        return DropdownMenuItem<String>(
+                          value: dropDownStringItem,
+                          child: Text(dropDownStringItem),
+                        );
+                      }).toList(),
+                      onChanged: (String newValueSelecteddiametro) {
+                        setState(() {
+                          this._currentItemSelectedDIAMETRO =
+                              newValueSelecteddiametro;
+                        });
+                      },
+                      value: _currentItemSelectedDIAMETRO,
+                    ),
                     Padding(
                       padding: EdgeInsets.only(left: 37.0, right: 1.0),
                       child: RaisedButton(
@@ -1030,45 +1046,41 @@ class _ResultadoGraudePertoState extends State<ResultadoGraudePerto> {
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(25.0),
                   color: Color(0xff399d63)),
-              child: Row(mainAxisAlignment: MainAxisAlignment.start, children: <
-                  Widget>[
-                Padding(padding: EdgeInsets.only(top: 10.0)),
-                Text(
-                  'Tipo de aro',
-                  style: TextStyle(
-                      fontFamily: 'Montserrat',
-                      fontSize: 14.0,
-                      color: Colors.black),
-                ),
-                Padding(padding: EdgeInsets.only(top: 10.0)),
-                Text(
-                  ':',
-                  style: TextStyle(
-                      fontFamily: 'Montserrat',
-                      fontSize: 14.0,
-                      color: Colors.black),
-                ),
-                Padding(padding: EdgeInsets.only(top: 10.0)),
-                DropdownButton<String>(
-                    value: tipodearo,
-                    onChanged: (String newValuetipodearo) {
-                      setState(() {
-                        tipodearo = newValuetipodearo;
-                      });
-                    },
-                    items: <String>[
-                      '  Tipo',
-                      'Zilo aro total',
-                      'Zilo com nylon',
-                      'Metal aro total',
-                      'Metal com nylon',
-                      'Nylon',
-                      'Balgriff'
-                    ].map<DropdownMenuItem<String>>((String valuetipodearo) {
-                      return DropdownMenuItem<String>(
-                          value: valuetipodearo, child: Text(valuetipodearo));
-                    }).toList()),
-              ]),
+              child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: <Widget>[
+                    Padding(padding: EdgeInsets.only(top: 10.0)),
+                    Text(
+                      'Tipo de aro',
+                      style: TextStyle(
+                          fontFamily: 'Montserrat',
+                          fontSize: 14.0,
+                          color: Colors.black),
+                    ),
+                    Padding(padding: EdgeInsets.only(top: 10.0)),
+                    Text(
+                      ':',
+                      style: TextStyle(
+                          fontFamily: 'Montserrat',
+                          fontSize: 14.0,
+                          color: Colors.black),
+                    ),
+                    Padding(padding: EdgeInsets.only(top: 10.0)),
+                    DropdownButton<String>(
+                      items: _currencies.map((String dropDownStringItem) {
+                        return DropdownMenuItem<String>(
+                          value: dropDownStringItem,
+                          child: Text(dropDownStringItem),
+                        );
+                      }).toList(),
+                      onChanged: (String newValueSelected) {
+                        setState(() {
+                          this._currentItemSelected = newValueSelected;
+                        });
+                      },
+                      value: _currentItemSelected,
+                    ),
+                  ]),
             ),
           ),
           Padding(
@@ -1134,8 +1146,7 @@ class _ResultadoGraudePertoState extends State<ResultadoGraudePerto> {
                 onPressed: _alternaButton),
           ),
           Padding(
-            padding:
-                EdgeInsets.only(top: 10.0, left: 5.0, right: 5.0, bottom: 60.0),
+            padding: EdgeInsets.only(top: 10.0, left: 5.0, right: 5.0),
             child: RaisedButton(
                 color: Color(0xff399d63),
                 textColor: Colors.black,
@@ -1151,7 +1162,25 @@ class _ResultadoGraudePertoState extends State<ResultadoGraudePerto> {
                             bytes: pdf.save(), filename: 'OS:$os.pdf');
                         writeOnPdf();
                       }),
-          )
+          ),
+          Padding(
+            padding:
+                EdgeInsets.only(top: 10.0, left: 5.0, right: 5.0, bottom: 60.0),
+            child: RaisedButton(
+                color: Color(0xff399d63),
+                textColor: Colors.black,
+                padding: EdgeInsets.all(15.0),
+                child: Text('Gerar novo calculo de perto'),
+                shape: RoundedRectangleBorder(
+                    borderRadius: new BorderRadius.circular(18.0),
+                    side: BorderSide(color: Colors.black)),
+                onPressed: _isButtonDisabled
+                    ? null
+                    : () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => FuncaoGraudePerto()));
+                      }),
+          ),
         ],
       ),
     );
