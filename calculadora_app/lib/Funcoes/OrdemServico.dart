@@ -91,6 +91,18 @@ class _OrdemServicoState extends State<OrdemServico> {
   var maskFormatterDiametro =
       new MaskTextInputFormatter(mask: '##', filter: {"#": RegExp(r'[0-9]')});
 
+  var _currencies = [
+    'Tipo',
+    'Zilo aro total',
+    'Zilo com nylon',
+    'Metal aro total',
+    'Metal com nylon',
+    'Nylon',
+    'Balgriff'
+  ];
+
+  var _currentItemSelected = 'Tipo';
+
   bool _isButtonDisabled = true;
 
   String os = '';
@@ -302,7 +314,7 @@ class _OrdemServicoState extends State<OrdemServico> {
                     fontSize: 30.0,
                   )),
               pw.Paragraph(
-                  text: '$tipodearo',
+                  text: _currentItemSelected,
                   style: pw.TextStyle(
                     fontSize: 30.0,
                   )),
@@ -575,7 +587,7 @@ class _OrdemServicoState extends State<OrdemServico> {
                     DropdownButton<String>(
                         value: od,
                         onChanged: (String newValueod) {
-                          setState(() {
+                          this.setState(() {
                             od = newValueod;
                           });
                         },
@@ -1564,45 +1576,41 @@ class _OrdemServicoState extends State<OrdemServico> {
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(25.0),
                   color: Color(0xff399d63)),
-              child: Row(mainAxisAlignment: MainAxisAlignment.start, children: <
-                  Widget>[
-                Padding(padding: EdgeInsets.only(top: 10.0)),
-                Text(
-                  'Tipo de aro',
-                  style: TextStyle(
-                      fontFamily: 'Montserrat',
-                      fontSize: 14.0,
-                      color: Colors.black),
-                ),
-                Padding(padding: EdgeInsets.only(top: 10.0)),
-                Text(
-                  ':',
-                  style: TextStyle(
-                      fontFamily: 'Montserrat',
-                      fontSize: 14.0,
-                      color: Colors.black),
-                ),
-                Padding(padding: EdgeInsets.only(top: 10.0)),
-                DropdownButton<String>(
-                    value: tipodearo,
-                    onChanged: (String newValuetipodearo) {
-                      setState(() {
-                        tipodearo = newValuetipodearo;
-                      });
-                    },
-                    items: <String>[
-                      '  Tipo',
-                      'Zilo aro total',
-                      'Zilo com nylon',
-                      'Metal aro total',
-                      'Metal com nylon',
-                      'Nylon',
-                      'Balgriff'
-                    ].map<DropdownMenuItem<String>>((String valuetipodearo) {
-                      return DropdownMenuItem<String>(
-                          value: valuetipodearo, child: Text(valuetipodearo));
-                    }).toList()),
-              ]),
+              child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: <Widget>[
+                    Padding(padding: EdgeInsets.only(top: 10.0)),
+                    Text(
+                      'Tipo de aro',
+                      style: TextStyle(
+                          fontFamily: 'Montserrat',
+                          fontSize: 14.0,
+                          color: Colors.black),
+                    ),
+                    Padding(padding: EdgeInsets.only(top: 10.0)),
+                    Text(
+                      ':',
+                      style: TextStyle(
+                          fontFamily: 'Montserrat',
+                          fontSize: 14.0,
+                          color: Colors.black),
+                    ),
+                    Padding(padding: EdgeInsets.only(top: 10.0)),
+                    DropdownButton<String>(
+                      items: _currencies.map((String dropDownStringItem) {
+                        return DropdownMenuItem<String>(
+                          value: dropDownStringItem,
+                          child: Text(dropDownStringItem),
+                        );
+                      }).toList(),
+                      onChanged: (String newValueSelected) {
+                        setState(() {
+                          this._currentItemSelected = newValueSelected;
+                        });
+                      },
+                      value: _currentItemSelected,
+                    ),
+                  ]),
             ),
           ),
           Padding(
