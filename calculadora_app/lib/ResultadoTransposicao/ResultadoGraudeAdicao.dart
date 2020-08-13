@@ -12,7 +12,7 @@ import 'package:intl/intl.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:firebase_admob/firebase_admob.dart';
 
-const String testDevice = '721A33913C7D7D311A5FB39652B0084B';
+const String testDevice = '9A88AAC62836EFF2EF922D024CB9D9BE';
 
 class ResultadoGraudeAdicao extends StatefulWidget {
   final double adicaoFinal;
@@ -1202,8 +1202,8 @@ class _ResultadoGraudeAdicaoState extends State<ResultadoGraudeAdicao> {
                       }),
           ),
           Padding(
-            padding:
-                EdgeInsets.only(top: 10.0, left: 5.0, right: 5.0, bottom: 60.0),
+            padding: EdgeInsets.only(
+                top: 10.0, left: 5.0, right: 5.0, bottom: 200.0),
             child: RaisedButton(
                 color: Color(0xff399d63),
                 textColor: Colors.black,

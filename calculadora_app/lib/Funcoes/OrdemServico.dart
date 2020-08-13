@@ -10,7 +10,7 @@ import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 import 'package:printing/printing.dart';
 
-const String testDevice = 'Mobile_id';
+const String testDevice = '9A88AAC62836EFF2EF922D024CB9D9BE';
 
 class OrdemServico extends StatefulWidget {
   @override
@@ -1732,8 +1732,8 @@ class _OrdemServicoState extends State<OrdemServico> {
                       }),
           ),
           Padding(
-            padding:
-                EdgeInsets.only(top: 10.0, left: 5.0, right: 5.0, bottom: 60.0),
+            padding: EdgeInsets.only(
+                top: 10.0, left: 5.0, right: 5.0, bottom: 200.0),
             child: RaisedButton(
                 color: Color(0xff399d63),
                 textColor: Colors.black,

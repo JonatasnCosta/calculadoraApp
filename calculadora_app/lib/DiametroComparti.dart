@@ -3,7 +3,7 @@ import 'package:intl/intl.dart';
 import 'package:firebase_admob/firebase_admob.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
-const String testDevice = '721A33913C7D7D311A5FB39652B0084B';
+const String testDevice = '9A88AAC62836EFF2EF922D024CB9D9BE';
 
 class DimetroComparti extends StatefulWidget {
   @override
@@ -272,7 +272,7 @@ class _DimetroCompartiState extends State<DimetroComparti> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 20.0, left: 10.0, bottom: 60.0),
+                padding: EdgeInsets.only(top: 20.0, left: 10.0, bottom: 200.0),
                 child: Text(
                   fn.format(diametro),
                   style: TextStyle(

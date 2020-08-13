@@ -10,7 +10,7 @@ import 'package:intl/intl.dart';
 import 'package:firebase_admob/firebase_admob.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
-const String testDevice = '721A33913C7D7D311A5FB39652B0084B';
+const String testDevice = '9A88AAC62836EFF2EF922D024CB9D9BE';
 
 class Calculadora extends StatefulWidget {
   @override
@@ -419,7 +419,7 @@ class _CalculadoraState extends State<Calculadora> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
               Padding(
-                padding: EdgeInsets.only(top: 10.0, left: 60.0, bottom: 50.0),
+                padding: EdgeInsets.only(top: 10.0, left: 60.0, bottom: 200.0),
                 child: Text(
                   "Diâmetro:",
                   style: TextStyle(
@@ -429,7 +429,7 @@ class _CalculadoraState extends State<Calculadora> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 10.0, left: 10.0, bottom: 50.0),
+                padding: EdgeInsets.only(top: 10.0, left: 10.0, bottom: 200.0),
                 child: Text(
                   fn.format(diametro),
                   style: TextStyle(
@@ -439,7 +439,7 @@ class _CalculadoraState extends State<Calculadora> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 10.0, left: 20.0, bottom: 50.0),
+                padding: EdgeInsets.only(top: 10.0, left: 20.0, bottom: 200.0),
                 child: IconButton(
                   icon: Icon(Icons.search),
                   onPressed: () async {
@@ -459,7 +459,7 @@ class _CalculadoraState extends State<Calculadora> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 10.0, left: 10.0, bottom: 50.0),
+                padding: EdgeInsets.only(top: 10.0, left: 10.0, bottom: 200.0),
                 child: IconButton(
                   icon: Icon(Icons.share),
                   onPressed: () async {
