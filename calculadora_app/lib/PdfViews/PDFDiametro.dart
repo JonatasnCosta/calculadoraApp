@@ -13,4 +13,3 @@ class PDFDiametro extends StatelessWidget {
     );
   }
 }
-
