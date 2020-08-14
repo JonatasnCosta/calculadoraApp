@@ -21,7 +21,7 @@ class _DimetroCompartiState extends State<DimetroComparti> {
   BannerAd createBannerAd() {
     return BannerAd(
         adUnitId: 'ca-app-pub-7677202089790115/3031795472',
-        size: AdSize.smartBanner,
+        size: AdSize.banner,
         targetingInfo: targetingInfo,
         listener: (MobileAdEvent event) {
           print("BannerAd $event");
@@ -262,7 +262,7 @@ class _DimetroCompartiState extends State<DimetroComparti> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
               Padding(
-                padding: EdgeInsets.only(top: 20.0, left: 120.0, bottom: 60.0),
+                padding: EdgeInsets.only(top: 20.0, left: 120.0, bottom: 200.0),
                 child: Text(
                   "Diâmetro:",
                   style: TextStyle(

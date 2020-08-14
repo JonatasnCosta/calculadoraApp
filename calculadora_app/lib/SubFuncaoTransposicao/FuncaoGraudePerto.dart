@@ -21,7 +21,7 @@ class _FuncaoGraudePertoState extends State<FuncaoGraudePerto> {
   BannerAd createBannerAd() {
     return BannerAd(
         adUnitId: 'ca-app-pub-7677202089790115/3031795472',
-        size: AdSize.smartBanner,
+        size: AdSize.banner,
         targetingInfo: targetingInfo,
         listener: (MobileAdEvent event) {
           print("BannerAd $event");
