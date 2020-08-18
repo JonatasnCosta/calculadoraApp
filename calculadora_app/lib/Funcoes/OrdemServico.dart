@@ -10,7 +10,7 @@ import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 import 'package:printing/printing.dart';
 
-const String testDevice = '9A88AAC62836EFF2EF922D024CB9D9BE';
+const String testDevice = 'Mobile_id';
 
 class OrdemServico extends StatefulWidget {
   @override

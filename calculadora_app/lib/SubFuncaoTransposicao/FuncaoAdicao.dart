@@ -3,7 +3,7 @@ import 'package:calculadoraapp/ResultadoTransposicao/ResultadoGraudeAdicao.dart'
 import 'package:flutter/material.dart';
 import 'package:firebase_admob/firebase_admob.dart';
 
-const String testDevice = '9A88AAC62836EFF2EF922D024CB9D9BE';
+const String testDevice = 'Mobile_id';
 
 class FuncaoAdicao extends StatefulWidget {
   FuncaoAdicao({Key key}) : super(key: key);

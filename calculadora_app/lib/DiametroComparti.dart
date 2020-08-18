@@ -3,7 +3,7 @@ import 'package:intl/intl.dart';
 import 'package:firebase_admob/firebase_admob.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
-const String testDevice = '9A88AAC62836EFF2EF922D024CB9D9BE';
+const String testDevice = 'Mobile_id';
 
 class DimetroComparti extends StatefulWidget {
   @override

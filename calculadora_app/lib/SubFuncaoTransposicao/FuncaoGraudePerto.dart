@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import "package:calculadoraapp/ResultadoTransposicao/ResultadoGraudePerto.dart";
 import 'package:firebase_admob/firebase_admob.dart';
 
-const String testDevice = '9A88AAC62836EFF2EF922D024CB9D9BE';
+const String testDevice = 'Mobile_id';
 
 class FuncaoGraudePerto extends StatefulWidget {
   @override
