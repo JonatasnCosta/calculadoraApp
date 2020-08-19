@@ -1732,8 +1732,7 @@ class _OrdemServicoState extends State<OrdemServico> {
                       }),
           ),
           Padding(
-            padding: EdgeInsets.only(
-                top: 10.0, left: 5.0, right: 5.0, bottom: 200.0),
+            padding: EdgeInsets.only(top: 10.0, left: 5.0, right: 5.0),
             child: RaisedButton(
                 color: Color(0xff399d63),
                 textColor: Colors.black,
@@ -1748,6 +1747,22 @@ class _OrdemServicoState extends State<OrdemServico> {
                         Navigator.of(context).push(MaterialPageRoute(
                             builder: (context) => OrdemServico()));
                       }),
+          ),
+          Padding(
+            padding: EdgeInsets.only(
+                top: 10.0, left: 5.0, right: 5.0, bottom: 200.0),
+            child: RaisedButton(
+                color: Color(0xff399d63),
+                textColor: Colors.black,
+                padding: EdgeInsets.all(15.0),
+                child: Text('Início'),
+                shape: RoundedRectangleBorder(
+                    borderRadius: new BorderRadius.circular(18.0),
+                    side: BorderSide(color: Colors.black)),
+                onPressed: () {
+                  Navigator.push(
+                      context, MaterialPageRoute(builder: (context) => Home()));
+                }),
           ),
         ],
       ),

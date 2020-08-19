@@ -55,7 +55,7 @@ class _CalculadoraState extends State<Calculadora> {
   TextEditingController _controllerPonte = TextEditingController();
   TextEditingController _controllerMenorDnp = TextEditingController();
   TextEditingController _controllerMaiorDiagonal = TextEditingController();
-  TextEditingController _controllerVertical = TextEditingController();
+
   var maskFormatter =
       new MaskTextInputFormatter(mask: '##.#', filter: {"#": RegExp(r'[0-9]')});
   var maskFormatterAro =
@@ -149,20 +149,6 @@ class _CalculadoraState extends State<Calculadora> {
                   )),
               pw.Paragraph(
                   text: _controllerMenorDnp.text,
-                  style: pw.TextStyle(
-                    fontSize: 30.0,
-                  )),
-            ],
-          ),
-          pw.Row(
-            children: [
-              pw.Paragraph(
-                  text: "Vertical: ",
-                  style: pw.TextStyle(
-                    fontSize: 30.0,
-                  )),
-              pw.Paragraph(
-                  text: _controllerVertical.text,
                   style: pw.TextStyle(
                     fontSize: 30.0,
                   )),
@@ -335,31 +321,6 @@ class _CalculadoraState extends State<Calculadora> {
               child: Center(
                 child: TextField(
                   keyboardType: TextInputType.number,
-                  inputFormatters: [maskFormatterVertical],
-                  decoration: InputDecoration(
-                    border: InputBorder.none,
-                    labelText: 'Vertical',
-                    labelStyle: TextStyle(
-                        fontFamily: 'Montserrat',
-                        fontSize: 15.0,
-                        color: Colors.black),
-                  ),
-                  controller: _controllerVertical,
-                ),
-              ),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(top: 10.0, left: 70.0, right: 70.0),
-            child: Container(
-              padding: EdgeInsets.only(left: 45.0),
-              height: 50.0,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(25.0),
-                  color: Color(0xff399d63)),
-              child: Center(
-                child: TextField(
-                  keyboardType: TextInputType.number,
                   inputFormatters: [maskFormatterDiagonalMaior],
                   decoration: InputDecoration(
                     border: InputBorder.none,
@@ -413,6 +374,21 @@ class _CalculadoraState extends State<Calculadora> {
                 onPressed: () {
                   Navigator.of(context).push(
                       MaterialPageRoute(builder: (context) => Calculadora()));
+                }),
+          ),
+          Padding(
+            padding: EdgeInsets.only(top: 5.0, left: 70.0, right: 70.0),
+            child: RaisedButton(
+                color: Color(0xff399d63),
+                textColor: Colors.black,
+                padding: EdgeInsets.all(15.0),
+                child: Text('Início'),
+                shape: RoundedRectangleBorder(
+                    borderRadius: new BorderRadius.circular(18.0),
+                    side: BorderSide(color: Colors.black)),
+                onPressed: () {
+                  Navigator.push(
+                      context, MaterialPageRoute(builder: (context) => Home()));
                 }),
           ),
           Row(
