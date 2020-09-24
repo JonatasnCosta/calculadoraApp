@@ -395,7 +395,7 @@ class _CalculadoraState extends State<Calculadora> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
               Padding(
-                padding: EdgeInsets.only(top: 10.0, left: 60.0, bottom: 200.0),
+                padding: EdgeInsets.only(top: 10.0, left: 60.0, bottom: 400.0),
                 child: Text(
                   "Diâmetro:",
                   style: TextStyle(
@@ -405,7 +405,7 @@ class _CalculadoraState extends State<Calculadora> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 10.0, left: 10.0, bottom: 200.0),
+                padding: EdgeInsets.only(top: 10.0, left: 10.0, bottom: 400.0),
                 child: Text(
                   fn.format(diametro),
                   style: TextStyle(
@@ -415,7 +415,7 @@ class _CalculadoraState extends State<Calculadora> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 10.0, left: 20.0, bottom: 200.0),
+                padding: EdgeInsets.only(top: 10.0, left: 20.0, bottom: 400.0),
                 child: IconButton(
                   icon: Icon(Icons.search),
                   onPressed: () async {
@@ -435,7 +435,7 @@ class _CalculadoraState extends State<Calculadora> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 10.0, left: 10.0, bottom: 200.0),
+                padding: EdgeInsets.only(top: 10.0, left: 10.0, bottom: 400.0),
                 child: IconButton(
                   icon: Icon(Icons.share),
                   onPressed: () async {

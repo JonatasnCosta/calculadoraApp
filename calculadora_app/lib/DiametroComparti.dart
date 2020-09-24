@@ -48,7 +48,7 @@ class _DimetroCompartiState extends State<DimetroComparti> {
   TextEditingController _controllerPonte = TextEditingController();
   TextEditingController _controllerMenorDnp = TextEditingController();
   TextEditingController _controllerMaiorDiagonal = TextEditingController();
-  TextEditingController _controllerVertical = TextEditingController();
+
   var maskFormatter =
       new MaskTextInputFormatter(mask: '##.#', filter: {"#": RegExp(r'[0-9]')});
   var maskFormatterAro =
@@ -206,31 +206,6 @@ class _DimetroCompartiState extends State<DimetroComparti> {
               child: Center(
                 child: TextField(
                   keyboardType: TextInputType.number,
-                  inputFormatters: [maskFormatterVertical],
-                  decoration: InputDecoration(
-                    border: InputBorder.none,
-                    labelText: 'Vertical',
-                    labelStyle: TextStyle(
-                        fontFamily: 'Montserrat',
-                        fontSize: 15.0,
-                        color: Colors.black),
-                  ),
-                  controller: _controllerVertical,
-                ),
-              ),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(top: 10.0, left: 70.0, right: 70.0),
-            child: Container(
-              padding: EdgeInsets.only(left: 45.0),
-              height: 50.0,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(25.0),
-                  color: Color(0xff399d63)),
-              child: Center(
-                child: TextField(
-                  keyboardType: TextInputType.number,
                   inputFormatters: [maskFormatterDiagonalMaior],
                   decoration: InputDecoration(
                     border: InputBorder.none,
@@ -262,7 +237,7 @@ class _DimetroCompartiState extends State<DimetroComparti> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
               Padding(
-                padding: EdgeInsets.only(top: 20.0, left: 120.0, bottom: 200.0),
+                padding: EdgeInsets.only(top: 20.0, left: 120.0, bottom: 300.0),
                 child: Text(
                   "Diâmetro:",
                   style: TextStyle(
@@ -272,7 +247,7 @@ class _DimetroCompartiState extends State<DimetroComparti> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 20.0, left: 10.0, bottom: 200.0),
+                padding: EdgeInsets.only(top: 20.0, left: 10.0, bottom: 300.0),
                 child: Text(
                   fn.format(diametro),
                   style: TextStyle(

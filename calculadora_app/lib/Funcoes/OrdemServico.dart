@@ -765,7 +765,7 @@ class _OrdemServicoState extends State<OrdemServico> {
     '40',
     '45',
     '50',
-    '51',
+    '55',
     '60',
     '65',
     '70',
@@ -1750,7 +1750,7 @@ class _OrdemServicoState extends State<OrdemServico> {
           ),
           Padding(
             padding: EdgeInsets.only(
-                top: 10.0, left: 5.0, right: 5.0, bottom: 200.0),
+                top: 10.0, left: 5.0, right: 5.0, bottom: 400.0),
             child: RaisedButton(
                 color: Color(0xff399d63),
                 textColor: Colors.black,
