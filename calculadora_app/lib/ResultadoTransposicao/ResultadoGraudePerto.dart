@@ -1,6 +1,6 @@
 import 'package:calculadoraapp/DiametroComparti.dart';
-import 'package:calculadoraapp/Home.dart';
 import 'package:calculadoraapp/SubFuncaoTransposicao/FuncaoGraudePerto.dart';
+import 'package:calculadoraapp/app/home/pages/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:pdf/pdf.dart';
@@ -483,7 +483,7 @@ class _ResultadoGraudePertoState extends State<ResultadoGraudePerto> {
                   FloatingActionButton(
                     onPressed: () {
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Home()));
+                          MaterialPageRoute(builder: (context) => HomePage()));
                     },
                     backgroundColor: Colors.grey.withOpacity(0.3),
                     mini: true,
@@ -1192,8 +1192,8 @@ class _ResultadoGraudePertoState extends State<ResultadoGraudePerto> {
                     borderRadius: new BorderRadius.circular(18.0),
                     side: BorderSide(color: Colors.black)),
                 onPressed: () {
-                  Navigator.push(
-                      context, MaterialPageRoute(builder: (context) => Home()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => HomePage()));
                 }),
           ),
         ],

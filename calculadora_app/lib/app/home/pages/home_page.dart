@@ -4,12 +4,12 @@ import 'package:calculadoraapp/MenusHome/MenuTransposicao.dart';
 import 'package:calculadoraapp/MenusHome/MenuTransposicaoPerto.dart';
 import 'package:flutter/material.dart';
 
-class Home extends StatefulWidget {
+class HomePage extends StatefulWidget {
   @override
-  _HomeState createState() => _HomeState();
+  _HomePageState createState() => _HomePageState();
 }
 
-class _HomeState extends State<Home>
+class _HomePageState extends State<HomePage>
 //Contrutor do Menu
     with
         SingleTickerProviderStateMixin {
@@ -37,7 +37,7 @@ class _HomeState extends State<Home>
                   FloatingActionButton(
                     onPressed: () {
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Home()));
+                          MaterialPageRoute(builder: (context) => HomePage()));
                     },
                     backgroundColor: Colors.grey.withOpacity(0.3),
                     mini: true,

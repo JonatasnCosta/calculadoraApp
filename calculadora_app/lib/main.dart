@@ -1,10 +1,10 @@
-import 'package:calculadoraapp/Home.dart';
+import 'package:calculadoraapp/app/app_widget.dart';
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: Home(),
+    home: Appwidget(),
   ));
 }
 //Ponto de integração para receber o Appbar
@@ -32,4 +32,4 @@ void main() {
 //Ponto de integração para receber o  DropdownButton grau de perto
 //Ponto de integração para corrigir erro de tela vermelha
 //Ponto de integração para implematar correcao de contador 0
-//Ponto de integração para receber refatoração e arquitetura
+//Ponto de integração para receber refatoração e arquitetura 
