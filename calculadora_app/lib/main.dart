@@ -32,4 +32,5 @@ void main() {
 //Ponto de integração para receber o  DropdownButton grau de perto
 //Ponto de integração para corrigir erro de tela vermelha
 //Ponto de integração para implematar correcao de contador 0
-//Ponto de integração para receber refatoração e arquitetura 
+//Ponto de integração para receber refatoração e arquitetura
+//Ponto de integração para refatorar a page pedido laboratorio 
