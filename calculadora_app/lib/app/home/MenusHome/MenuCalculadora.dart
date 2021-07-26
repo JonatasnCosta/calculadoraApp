@@ -1,4 +1,4 @@
-import 'package:calculadoraapp/Funcoes/Calculadora.dart';
+import 'package:calculadoraapp/app/Calculadora/Calculadora.dart';
 import 'package:flutter/material.dart';
 
 class MenuCalculadora extends StatefulWidget {

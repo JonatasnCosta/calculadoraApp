@@ -1,7 +1,7 @@
-import 'package:calculadoraapp/MenusHome/MenuCalculadora.dart';
-import 'package:calculadoraapp/MenusHome/MenuOS.dart';
-import 'package:calculadoraapp/MenusHome/MenuTransposicao.dart';
-import 'package:calculadoraapp/MenusHome/MenuTransposicaoPerto.dart';
+import 'package:calculadoraapp/app/home/MenusHome/MenuCalculadora.dart';
+import 'package:calculadoraapp/app/home/MenusHome/MenuOS.dart';
+import 'package:calculadoraapp/app/home/MenusHome/MenuTransposicao.dart';
+import 'package:calculadoraapp/app/home/MenusHome/MenuTransposicaoPerto.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {

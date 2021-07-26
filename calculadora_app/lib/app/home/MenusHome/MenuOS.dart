@@ -1,4 +1,4 @@
-import 'package:calculadoraapp/Funcoes/OrdemServico.dart';
+import 'package:calculadoraapp/app/OrdemdeServico/OrdemServico.dart';
 import 'package:flutter/material.dart';
 
 class MenuOS extends StatefulWidget {
