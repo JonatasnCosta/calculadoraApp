@@ -1,4 +1,4 @@
-import 'package:calculadoraapp/SubFuncaoTransposicao/FuncaoAdicao.dart';
+import 'package:calculadoraapp/app/home/home_TransposicaoAdicao/FuncaoAdicao.dart';
 import 'package:flutter/material.dart';
 
 class MenuTransposicao extends StatefulWidget {

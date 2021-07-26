@@ -1,4 +1,4 @@
-import 'package:calculadoraapp/SubFuncaoTransposicao/FuncaoGraudePerto.dart';
+import 'package:calculadoraapp/app/home/home_TransposicaoPerto/FuncaoGraudePerto.dart';
 import 'package:flutter/material.dart';
 
 class MenuTransposicaoPerto extends StatefulWidget {

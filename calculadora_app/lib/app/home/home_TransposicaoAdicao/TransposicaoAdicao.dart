@@ -1,17 +1,17 @@
-import 'package:calculadoraapp/SubFuncaoTransposicao/FuncaoGraudePerto.dart';
+import 'package:calculadoraapp/app/home/home_TransposicaoAdicao/FuncaoAdicao.dart';
 import 'package:flutter/material.dart';
 
-class TransposicaoGraudePerto extends StatefulWidget {
+class TransposicaoAdicao extends StatefulWidget {
   @override
-  _TransposicaoGraudePertoState createState() =>
-      _TransposicaoGraudePertoState();
+  _TransposicaoAdicaoState createState() => _TransposicaoAdicaoState();
 }
 
-class _TransposicaoGraudePertoState extends State<TransposicaoGraudePerto> {
+class _TransposicaoAdicaoState extends State<TransposicaoAdicao> {
   ScrollController _scrollController;
   List allDescriptions = [
     'Preencha os seus pedidos em um clique.',
   ];
+
   @override
   Widget build(BuildContext context) {
     return ListView(
@@ -24,7 +24,7 @@ class _TransposicaoGraudePertoState extends State<TransposicaoGraudePerto> {
                 scrollDirection: Axis.horizontal,
                 children: <Widget>[
                   getMenuCard(
-                      'Precisão nos seus calculos', 'Saber grau', 'de perto')
+                      'Agilidade nos seus calculos', 'Saber grau', ' de adição')
                 ])),
         Padding(
           padding: EdgeInsets.only(left: 15.0),
@@ -38,9 +38,9 @@ class _TransposicaoGraudePertoState extends State<TransposicaoGraudePerto> {
           ),
         ),
         Padding(
-          padding: EdgeInsets.only(top: 5.0, left: 15.0),
+          padding: EdgeInsets.only(top: 10.0, left: 15.0),
           child: Text(
-            'para o seu negócio!',
+            'para sua ótica!',
             style: TextStyle(
                 fontFamily: 'Montserrat',
                 fontSize: 30.0,
@@ -122,7 +122,7 @@ class _TransposicaoGraudePertoState extends State<TransposicaoGraudePerto> {
                       child: InkWell(
                         onTap: () {
                           Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => FuncaoGraudePerto()));
+                              builder: (context) => FuncaoAdicao()));
                         },
                         child: Center(
                           child: Icon(Icons.library_add, color: Colors.white),

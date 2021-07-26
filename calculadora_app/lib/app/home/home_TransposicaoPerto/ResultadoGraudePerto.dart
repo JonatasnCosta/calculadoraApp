@@ -1,5 +1,5 @@
 import 'package:calculadoraapp/DiametroComparti.dart';
-import 'package:calculadoraapp/SubFuncaoTransposicao/FuncaoGraudePerto.dart';
+import 'package:calculadoraapp/app/home/home_TransposicaoPerto/FuncaoGraudePerto.dart';
 import 'package:calculadoraapp/app/home/pages/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
