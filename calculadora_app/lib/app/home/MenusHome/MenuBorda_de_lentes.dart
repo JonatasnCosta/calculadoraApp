@@ -1,3 +1,4 @@
+import 'package:calculadoraapp/app/home/home_Borda_de_lentes/Borda_de_lentes.dart';
 import 'package:flutter/material.dart';
 
 class MenuBordadeLentes extends StatefulWidget {
@@ -244,7 +245,10 @@ class _MenuBordadeLentesState extends State<MenuBordadeLentes> {
                   borderRadius: BorderRadius.circular(25.0),
                   color: Colors.black),
               child: InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => BordadeLentes()));
+                },
                 child: Center(
                   child: Icon(Icons.library_add, color: Colors.white),
                 ),
