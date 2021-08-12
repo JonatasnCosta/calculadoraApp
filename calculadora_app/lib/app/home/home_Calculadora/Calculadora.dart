@@ -337,6 +337,7 @@ class _CalculadoraState extends State<Calculadora> {
           ),
           Padding(
             padding: EdgeInsets.only(top: 10.0, left: 70.0, right: 70.0),
+            // ignore: deprecated_member_use
             child: RaisedButton(
                 color: Color(0xff399d63),
                 textColor: Colors.black,
@@ -363,6 +364,7 @@ class _CalculadoraState extends State<Calculadora> {
           ),
           Padding(
             padding: EdgeInsets.only(top: 5.0, left: 70.0, right: 70.0),
+            // ignore: deprecated_member_use
             child: RaisedButton(
                 color: Color(0xff399d63),
                 textColor: Colors.black,
@@ -378,6 +380,7 @@ class _CalculadoraState extends State<Calculadora> {
           ),
           Padding(
             padding: EdgeInsets.only(top: 5.0, left: 70.0, right: 70.0),
+            // ignore: deprecated_member_use
             child: RaisedButton(
                 color: Color(0xff399d63),
                 textColor: Colors.black,

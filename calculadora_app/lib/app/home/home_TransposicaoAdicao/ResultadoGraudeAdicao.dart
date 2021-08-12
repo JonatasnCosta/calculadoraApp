@@ -1060,6 +1060,7 @@ class _ResultadoGraudeAdicaoState extends State<ResultadoGraudeAdicao> {
                     ),
                     Padding(
                       padding: EdgeInsets.only(left: 37.0, right: 1.0),
+                      // ignore: deprecated_member_use
                       child: RaisedButton(
                           color: Color(0xff399d63),
                           textColor: Colors.black,
@@ -1171,6 +1172,7 @@ class _ResultadoGraudeAdicaoState extends State<ResultadoGraudeAdicao> {
           ),
           Padding(
             padding: EdgeInsets.only(top: 10.0, left: 5.0, right: 5.0),
+            // ignore: deprecated_member_use
             child: RaisedButton(
                 color: Color(0xff399d63),
                 textColor: Colors.black,
@@ -1185,6 +1187,7 @@ class _ResultadoGraudeAdicaoState extends State<ResultadoGraudeAdicao> {
           ),
           Padding(
             padding: EdgeInsets.only(top: 10.0, left: 5.0, right: 5.0),
+            // ignore: deprecated_member_use
             child: RaisedButton(
                 color: Color(0xff399d63),
                 textColor: Colors.black,
@@ -1203,6 +1206,7 @@ class _ResultadoGraudeAdicaoState extends State<ResultadoGraudeAdicao> {
           ),
           Padding(
             padding: EdgeInsets.only(top: 10.0, left: 5.0, right: 5.0),
+            // ignore: deprecated_member_use
             child: RaisedButton(
                 color: Color(0xff399d63),
                 textColor: Colors.black,
@@ -1221,6 +1225,7 @@ class _ResultadoGraudeAdicaoState extends State<ResultadoGraudeAdicao> {
           Padding(
             padding: EdgeInsets.only(
                 top: 10.0, left: 5.0, right: 5.0, bottom: 400.0),
+            // ignore: deprecated_member_use
             child: RaisedButton(
                 color: Color(0xff399d63),
                 textColor: Colors.black,
