@@ -1,4 +1,5 @@
-import 'package:calculadoraapp/DiametroComparti.dart';
+import 'package:calculadoraapp/app/Global/DiametroComparti.dart';
+import 'package:calculadoraapp/app/Global/PdfViews/PDFDiametro.dart';
 import 'package:calculadoraapp/app/home/home_TransposicaoPerto/FuncaoGraudePerto.dart';
 import 'package:calculadoraapp/app/home/pages/home_page.dart';
 import 'package:flutter/material.dart';
@@ -7,7 +8,6 @@ import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 import 'package:printing/printing.dart';
 import 'dart:io';
-import 'package:calculadoraapp/PdfViews/PDFDiametro.dart';
 import 'package:intl/intl.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:firebase_admob/firebase_admob.dart';

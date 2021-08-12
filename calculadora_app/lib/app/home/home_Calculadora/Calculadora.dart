@@ -1,6 +1,6 @@
+import 'package:calculadoraapp/app/Global/PdfViews/PDFDiametro.dart';
 import 'package:calculadoraapp/app/home/pages/home_page.dart';
 import 'package:flutter/material.dart';
-import 'package:calculadoraapp/PdfViews/PDFDiametro.dart';
 import 'dart:io';
 import 'package:path_provider/path_provider.dart';
 import 'package:pdf/pdf.dart';

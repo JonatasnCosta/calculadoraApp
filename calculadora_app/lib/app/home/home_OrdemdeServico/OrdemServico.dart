@@ -1,9 +1,9 @@
-import 'package:calculadoraapp/DiametroComparti.dart';
+import 'package:calculadoraapp/app/Global/DiametroComparti.dart';
+import 'package:calculadoraapp/app/Global/PdfViews/PdfPreviewScreen.dart';
 import 'package:calculadoraapp/app/home/pages/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:firebase_admob/firebase_admob.dart';
-import 'package:calculadoraapp/PdfViews/PdfPreviewScreen.dart';
 import 'dart:io';
 import 'package:path_provider/path_provider.dart';
 import 'package:pdf/pdf.dart';
