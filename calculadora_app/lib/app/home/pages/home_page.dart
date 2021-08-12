@@ -1,3 +1,4 @@
+import 'package:calculadoraapp/app/home/MenusHome/MenuBorda_de_lentes.dart';
 import 'package:calculadoraapp/app/home/MenusHome/MenuCalculadora.dart';
 import 'package:calculadoraapp/app/home/MenusHome/MenuOS.dart';
 import 'package:calculadoraapp/app/home/MenusHome/MenuTransposicao.dart';
@@ -17,7 +18,7 @@ class _HomePageState extends State<HomePage>
   TabController tabController;
   @override
   void initState() {
-    tabController = TabController(vsync: this, length: 4);
+    tabController = TabController(vsync: this, length: 5);
     super.initState();
   }
 
@@ -86,6 +87,15 @@ class _HomePageState extends State<HomePage>
                   ),
                   Tab(
                     child: Text(
+                      'Borda de lentes',
+                      style: TextStyle(
+                          fontFamily: 'Montserrat',
+                          fontSize: 17.0,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  Tab(
+                    child: Text(
                       'Diâmetro de Lentes',
                       style: TextStyle(
                           fontFamily: 'Montserrat',
@@ -120,6 +130,7 @@ class _HomePageState extends State<HomePage>
                 controller: tabController,
                 children: <Widget>[
                   MenuOS(),
+                  MenuBordadeLentes(),
                   MenuCalculadora(),
                   MenuTransposicao(),
                   MenuTransposicaoPerto()

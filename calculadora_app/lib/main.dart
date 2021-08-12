@@ -34,3 +34,4 @@ void main() {
 //Ponto de integração para implematar correcao de contador 0
 //Ponto de integração para receber refatoração e arquitetura
 //Ponto de integração para refatorar a page pedido laboratorio 
+//Ponto de integração para gerar opção de calculo de borda
