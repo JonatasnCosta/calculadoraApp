@@ -2,6 +2,7 @@ import 'package:calculadoraapp/app/home/MenusHome/MenuCalculadora.dart';
 import 'package:calculadoraapp/app/home/MenusHome/MenuOS.dart';
 import 'package:calculadoraapp/app/home/MenusHome/MenuTransposicao.dart';
 import 'package:calculadoraapp/app/home/MenusHome/MenuTransposicaoPerto.dart';
+import 'package:calculadoraapp/app/home/pages/link_compartilhado.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -33,7 +34,13 @@ class _HomePageState extends State<HomePage>
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   //Icones
-                  IconButton(icon: Icon(Icons.menu), onPressed: () {}),
+                  IconButton(
+                    icon: Icon(Icons.menu),
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => LinkMenu()));
+                    },
+                  ),
                   FloatingActionButton(
                     onPressed: () {
                       Navigator.push(context,
