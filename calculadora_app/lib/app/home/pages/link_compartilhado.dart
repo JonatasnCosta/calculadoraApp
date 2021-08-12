@@ -130,7 +130,7 @@ class _LinkMenuState extends State<LinkMenu> {
                   onPressed: () {
                     lounchWhatsApp(
                         propraganda:
-                            "Olha esse ótimo aplicativo para ajudar no gerênciamento da medidas",
+                            "Olha esse ótimo aplicativo para sua ótica",
                         message:
                             'https://play.google.com/store/apps/details?id=com.jonatasprogramador.calculadora_app');
                   },
