@@ -1,16 +1,14 @@
 import 'package:calculadoraapp/app/Global/DiametroComparti.dart';
 import 'package:calculadoraapp/app/Global/PdfViews/PdfPreviewScreen.dart';
+import 'package:calculadoraapp/app/Global/Propaganda.dart';
 import 'package:calculadoraapp/app/home/pages/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
-import 'package:firebase_admob/firebase_admob.dart';
 import 'dart:io';
 import 'package:path_provider/path_provider.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 import 'package:printing/printing.dart';
-
-const String testDevice = 'Mobile_id';
 
 class OrdemServico extends StatefulWidget {
   @override
@@ -18,39 +16,6 @@ class OrdemServico extends StatefulWidget {
 }
 
 class _OrdemServicoState extends State<OrdemServico> {
-  static const MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(
-    testDevices: testDevice != null ? <String>[testDevice] : null,
-    nonPersonalizedAds: true,
-    keywords: <String>['Mortgage', 'Attorney'],
-  );
-
-  BannerAd _bannerAd;
-  BannerAd createBannerAd() {
-    return BannerAd(
-        adUnitId: 'ca-app-pub-7677202089790115/3031795472',
-        size: AdSize.banner,
-        targetingInfo: targetingInfo,
-        listener: (MobileAdEvent event) {
-          print("BannerAd $event");
-        });
-  }
-
-  @override
-  void initState() {
-    FirebaseAdMob.instance
-        .initialize(appId: 'ca-app-pub-7677202089790115~7992122892');
-    _bannerAd = createBannerAd()
-      ..load()
-      ..show();
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    _bannerAd.dispose();
-    super.dispose();
-  }
-
   TextEditingController _controllerNumeroCliente = TextEditingController();
   TextEditingController _controllerNomeotica = TextEditingController();
   TextEditingController _controllerData = TextEditingController();
@@ -1071,6 +1036,10 @@ class _OrdemServicoState extends State<OrdemServico> {
             ),
           ),
           Padding(
+            padding: EdgeInsets.all(1.0),
+            child: Propaganda(),
+          ),
+          Padding(
             padding: EdgeInsets.only(top: 10.0, left: 5.0, right: 5.0),
             child: Container(
               padding: EdgeInsets.only(left: 45.0),
@@ -1237,6 +1206,10 @@ class _OrdemServicoState extends State<OrdemServico> {
                 ),
               ),
             ),
+          ),
+          Padding(
+            padding: EdgeInsets.all(1.0),
+            child: Propaganda(),
           ),
           Padding(
             padding: EdgeInsets.only(top: 10.0, left: 5.0, right: 5.0),
@@ -1768,6 +1741,10 @@ class _OrdemServicoState extends State<OrdemServico> {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => HomePage()));
                 }),
+          ),
+          Padding(
+            padding: EdgeInsets.all(1.0),
+            child: Propaganda(),
           ),
         ],
       ),
