@@ -1,15 +1,15 @@
-import 'package:calculadoraapp/app/home/home_TransposicaoPerto/FuncaoGraudePerto.dart';
+import 'package:calculadoraapp/app/presenter/Menus/Menu_OrdemdeServico/OrdemServico.dart';
 import 'package:flutter/material.dart';
 
-class MenuTransposicaoPerto extends StatefulWidget {
+class MenuOS extends StatefulWidget {
   @override
-  _MenuTransposicaoPerto createState() => _MenuTransposicaoPerto();
+  _MenuOSState createState() => _MenuOSState();
 }
 
-class _MenuTransposicaoPerto extends State<MenuTransposicaoPerto> {
+class _MenuOSState extends State<MenuOS> {
   ScrollController _scrollController;
   List allDescriptions = [
-    'Calculo rápido & preciso.',
+    'Preencha os seus pedidos em um clique.',
   ];
 
   String description;
@@ -44,8 +44,8 @@ class _MenuTransposicaoPerto extends State<MenuTransposicaoPerto> {
                 controller: _scrollController,
                 scrollDirection: Axis.horizontal,
                 children: <Widget>[
-                  getMenuCard('Rapidez & Perfeição', 'Transposição Receita',
-                      'Saber grau de perto')
+                  getMenuCard('Agilidade aos seus pedidos', 'Pedido de Lentes',
+                      'Ordem de serviço')
                 ])),
         Padding(
           padding: EdgeInsets.only(left: 25.0, top: 10.0),
@@ -135,7 +135,7 @@ class _MenuTransposicaoPerto extends State<MenuTransposicaoPerto> {
                           menuName,
                           style: TextStyle(
                               fontFamily: 'Montserrat',
-                              fontSize: 19.0,
+                              fontSize: 20.0,
                               fontWeight: FontWeight.w600,
                               color: Color(0xff8ac7a4)),
                         )
@@ -244,8 +244,8 @@ class _MenuTransposicaoPerto extends State<MenuTransposicaoPerto> {
                   color: Colors.black),
               child: InkWell(
                 onTap: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => FuncaoGraudePerto()));
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => OrdemServico()));
                 },
                 child: Center(
                   child: Icon(Icons.library_add, color: Colors.white),

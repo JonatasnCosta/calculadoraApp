@@ -1,10 +1,11 @@
-import 'package:calculadoraapp/app/home/MenusHome/MenuBorda_de_lentes.dart';
-import 'package:calculadoraapp/app/home/MenusHome/MenuCalculadora.dart';
-import 'package:calculadoraapp/app/home/MenusHome/MenuOS.dart';
-import 'package:calculadoraapp/app/home/MenusHome/MenuTransposicao.dart';
-import 'package:calculadoraapp/app/home/MenusHome/MenuTransposicaoPerto.dart';
-import 'package:calculadoraapp/app/home/pages/link_compartilhado.dart';
+import 'package:calculadoraapp/app/presenter/Global/link_compartilhado.dart';
 import 'package:flutter/material.dart';
+
+import 'MenusHome/MenuBorda_de_lentes.dart';
+import 'MenusHome/MenuCalculadora.dart';
+import 'MenusHome/MenuOS.dart';
+import 'MenusHome/MenuTransposicao.dart';
+import 'MenusHome/MenuTransposicaoPerto.dart';
 
 class HomePage extends StatefulWidget {
   @override

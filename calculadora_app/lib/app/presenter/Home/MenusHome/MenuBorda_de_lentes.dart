@@ -1,15 +1,17 @@
-import 'package:calculadoraapp/app/home/home_TransposicaoAdicao/FuncaoAdicao.dart';
+import 'package:calculadoraapp/app/presenter/Menus/Menu_Borda_de_lentes/Borda_de_lentes.dart';
 import 'package:flutter/material.dart';
 
-class MenuTransposicao extends StatefulWidget {
+class MenuBordadeLentes extends StatefulWidget {
+  const MenuBordadeLentes({Key key}) : super(key: key);
+
   @override
-  _MenuTransposicao createState() => _MenuTransposicao();
+  _MenuBordadeLentesState createState() => _MenuBordadeLentesState();
 }
 
-class _MenuTransposicao extends State<MenuTransposicao> {
+class _MenuBordadeLentesState extends State<MenuBordadeLentes> {
   ScrollController _scrollController;
   List allDescriptions = [
-    'Deixe os calculos complicados com a gente.',
+    'Indique a lente mais adequada pra o seu cliente.',
   ];
 
   String description;
@@ -44,8 +46,8 @@ class _MenuTransposicao extends State<MenuTransposicao> {
                 controller: _scrollController,
                 scrollDirection: Axis.horizontal,
                 children: <Widget>[
-                  getMenuCard('Confiança & Inovação', 'Transposição Receita',
-                      'Saber Adição')
+                  getMenuCard(
+                      'Qualidade na vendas', 'Calculadora', 'Tipos de borda')
                 ])),
         Padding(
           padding: EdgeInsets.only(left: 25.0, top: 10.0),
@@ -245,7 +247,7 @@ class _MenuTransposicao extends State<MenuTransposicao> {
               child: InkWell(
                 onTap: () {
                   Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => FuncaoAdicao()));
+                      MaterialPageRoute(builder: (context) => BordadeLentes()));
                 },
                 child: Center(
                   child: Icon(Icons.library_add, color: Colors.white),

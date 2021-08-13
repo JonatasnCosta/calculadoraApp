@@ -1,5 +1,5 @@
-import 'package:calculadoraapp/app/Global/Propaganda.dart';
-import 'package:calculadoraapp/app/home/pages/home_page.dart';
+import 'package:calculadoraapp/app/presenter/Global/Propaganda.dart';
+import 'package:calculadoraapp/app/presenter/Home/home_page.dart';
 import 'package:flutter/material.dart';
 
 class BordadeLentes extends StatefulWidget {

@@ -1,5 +1,5 @@
-import 'package:calculadoraapp/app/Global/PdfViews/PDFDiametro.dart';
-import 'package:calculadoraapp/app/home/pages/home_page.dart';
+import 'package:calculadoraapp/app/presenter/Global/PdfViews/PDFDiametro.dart';
+import 'package:calculadoraapp/app/presenter/Home/home_page.dart';
 import 'package:flutter/material.dart';
 import 'dart:io';
 import 'package:path_provider/path_provider.dart';

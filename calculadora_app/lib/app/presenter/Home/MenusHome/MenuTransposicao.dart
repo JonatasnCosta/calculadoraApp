@@ -1,15 +1,15 @@
-import 'package:calculadoraapp/app/home/home_OrdemdeServico/OrdemServico.dart';
+import 'package:calculadoraapp/app/presenter/Menus/Menu_TransposicaoAdicao/FuncaoAdicao.dart';
 import 'package:flutter/material.dart';
 
-class MenuOS extends StatefulWidget {
+class MenuTransposicao extends StatefulWidget {
   @override
-  _MenuOSState createState() => _MenuOSState();
+  _MenuTransposicao createState() => _MenuTransposicao();
 }
 
-class _MenuOSState extends State<MenuOS> {
+class _MenuTransposicao extends State<MenuTransposicao> {
   ScrollController _scrollController;
   List allDescriptions = [
-    'Preencha os seus pedidos em um clique.',
+    'Deixe os calculos complicados com a gente.',
   ];
 
   String description;
@@ -44,8 +44,8 @@ class _MenuOSState extends State<MenuOS> {
                 controller: _scrollController,
                 scrollDirection: Axis.horizontal,
                 children: <Widget>[
-                  getMenuCard('Agilidade aos seus pedidos', 'Pedido de Lentes',
-                      'Ordem de serviço')
+                  getMenuCard('Confiança & Inovação', 'Transposição Receita',
+                      'Saber Adição')
                 ])),
         Padding(
           padding: EdgeInsets.only(left: 25.0, top: 10.0),
@@ -245,7 +245,7 @@ class _MenuOSState extends State<MenuOS> {
               child: InkWell(
                 onTap: () {
                   Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => OrdemServico()));
+                      MaterialPageRoute(builder: (context) => FuncaoAdicao()));
                 },
                 child: Center(
                   child: Icon(Icons.library_add, color: Colors.white),

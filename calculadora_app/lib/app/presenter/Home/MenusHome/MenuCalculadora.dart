@@ -1,17 +1,15 @@
-import 'package:calculadoraapp/app/home/home_Borda_de_lentes/Borda_de_lentes.dart';
+import 'package:calculadoraapp/app/presenter/Menus/Menu_Calculadora/Calculadora.dart';
 import 'package:flutter/material.dart';
 
-class MenuBordadeLentes extends StatefulWidget {
-  const MenuBordadeLentes({Key key}) : super(key: key);
-
+class MenuCalculadora extends StatefulWidget {
   @override
-  _MenuBordadeLentesState createState() => _MenuBordadeLentesState();
+  _MenuCalculadoraState createState() => _MenuCalculadoraState();
 }
 
-class _MenuBordadeLentesState extends State<MenuBordadeLentes> {
+class _MenuCalculadoraState extends State<MenuCalculadora> {
   ScrollController _scrollController;
   List allDescriptions = [
-    'Indique a lente mais adequada pra o seu cliente.',
+    'Existem varias maneiras de calcular o diâmentro de lentes, essa venho pra facilitar.',
   ];
 
   String description;
@@ -47,7 +45,7 @@ class _MenuBordadeLentesState extends State<MenuBordadeLentes> {
                 scrollDirection: Axis.horizontal,
                 children: <Widget>[
                   getMenuCard(
-                      'Qualidade na vendas', 'Calculadora', 'Tipos de borda')
+                      'Valor a sua ótica', 'Diâmetro de lentes', 'Calculadora')
                 ])),
         Padding(
           padding: EdgeInsets.only(left: 25.0, top: 10.0),
@@ -247,7 +245,7 @@ class _MenuBordadeLentesState extends State<MenuBordadeLentes> {
               child: InkWell(
                 onTap: () {
                   Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => BordadeLentes()));
+                      MaterialPageRoute(builder: (context) => Calculadora()));
                 },
                 child: Center(
                   child: Icon(Icons.library_add, color: Colors.white),

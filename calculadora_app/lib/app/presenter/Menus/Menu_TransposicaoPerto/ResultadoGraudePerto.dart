@@ -1,7 +1,6 @@
-import 'package:calculadoraapp/app/Global/DiametroComparti.dart';
-import 'package:calculadoraapp/app/Global/PdfViews/PDFDiametro.dart';
-import 'package:calculadoraapp/app/home/home_TransposicaoPerto/FuncaoGraudePerto.dart';
-import 'package:calculadoraapp/app/home/pages/home_page.dart';
+import 'package:calculadoraapp/app/presenter/Global/DiametroComparti.dart';
+import 'package:calculadoraapp/app/presenter/Global/PdfViews/PDFDiametro.dart';
+import 'package:calculadoraapp/app/presenter/Home/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:pdf/pdf.dart';
@@ -11,6 +10,8 @@ import 'dart:io';
 import 'package:intl/intl.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:firebase_admob/firebase_admob.dart';
+
+import 'FuncaoGraudePerto.dart';
 
 const String testDevice = 'Mobile_id';
 

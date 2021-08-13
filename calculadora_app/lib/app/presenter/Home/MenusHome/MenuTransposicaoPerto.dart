@@ -1,15 +1,15 @@
-import 'package:calculadoraapp/app/home/home_Calculadora/Calculadora.dart';
+import 'package:calculadoraapp/app/presenter/Menus/Menu_TransposicaoPerto/FuncaoGraudePerto.dart';
 import 'package:flutter/material.dart';
 
-class MenuCalculadora extends StatefulWidget {
+class MenuTransposicaoPerto extends StatefulWidget {
   @override
-  _MenuCalculadoraState createState() => _MenuCalculadoraState();
+  _MenuTransposicaoPerto createState() => _MenuTransposicaoPerto();
 }
 
-class _MenuCalculadoraState extends State<MenuCalculadora> {
+class _MenuTransposicaoPerto extends State<MenuTransposicaoPerto> {
   ScrollController _scrollController;
   List allDescriptions = [
-    'Existem varias maneiras de calcular o diâmentro de lentes, essa venho pra facilitar.',
+    'Calculo rápido & preciso.',
   ];
 
   String description;
@@ -44,8 +44,8 @@ class _MenuCalculadoraState extends State<MenuCalculadora> {
                 controller: _scrollController,
                 scrollDirection: Axis.horizontal,
                 children: <Widget>[
-                  getMenuCard(
-                      'Valor a sua ótica', 'Diâmetro de lentes', 'Calculadora')
+                  getMenuCard('Rapidez & Perfeição', 'Transposição Receita',
+                      'Saber grau de perto')
                 ])),
         Padding(
           padding: EdgeInsets.only(left: 25.0, top: 10.0),
@@ -135,7 +135,7 @@ class _MenuCalculadoraState extends State<MenuCalculadora> {
                           menuName,
                           style: TextStyle(
                               fontFamily: 'Montserrat',
-                              fontSize: 20.0,
+                              fontSize: 19.0,
                               fontWeight: FontWeight.w600,
                               color: Color(0xff8ac7a4)),
                         )
@@ -244,8 +244,8 @@ class _MenuCalculadoraState extends State<MenuCalculadora> {
                   color: Colors.black),
               child: InkWell(
                 onTap: () {
-                  Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => Calculadora()));
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => FuncaoGraudePerto()));
                 },
                 child: Center(
                   child: Icon(Icons.library_add, color: Colors.white),
